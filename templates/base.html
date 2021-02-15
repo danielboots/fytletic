@@ -17,6 +17,9 @@
     {% block corecss %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
     {% endblock %}
 
     {% block extra_css %}
@@ -24,6 +27,7 @@
 
     {% block corejs %}
 
+    <script src="https://kit.fontawesome.com/19ef3993ad.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -33,6 +37,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
 
     {% endblock %}
 
@@ -45,7 +50,7 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div class="row">
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex ">
 
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
 
@@ -75,56 +80,55 @@
             </div>
 
 
-        </div>
 
 
 
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
 
-            <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
 
-                <li class="list-inline-item dropdown">
-                    <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <div class="text-center">
-                            <div><i class="fas fa-user fa-lg"></i></div>
-                            <p class="my-0">My Account</p>
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
                         </div>
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Product Management</a>
-                        {% endif %}
-                        <a href="" class="dropdown-item">My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                        {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                        {% endif %}
-                    </div>
-                </li>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    £0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
 
 
-                <li class="list-inline-item">
-                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                        href="">
-                        <div class="text-center">
-                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                            <p class="my-0">
-                                {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
-                                {% else %}
-                                $0.00
-                                {% endif %}
-                            </p>
-                        </div>
-                    </a>
-                </li>
-
-
-            </ul>
-
+                </ul>
+            </div>
         </div>
 
 
