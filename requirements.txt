@@ -3,8 +3,10 @@ black==20.8b1
 click==7.1.2
 Django==3.1.6
 django-allauth==0.44.0
+django-crispy-forms==1.11.1
 oauthlib==3.1.0
 pathspec==0.8.1
+Pillow==8.1.0
 PyJWT==2.0.1
 python3-openid==3.2.0
 pytz==2021.1
