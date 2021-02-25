@@ -57,7 +57,7 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get("client_secret").split("_secret")[0]
-            order.stripe.pid = pid
+            order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
             for item_id, item_data in bag.items():
@@ -89,6 +89,7 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse("view_bag"))
+
             request.session["save_info"] = "save-info" in request.POST
             return redirect(reverse("checkout_success", args=[order.order_number]))
         else:
@@ -97,7 +98,6 @@ def checkout(request):
                 "There was an error with your form. \
                 Please double check your information.",
             )
-
     else:
         bag = request.session.get("bag", {})
         if not bag:
@@ -133,7 +133,6 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-
     """
     Handle successful checkouts
     """
