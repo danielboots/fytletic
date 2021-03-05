@@ -27,7 +27,7 @@ SECRET_KEY = "wic90tw54s^86!d@y17hx_*)e=#ogsu%xp%#_0_mo2j@jj*9j*"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["fytletic.herokuapp.com", "localhost"]
 
 
 # Application definition
