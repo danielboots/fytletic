@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.urls import path
+from .models import Post
 
 
 def news(request):
     """ A view to return the news page. """
+    posts = Post.objects.all()
 
-    return render(request, "news/news.html")
+    return render(request, "news/news.html", {"posts": posts})
