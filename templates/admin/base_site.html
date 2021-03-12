@@ -1,0 +1,17 @@
+<!-- Code taken from Udemy - Django project Traversy Media-->
+
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+
+<h1 id="head">Fytletic
+</h1>
+<p>Professional Fight Network</p>
+
+{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+
+{% endblock %}
