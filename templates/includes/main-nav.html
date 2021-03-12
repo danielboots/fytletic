@@ -7,55 +7,18 @@
             </a>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
+        <li class="nav-item ">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}"
+                id="all-products-link">
+                FYT Shop
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-            </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Clothing
+        <li class="nav-item ">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'account_signup' %}"
+                id="all-products-link">
+                JOIN
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=activewear,essentials" class="dropdown-item">Activewear &amp;
-                    Essentials</a>
-                <a href="{% url 'products' %}?category=essentials" class="dropdown-item">Essentials</a>
-                <a href="{% url 'products' %}?category=shirts" class="dropdown-item">Shirts</a>
-                <a href="{% url 'products' %}?category=activewear,essentials,shirts" class="dropdown-item">All
-                    Clothing</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="merchandise-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Merchandise
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?category=sportswear" class="dropdown-item">Sportswear</a>
-                <a href="{% url 'products' %}?category=activewear" class="dropdown-item">Activewear</a>
-                <a href="{% url 'products' %}?category=sportswear,activewear" class="dropdown-item">All Merchandise</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="memberships-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Join
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="fytpro-link">
-                <a href="{% url 'products' %}?category=memberships" class="dropdown-item">Join Fytletic Pro</a>
-
-            </div>
         </li>
     </ul>
 </div>
