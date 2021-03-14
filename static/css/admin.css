@@ -27,3 +27,22 @@ div.breadcrumbs {
     margin: 0;
     background-color: #30363d;
 }
+
+a:link, a:visited {
+    color: #30363d;
+    text-decoration: none;
+}
+
+#nav-sidebar .current-model {
+    background: #1fea00;
+}
+
+#nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
+    color: #1fea00;
+    font-weight: bold;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    
+    background: #181b1f;
+}
