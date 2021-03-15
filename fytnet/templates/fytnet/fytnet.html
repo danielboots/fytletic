@@ -18,27 +18,66 @@
         <div class="col text-center mt-3">
             <h2 class="logo-font">Fytletic Network</h2>
 
-            <h3>This is the test template render!!</h3>
+            <h3>This is the test template render!!welcome {{ fighter.first_name }}</h3>
 
             <hr class="w-50 mb-1">
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
+    <!-- fighter profile cards -->
+    <section id="fighters" class="py-4">
+        <div class="container">
+            <div class="row">
 
-            {% for post in posts %}
-            <div class="post block">
-                <h2 class="subtitle">{{ post.title}}</h2>
-                <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
-                <p>{{ post.intro }}</p>
-
-                <a href="{% url 'news_article' post.slug %}">Read more!</a>
+                {% if fighters %}
+                {% for fighter in fighters %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card fighter-preview">
+                        <img class="card-img-top" src="#" alt="">
+                        <div class="card-img-overlay">
+                            <h2>
+                                <span class="badge badge-secondary text-white">$</span>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="listing-heading text-center">
+                                <h4 class="text-primary"></h4>
+                                <p>
+                                    <i class="fas fa-map-marker text-secondary"></i>
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="row py-2 text-secondary">
+                                <div class="col-6">
+                                    <i class="fas fa-th-large"></i> Sqft: {{ fighter.first_name }}</div>
+                                <div class="col-6">
+                                    <i class="fas fa-car"></i> Garage:{{ fighter.first_name }} </div>
+                            </div>
+                            <div class="row py-2 text-secondary">
+                                <div class="col-6">
+                                    <i class="fas fa-bed"></i> Bedrooms:</div>
+                                <div class="col-6">
+                                    <i class="fas fa-bath"></i> Bathrooms: </div>
+                            </div>
+                            <hr>
+                            <div class="row py-2 text-secondary">
+                                <div class="col-12">
+                                    <i class="fas fa-user"></i> created by</div>
+                            </div>
+                            <div class="row text-secondary pb-2">
+                                <div class="col-6">
+                                    <i class="fas fa-clock"></i> on</div>
+                            </div>
+                            <hr>
+                            <a href="#" class="btn btn-primary btn-block btn-dark">More Info</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
-        {% endfor %}
-
-    </div>
+    </section>
 
 
 

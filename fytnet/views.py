@@ -6,7 +6,7 @@ def fighter(request):
     """ A view to return the main fytnet page. """
     fighters = Fighter.objects.all()
 
-    return render(request, "fytnet/fytnet.html")
+    return render(request, "fytnet/fytnet.html", {"fighters": fighters})
 
 
 def fytnet_profile(request, fighter_id):
