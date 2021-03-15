@@ -45,6 +45,7 @@ class Fighter(models.Model):
     fight_style = models.CharField(max_length=200, unique=True)
     titles = models.CharField(max_length=200, unique=True)
     bio = models.TextField()
+    weight = models.IntegerField(null=True, blank=True)
 
     # Contact
     email = models.CharField(
