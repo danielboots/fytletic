@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Product, Category
 
 # Register your models here.
-
 # Allows us more power on the backend admin panel
 class ProductAdmin(admin.ModelAdmin):
     list_display = (

@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Fytnet
+from .models import Fighter
 
 
-def fytnet(request):
+def fighter(request):
     """ A view to return the main fytnet page. """
-    fytnet = Fytnet.objects.all()
+    fighters = Fighter.objects.all()
 
     return render(request, "fytnet/fytnet.html")

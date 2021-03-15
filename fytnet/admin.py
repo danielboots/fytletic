@@ -1,5 +1,14 @@
 from django.contrib import admin
 
-from .models import Fytnet
+from .models import Fighter, Category
 
-admin.site.register(Fytnet)
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        "friendly_name",
+        "name",
+    )
+
+
+admin.site.register(Fighter)
+admin.site.register(Category, CategoryAdmin)
