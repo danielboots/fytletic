@@ -6,12 +6,16 @@
 
 <!-- Hero Section-->
 <div class="hero-header">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-7 col-md-6 my-auto hero-text">
+            <div class="hero-text text-center">
+                <p>"{{ fighter.fighter }}"</p>
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     {{ fighter.fighter }}
+
                 </h1>
+                <p>{{ fighter.titles }}</p>
+
             </div>
         </div>
     </div>
@@ -23,9 +27,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font font font-weight-bold ">Fytletic Network {{ fighter.fighter }}</h2>
+            <h2 class="logo-font font font-weight-bold "> {{ fighter.fighter }}</h2>
 
-            <h3>This is the Single test page!! welcome {{ fighter.first_name }}</h3>
+            <h3 class="font-weight-bold "> W {{ fighter.win }} D {{ fighter.draw }} L {{ fighter.loss }} </h3>
 
             <hr class="w-50 mb-1">
         </div>
@@ -33,99 +37,89 @@
 </div>
 
 
+<div class="container">
 
-<!-- fighter profile cards -->
-<section id="fighters" class="py-4">
-    <div class="container">
-        <div class="row">
+    <div class="row">
 
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card fighter-preview">
-                    <img class="card-img-top" src="#" alt="">
-                    <div class="card-img-overlay">
-                        <h2>
-                            <span class="badge badge-secondary text-white">$</span>
-                        </h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="listing-heading text-center">
-                            <h4 class="text-primary"></h4>
-                            <p>
-                                <i class="fas fa-map-marker text-secondary"></i>
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="row py-2 text-secondary">
-                            <div class="col-6">
-                                <i class="fas fa-th-large"></i> Sqft: {{ fighter.first_name }}</div>
-                            <div class="col-6">
-                                <i class="fas fa-car"></i> Garage:{{ fighter.first_name }} </div>
-                        </div>
-                        <div class="row py-2 text-secondary">
-                            <div class="col-6">
-                                <i class="fas fa-bed"></i> Bedrooms:</div>
-                            <div class="col-6">
-                                <i class="fas fa-bath"></i> Bathrooms: </div>
-                        </div>
-                        <hr>
-                        <div class="row py-2 text-secondary">
-                            <div class="col-12">
-                                <i class="fas fa-user"></i> created by</div>
-                        </div>
-                        <div class="row text-secondary pb-2">
-                            <div class="col-6">
-                                <i class="fas fa-clock"></i> on</div>
-                        </div>
-                        <hr>
-                        <a href="#" class="btn btn-primary btn-block btn-dark">More Info</a>
-                    </div>
-                </div>
-            </div>
+        <div class="col">
+
+            <p> <strong>Category</strong> {{ fighter.category }}</p>
+            <p> <strong>Nickname</strong> {{ fighter.nick_name }}
+            <p>
+            <p> <strong>Fight Style</strong> {{ fighter.fight_style }} </p>
+            <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
+            <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
+            <p> <strong>Titles</strong> {{ fighter.titles }} </p>
+            <p> <strong>Bio</strong> {{ fighter.bio }} </p>
+            <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
+            <p> <strong>Email</strong> {{ fighter.email }} </p>
+            <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
+            <p> <strong>Profile Photo</strong> {{ fighter.profile_photo_main }} </p>
+            <p> <strong>Showreel Vid</strong> {{ fighter.video }} </p>
+            <p> <strong>Photo 1</strong> {{ fighter.photo_1 }} </p>
+            <p> <strong>Photo 2</strong> {{ fighter.photo_2 }} </p>
+            <p> <strong>Photo 3</strong> {{ fighter.photo_3 }} </p>
+            <p> <strong>Photo 4</strong> {{ fighter.photo_4 }} </p>
+            <p> <strong>Photo 5</strong> {{ fighter.photo_5 }} </p>
+            <p> <strong>Photo 6</strong> {{ fighter.photo_6 }} </p>
 
 
-            <!-- back to top link-->
-            <div class="btt-button shadow-sm rounded-0 border border-black">
-                <a class="btt-link d-flex h-100">
-                    <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                </a>
-
-            </div>
+            <p> <strong>Facebook</strong> {{ fighter.facebook }} </p>
+            <p> <strong>Twitter</strong> {{ fighter.twitter }} </p>
+            <p> <strong>Instagram</strong> {{ fighter.instagram }} </p>
+            <p> <strong>Website</strong> {{ fighter.web }} </p>
 
 
+            <p> <strong>Verified</strong> {{ fighter.is_verified }} </p>
+            <p> <strong>Created Profile on</strong> {{ fighter.created_on }} </p>
+            </p>
 
+
+            </p>
         </div>
     </div>
-    {% endblock %}
+</div>
 
-    {% block postloadjs %}
-    <!-- block super appends instead of replacing anything in the block.-->
-    {{ block.super }}
-    <script type="text/javascript">
-        $('.btt-link').click(function (e) {
-            window.scrollTo(0, 0)
-        })
-    </script>
 
-    <script type="text/javascript">
-        $('#sort-selector').change(function () {
-            let selector = $(this);
-            let currentUrl = new URL(window.location);
+<!-- back to top link-->
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
 
-            let selectedVal = selector.val();
-            if (selectedVal != "reset") {
-                let sort = selectedVal.split("_")[0];
-                let direction = selectedVal.split("_")[1];
+</div>
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+{% endblock %}
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+{% block postloadjs %}
+<!-- block super appends instead of replacing anything in the block.-->
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
-    {% endblock %}
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        let selector = $(this);
+        let currentUrl = new URL(window.location);
+
+        let selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            let sort = selectedVal.split("_")[0];
+            let direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+{% endblock %}
