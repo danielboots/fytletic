@@ -3,20 +3,27 @@
 
 
 {% block content %}
+
 <!-- Hero Section-->
-<div class="hero-header">
-    <div class="container">
+<div class="hero-gym">
+    <img class="hero-gym-img" src=" {{ post.photo_main.url }}" alt=" Image photo main">
+    <div class="container-fluid">
+
         <div class="row">
-            <div class="col-7 col-md-6 my-auto hero-text">
+            <div class="hero-text text-center">
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     {{ post.title}}
+
                 </h1>
+                <p>{{ gym.whatsapp }}</p>
+
             </div>
         </div>
     </div>
 </div>
 
 <!-- End Hero Section-->
+
 
 
 <div class="container-fluid">
