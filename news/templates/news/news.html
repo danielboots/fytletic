@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col">
-            <h1>{{ title }}.</h1>
+{% block content %}
+
+<!-- Hero Section-->
+<div class="hero-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-7 col-md-6 my-auto hero-text">
+                <h1 class="display-4 logo-font text-white font-weight-bold">
+                    News Desk
+                </h1>
+            </div>
         </div>
     </div>
 </div>
-{% endblock %}
 
-{% block content %}
-
+<!-- End Hero Section-->
 
 {% for post in posts %}
 <div class="post block">

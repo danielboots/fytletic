@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col">
-            <h1>banner image here.</h1>
+
+
+{% block content %}
+<!-- Hero Section-->
+<div class="hero-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-7 col-md-6 my-auto hero-text">
+                <h1 class="display-4 logo-font text-white font-weight-bold">
+                    {{ post.title}}
+                </h1>
+            </div>
         </div>
     </div>
 </div>
-{% endblock %}
 
-{% block content %}
+<!-- End Hero Section-->
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h2 class="title">{{ post.title}}</h2>
+            <h2 class="title"></h2>
             <div class="post block">
                 <small>Posted at {{ post.created_on }} by {{ post.author }}</small>
                 <p> <strong>{{ post.intro }}</strong></p>

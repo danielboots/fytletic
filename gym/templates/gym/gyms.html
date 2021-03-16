@@ -2,6 +2,7 @@
 {% load static %}
 
 
+
 {% block content %}
 
 <!-- Hero Section-->
@@ -10,7 +11,7 @@
         <div class="row">
             <div class="col-7 col-md-6 my-auto hero-text">
                 <h1 class="display-4 logo-font text-white font-weight-bold">
-                    {{ fighter.fighter }}
+                    Gyms
                 </h1>
             </div>
         </div>
@@ -19,13 +20,12 @@
 
 <!-- End Hero Section-->
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font font font-weight-bold ">Fytletic Network {{ fighter.fighter }}</h2>
+            <h2 class="logo-font font font-weight-bold ">Fytletic Gyms</h2>
 
-            <h3>This is the Single test page!! welcome {{ fighter.first_name }}</h3>
+            <h3>This is the Single test page for the gyms network!! welcome</h3>
 
             <hr class="w-50 mb-1">
         </div>
@@ -39,6 +39,8 @@
     <div class="container">
         <div class="row">
 
+            {% if gyms %}
+            {% for gym in gyms %}
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card fighter-preview">
                     <img class="card-img-top" src="#" alt="">
@@ -57,9 +59,9 @@
                         <hr>
                         <div class="row py-2 text-secondary">
                             <div class="col-6">
-                                <i class="fas fa-th-large"></i> Sqft: {{ fighter.first_name }}</div>
+                                <i class="fas fa-th-large"></i> Sqft: {{ gym.name }}</div>
                             <div class="col-6">
-                                <i class="fas fa-car"></i> Garage:{{ fighter.first_name }} </div>
+                                <i class="fas fa-car"></i> Garage: </div>
                         </div>
                         <div class="row py-2 text-secondary">
                             <div class="col-6">
@@ -81,51 +83,57 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- back to top link-->
-            <div class="btt-button shadow-sm rounded-0 border border-black">
-                <a class="btt-link d-flex h-100">
-                    <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                </a>
-
-            </div>
-
-
-
+            {% endfor %}
+            {% endif %}
         </div>
     </div>
-    {% endblock %}
 
-    {% block postloadjs %}
-    <!-- block super appends instead of replacing anything in the block.-->
-    {{ block.super }}
-    <script type="text/javascript">
-        $('.btt-link').click(function (e) {
-            window.scrollTo(0, 0)
-        })
-    </script>
+</section>
 
-    <script type="text/javascript">
-        $('#sort-selector').change(function () {
-            let selector = $(this);
-            let currentUrl = new URL(window.location);
 
-            let selectedVal = selector.val();
-            if (selectedVal != "reset") {
-                let sort = selectedVal.split("_")[0];
-                let direction = selectedVal.split("_")[1];
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+<!-- back to top link-->
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+</div>
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
-    {% endblock %}
+
+
+
+{% endblock %}
+
+{% block postloadjs %}
+<!-- block super appends instead of replacing anything in the block.-->
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        let selector = $(this);
+        let currentUrl = new URL(window.location);
+
+        let selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            let sort = selectedVal.split("_")[0];
+            let direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+{% endblock %}

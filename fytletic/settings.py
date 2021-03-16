@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "storages",
     "news",
     "fytnet",
+    "gym",
 ]
 
 MIDDLEWARE = [
