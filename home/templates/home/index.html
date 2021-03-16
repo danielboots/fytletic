@@ -1,39 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-
-<div class="container header-container">
-    <div class="row">
-
-        <div class="col"></div>
-
-    </div>
-
-</div>
-
-{% endblock %}
-
-
 {% block content %}
-<div class="container h-100">
-    <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-white">Fytletic - Professional Fight Network</h1>
+<div class="hero-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-7 col-md-6 my-auto hero-text">
+                <h1 class="display-4 logo-font text-white font-weight-bold">Fytletic- <br> Professional Fight Network
+                </h1>
 
-            <div class="my-5">
-                <h4>
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">FYT
-                        Merch </a>
-                </h4>
+                <div class="my-5">
+                    <h4>
+                        <a href="{% url 'products' %}"
+                            class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">FYT
+                            Merch </a>
+                    </h4>
+                </div>
+
             </div>
 
         </div>
-
     </div>
+
+    <div class=""></div>
 
 
 </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Fytletic Network {{ fighter.fighter }}</h2>
+
+            <h3>This is the Single test page!! welcome {{ fighter.first_name }}</h3>
+
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+</div>
+
+
 
 
 
