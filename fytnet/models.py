@@ -40,6 +40,9 @@ class Fighter(models.Model):
     )
     # Main
     fighter = models.ForeignKey(User, on_delete=models.CASCADE)
+    nick_name = models.CharField(
+        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+    )
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     fight_style = models.CharField(max_length=200, unique=True)

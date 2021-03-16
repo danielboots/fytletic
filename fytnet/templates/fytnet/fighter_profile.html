@@ -1,22 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
-
-<div class="overlay"></div>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Fytletic Network {{ fighter.fighter }}</h2>
+            <h2 class="logo-font font font-weight-bold ">Fytletic Network {{ fighter.fighter }}</h2>
 
             <h3>This is the Single test page!! welcome {{ fighter.first_name }}</h3>
 
@@ -24,6 +13,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- back to top link-->
