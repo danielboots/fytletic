@@ -9,7 +9,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Montseratt", sans-serif;
   /* font-weight: 600; */
   line-height: 1.6;    
 }
@@ -91,7 +91,7 @@ font-family: "Montserrat", sans-serif;
   font-size: 30px;
   letter-spacing: -1px;
 }
-
+ 
 .footer-font {
     font-family: "Montserrat", sans-serif;
 }

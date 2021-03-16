@@ -26,6 +26,12 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    # Media
+    photo_main = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+    video = models.URLField(null=True, blank=True)
+    photo_1 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+    photo_2 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+
     class Meta:
         ordering = ["-created_on"]
 

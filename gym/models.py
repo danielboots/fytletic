@@ -1,4 +1,5 @@
 from django.db import models
+from django_countries.fields import CountryField
 
 
 class Category(models.Model):
@@ -21,6 +22,14 @@ class Gym(models.Model):
 
     name = models.CharField(max_length=50, null=False, blank=False)
 
+    # Address Fields.
+
+    street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    country = CountryField(blank_label="Country *", null=False, blank=False)
+    postcode = models.CharField(max_length=20, null=True, blank=True)
+    town_or_city = models.CharField(max_length=40, null=False, blank=False)
+
     # Contact
     email = models.CharField(
         max_length=50, null=False, blank=False, default="DEFAULT VALUE"
@@ -30,16 +39,12 @@ class Gym(models.Model):
     )
 
     # Media
-    profile_photo_main = models.ImageField(
+    gym_photo_main = models.ImageField(
         upload_to="media/%Y/%m/%d", null=True, blank=True
     )
     video = models.URLField(null=True, blank=True)
     photo_1 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
     photo_2 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
-    photo_3 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
-    photo_4 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
-    photo_5 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
-    photo_6 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
 
     # Social
     facebook = models.URLField(max_length=1024, null=True, blank=True)
