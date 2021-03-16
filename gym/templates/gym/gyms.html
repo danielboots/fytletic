@@ -7,18 +7,21 @@
 
 <!-- Hero Section-->
 <div class="hero-header">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-7 col-md-6 my-auto hero-text">
+            <div class="hero-text text-center">
                 <h1 class="display-4 logo-font text-white font-weight-bold">
-                    Gyms
+                    GYMS
                 </h1>
+
+
             </div>
         </div>
     </div>
 </div>
 
 <!-- End Hero Section-->
+
 
 <div class="container-fluid">
     <div class="row">
@@ -41,51 +44,88 @@
 
             {% if gyms %}
             {% for gym in gyms %}
+
+
+            <div class="col">
+
+                <p> <strong>Gym Name</strong> {{ gym.name }}</p>
+                <p> <strong>Street Address 1</strong> {{ gym.street_address_1 }} </p>
+                <p> <strong>Street Address 2</strong> {{ gym.street_address_2 }} </p>
+                <p> <strong>Country</strong> {{ gym.country }} </p>
+                <p> <strong>Town or City</strong> {{ gym.town_or_city }} </p>
+                <p> <strong>Email</strong> {{ gym.name }} </p>
+                <p> <strong>Whatsapp</strong> {{ gym.whatsapp }} </p>
+
+                <p> <strong>photo main</strong> {{ gym.gym_photo_main }} </p>
+                <p> <strong>Video</strong> {{ gym.video }} </p>
+                <p> <strong>Photo 1 </strong> {{ gym.photo_1 }} </p>
+                <p> <strong>Photo 2</strong> {{ gym.photo_2 }} </p>
+
+                <p> <strong>Facebook</strong> {{ gym.facebook }} </p>
+                <p> <strong>Twitter</strong> {{ gym.twitter }} </p>
+                <p> <strong>Instagram</strong> {{ gym.instagram }} </p>
+                <p> <strong>Website</strong> {{ gym.web }} </p>
+
+
+                <p> <strong>Verified</strong> {{ gym.is_verified }} </p>
+                <p> <strong>Created Profile on</strong> {{ gym.created_on }} </p>
+                <img src=" {{ gym.image_test.url }}" alt=" Image photo main">
+
+
+
+            </div>
+
+
+
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card fighter-preview">
-                    <img class="card-img-top" src="#" alt="">
-                    <div class="card-img-overlay">
-                        <h2>
-                            <span class="badge badge-secondary text-white">$</span>
-                        </h2>
+                    <img class="card-img-top" src="{{ gym.gym_photo_main.url }}" alt="">
+
+                    <h2>
+                        <span class="badge badge-secondary text-white">{{ gym.category }}
+                            {{ gym.is_verified }}</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="listing-heading text-center">
+                        <h4 class="text-primary"></h4>
+                        <p>
+                            <i class="fas fa-map-marker text-secondary">{{ gym.town_or_city }}</i>
+                        </p>
                     </div>
-                    <div class="card-body">
-                        <div class="listing-heading text-center">
-                            <h4 class="text-primary"></h4>
-                            <p>
-                                <i class="fas fa-map-marker text-secondary"></i>
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="row py-2 text-secondary">
-                            <div class="col-6">
-                                <i class="fas fa-th-large"></i> Sqft: {{ gym.name }}</div>
-                            <div class="col-6">
-                                <i class="fas fa-car"></i> Garage: </div>
-                        </div>
-                        <div class="row py-2 text-secondary">
-                            <div class="col-6">
-                                <i class="fas fa-bed"></i> Bedrooms:</div>
-                            <div class="col-6">
-                                <i class="fas fa-bath"></i> Bathrooms: </div>
-                        </div>
-                        <hr>
-                        <div class="row py-2 text-secondary">
-                            <div class="col-12">
-                                <i class="fas fa-user"></i> created by</div>
-                        </div>
-                        <div class="row text-secondary pb-2">
-                            <div class="col-6">
-                                <i class="fas fa-clock"></i> on</div>
-                        </div>
-                        <hr>
-                        <a href="#" class="btn btn-primary btn-block btn-dark">More Info</a>
+                    <hr>
+                    <div class="row py-2 text-secondary">
+                        <div class="col-6">
+                            <i class="fas fa-th-large"></i>{{ gym.name }}</div>
+                        <div class="col-6">
+                            <i class="fas fa-car"></i> {{ gym.town_or_city }}</div>
                     </div>
+                    <div class="row py-2 text-secondary">
+                        <div class="col-6">
+                            <i class="fas fa-bed"></i> {{ gym.town_or_city }}</div>
+                        <div class="col-6">
+                            <i class="fas fa-bath"></i> {{ gym.town_or_city }}</div>
+                    </div>
+                    <hr>
+                    <div class="row py-2 text-secondary">
+                        <div class="col-12">
+                            <i class="fas fa-user"></i> created by </div>
+                    </div>
+                    <div class="row text-secondary pb-2">
+                        <div class="col-6">
+                            <i class="fas fa-clock"></i> {{ gym.created_on }}</div>
+                    </div>
+                    <hr>
+
+
+                    <a href="{% url 'gym_profile' gym.id %}" class=" btn btn-primary btn-block btn-dark">Full
+                        Profile</a>
                 </div>
             </div>
-            {% endfor %}
-            {% endif %}
         </div>
+        {% endfor %}
+        {% endif %}
+    </div>
     </div>
 
 </section>

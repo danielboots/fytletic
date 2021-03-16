@@ -18,4 +18,8 @@ def gym_profile(request, gym_id):
         "gym": gym,
     }
 
-    return render(request, "gym/gym_listing.html", context)
+    return render(
+        request,
+        "gym/gym_listing.html",
+        context,
+    )
