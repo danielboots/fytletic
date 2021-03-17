@@ -144,6 +144,14 @@ font-family: "Montserrat", sans-serif;
 
 
 
+/* Cards */
+
+.card-img-top {
+    width: 100%;
+	height: 150px;
+	object-fit: cover;
+}
+
 
 /* Css Animations - Animista.net */
 

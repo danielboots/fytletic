@@ -19,7 +19,7 @@
 
                 {% else %}
                 <h1 class="display-4 logo-font text-white font-weight-bold">
-                    {{ gym.name }}<i class="fas fa-check-circle"></i>
+                    {{ gym.name }}
                 </h1>
                 {% endif %}
             </div>
@@ -38,7 +38,7 @@
                 About: {{ gym.name }}</h2>
         </div>
         <div class="row mb-5">
-            <div class="col-md-12">
+            <div class="col-md-12 text-justify">
                 {{ gym.about }}
             </div>
         </div>
@@ -108,7 +108,7 @@
                             </li>
 
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-bed"></i> <strong>Specialises in:</strong>
+                                <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
                                 <span class="float-right">{{ gym.category }}
                                 </span>
                             </li>
@@ -121,7 +121,7 @@
                                 <span class="float-right">{{ gym.whatsapp }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-square"></i> <strong>Email:</strong>
+                                <i class="fas fa-envelope"></i> <strong>Email:</strong>
                                 <span class="float-right">{{ gym.email }}
                                 </span>
                             </li>
@@ -148,18 +148,24 @@
             </div>
             <div class="col-md-3">
                 <div class="card mb-3">
-                    <img class="card-img-top" src="#" alt="">
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h5 class="card-title"> <strong>Gym Owner</strong></h5>
                         <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid-profile" alt=" Gym Owner">
                         <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
+
+
+                        {% if gym.is_verified %}
+                        <h6 class="font-weight-bold">
+                            <em>Verified GYM</em> <i class="fas fa-check-circle blue-tick"></i>
+                        </h6>
+                        {% endif %}
+
+
                     </div>
                 </div>
 
-                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Fight Camp</a> <br>
-                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Back To Gyms</a>
-
-
+                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Join Fight Camp</a> <br>
+                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-danger">Back To Gyms</a>
             </div>
 
             <!-- Carousel-->
@@ -167,8 +173,8 @@
                 <div class="row">
                     <div class="col text-left mt-3">
 
-                        <h4 class="logo-font font font-weight-bold">Media - need to work out code to display from
-                            template tags!</h4>
+                        <h4 class="logo-font font font-weight-bold"> <em>Media</em> </h4>
+
                         <div class="owl-carousel">
                             <div class="item-video" data-merge="1">
                                 <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
@@ -192,8 +198,11 @@
                 <!-- End Carousel-->
 
             </div>
+
         </div>
+
     </div>
+
 </section>
 <!-- End About Gym -->
 
