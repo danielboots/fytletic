@@ -224,6 +224,48 @@ font-family: "Montserrat", sans-serif;
 }
 
 
+
+/* Carousel */
+
+.container-media {
+    margin-top: 80px;
+}
+
+.owl-carousel {
+    top: 40px;
+}
+
+.owl-carousel .item-video {
+    height: 200px;
+}
+
+
+.owl-dot {
+    text-align: center;
+    margin-top: 20px
+}
+
+
+.owl-dot {
+    display: inline-block;
+    color: black;
+
+}
+
+.owl-dot span {
+    width: 11px;
+    height: 11px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    margin: 5px 3px;
+}
+
+
+.owl-dot.active span {
+    color: slateblue;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

@@ -32,8 +32,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font font font-weight-bold ">
+        <div class="col text-center mb-3">
+            <h2 class="logo-font font font-weight-bold mb-3">
                 Welcome to {{ gym.name }}</h2>
 
             <hr class="w-50 mb-1">
@@ -145,6 +145,12 @@
                 </div>
 
                 <!-- About Gym -->
+                <div class="col text-left mt-3">
+                    <h2 class="logo-font font font-weight-bold ">
+                        About: {{ gym.name }}</h2>
+
+                    <hr class="w-50 mb-1">
+                </div>
                 <div class="row mb-5">
                     <div class="col-md-12">
                         {{ gym.about }}
@@ -166,12 +172,48 @@
 
                 <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Fight Camp</a> <br>
                 <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Back To Gyms</a>
+
+
+            </div>
+
+            <!-- Carousel-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col text-left mt-3">
+
+                        <h4 class="logo-font font font-weight-bold">Media</h4>
+                        <div class="owl-carousel">
+                            <div class="item-video" data-merge="1">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="1">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="2">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="2">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="1">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Carousel-->
+
             </div>
         </div>
     </div>
 </section>
-
 <!-- End About Gym -->
+
+
+
+
+
 
 
 
@@ -186,6 +228,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+
 <!-- block super appends instead of replacing anything in the block.-->
 {{ block.super }}
 <script type="text/javascript">
