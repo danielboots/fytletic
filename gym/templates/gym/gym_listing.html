@@ -29,21 +29,21 @@
 
 <!-- End Hero Section-->
 
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mb-3">
-            <h2 class="logo-font font font-weight-bold mb-3">
-                Welcome to {{ gym.name }}</h2>
-
-            <hr class="w-50 mb-1">
-        </div>
-    </div>
-</div>
-
 <!-- Data -->
-<section id="" class="py-4">
+<section class="py-4">
     <div class="container">
+        <!-- About Gym -->
+        <div class="col text-left mt-3">
+            <h2 class="logo-font font font-weight-bold ">
+                About: {{ gym.name }}</h2>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-12">
+                {{ gym.about }}
+            </div>
+        </div>
+
+
         <div class="row">
             <div class="col-md-9">
                 <!-- Home Main Image -->
@@ -144,29 +144,15 @@
                     </div>
                 </div>
 
-                <!-- About Gym -->
-                <div class="col text-left mt-3">
-                    <h2 class="logo-font font font-weight-bold ">
-                        About: {{ gym.name }}</h2>
 
-                    <hr class="w-50 mb-1">
-                </div>
-                <div class="row mb-5">
-                    <div class="col-md-12">
-                        {{ gym.about }}
-                    </div>
-                </div>
             </div>
             <div class="col-md-3">
                 <div class="card mb-3">
                     <img class="card-img-top" src="#" alt="">
                     <div class="card-body">
                         <h5 class="card-title"> <strong>Gym Owner</strong></h5>
-                        <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid " alt=" Gym Owner">
+                        <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid-profile" alt=" Gym Owner">
                         <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
-                        <h6 class="card-title">created</h6>
-
-                        <h6 class="text-secondary">{{ gym.created_on }}</h6>
                     </div>
                 </div>
 
@@ -181,7 +167,8 @@
                 <div class="row">
                     <div class="col text-left mt-3">
 
-                        <h4 class="logo-font font font-weight-bold">Media</h4>
+                        <h4 class="logo-font font font-weight-bold">Media - need to work out code to display from
+                            template tags!</h4>
                         <div class="owl-carousel">
                             <div class="item-video" data-merge="1">
                                 <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>

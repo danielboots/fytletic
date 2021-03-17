@@ -63,8 +63,6 @@ background-color: #05101fcf;
 /* gym listings */
 
 .hero-gym {
-
-/* THIS DONT WORK AS OF YET !  */
   background-image: url() no-repeat center center fixed;
   /* background-size: cover; */
   margin: auto;
@@ -124,10 +122,10 @@ font-family: "Montserrat", sans-serif;
 
 }
 
-.max-img {
-    max-width: 100%;
-    max-height: 100px;
-    
+.img-fluid-profile {
+    object-fit: cover;
+  width:230px;
+  height:230px;
 }
 
 
@@ -239,17 +237,10 @@ font-family: "Montserrat", sans-serif;
     height: 200px;
 }
 
-
 .owl-dot {
     text-align: center;
-    margin-top: 20px
-}
-
-
-.owl-dot {
+    margin-top: 20px;
     display: inline-block;
-    color: black;
-
 }
 
 .owl-dot span {
