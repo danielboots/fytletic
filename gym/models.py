@@ -45,6 +45,10 @@ class Gym(models.Model):
     video = models.URLField(null=True, blank=True)
     photo_1 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
     photo_2 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+    photo_3 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+    photo_4 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+    photo_5 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+    photo_6 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
 
     # Social
     facebook = models.URLField(max_length=1024, null=True, blank=True)

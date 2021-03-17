@@ -11,7 +11,15 @@
 
         <div class="row">
             <div class="hero-text text-center">
-                <p>"{{ gym.name }}"</p>
+
+                {% if gym.is_verified %}
+                <i class="fas fa-check-circle blue-tick fa-lg"></i>
+
+                {% else %}
+                <i class="fas fa-check-circle fa-lg"></i>
+                {% endif %}
+
+
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     {{ gym.name }}
 
@@ -68,11 +76,141 @@
             <p> <strong>Created Profile on</strong> {{ gym.created_on }} </p>
             <img src=" {{ gym.image_test.url }}" alt=" Image photo main">
 
-
-
         </div>
     </div>
 </div>
+
+<!-- Data -->
+<section id="" class="py-4">
+    <div class="container">
+        <a href="{% url 'gym' %}" class="btn btn-primary btn-dark">Back To Gyms</a>
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Home Main Image -->
+                <img src="#" alt="" class="img-main img-fluid mb-3">
+                <!-- Thumbnails -->
+                <div class="row mb-5 thumbs">
+                    {% if gym.photo_1 %}
+                    <div class="col-md-2">
+                        <a href="{{ gym.photo_1.url }}" data-lightbox="home-images">
+                            <img src="{{ gym.photo_1.url }}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if gym.photo_2 %}
+                    <div class="col-md-2">
+                        <a href="{{ gym.photo_2.url }}" data-lightbox="home-images">
+                            <img src="{{ gym.photo_2.url }}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if gym.photo_3 %}
+                    <div class="col-md-2">
+                        <a href="{{ gym.photo_3.url }}" data-lightbox="home-images">
+                            <img src="{{ gym.photo_3.url }}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if gym.photo_4 %}
+                    <div class="col-md-2">
+                        <a href="{{ gym.photo_4.url }}" data-lightbox="home-images">
+                            <img src="{{ gym.photo_4.url }}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if gym.photo_5 %}
+                    <div class="col-md-2">
+                        <a href="{{ gym.gym_photo_5.url }}" data-lightbox="home-images">
+                            <img src="{{ gym.photo_5.url }}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if gym.photo_6 %}
+                    <div class="col-md-2">
+                        <a href="{{ gym.photo_6.url }}" data-lightbox="home-images">
+                            <img src="{{ gym.photo_6.url }}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+                <!-- Fields -->
+                <div class="row mb-5 fields">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-money-bill-alt"></i> Asking Price:
+                                <span class="float-right">$</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bed"></i> Bedrooms:
+                                <span class="float-right">#</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Bathrooms:
+                                <span class="float-right">#</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-car"></i> Garage:
+                                <span class="float-right">#
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-th-large"></i> Square Feet:
+                                <span class="float-right">#</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-square"></i> Lot Size:
+                                <span class="float-right"># Acres
+                                </span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-calendar"></i> Listing Date:
+                                <span class="float-right">{{ gym.created_on }}</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bed"></i> User:
+                                <span class="float-right">#
+                                </span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bed"></i> Specialises in:
+                                <span class="float-right">{{ gym.category }}
+                                </span>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        #
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img class="card-img-top" src="#" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Gym Owner</h5>
+                        <h6 class="text-secondary">#</h6>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-dark" data-toggle="modal" data-target="#inquiryModal">Join
+                    Fight
+                    Camp</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 
 <!-- back to top link-->

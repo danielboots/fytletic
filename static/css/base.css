@@ -91,6 +91,15 @@ background-color: #05101fcf;
     object-fit: cover;
 }
 
+/* Verification mark */
+
+i.fas.fa-check-circle.blue-tick.fa-lg {
+    color: blueviolet !important;
+}
+
+i.fas.fa-check-circle.fa-lg {
+    color: grey !important;
+}
 
 
 .grad {
