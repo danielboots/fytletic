@@ -91,13 +91,13 @@ background-color: #05101fcf;
     object-fit: cover;
 }
 
-/* Verification mark */
+/* Verification mark like instagram for verified profiles and gyms */
 
-i.fas.fa-check-circle.blue-tick.fa-lg {
-    color: blueviolet !important;
+i.fas.fa-check-circle.blue-tick{
+    color: dodgerblue !important;
 }
 
-i.fas.fa-check-circle.fa-lg {
+i.fas.fa-check-circle {
     color: grey !important;
 }
 
@@ -124,6 +124,11 @@ font-family: "Montserrat", sans-serif;
 
 }
 
+.max-img {
+    max-width: 100%;
+    max-height: 100px;
+    
+}
 
 
 /* Titles and headers */

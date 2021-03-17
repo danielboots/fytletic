@@ -38,6 +38,10 @@ class Gym(models.Model):
         max_length=50, null=False, blank=False, default="DEFAULT VALUE"
     )
 
+    # Owner Details
+    gym_owner = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
+    gym_owner_name = models.CharField(max_length=50, null=False, blank=False)
+
     # Media
     gym_photo_main = models.ImageField(
         upload_to="media/%Y/%m/%d", null=True, blank=True
@@ -57,6 +61,7 @@ class Gym(models.Model):
     web = models.URLField(max_length=1024, null=True, blank=True)
 
     # Misc
+    about = models.TextField(null=True, blank=True)
     is_verified = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
 

@@ -13,19 +13,15 @@
             <div class="hero-text text-center">
 
                 {% if gym.is_verified %}
-                <i class="fas fa-check-circle blue-tick fa-lg"></i>
+                <h1 class="display-4 logo-font text-white font-weight-bold">
+                    {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
+                </h1>
 
                 {% else %}
-                <i class="fas fa-check-circle fa-lg"></i>
-                {% endif %}
-
-
                 <h1 class="display-4 logo-font text-white font-weight-bold">
-                    {{ gym.name }}
-
+                    {{ gym.name }}<i class="fas fa-check-circle"></i>
                 </h1>
-                <p>{{ gym.whatsapp }}</p>
-
+                {% endif %}
             </div>
         </div>
     </div>
@@ -37,45 +33,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font font font-weight-bold "> {{ gym.name }}</h2>
-
-            <h3 class="font-weight-bold "> Phone {{ gym.whatsapp }} email: {{ gym.email }} </h3>
+            <h2 class="logo-font font font-weight-bold ">
+                Welcome to {{ gym.name }}</h2>
 
             <hr class="w-50 mb-1">
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-
-    <div class="row">
-
-        <div class="col">
-
-            <p> <strong>Gym Name</strong> {{ gym.name }}</p>
-            <p> <strong>Street Address 1</strong> {{ gym.street_address_1 }} </p>
-            <p> <strong>Street Address 2</strong> {{ gym.street_address_2 }} </p>
-            <p> <strong>Country</strong> {{ gym.country }} </p>
-            <p> <strong>Town or City</strong> {{ gym.town_or_city }} </p>
-            <p> <strong>Email</strong> {{ gym.name }} </p>
-            <p> <strong>Whatsapp</strong> {{ gym.whatsapp }} </p>
-
-            <p> <strong>photo main</strong> {{ gym.gym_photo_main }} </p>
-            <p> <strong>Video</strong> {{ gym.video }} </p>
-            <p> <strong>Photo 1 </strong> {{ gym.photo_1 }} </p>
-            <p> <strong>Photo 2</strong> {{ gym.photo_2 }} </p>
-
-            <p> <strong>Facebook</strong> {{ gym.facebook }} </p>
-            <p> <strong>Twitter</strong> {{ gym.twitter }} </p>
-            <p> <strong>Instagram</strong> {{ gym.instagram }} </p>
-            <p> <strong>Website</strong> {{ gym.web }} </p>
-
-
-            <p> <strong>Verified</strong> {{ gym.is_verified }} </p>
-            <p> <strong>Created Profile on</strong> {{ gym.created_on }} </p>
-            <img src=" {{ gym.image_test.url }}" alt=" Image photo main">
-
         </div>
     </div>
 </div>
@@ -83,11 +44,10 @@
 <!-- Data -->
 <section id="" class="py-4">
     <div class="container">
-        <a href="{% url 'gym' %}" class="btn btn-primary btn-dark">Back To Gyms</a>
         <div class="row">
             <div class="col-md-9">
                 <!-- Home Main Image -->
-                <img src="#" alt="" class="img-main img-fluid mb-3">
+                <img src="{{ gym.photo_1.url }}" alt="" class="img-main img-fluid mb-3">
                 <!-- Thumbnails -->
                 <div class="row mb-5 thumbs">
                     {% if gym.photo_1 %}
@@ -138,12 +98,13 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-money-bill-alt"></i> Asking Price:
-                                <span class="float-right">$</span>
+                                <i class="fas fa-globe-europe"></i> location:
+                                <span class="float-right">{{ gym.country }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-bed"></i> Bedrooms:
-                                <span class="float-right">#</span>
+                                <i class="fas fa-map-marked"></i> Address:
+                                <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
+                                    <br>{{ gym.town_or_city }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
                                 <i class="fas fa-bath"></i> Bathrooms:
@@ -159,12 +120,12 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-th-large"></i> Square Feet:
-                                <span class="float-right">#</span>
+                                <i class="fab fa-whatsapp"></i> Call
+                                <span class="float-right">{{ gym.whatsapp }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-square"></i> Lot Size:
-                                <span class="float-right"># Acres
+                                <i class="fas fa-square"></i> Email:
+                                <span class="float-right">{{ gym.email }}
                                 </span>
                             </li>
                             <li class="list-group-item text-secondary">
@@ -182,15 +143,19 @@
                                 </span>
                             </li>
 
+                            <p> <strong>Facebook</strong> {{ gym.facebook }} </p>
+                            <p> <strong>Twitter</strong> {{ gym.twitter }} </p>
+                            <p> <strong>Instagram</strong> {{ gym.instagram }} </p>
+                            <p> <strong>Website</strong> {{ gym.web }} </p>
 
                         </ul>
                     </div>
                 </div>
 
-                <!-- Description -->
+                <!-- About Gym -->
                 <div class="row mb-5">
                     <div class="col-md-12">
-                        #
+                        {{ gym.about }}
                     </div>
                 </div>
             </div>
@@ -199,17 +164,22 @@
                     <img class="card-img-top" src="#" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Gym Owner</h5>
-                        <h6 class="text-secondary">#</h6>
+                        <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid " alt=" Gym Owner">
+                        <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
+                        <h6 class="card-title">created</h6>
+
+                        <h6 class="text-secondary">{{ gym.created_on }}</h6>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block btn-dark" data-toggle="modal" data-target="#inquiryModal">Join
-                    Fight
-                    Camp</button>
+
+                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Fight Camp</a> <br>
+                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Back To Gyms</a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- End About Gym -->
 
 
 
