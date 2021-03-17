@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block content %}
 
 <!-- Hero Section-->
@@ -13,10 +12,7 @@
             <div class="hero-text text-center">
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     {{ post.title}}
-
                 </h1>
-                <p>{{ gym.whatsapp }}</p>
-
             </div>
         </div>
     </div>
@@ -24,21 +20,50 @@
 
 <!-- End Hero Section-->
 
+<!-- Data -->
+<section class="py-4">
+    <div class="container">
+        <!-- About News Article-->
+        <div class="col text-left mt-3">
+            <h2 class="logo-font font font-weight-bold ">
+                {{ post.title }}</h2>
+        </div>
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="title"></h2>
-            <div class="post block">
-                <small>Posted at {{ post.created_on }} by {{ post.author }}</small>
-                <p> <strong>{{ post.intro }}</strong></p>
 
-                <p>{{ post.body }}</p>
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Home Main Image -->
+                <img src="{{ post.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
+                <p>{{ post.intro }} </p>
+                <p>{{ post.body }} </p>
+
+
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"> <strong>Author</strong></h5>
+                        <img src="{{ post.photo_main.url }}" class="rounded img-fluid-profile" alt=" Author">
+                        <h6 class="text-secondary">{{ post.author }}</h6>
+
+
+                        <small>Posted at {{ post.created_on }} by {{ post.author }}</small>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <a href="{% url 'news' %}" class="btn btn-primary btn-block btn-danger">Back To News Desk</a>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- End News Article -->
 
 
 
