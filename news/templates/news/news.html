@@ -5,12 +5,14 @@
 
 <!-- Hero Section-->
 <div class="hero-header">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-7 col-md-6 my-auto hero-text">
+            <div class="hero-text text-center">
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     News Desk
                 </h1>
+
+
             </div>
         </div>
     </div>
@@ -18,16 +20,44 @@
 
 <!-- End Hero Section-->
 
-{% for post in posts %}
-<div class="post block">
-    <h2 class="subtitle">{{ post.title}}</h2>
-    <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
-    <p>{{ post.intro }}</p>
 
-    <a href="{% url 'news_article' post.slug %}">Read more!</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font font font-weight-bold ">Latest</h2>
+
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
 </div>
 
-{% endfor %}
+
+<section id="fighters" class="py-4">
+    <div class="container">
+        <div class="row">
+
+            {% for post in posts %}
+
+
+            <div class="post block">
+                <h2 class="subtitle">{{ post.title}}</h2>
+                <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
+                <p>{{ post.intro }}</p>
+
+                <a href="{% url 'news_article' post.slug %}">Read more!</a>
+            </div>
+
+
+
+
+
+
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
 
 
 
@@ -53,26 +83,4 @@
     })
 </script>
 
-<script type="text/javascript">
-    $('#sort-selector').change(function () {
-        let selector = $(this);
-        let currentUrl = new URL(window.location);
-
-        let selectedVal = selector.val();
-        if (selectedVal != "reset") {
-            let sort = selectedVal.split("_")[0];
-            let direction = selectedVal.split("_")[1];
-
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-
-            window.location.replace(currentUrl);
-        }
-    })
-</script>
 {% endblock %}
