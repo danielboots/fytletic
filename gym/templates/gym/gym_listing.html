@@ -98,21 +98,18 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-globe-europe"></i> location:
+                                <i class="fas fa-globe-europe"></i> <strong>location:</strong>
                                 <span class="float-right">{{ gym.country }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-map-marked"></i> Address:
+                                <i class="fas fa-map-marked"></i> <strong>Address:</strong>
                                 <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
                                     <br>{{ gym.town_or_city }}</span>
                             </li>
+
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-bath"></i> Bathrooms:
-                                <span class="float-right">#</span>
-                            </li>
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-car"></i> Garage:
-                                <span class="float-right">#
+                                <i class="fas fa-bed"></i> <strong>Specialises in:</strong>
+                                <span class="float-right">{{ gym.category }}
                                 </span>
                             </li>
                         </ul>
@@ -120,34 +117,29 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-secondary">
-                                <i class="fab fa-whatsapp"></i> Call
+                                <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
                                 <span class="float-right">{{ gym.whatsapp }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-square"></i> Email:
+                                <i class="fas fa-square"></i> <strong>Email:</strong>
                                 <span class="float-right">{{ gym.email }}
                                 </span>
                             </li>
+
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-calendar"></i> Listing Date:
+                                <i class="fas fa-link"></i> <strong>Social Media:</strong>
+                                <span class="float-right">{{ gym.facebook }}</span><br>
+                                <span class="float-right">{{ gym.instagram }}</span><br>
+                                <span class="float-right">{{ gym.twitter }}</span><br>
+                                <span class="float-right">{{ gym.web }}</span><br>
+
+
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
                                 <span class="float-right">{{ gym.created_on }}</span>
-                            </li>
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-bed"></i> User:
-                                <span class="float-right">#
-                                </span>
-                            </li>
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-bed"></i> Specialises in:
-                                <span class="float-right">{{ gym.category }}
-                                </span>
-                            </li>
 
-                            <p> <strong>Facebook</strong> {{ gym.facebook }} </p>
-                            <p> <strong>Twitter</strong> {{ gym.twitter }} </p>
-                            <p> <strong>Instagram</strong> {{ gym.instagram }} </p>
-                            <p> <strong>Website</strong> {{ gym.web }} </p>
-
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -163,7 +155,7 @@
                 <div class="card mb-3">
                     <img class="card-img-top" src="#" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Gym Owner</h5>
+                        <h5 class="card-title"> <strong>Gym Owner</strong></h5>
                         <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid " alt=" Gym Owner">
                         <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
                         <h6 class="card-title">created</h6>
