@@ -5,8 +5,8 @@ from .models import Gym, Category
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        "friendly_name",
         "name",
+        "friendly_name",
     )
 
 

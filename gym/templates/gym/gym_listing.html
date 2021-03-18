@@ -16,12 +16,12 @@
             <div class="hero-text text-center">
 
                 {% if gym.is_verified %}
-                <h1 class="display-4 logo-font text-white font-weight-bold">
+                <h1 class="display-4 logo-font text-white font-weight-bold focus-in-contract-bck">
                     {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
                 </h1>
 
                 {% else %}
-                <h1 class="display-4 logo-font text-white font-weight-bold">
+                <h1 class="display-4 logo-font text-white font-weight-bold focus-in-contract-bck">
                     {{ gym.name }}
                 </h1>
                 {% endif %}
@@ -52,8 +52,9 @@
 
             <div class="row">
                 <div class="col-md-9 white-box">
+
                     <!-- Home Main Image -->
-                    <img src="{{ gym.photo_1.url }}" alt="" class="img-main img-fluid mb-3">
+                    <img src="{{ gym.photo_1.url }}" alt="" class="img-fluid rounded mx-auto d-block  home-images mb-3">
                     <!-- Thumbnails -->
                     <div class="row mb-5 thumbs">
                         {% if gym.photo_1 %}
@@ -166,7 +167,8 @@
                     <div class="card mb-3 white-box">
                         <div class="card-body text-center">
                             <h5 class="card-title"> <strong>Gym Owner</strong></h5>
-                            <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid-profile" alt=" Gym Owner">
+                            <img src="{{ gym.gym_owner.url }}" class="rounded mx-auto d-block img-fluid-profile"
+                                alt=" Gym Owner">
                             <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
 
 
@@ -201,7 +203,7 @@
                 <!-- Carousel-->
                 <div class="container-fluid">
                     <div class="row white-box">
-                        <div class="col text-left mt-3">
+                        <div class="col text-left">
 
                             <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
 
@@ -235,12 +237,7 @@
 
     </section>
     <!-- End About Gym -->
-
-
-
-
 </div>
-
 
 
 <!-- back to top link-->
@@ -263,26 +260,4 @@
     })
 </script>
 
-<script type="text/javascript">
-    $('#sort-selector').change(function () {
-        let selector = $(this);
-        let currentUrl = new URL(window.location);
-
-        let selectedVal = selector.val();
-        if (selectedVal != "reset") {
-            let sort = selectedVal.split("_")[0];
-            let direction = selectedVal.split("_")[1];
-
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-
-            window.location.replace(currentUrl);
-        }
-    })
-</script>
 {% endblock %}

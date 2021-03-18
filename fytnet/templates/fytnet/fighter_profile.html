@@ -4,102 +4,222 @@
 
 {% block content %}
 
-<!-- Hero Section-->
-<div class="hero-gym">
-    <img class="hero-gym-img" src=" {{ fighter.profile_photo_main.url }}" alt=" Image photo main">
+<section>
+    <!-- Hero Section-->
+    <div class="hero-gym">
+        <img class="hero-gym-img" src=" {{ fighter.profile_photo_main.url }}" alt=" Image photo main">
+        <div class="container-fluid">
+
+            <div class="row ">
+                <div class="hero-text text-center focus-in-contract-bck">
+                    <p>"{{ fighter.fighter }}"</p>
+                    <h1 class="display-4 logo-font text-white font-weight-bold">
+                        {{ fighter.fighter }}</h1>
+                    <em>
+                        <p>{{ fighter.titles }}</p>
+                    </em>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Hero Section-->
+
+
+    <!-- Carousel-->
     <div class="container-fluid">
+        <div class="row white-box">
+            <div class="col">
+
+                <div class="owl-carousel">
+                    <div class="item-video" data-merge="1">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                    </div>
+                    <div class="item-video" data-merge="1">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                    </div>
+                    <div class="item-video" data-merge="2">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                    </div>
+                    <div class="item-video" data-merge="2">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                    </div>
+                    <div class="item-video" data-merge="1">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End Carousel-->
+
+
+        <div class="container-fluid whitesmoke-container">
+            <!-- Data -->
+            <section class="py-4"></section>
+            <div class="container">
+
+                <div class="row">
+                    <!-- About Gym -->
+                    <div class="col-9 text-left mt-3 white-box">
+
+                        <img src="{{ fighter.photo_1.url }}" alt=""
+                            class="img-fluid rounded mx-auto d-block  home-images mb-3">
+
+                        <!-- Thumbnails -->
+                        <div class="row mb-5 thumbs">
+                            {% if fighter.photo_1 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_1.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if fighter.photo_2 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_2.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_2.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if fighter.photo_3 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_3.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_3.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if fighter.photo_4 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_4.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_4.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if fighter.photo_5 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_5.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_5.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if fighter.photo_6 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_6.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_6.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+
+
+                            <h5 class="logo-font font font-weight-bold text-left"> Bio:</h5>
+
+
+                            <p> {{ fighter.bio }} </p>
+                            <hr>
+                            <p> <strong>Discipline</strong> {{ fighter.discipline }}</p>
+                            <hr>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-3 text-left mt-3 white-box">
+
+                        <h2 class="logo-font font font-weight-bold text-left">
+                            <em>Stats - - -</em>
+                        </h2>
+
+
+                        <h3 class="font-weight-bold text-left"> W {{ fighter.win }} D {{ fighter.draw }} L
+                            {{ fighter.loss }} </h3>
+                        <p> <strong>Category</strong> {{ fighter.category }}</p>
+                        <hr>
+                        <p> <strong>Nickname</strong> {{ fighter.nick_name }}
+                            <hr>
+
+
+                        <p> <strong>Fight Style</strong> {{ fighter.fight_style }} </p>
+                        <hr>
+                        <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
+                        <hr>
+                        <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
+                        <hr>
+                        <p> <strong>Titles</strong> {{ fighter.titles }} </p>
+                        <hr>
+                        <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
+                        <hr>
+
+                        <p> <strong>Email</strong> {{ fighter.email }} </p>
+                        <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
+                        <p> <strong>Profile Photo</strong> {{ fighter.profile_photo_main }} </p>
+                        <p> <strong>Showreel Vid</strong> {{ fighter.video }} </p>
+
+                        <!-- back to top link-->
+                        <div class="btt-button shadow-sm rounded-0 border border-black">
+                            <a class="btt-link d-flex h-100">
+                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                            </a>
+
+                        </div>
+
+</section>
+
+
+<div class="container-fluid whitesmoke-container">
+    <!-- Data -->
+
+    <div class="container">
 
         <div class="row">
-            <div class="hero-text text-center">
-                <p>"{{ fighter.fighter }}"</p>
-                <h1 class="display-4 logo-font text-white font-weight-bold">
-                    {{ fighter.fighter }}
 
-                </h1>
-                <p>{{ fighter.titles }}</p>
+            <div class="col white-box">
 
+                <p> <strong>Category</strong> {{ fighter.category }}</p>
+                <p> <strong>Nickname</strong> {{ fighter.nick_name }}
+
+                <p> <strong>Fight Style</strong> {{ fighter.fight_style }} </p>
+                <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
+                <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
+                <p> <strong>Titles</strong> {{ fighter.titles }} </p>
+                <p> <strong>Bio</strong> {{ fighter.bio }} </p>
+                <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
+                <p> <strong>Email</strong> {{ fighter.email }} </p>
+                <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
+                <p> <strong>Profile Photo</strong> {{ fighter.profile_photo_main }} </p>
+                <p> <strong>Showreel Vid</strong> {{ fighter.video }} </p>
+
+
+                <p>weight class </p>
+                {{ fighter.weight_class }}
+
+                <p>discipline</p>
+                {{ fighter.discipline }}
+
+                <p><strong>trains at</strong> {{ fighter.trains_at }} </p>
+
+
+
+                <p> <strong>Facebook</strong> {{ fighter.facebook }} </p>
+                <p> <strong>Twitter</strong> {{ fighter.twitter }} </p>
+                <p> <strong>Instagram</strong> {{ fighter.instagram }} </p>
+                <p> <strong>Website</strong> {{ fighter.web }} </p>
+
+
+                <p> <strong>Verified</strong> {{ fighter.is_verified }} </p>
+                <p> <strong>Created Profile on</strong> {{ fighter.created_on }} </p>
+
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- End Hero Section-->
 
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font font font-weight-bold "> {{ fighter.fighter }}</h2>
-
-            <h3 class="font-weight-bold "> W {{ fighter.win }} D {{ fighter.draw }} L {{ fighter.loss }} </h3>
-
-            <hr class="w-50 mb-1">
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-
-    <div class="row">
-
-        <div class="col">
-
-            <p> <strong>Category</strong> {{ fighter.category }}</p>
-            <p> <strong>Nickname</strong> {{ fighter.nick_name }}
-
-            <p> <strong>Fight Style</strong> {{ fighter.fight_style }} </p>
-            <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
-            <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
-            <p> <strong>Titles</strong> {{ fighter.titles }} </p>
-            <p> <strong>Bio</strong> {{ fighter.bio }} </p>
-            <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
-            <p> <strong>Email</strong> {{ fighter.email }} </p>
-            <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
-            <p> <strong>Profile Photo</strong> {{ fighter.profile_photo_main }} </p>
-            <p> <strong>Showreel Vid</strong> {{ fighter.video }} </p>
-            <p> <strong>Photo 1</strong> {{ fighter.photo_1 }} </p>
-            <p> <strong>Photo 2</strong> {{ fighter.photo_2 }} </p>
-            <p> <strong>Photo 3</strong> {{ fighter.photo_3 }} </p>
-            <p> <strong>Photo 4</strong> {{ fighter.photo_4 }} </p>
-            <p> <strong>Photo 5</strong> {{ fighter.photo_5 }} </p>
-            <p> <strong>Photo 6</strong> {{ fighter.photo_6 }} </p>
-
-            <p>weight class </p>
-            {{ fighter.weight_class }}
-
-            <p>discipline</p>
-            {{ fighter.discipline }}
-
-            <p><strong>trains at</strong> {{ fighter.trains_at }} </p>
-
-
-
-            <p> <strong>Facebook</strong> {{ fighter.facebook }} </p>
-            <p> <strong>Twitter</strong> {{ fighter.twitter }} </p>
-            <p> <strong>Instagram</strong> {{ fighter.instagram }} </p>
-            <p> <strong>Website</strong> {{ fighter.web }} </p>
-
-
-            <p> <strong>Verified</strong> {{ fighter.is_verified }} </p>
-            <p> <strong>Created Profile on</strong> {{ fighter.created_on }} </p>
-            </p>
-
-
-
-        </div>
-    </div>
-</div>
-
-
-<!-- back to top link-->
-<div class="btt-button shadow-sm rounded-0 border border-black">
-    <a class="btt-link d-flex h-100">
-        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-    </a>
-
-</div>
 
 {% endblock %}
 
@@ -112,26 +232,5 @@
     })
 </script>
 
-<script type="text/javascript">
-    $('#sort-selector').change(function () {
-        let selector = $(this);
-        let currentUrl = new URL(window.location);
 
-        let selectedVal = selector.val();
-        if (selectedVal != "reset") {
-            let sort = selectedVal.split("_")[0];
-            let direction = selectedVal.split("_")[1];
-
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-
-            window.location.replace(currentUrl);
-        }
-    })
-</script>
 {% endblock %}

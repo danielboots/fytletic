@@ -35,9 +35,32 @@
             <div class="col-md-9">
                 <!-- Home Main Image -->
                 <img src="{{ post.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
+
+
                 <p>{{ post.intro }} </p>
+
+
+                {% if request.user.is_authenticated %}
                 <p>{{ post.body }} </p>
 
+                {% else %}
+                <p>Read the full post by registering for free here: LINK</p>
+
+                {% endif %}
+
+
+                <div class="col text-right">
+                    <strong> Tags:</strong><br>
+
+
+                    {% for categories in post.categories.all %}
+
+                    <span> <strong> <em>{{ categories.name }} / </em></strong></span>
+
+                    {% empty %}
+                    No tags!
+                    {% endfor %}
+                </div>
 
             </div>
             <div class="col-md-3">
@@ -46,21 +69,7 @@
                         <h5 class="card-title"> <strong>Author</strong></h5>
                         <img src="{{ post.photo_main.url }}" class="rounded img-fluid-profile" alt=" Author">
                         <h6 class="text-secondary">{{ post.author }}</h6>
-
-
                         <small>Posted at {{ post.created_on }} by {{ post.author }}</small><br>
-
-
-
-                        <strong> posted under: {{ category.name }} </strong> <br>
-
-
-                        {% for categories in post.categories.all %}
-                        {{ categories.name }} <br>
-                        {% empty %}
-                        No tags!
-                        {% endfor %}
-
 
 
                     </div>
@@ -73,7 +82,36 @@
     </div>
 </section>
 <!-- End News Article -->
+<!-- Carousel-->
+<div class="container">
+    <div class="row white-box">
+        <div class="col text-left">
 
+            <h4 class="logo-font font font-weight-bold"> <em>Related News - - - </em> </h4>
+
+            <div class="owl-carousel">
+                <div class="item-video" data-merge="1">
+                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                </div>
+                <div class="item-video" data-merge="1">
+                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                </div>
+                <div class="item-video" data-merge="2">
+                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                </div>
+                <div class="item-video" data-merge="2">
+                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                </div>
+                <div class="item-video" data-merge="1">
+                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Carousel-->
+
+</div>
 
 
 <!-- back to top link-->

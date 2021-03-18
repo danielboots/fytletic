@@ -5,15 +5,15 @@ from .models import Fighter, Category, WeightClass
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        "friendly_name",
         "name",
+        "friendly_name",
     )
 
 
 class WeightClassAdmin(admin.ModelAdmin):
     list_display = (
-        "friendly_name",
         "name",
+        "friendly_name",
     )
 
 

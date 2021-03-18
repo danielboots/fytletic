@@ -38,19 +38,20 @@
 
             {% for post in posts %}
 
+            <div class="row">
+                <div class="col-md-9">
+                    <!-- Home Main Image -->
+                    <img src="{{ post.photo_main.url }}" alt="" class="rounded img-fluid-profile">
 
-            <div class="post block">
-                <h2 class="subtitle">{{ post.title}}</h2>
-                <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
-                <p>{{ post.intro }}</p>
+                    <div class="post block">
+                        <h2 class="subtitle">{{ post.title}}</h2>
+                        <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
+                        <p>{{ post.intro }}</p>
 
-                <a href="{% url 'news_article' post.slug %}">Read more!</a>
+                        <a href="{% url 'news_article' post.slug %}">Read more!</a>
+                    </div>
+                </div>
             </div>
-
-
-
-
-
 
 
             {% endfor %}
