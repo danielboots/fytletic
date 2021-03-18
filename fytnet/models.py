@@ -50,7 +50,6 @@ class Fighter(models.Model):
 
     # Relationship to Weight Class model
     trains_at = models.ForeignKey(Gym, null=True, blank=True, on_delete=models.CASCADE)
-
     # Main
     fighter = models.ForeignKey(User, on_delete=models.CASCADE)
     nick_name = models.CharField(

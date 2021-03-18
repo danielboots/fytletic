@@ -19,6 +19,10 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+
+    # Relationship to Specialises in = aka categories
+    categories = models.ManyToManyField(Category)
+
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     intro = models.TextField()
