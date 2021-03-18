@@ -206,11 +206,10 @@
                                     <span class="float-right">
 
                                         <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
-                                        {% for categories in gym.categories.all %}
-                                        {{ categories.name }} <br>
-                                        {% empty %}
-                                        No tags!
-                                        {% endfor %}
+
+                                        {{ fighter.discipline }}
+
+
 
 
                                     </span>
@@ -262,7 +261,7 @@
 
                     <div class="card mb-3 white-box">
                         <div class="card-body text-center">
-                            <h5 class="card-title"> <strong>TRAINS AT : GYM</strong></h5>
+                            <h5 class="card-title"> <strong>TRAINS AT : {{ fighter.trains_at }}</strong></h5>
 
 
 
