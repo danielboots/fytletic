@@ -4,8 +4,11 @@
 
 {% block content %}
 
+
+
+
 <!-- Hero Section-->
-<div class="hero-gym">
+<div class="hero-gym ">
     <img class="hero-gym-img" src=" {{ gym.gym_photo_main.url }}" alt=" Image photo main">
     <div class="container-fluid">
 
@@ -29,196 +32,214 @@
 
 <!-- End Hero Section-->
 
-<!-- Data -->
-<section class="py-4">
-    <div class="container">
-        <!-- About Gym -->
-        <div class="col text-left mt-3">
-            <h2 class="logo-font font font-weight-bold ">
-                About: {{ gym.name }}</h2>
-        </div>
-        <div class="row mb-5">
-            <div class="col-md-12 text-justify">
-                {{ gym.about }}
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-9">
-                <!-- Home Main Image -->
-                <img src="{{ gym.photo_1.url }}" alt="" class="img-main img-fluid mb-3">
-                <!-- Thumbnails -->
-                <div class="row mb-5 thumbs">
-                    {% if gym.photo_1 %}
-                    <div class="col-md-2">
-                        <a href="{{ gym.photo_1.url }}" data-lightbox="home-images">
-                            <img src="{{ gym.photo_1.url }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    {% endif %}
-                    {% if gym.photo_2 %}
-                    <div class="col-md-2">
-                        <a href="{{ gym.photo_2.url }}" data-lightbox="home-images">
-                            <img src="{{ gym.photo_2.url }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    {% endif %}
-                    {% if gym.photo_3 %}
-                    <div class="col-md-2">
-                        <a href="{{ gym.photo_3.url }}" data-lightbox="home-images">
-                            <img src="{{ gym.photo_3.url }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    {% endif %}
-                    {% if gym.photo_4 %}
-                    <div class="col-md-2">
-                        <a href="{{ gym.photo_4.url }}" data-lightbox="home-images">
-                            <img src="{{ gym.photo_4.url }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    {% endif %}
-                    {% if gym.photo_5 %}
-                    <div class="col-md-2">
-                        <a href="{{ gym.gym_photo_5.url }}" data-lightbox="home-images">
-                            <img src="{{ gym.photo_5.url }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    {% endif %}
-                    {% if gym.photo_6 %}
-                    <div class="col-md-2">
-                        <a href="{{ gym.photo_6.url }}" data-lightbox="home-images">
-                            <img src="{{ gym.photo_6.url }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    {% endif %}
+<div class="container-fluid whitesmoke-container">
+    <!-- Data -->
+    <section class="py-4">
+        <div class="container">
+            <!-- About Gym -->
+            <div class="col text-left mt-3 white-box">
+                <h2 class="logo-font font font-weight-bold  text-left">
+                    <em>About - - -</em>
+                </h2>
+                <div class="col-md-12 text-justify ">
+                    {{ gym.about }}
                 </div>
-                <!-- Fields -->
-                <div class="row mb-5 fields">
-                    <div class="col-md-6">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-globe-europe"></i> <strong>location:</strong>
-                                <span class="float-right">{{ gym.country }}</span>
-                            </li>
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-map-marked"></i> <strong>Address:</strong>
-                                <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
-                                    <br>{{ gym.town_or_city }}</span>
-                            </li>
-
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
-                                <span class="float-right">
-
-                                    <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
-                                    {% for categorys in gym.categorys.all %}
-                                    {{ categorys.name }} <br>
-                                    {% empty %}
-                                    No tags!
-                                    {% endfor %}
-
-
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-secondary">
-                                <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
-                                <span class="float-right">{{ gym.whatsapp }}</span>
-                            </li>
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-envelope"></i> <strong>Email:</strong>
-                                <span class="float-right">{{ gym.email }}
-                                </span>
-                            </li>
-
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-link"></i> <strong>Social Media:</strong>
-                                <span class="float-right">{{ gym.facebook }}</span><br>
-                                <span class="float-right">{{ gym.instagram }}</span><br>
-                                <span class="float-right">{{ gym.twitter }}</span><br>
-                                <span class="float-right">{{ gym.web }}</span><br>
-
-
-                            </li>
-                            <li class="list-group-item text-secondary">
-                                <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
-                                <span class="float-right">{{ gym.created_on }}</span>
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-
             </div>
-            <div class="col-md-3">
-                <div class="card mb-3">
-                    <div class="card-body text-center">
-                        <h5 class="card-title"> <strong>Gym Owner</strong></h5>
-                        <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid-profile" alt=" Gym Owner">
-                        <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
 
 
-                        {% if gym.is_verified %}
-                        <h6 class="font-weight-bold">
-                            <em>Verified GYM</em> <i class="fas fa-check-circle blue-tick"></i>
-                        </h6>
+
+
+
+            <div class="row">
+                <div class="col-md-9 white-box">
+                    <!-- Home Main Image -->
+                    <img src="{{ gym.photo_1.url }}" alt="" class="img-main img-fluid mb-3">
+                    <!-- Thumbnails -->
+                    <div class="row mb-5 thumbs">
+                        {% if gym.photo_1 %}
+                        <div class="col-md-2">
+                            <a href="{{ gym.photo_1.url }}" data-lightbox="home-images">
+                                <img src="{{ gym.photo_1.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
                         {% endif %}
-
-
+                        {% if gym.photo_2 %}
+                        <div class="col-md-2">
+                            <a href="{{ gym.photo_2.url }}" data-lightbox="home-images">
+                                <img src="{{ gym.photo_2.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if gym.photo_3 %}
+                        <div class="col-md-2">
+                            <a href="{{ gym.photo_3.url }}" data-lightbox="home-images">
+                                <img src="{{ gym.photo_3.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if gym.photo_4 %}
+                        <div class="col-md-2">
+                            <a href="{{ gym.photo_4.url }}" data-lightbox="home-images">
+                                <img src="{{ gym.photo_4.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if gym.photo_5 %}
+                        <div class="col-md-2">
+                            <a href="{{ gym.gym_photo_5.url }}" data-lightbox="home-images">
+                                <img src="{{ gym.photo_5.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if gym.photo_6 %}
+                        <div class="col-md-2">
+                            <a href="{{ gym.photo_6.url }}" data-lightbox="home-images">
+                                <img src="{{ gym.photo_6.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
                     </div>
-                </div>
+                    <!-- Fields -->
+                    <div class="row mb-5 fields">
+                        <div class="col-md-6 ">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-globe-europe"></i> <strong>location:</strong>
+                                    <span class="float-right">{{ gym.country }}</span>
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-map-marked"></i> <strong>Address:</strong>
+                                    <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
+                                        <br>{{ gym.town_or_city }}</span>
+                                </li>
 
-                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Join Fight Camp</a> <br>
-                <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-danger">Back To Gyms</a>
-            </div>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
+                                    <span class="float-right">
 
-            <!-- Carousel-->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col text-left mt-3">
+                                        <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
+                                        {% for categorys in gym.categorys.all %}
+                                        {{ categorys.name }} <br>
+                                        {% empty %}
+                                        No tags!
+                                        {% endfor %}
 
-                        <h4 class="logo-font font font-weight-bold"> <em>Media</em> </h4>
 
-                        <div class="owl-carousel">
-                            <div class="item-video" data-merge="1">
-                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                            </div>
-                            <div class="item-video" data-merge="1">
-                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                            </div>
-                            <div class="item-video" data-merge="2">
-                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                            </div>
-                            <div class="item-video" data-merge="2">
-                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                            </div>
-                            <div class="item-video" data-merge="1">
-                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                            </div>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-secondary">
+                                    <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
+                                    <span class="float-right">{{ gym.whatsapp }}</span>
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-envelope"></i> <strong>Email:</strong>
+                                    <span class="float-right">{{ gym.email }}
+                                    </span>
+                                </li>
+
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-link"></i> <strong>Social Media:</strong>
+                                    <span class="float-right">{{ gym.facebook }}</span><br>
+                                    <span class="float-right">{{ gym.instagram }}</span><br>
+                                    <span class="float-right">{{ gym.twitter }}</span><br>
+                                    <span class="float-right">{{ gym.web }}</span><br>
+
+
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
+                                    <span class="float-right">{{ gym.created_on }}</span>
+
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
+
                 </div>
-                <!-- End Carousel-->
+
+                <div class="col-md-3 ">
+                    <div class="card mb-3 white-box">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> <strong>Gym Owner</strong></h5>
+                            <img src="{{ gym.gym_owner.url }}" class="rounded img-fluid-profile" alt=" Gym Owner">
+                            <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
+
+
+                            {% if gym.is_verified %}
+                            <h6 class="font-weight-bold">
+                                <em>Verified GYM</em> <i class="fas fa-check-circle blue-tick"></i>
+                            </h6>
+                            {% endif %}
+                        </div>
+                    </div>
+
+
+                    <div class="card mb-3 white-box">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> <strong>Fighters</strong></h5>
+
+
+
+                            <h6 class="text-secondary"></h6>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                    <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Join Fight Camp</a> <br>
+                    <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-back">Back To Gyms</a>
+                </div>
+
+                <!-- Carousel-->
+                <div class="container-fluid">
+                    <div class="row white-box">
+                        <div class="col text-left mt-3">
+
+                            <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
+
+                            <div class="owl-carousel">
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="2">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="2">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Carousel-->
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
-<!-- End About Gym -->
+    </section>
+    <!-- End About Gym -->
 
 
 
 
-
+</div>
 
 
 

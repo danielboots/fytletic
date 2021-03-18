@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from gym.models import Gym
 
 
 class Category(models.Model):
@@ -38,9 +39,17 @@ class Fighter(models.Model):
 
     # Relationship to Fighter discipline in = aka categories
 
-    categorys = models.ManyToManyField(Category)
+    discipline = models.ForeignKey(
+        Category, null=True, blank=True, on_delete=models.CASCADE
+    )
 
     # Relationship to Weight Class model
+    weight_class = models.ForeignKey(
+        WeightClass, null=True, blank=True, on_delete=models.CASCADE
+    )
+
+    # Relationship to Weight Class model
+    trains_at = models.ForeignKey(Gym, null=True, blank=True, on_delete=models.CASCADE)
 
     # Main
     fighter = models.ForeignKey(User, on_delete=models.CASCADE)

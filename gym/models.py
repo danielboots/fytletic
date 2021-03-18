@@ -1,5 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
+from fytnet.models import Fighter
 
 
 class Category(models.Model):
@@ -71,6 +72,9 @@ class Gym(models.Model):
 
     # Misc
     about = models.TextField(null=True, blank=True)
+    top_rank_fighter = models.ForeignKey(
+        Fighter, null=True, blank=True, on_delete=models.CASCADE
+    )
     is_verified = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
 

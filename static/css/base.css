@@ -89,6 +89,22 @@ background-color: #05101fcf;
     object-fit: cover;
 }
 
+
+/* background containers */
+
+.whitesmoke-container {
+    background-color: whitesmoke;
+}
+
+.white-box {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+}
+
+
 /* Verification mark like instagram for verified profiles and gyms */
 
 i.fas.fa-check-circle.blue-tick{
@@ -293,6 +309,10 @@ font-family: "Montserrat", sans-serif;
     color: white;
 } 
 
+.btn-back {
+    background-color: limegreen;
+    color: white
+}
          
 
 
