@@ -109,7 +109,16 @@
 
                             <li class="list-group-item text-secondary">
                                 <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
-                                <span class="float-right">{{ gym.category }}
+                                <span class="float-right">
+
+                                    <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
+                                    {% for categorys in gym.categorys.all %}
+                                    {{ categorys.name }} <br>
+                                    {% empty %}
+                                    No tags!
+                                    {% endfor %}
+
+
                                 </span>
                             </li>
                         </ul>

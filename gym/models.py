@@ -22,6 +22,9 @@ class Gym(models.Model):
 
     name = models.CharField(max_length=50, null=False, blank=False)
 
+    # Relationship to Specialises in = aka categories
+    categorys = models.ManyToManyField(Category)
+
     # Address Fields.
 
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
@@ -39,6 +42,7 @@ class Gym(models.Model):
     )
 
     # Owner Details
+
     gym_owner = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
     gym_owner_name = models.CharField(max_length=50, null=False, blank=False)
 
