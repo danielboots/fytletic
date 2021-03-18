@@ -48,9 +48,18 @@
                         <h6 class="text-secondary">{{ post.author }}</h6>
 
 
-                        <small>Posted at {{ post.created_on }} by {{ post.author }}</small>
+                        <small>Posted at {{ post.created_on }} by {{ post.author }}</small><br>
 
 
+
+                        <strong> posted under: {{ category.name }} </strong> <br>
+
+
+                        {% for categories in post.categories.all %}
+                        {{ categories.name }} <br>
+                        {% empty %}
+                        No tags!
+                        {% endfor %}
 
 
 
