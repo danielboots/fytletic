@@ -28,142 +28,80 @@
     <!-- End Hero Section-->
 
 
-    <!-- Carousel-->
-    <div class="container-fluid">
-        <div class="row white-box">
-            <div class="col">
 
-                <div class="owl-carousel">
-                    <div class="item-video" data-merge="1">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                    </div>
-                    <div class="item-video" data-merge="1">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                    </div>
-                    <div class="item-video" data-merge="2">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                    </div>
-                    <div class="item-video" data-merge="2">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                    </div>
-                    <div class="item-video" data-merge="1">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+
+
+    <div class="container-fluid whitesmoke-container">
+        <!-- Data -->
+        <section class="py-4"></section>
+        <div class="container">
+
+            <div class="row">
+                <!-- MAIN IMAGE-->
+                <div class="col-9 text-left mt-3 white-box">
+
+                    <!-- MAIN IMAGE-->
+                    <img src="{{ fighter.photo_1.url }}" alt=""
+                        class="img-fluid rounded mx-auto d-block  home-images mb-3">
+
+                    <!-- Thumbnails -->
+                    <div class="row mb-5 thumbs">
+                        {% if fighter.photo_1 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_1.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if fighter.photo_2 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_2.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_2.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if fighter.photo_3 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_3.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_3.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if fighter.photo_4 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_4.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_4.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if fighter.photo_5 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_5.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_5.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if fighter.photo_6 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_6.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_6.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        {% endif %}
+
+
+                        <h5 class="logo-font font font-weight-bold text-left"> Bio:</h5>
+
+
+                        <p> {{ fighter.bio }} </p>
+                        <hr>
+                        <p> <strong>Discipline</strong> {{ fighter.discipline }}</p>
+                        <hr>
+
+
                     </div>
                 </div>
-            </div>
 
-        </div>
-        <!-- End Carousel-->
-
-
-        <div class="container-fluid whitesmoke-container">
-            <!-- Data -->
-            <section class="py-4"></section>
-            <div class="container">
-
-                <div class="row">
-                    <!-- About Gym -->
-                    <div class="col-9 text-left mt-3 white-box">
-
-                        <img src="{{ fighter.photo_1.url }}" alt=""
-                            class="img-fluid rounded mx-auto d-block  home-images mb-3">
-
-                        <!-- Thumbnails -->
-                        <div class="row mb-5 thumbs">
-                            {% if fighter.photo_1 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_1.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_2 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_2.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_2.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_3 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_3.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_3.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_4 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_4.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_4.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_5 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_5.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_5.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_6 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_6.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_6.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-
-
-                            <h5 class="logo-font font font-weight-bold text-left"> Bio:</h5>
-
-
-                            <p> {{ fighter.bio }} </p>
-                            <hr>
-                            <p> <strong>Discipline</strong> {{ fighter.discipline }}</p>
-                            <hr>
-
-
-                        </div>
-                    </div>
-
-                    <div class="col-3 text-left mt-3 white-box">
-
-                        <h2 class="logo-font font font-weight-bold text-left">
-                            <em>Stats - - -</em>
-                        </h2>
-
-
-                        <h3 class="font-weight-bold text-left"> W {{ fighter.win }} D {{ fighter.draw }} L
-                            {{ fighter.loss }} </h3>
-                        <p> <strong>Category</strong> {{ fighter.category }}</p>
-                        <hr>
-                        <p> <strong>Nickname</strong> {{ fighter.nick_name }}
-                            <hr>
-
-
-                        <p> <strong>Fight Style</strong> {{ fighter.fight_style }} </p>
-                        <hr>
-                        <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
-                        <hr>
-                        <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
-                        <hr>
-                        <p> <strong>Titles</strong> {{ fighter.titles }} </p>
-                        <hr>
-                        <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
-                        <hr>
-
-                        <p> <strong>Email</strong> {{ fighter.email }} </p>
-                        <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
-                        <p> <strong>Profile Photo</strong> {{ fighter.profile_photo_main }} </p>
-                        <p> <strong>Showreel Vid</strong> {{ fighter.video }} </p>
-
-                        <!-- back to top link-->
-                        <div class="btt-button shadow-sm rounded-0 border border-black">
-                            <a class="btt-link d-flex h-100">
-                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                            </a>
-
-                        </div>
 
 </section>
 
@@ -215,6 +153,167 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+
+
+<!-- NEW Template-->
+
+
+<div class="container-fluid whitesmoke-container">
+    <!-- Data -->
+    <section class="py-4">
+        <div class="container">
+            <!-- About Gym -->
+            <div class="col text-left mt-3 white-box">
+                <h2 class="logo-font font font-weight-bold  text-left">
+                    <em>About - - -</em>
+                </h2>
+                <div class="col-md-12 text-justify ">
+                    {{ gym.about }}
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row">
+                <div class="col-md-9 white-box">
+
+
+                    <!-- Fields -->
+                    <div class="row mb-5 fields">
+                        <div class="col-md-6 ">
+
+
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-globe-europe"></i> <strong>location:</strong>
+                                    <span class="float-right">{{ gym.country }}</span>
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-map-marked"></i> <strong>Address:</strong>
+                                    <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
+                                        <br>{{ gym.town_or_city }}</span>
+                                </li>
+
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
+                                    <span class="float-right">
+
+                                        <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
+                                        {% for categories in gym.categories.all %}
+                                        {{ categories.name }} <br>
+                                        {% empty %}
+                                        No tags!
+                                        {% endfor %}
+
+
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-secondary">
+                                    <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
+                                    <span class="float-right">{{ gym.whatsapp }}</span>
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-envelope"></i> <strong>Email:</strong>
+                                    <span class="float-right">{{ gym.email }}
+                                    </span>
+                                </li>
+
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-link"></i> <strong>Social Media:</strong>
+                                    <span class="float-right">{{ gym.facebook }}</span><br>
+                                    <span class="float-right">{{ gym.instagram }}</span><br>
+                                    <span class="float-right">{{ gym.twitter }}</span><br>
+                                    <span class="float-right">{{ gym.web }}</span><br>
+
+
+                                </li>
+                                <li class="list-group-item text-secondary">
+                                    <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
+                                    <span class="float-right">{{ gym.created_on }}</span>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-3 ">
+                    <div class="card mb-3 white-box">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> <strong>STATS</strong></h5>
+                            W {{ fighter.win }} D {{ fighter.draw }} L
+                            {{ fighter.loss }}
+                        </div>
+                    </div>
+
+
+                    <div class="card mb-3 white-box">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> <strong>TRAINS AT : GYM</strong></h5>
+
+
+
+                            <h6 class="text-secondary"></h6>
+
+
+
+                        </div>
+                    </div>
+
+
+                    <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-back">Back To FIGHTERS</a>
+                </div>
+
+                <!-- Carousel-->
+                <div class="container-fluid">
+                    <div class="row white-box">
+                        <div class="col text-left">
+
+                            <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
+
+                            <div class="owl-carousel">
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="2">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="2">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Carousel-->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End About Gym -->
 </div>
 
 
