@@ -35,9 +35,13 @@ class WeightClass(models.Model):
 
 
 class Fighter(models.Model):
-    category = models.ForeignKey(
-        "Category", null=True, blank=True, on_delete=models.SET_NULL
-    )
+
+    # Relationship to Fighter discipline in = aka categories
+
+    categorys = models.ManyToManyField(Category)
+
+    # Relationship to Weight Class model
+
     # Main
     fighter = models.ForeignKey(User, on_delete=models.CASCADE)
     nick_name = models.CharField(
