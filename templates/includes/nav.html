@@ -3,7 +3,7 @@
     <div id="main">
         <button class="openbtn" onclick="openNav()">&#9776;</button>
     </div>
-    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0  text-lg-left">
+    <div class="col-6 col-lg-4 my-auto py-1 py-lg-0  text-lg-right">
 
         <a href="{% url 'home' %}" class="nav-link main-logo-link ">
             <h2 class="logo-font  font-weight-bold text-black font-weight-bold my-0"><strong> FYT</strong><em>LETIC</em>
@@ -19,13 +19,19 @@
 
     <div id="mySidebar" class="sidebar ">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a class="font-weight-bold" href="{% url 'profile' %}"><i class="far fa-user"></i> Profile</a>
 
-        <a class="font-weight-bold" href="{% url 'gym' %}"><i class="fas fa-dumbbell"></i> Gyms</a>
-        <a class="font-weight-bold" href="{% url 'fytnet' %}"><i class="fas fa-fist-raised"></i> Fighters</a>
-        <a class="font-weight-bold" href="{% url 'account_logout' %}"><i class="fas fa-user-plus"></i> Register</a>
-        <a class="font-weight-bold" href="{% url 'account_logout' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
-        <a class="font-weight-bold logout mb-5" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>
+        <a class="font-weight-bold my-1" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+        <a class="font-weight-bold my-1" href="{% url 'about' %}"><i class="fas fa-info"></i> About</a>
+        <a class="font-weight-bold my-1" href="{% url 'news' %}"><i class="far fa-newspaper"></i> News</a>
+        <a class="font-weight-bold my-1" href="{% url 'contact' %}"><i class="far fa-envelope"></i> Contact</a>m
+        <a class="font-weight-bold my-1" href="{% url 'profile' %}"><i class="far fa-user"></i> Profile</a>
+
+        <a class="font-weight-bold my-1" href="{% url 'gym' %}"><i class="fas fa-dumbbell"></i> Gyms</a>
+        <a class="font-weight-bold my-1" href="{% url 'fytnet' %}"><i class="fas fa-fist-raised"></i> Fighters</a>
+        <a class="font-weight-bold my-1" href="{% url 'account_signup' %}"><i class="fas fa-user-plus"></i> Register</a>
+        <a class="font-weight-bold my-1" href="{% url 'account_logout' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a class="font-weight-bold logout mb-5 py-1" href="{% url 'account_logout' %}"><i
+                class="fas fa-sign-out-alt"></i>
             Logout</a>
 
 
@@ -47,22 +53,15 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link font-weight-bold" href="{% url 'home' %}">Home</a>
             </li>
-            <!-- Button trigger modal
-            <li class="nav-item"><a class="nav-link font-weight-bolder" data-toggle="modal"
-                    data-target="#fullHeightModalRight">About</a></li> -->
+
 
             <li class="nav-item"><a class="nav-link font-weight-bold" href="{% url 'about' %}">About
                 </a></li>
             <li class="nav-item"><a class="nav-link font-weight-bold" href="{% url 'contact' %}">Contact
                 </a></li>
 
-
             <li class="nav-item"><a class="nav-link font-weight-bold" href="{% url 'news' %}">News Desk</a>
             </li>
-
-
-
-
 
         </ul>
 

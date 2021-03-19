@@ -44,7 +44,24 @@
                 <p>{{ post.body }} </p>
 
                 {% else %}
-                <p>Read the full post by registering for free here: LINK</p>
+
+                <div class="container my-5 py-5 z-depth-1">
+
+
+                    <!--Section: Content-->
+                    <section class="text-center px-md-5 mx-md-5 dark-grey-text">
+
+                        <h3 class="font-weight-bold">Read the full post by registering for free here: <a
+                                class="font-weight-bold" href="{% url 'account_signup' %}"><i
+                                    class="fas fa-user-plus"></i> Register</a>
+                        </h3>
+
+                    </section>
+                    <!--Section: Content-->
+
+
+                </div>
+
 
                 {% endif %}
 
