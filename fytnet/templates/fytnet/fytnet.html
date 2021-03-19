@@ -7,82 +7,70 @@
 
 <!-- Hero Section-->
 <div class="hero-header">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-7 col-md-6 my-auto hero-text">
+            <div class="hero-text text-center">
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     Fighters
                 </h1>
+
+
             </div>
         </div>
     </div>
 </div>
 
-<!-- End Hero Section-->
 
-<div class="container-fluid">
+<div class="container mt-5">
+
+
+    <!-- Section heading -->
+    <h3 class="font-weight-bold mb-5">Fighters</h3>
+
+    <!-- New card System-->
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font  font-weight-bold  m-text">Fighter Database</h2>
-            <hr class="w-50 mb-1">
-        </div>
-    </div>
-</div>
 
+        {% if fighters %}
+        {% for fighter in fighters %}
 
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
 
-<!-- fighter profile cards -->
-<section id="fighters" class="py-4">
-    <div class="container">
-        <div class="row">
+            <!-- Card -->
+            <div class="card hoverable">
 
-            {% if fighters %}
-            {% for fighter in fighters %}
+                <!-- Card image -->
+                <img class="card-img-top" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
 
+                <!-- Card content -->
+                <div class="card-body">
 
+                    <!-- Title -->
+                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3"> {{ fighter.first_name }}</p>
+                    <!-- Country -->
 
+                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'fytnet_profile' fighter.id %}">View
+                        Fighter!</a>
 
-            <!-- New fighter card layout-->
-
-            <!-- Grid column -->
-            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-
-                <!-- Card -->
-                <div class="card hoverable">
-
-                    <!-- Card image -->
-                    <img class="card-img-top" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ fighter.first_name }}
-                        </p>
-                        <!-- Text -->
-                        <p class="mb-2">{{ post.intro }}</p>
-                        <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
-                        <a class="btn btn-dark pill-btn btn-sm" href="{% url 'fytnet_profile' fighter.id %}">Read
-                            more!</a>
-
-                    </div>
                 </div>
             </div>
-
-
-
-
-            <!--End new card layout -->
-
-
-            {% endfor %}
-            {% endif %}
-
-
         </div>
-    </div>
+        {% endfor %}
+        {% endif %}
 
-</section>
+    </div>
+</div>
+
+
+<div class="row mt-5">
+    <div class="col">
+        <p>register for full news desk access!</p>
+    </div>
+</div>
+
+
+
+
 
 
 

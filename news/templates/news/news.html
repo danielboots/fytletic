@@ -34,10 +34,6 @@
 
         {% for post in posts %}
 
-
-        <!-- Grid row -->
-
-
         <!-- Grid column -->
         <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
 
@@ -55,7 +51,7 @@
                     <!-- Text -->
                     <p class="mb-2">{{ post.intro }}</p>
                     <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
-                    <a class="btn btn-dark pill-btn" href="{% url 'news_article' post.slug %}">Read more!</a>
+                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read more!</a>
 
                 </div>
             </div>
