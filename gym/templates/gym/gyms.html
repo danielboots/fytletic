@@ -27,9 +27,6 @@
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="logo-font font font-weight-bold ">Fytletic Gyms</h2>
-
-            <h3>This is the Single test page for the gyms network!! welcome</h3>
-
             <hr class="w-50 mb-1">
         </div>
     </div>
@@ -38,38 +35,58 @@
 
 
 <!-- fighter profile cards -->
-<section id="fighters" class="py-4">
+<section id="gyms" class="py-4">
     <div class="container">
         <div class="row">
 
             {% if gyms %}
             {% for gym in gyms %}
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card fighter-preview">
-                    <img class="card-img-top" src="{{ gym.gym_photo_main.url }}" alt="">
 
-                    {% if gym.is_verified %}
-                    <h5 class="font-weight-bold listing-heading text-center">
-                        {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
-                    </h5>
 
-                    {% else %}
-                    <h5 class="font-weight-bold listing-heading text-center">
-                        {{ gym.name }}<i class="fas fa-check-circle"></i>
-                    </h5>
-                    {% endif %}
-                    <div class="row py-2">
-                        <div class="col-6">
-                            <i class="fas fa-th-large"></i>{{ gym.name }}</div>
-                        <div class="col-6">
-                            <i class="fas fa-map-marked"></i> {{ gym.town_or_city }}</div>
+
+            <!-- New fighter card layout-->
+
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+                <!-- Card -->
+                <div class="card hoverable">
+
+                    <!-- Card image -->
+                    <img class="card-img-top" src="{{ gym.gym_photo_main.url }}" alt="Card image cap">
+
+                    <!-- Card content -->
+                    <div class="card-body">
+                        {% if gym.is_verified %}
+                        <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
+                            {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
+                        </h5>
+
+                        {% else %}
+                        <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
+                            {{ gym.name }}<i class="fas fa-check-circle"></i>
+                        </h5>
+                        {% endif %}
+
+
+                        <!-- Text -->
+                        <p class="mb-2">{{ gym.town_or_city }}</p>
+                        <!-- Title -->
+                        <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ gym.created_on }}
+                        </p>
+
+                        <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">Read
+                            more!</a>
+
+
                     </div>
-
-                    <a href="{% url 'gym_profile' gym.id %}" class=" btn btn-primary btn-block btn-dark">View</a>
                 </div>
             </div>
 
 
+
+
+            <!--End new card layout -->
 
 
             {% endfor %}

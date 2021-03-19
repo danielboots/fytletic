@@ -32,12 +32,12 @@
 
 <!-- End Hero Section-->
 
-<div class="container-fluid whitesmoke-container">
+<div class="container-fluid whitesmoke-container ">
     <!-- Data -->
     <section class="py-4">
         <div class="container">
             <!-- About Gym -->
-            <div class="col text-left mt-3 white-box">
+            <div class="col text-left mt-3 white-box my-5 py-5 z-depth-1">
                 <h2 class="logo-font font font-weight-bold  text-left">
                     <em>About - - -</em>
                 </h2>
@@ -51,7 +51,7 @@
 
 
             <div class="row">
-                <div class="col-md-9 white-box">
+                <div class="col-md-9 white-box  z-depth-1">
 
 
                     <!-- Home Main Image -->
@@ -105,17 +105,17 @@
                     <div class="row mb-5 fields">
                         <div class="col-md-6 ">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item text-secondary">
+                                <li class="list-group-item text-mute">
                                     <i class="fas fa-globe-europe"></i> <strong>location:</strong>
                                     <span class="float-right">{{ gym.country }}</span>
                                 </li>
-                                <li class="list-group-item text-secondary">
+                                <li class="list-group-item text-mute">
                                     <i class="fas fa-map-marked"></i> <strong>Address:</strong>
                                     <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
                                         <br>{{ gym.town_or_city }}</span>
                                 </li>
 
-                                <li class="list-group-item text-secondary">
+                                <li class="list-group-item text-mute">
                                     <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
                                     <span class="float-right">
 
@@ -133,17 +133,17 @@
                         </div>
                         <div class="col-md-6">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item text-secondary">
+                                <li class="list-group-item text-mute">
                                     <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
                                     <span class="float-right">{{ gym.whatsapp }}</span>
                                 </li>
-                                <li class="list-group-item text-secondary">
+                                <li class="list-group-item text-mute">
                                     <i class="fas fa-envelope"></i> <strong>Email:</strong>
                                     <span class="float-right">{{ gym.email }}
                                     </span>
                                 </li>
 
-                                <li class="list-group-item text-secondary">
+                                <li class="list-group-item text-mute">
                                     <i class="fas fa-link"></i> <strong>Social Media:</strong>
                                     <span class="float-right">{{ gym.facebook }}</span><br>
                                     <span class="float-right">{{ gym.instagram }}</span><br>
@@ -152,7 +152,7 @@
 
 
                                 </li>
-                                <li class="list-group-item text-secondary">
+                                <li class="list-group-item ">
                                     <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
                                     <span class="float-right">{{ gym.created_on }}</span>
 
@@ -168,9 +168,10 @@
                     <div class="card mb-3 white-box">
                         <div class="card-body text-center">
                             <h5 class="card-title"> <strong>Gym Owner</strong></h5>
-                            <img src="{{ gym.gym_owner.url }}" class="rounded mx-auto d-block img-fluid-profile"
+
+                            <img src="{{ gym.gym_owner.url }}" class="mx-auto d-block img-fluid-profile rounded"
                                 alt=" Gym Owner">
-                            <h6 class="text-secondary">{{ gym.gym_owner_name }}</h6>
+                            <h6 class="">{{ gym.gym_owner_name }}</h6>
 
 
                             {% if gym.is_verified %}
@@ -182,28 +183,22 @@
                     </div>
 
 
-                    <div class="card mb-3 white-box">
+                    <div class="card mb-3 white-box ">
                         <div class="card-body text-center">
                             <h5 class="card-title"> <strong>Fighters</strong></h5>
-
-
-
-                            <h6 class="text-secondary"></h6>
-
-
 
                         </div>
                     </div>
 
 
-
-                    <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-dark">Join Fight Camp</a> <br>
-                    <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-back">Back To Gyms</a>
+                    <div class="div text-center">
+                        <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-dark">Join Fight Camp</a>
+                        <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Gyms</a></div>
                 </div>
 
                 <!-- Carousel-->
-                <div class="container-fluid">
-                    <div class="row white-box">
+                <div class="container-fluid ">
+                    <div class="row white-box my-5 py-5 z-depth-1">
                         <div class="col text-left">
 
                             <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>

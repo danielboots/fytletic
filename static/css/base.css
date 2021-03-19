@@ -138,6 +138,14 @@ font-family: "Montserrat", sans-serif;
 
 }
 
+
+
+.text-mute {
+    color:#6c757d!important;
+}
+
+
+
 .img-fluid-profile {
     object-fit: cover;
   width:100%;
