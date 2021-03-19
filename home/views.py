@@ -23,11 +23,3 @@ def contact(request):
     """
 
     return render(request, "home/contact.html")
-
-
-def dan(request):
-    """
-    A view to return the Dan page
-    """
-
-    return render(request, "home/dan.html")
