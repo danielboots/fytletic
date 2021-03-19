@@ -110,6 +110,18 @@ background-color: #12192Ccf;
     border-radius: 5px;
 }
 
+.nav-primary {
+    background-color: white;
+    color: black;
+   padding: 0 !important;
+}
+
+
+.nav-link  {
+    color: black;
+    
+}
+  
 
 /* Verification mark like instagram for verified profiles and gyms */
 
