@@ -18,6 +18,10 @@
                     <em>
                         <p>{{ fighter.titles }}</p>
                     </em>
+                    <span> <strong> W :{{ fighter.win }}</strong></span>
+                    <span> D :{{ fighter.draw }}</span>
+                    <span> L :{{ fighter.loss }}</span>
+
 
 
                 </div>
@@ -27,308 +31,257 @@
 
     <!-- End Hero Section-->
 
-
-
-
-
-    <div class="container-fluid whitesmoke-container">
+    <div class="container-fluid whitesmoke-container ">
         <!-- Data -->
-        <section class="py-4"></section>
-        <div class="container">
-
-            <div class="row">
-                <!-- MAIN IMAGE-->
-                <div class="col-9 text-left mt-3 white-box">
-
-                    <!-- MAIN IMAGE-->
-                    <img src="{{ fighter.photo_1.url }}" alt=""
-                        class="img-fluid rounded mx-auto d-block  home-images mb-3">
-
-                    <!-- Thumbnails -->
-                    <div class="row mb-5 thumbs">
-                        {% if fighter.photo_1 %}
-                        <div class="col-md-2">
-                            <a href="{{ fighter.photo_1.url }}" data-lightbox="home-images">
-                                <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        {% endif %}
-                        {% if fighter.photo_2 %}
-                        <div class="col-md-2">
-                            <a href="{{ fighter.photo_2.url }}" data-lightbox="home-images">
-                                <img src="{{ fighter.photo_2.url }}" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        {% endif %}
-                        {% if fighter.photo_3 %}
-                        <div class="col-md-2">
-                            <a href="{{ fighter.photo_3.url }}" data-lightbox="home-images">
-                                <img src="{{ fighter.photo_3.url }}" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        {% endif %}
-                        {% if fighter.photo_4 %}
-                        <div class="col-md-2">
-                            <a href="{{ fighter.photo_4.url }}" data-lightbox="home-images">
-                                <img src="{{ fighter.photo_4.url }}" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        {% endif %}
-                        {% if fighter.photo_5 %}
-                        <div class="col-md-2">
-                            <a href="{{ fighter.photo_5.url }}" data-lightbox="home-images">
-                                <img src="{{ fighter.photo_5.url }}" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        {% endif %}
-                        {% if fighter.photo_6 %}
-                        <div class="col-md-2">
-                            <a href="{{ fighter.photo_6.url }}" data-lightbox="home-images">
-                                <img src="{{ fighter.photo_6.url }}" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        {% endif %}
-
-
-                        <h5 class="logo-font font font-weight-bold text-left"> Bio:</h5>
-
-
-                        <p> {{ fighter.bio }} </p>
-                        <hr>
-                        <p> <strong>Discipline</strong> {{ fighter.discipline }}</p>
-                        <hr>
-
-
+        <section class="py-4">
+            <div class="container">
+                <!-- About Gym -->
+                <div class="col text-left mt-3 white-box my-5 py-5 z-depth-1">
+                    <h2 class="logo-font font font-weight-bold  text-left">
+                        <em>Bio - - -</em>
+                    </h2>
+                    <div class="col-md-12 text-justify ">
+                        {{ fighter.bio }}
+                        <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
+                        <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
+                        <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
+                        <p> <strong>Email</strong> {{ fighter.email }} </p>
+                        <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
                     </div>
                 </div>
 
 
-</section>
-
-
-<div class="container-fluid whitesmoke-container">
-    <!-- Data -->
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col white-box">
-
-                <p> <strong>Category</strong> {{ fighter.category }}</p>
-                <p> <strong>Nickname</strong> {{ fighter.nick_name }}
-
-                <p> <strong>Fight Style</strong> {{ fighter.fight_style }} </p>
-                <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
-                <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
-                <p> <strong>Titles</strong> {{ fighter.titles }} </p>
-                <p> <strong>Bio</strong> {{ fighter.bio }} </p>
-                <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
-                <p> <strong>Email</strong> {{ fighter.email }} </p>
-                <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
-                <p> <strong>Profile Photo</strong> {{ fighter.profile_photo_main }} </p>
-                <p> <strong>Showreel Vid</strong> {{ fighter.video }} </p>
-
-
-                <p>weight class </p>
-                {{ fighter.weight_class }}
-
-                <p>discipline</p>
-                {{ fighter.discipline }}
-
-                <p><strong>trains at</strong> {{ fighter.trains_at }} </p>
 
 
 
-                <p> <strong>Facebook</strong> {{ fighter.facebook }} </p>
-                <p> <strong>Twitter</strong> {{ fighter.twitter }} </p>
-                <p> <strong>Instagram</strong> {{ fighter.instagram }} </p>
-                <p> <strong>Website</strong> {{ fighter.web }} </p>
+                <div class="row">
+                    <div class="col-md-9 white-box  z-depth-1">
 
 
-                <p> <strong>Verified</strong> {{ fighter.is_verified }} </p>
-                <p> <strong>Created Profile on</strong> {{ fighter.created_on }} </p>
-
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<!-- NEW Template-->
-
-
-<div class="container-fluid whitesmoke-container">
-    <!-- Data -->
-    <section class="py-4">
-        <div class="container">
-            <!-- About Gym -->
-            <div class="col text-left mt-3 white-box">
-                <h2 class="logo-font font font-weight-bold  text-left">
-                    <em>About - - -</em>
-                </h2>
-                <div class="col-md-12 text-justify ">
-                    {{ gym.about }}
-                </div>
-            </div>
-
-
-
-
-
-            <div class="row">
-                <div class="col-md-9 white-box">
-
-
-                    <!-- Fields -->
-                    <div class="row mb-5 fields">
-                        <div class="col-md-6 ">
-
-
-
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item text-secondary">
-                                    <i class="fas fa-globe-europe"></i> <strong>location:</strong>
-                                    <span class="float-right">{{ gym.country }}</span>
-                                </li>
-                                <li class="list-group-item text-secondary">
-                                    <i class="fas fa-map-marked"></i> <strong>Address:</strong>
-                                    <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
-                                        <br>{{ gym.town_or_city }}</span>
-                                </li>
-
-                                <li class="list-group-item text-secondary">
-                                    <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
-                                    <span class="float-right">
-
-                                        <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
-
-                                        {{ fighter.discipline }}
-
-
-
-
-                                    </span>
-                                </li>
-                            </ul>
+                        <!-- Home Main Image -->
+                        <img src="{{ fighter.photo_1.url }}" alt=""
+                            class="img-fluid rounded mx-auto d-block  home-images mb-3">
+                        <!-- Thumbnails -->
+                        <div class="row mb-5 thumbs">
+                            {% if gym.photo_1 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_1.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if gym.photo_2 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_2.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_2.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if gym.photo_3 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_3.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_3.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if gym.photo_4 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_4.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_4.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if gym.photo_5 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_5.url }}" data-lightbox="home-images">
+                                    <img src="{{ 5 }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if gym.photo_6 %}
+                            <div class="col-md-2">
+                                <a href="{{ fighter.photo_6.url }}" data-lightbox="home-images">
+                                    <img src="{{ fighter.photo_6.url }}" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            {% endif %}
                         </div>
-                        <div class="col-md-6">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item text-secondary">
-                                    <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
-                                    <span class="float-right">{{ gym.whatsapp }}</span>
-                                </li>
-                                <li class="list-group-item text-secondary">
-                                    <i class="fas fa-envelope"></i> <strong>Email:</strong>
-                                    <span class="float-right">{{ gym.email }}
-                                    </span>
-                                </li>
+                        <!-- Fields -->
+                        <div class="row mb-5 fields">
+                            <div class="col-md-6 ">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-mute">
+                                        <i class="fas fa-globe-europe"></i> <strong>location:</strong>
+                                        <span class="float-right">{{ gym.country }}</span>
+                                    </li>
+                                    <li class="list-group-item text-mute">
+                                        <i class="fas fa-map-marked"></i> <strong>Address:</strong>
+                                        <span class="float-right">{{ gym.street_address1 }}
+                                            <br>{{ gym.street_address2 }}
+                                            <br>{{ gym.town_or_city }}</span>
+                                    </li>
 
-                                <li class="list-group-item text-secondary">
-                                    <i class="fas fa-link"></i> <strong>Social Media:</strong>
-                                    <span class="float-right">{{ gym.facebook }}</span><br>
-                                    <span class="float-right">{{ gym.instagram }}</span><br>
-                                    <span class="float-right">{{ gym.twitter }}</span><br>
-                                    <span class="float-right">{{ gym.web }}</span><br>
+                                    <li class="list-group-item text-mute">
+                                        <i class="fas fa-fist-raised"></i> <strong>Specialises in:
+                                            {{ fighter.discipline }}</strong>
+                                        <span class="float-right">
 
+                                        </span>
+                                    </li>
 
-                                </li>
-                                <li class="list-group-item text-secondary">
-                                    <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
-                                    <span class="float-right">{{ gym.created_on }}</span>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div class="col-md-3 ">
-                    <div class="card mb-3 white-box">
-                        <div class="card-body text-center">
-                            <h5 class="card-title"> <strong>STATS</strong></h5>
-                            W {{ fighter.win }} D {{ fighter.draw }} L
-                            {{ fighter.loss }}
-                        </div>
-                    </div>
-
-
-                    <div class="card mb-3 white-box">
-                        <div class="card-body text-center">
-                            <h5 class="card-title"> <strong>TRAINS AT : {{ fighter.trains_at }}</strong></h5>
+                                    <li class="list-group-item text-mute">
+                                        <i class="fas fa-fist-raised"></i> <strong>Style:
+                                            {{ fighter.fight_style }}</strong>
+                                        <span class="float-right">
+                                        </span>
+                                    </li>
 
 
 
-                            <h6 class="text-secondary"></h6>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-mute">
+                                        <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
+                                        <span class="float-right">{{ fighter.whatsapp }}</span>
+                                    </li>
+                                    <li class="list-group-item text-mute">
+                                        <i class="fas fa-envelope"></i> <strong>Email:</strong>
+                                        <span class="float-right">{{ fighter.email }}
+                                        </span>
+                                    </li>
+
+                                    <li class="list-group-item text-mute">
+                                        <i class="fas fa-link"></i> <strong>Social Media:</strong>
+                                        <span class="float-right">{{ fighter.facebook }}</span><br>
+                                        <span class="float-right">{{ fighter.instagram }}</span><br>
+                                        <span class="float-right">{{ fighter.twitter }}</span><br>
+                                        <span class="float-right">{{ fighter.web }}</span><br>
 
 
+                                    </li>
+                                    <li class="list-group-item ">
+                                        <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
+                                        <span class="float-right">{{ fighter.created_on }}</span>
 
-                        </div>
-                    </div>
-
-
-                    <a href="{% url 'gym' %}" class="btn btn-primary btn-block btn-back">Back To FIGHTERS</a>
-                </div>
-
-                <!-- Carousel-->
-                <div class="container-fluid">
-                    <div class="row white-box">
-                        <div class="col text-left">
-
-                            <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
-
-                            <div class="owl-carousel">
-                                <div class="item-video" data-merge="1">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="1">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="2">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="2">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="1">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
+
                     </div>
-                    <!-- End Carousel-->
+
+                    <div class="col-md-3 ">
+                        <div class="card mb-3 white-box">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"> <strong>Sponsors:</strong></h5>
+
+                                <img src="{{ fighter.photo_6.url }}" class="mx-auto d-block img-fluid-profile rounded"
+                                    alt=" Sponsors">
+
+
+
+                                {% if fighter.is_verified %}
+                                <h6 class="font-weight-bold">
+                                    <em>Verified Fighter</em> <i class="fas fa-check-circle blue-tick"></i>
+                                </h6>
+                                {% endif %}
+                            </div>
+                        </div>
+
+
+                        <div class="card mb-3 white-box ">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"> <strong>Trains At:</strong></h5>
+                                {{ fighter.trains_at }}
+
+                                <h6 class="card-title"> <strong>Weight class</strong></h6>
+
+                                {{ fighter.weight_class }}
+                            </div>
+
+                        </div>
+
+
+                        <div class="card mb-3 white-box ">
+
+                            <div class="div text-center">
+
+                                <!--Facebook-->
+
+                                <a href="https://facebook.com" target="_blank" class="fb-ic mr-3" role="button"><i
+                                        class="fab fa-lg fa-facebook-f"></i></a>
+                                <!--Twitter-->
+                                <a href="https://twitter.com" target="_blank" class="tw-ic mr-3" role="button"><i
+                                        class="fab fa-lg fa-twitter"></i></a>
+
+                                <!--Linkedin-->
+                                <a href="https://linkedin.com" target="_blank" class="li-ic mr-3" role="button"><i
+                                        class="fab fa-lg fa-linkedin-in"></i></a>
+                                <!--Instagram-->
+                                <a href="https://instagram.com" target="_blank" class="ins-ic mr-3" role="button"><i
+                                        class="fab fa-lg fa-instagram"></i></a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="div text-center">
+
+                            <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Fighters</a></div>
+                    </div>
+
+                    <!-- Carousel-->
+                    <div class="container-fluid ">
+                        <div class="row white-box my-5 py-5 z-depth-1">
+                            <div class="col text-left">
+
+                                <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
+
+                                <div class="owl-carousel">
+                                    <div class="item-video" data-merge="1">
+                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                    </div>
+                                    <div class="item-video" data-merge="1">
+                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                    </div>
+                                    <div class="item-video" data-merge="2">
+                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                    </div>
+                                    <div class="item-video" data-merge="2">
+                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                    </div>
+                                    <div class="item-video" data-merge="1">
+                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End Carousel-->
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
+        <!-- End About Gym -->
+    </div>
 
-    </section>
-    <!-- End About Gym -->
-</div>
+    {% endblock %}
 
-
-
-
-
-{% endblock %}
-
-{% block postloadjs %}
-<!-- block super appends instead of replacing anything in the block.-->
-{{ block.super }}
-<script type="text/javascript">
-    $('.btt-link').click(function (e) {
-        window.scrollTo(0, 0)
-    })
-</script>
+    {% block postloadjs %}
+    <!-- block super appends instead of replacing anything in the block.-->
+    {{ block.super }}
+    <script type="text/javascript">
+        $('.btt-link').click(function (e) {
+            window.scrollTo(0, 0)
+        })
+    </script>
 
 
-{% endblock %}
+    {% endblock %}
