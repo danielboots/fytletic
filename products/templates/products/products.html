@@ -27,20 +27,7 @@
         <div class="col text-center mt-3">
             <h2 class="logo-font">Products</h2>
 
-            <div class="div">
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control " type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-dark pill-btn btn-sm" type="submit">
-                                <span class="icon">
 
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                 <span
