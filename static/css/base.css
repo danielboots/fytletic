@@ -57,7 +57,7 @@ background-color: #05101fcf;
   width: 100%;
   height: 100%;
   /* change RGBA to HEX Alpha Mentor Suggestion */
-background-color: #05101fcf;
+background-color: #12192Ccf;
 }
 
 /* gym listings */
@@ -80,7 +80,7 @@ background-color: #05101fcf;
   width: 100%;
   height: 100%;
   /* change RGBA to HEX Alpha Mentor Suggestion */
-background-color: #05101fcf;
+background-color: #12192Ccf;
 }
 
 .hero-gym-img {
@@ -89,6 +89,12 @@ background-color: #05101fcf;
     object-fit: cover;
 }
 
+
+
+.brandlogo {
+	width: 32px;
+	margin-left: 10px;
+}
 
 /* background containers */
 
@@ -117,7 +123,7 @@ i.fas.fa-check-circle {
 
 
 .grad {
-background: rgb(5,16,30);
+background: #12192C;
 /* background: linear-gradient(45deg, rgba(5,16,30,1) 30%, rgba(93,114,153,1) 100%); */
 }
 
@@ -287,7 +293,7 @@ font-family: "Montserrat", sans-serif;
 
 
 .owl-dot.active span {
-    color: slateblue;
+    color: #12192C;
 }
 
 /* from Bulma */
@@ -308,13 +314,13 @@ font-family: "Montserrat", sans-serif;
 }
 
 .shop-now-button {
-    background: #05101e;
+    background: #12192C;
     color: white;
     min-width: 260px;
 }
 
 .btn-black {
-    background: #05101e;
+    background: #12192C;
     color: white;
 } 
 
@@ -327,8 +333,8 @@ font-family: "Montserrat", sans-serif;
 
 .btn-outline-black {
     background: white;
-    color: #05101e !important; /* use important to override link colors for <a> elements */
-    border: 1px solid #05101e;
+    color: #12192C !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #12192C;
 }
 
 .shop-now-button:hover,
@@ -337,7 +343,7 @@ font-family: "Montserrat", sans-serif;
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #12192C;
     color: white;
 }
 
@@ -354,7 +360,7 @@ font-family: "Montserrat", sans-serif;
 }
 
 .bg-black {
-    background: #000 !important;
+    background: #12192C !important;
 }
 
 
@@ -572,12 +578,23 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-.page-footer {
-    background-color: #05101e;
+
+.nav-primary {
+ 
+    background-color: #12192C;
     color: white;
     padding: 25px 0px; 
 
 }
+
+.page-footer {
+    background-color: #12192C;
+    color: white;
+    padding: 25px 0px; 
+
+}
+
+
 
 
 
