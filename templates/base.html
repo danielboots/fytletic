@@ -50,8 +50,9 @@
 
     {% block corejs %}
 
-    <!-- Side Nav implementaiton from https://www.youtube.com/watch?v=8tSbE3X29kQ -->
-    <script src="{% static 'js/main.js' %}"></script>
+
+
+
 
     <script src="https://kit.fontawesome.com/19ef3993ad.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -62,7 +63,8 @@
 
 
 
-
+    <!-- Side Nav W3 Schools -->
+    <script src="{% static 'js/main.js' %}"></script>
 
     <!--Lightbox2 loaded after jQuery-->
     <script src="{% static 'js/lightbox.min.js' %}"></script>
@@ -102,6 +104,23 @@
 
     </header>
 
+
+
+    <!-- Side bar -->
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+        <h2>Collapsed Sidebar</h2>
+        <p>Content...</p>
+    </div>
 
 
 
