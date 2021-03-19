@@ -50,7 +50,8 @@
 
     {% block corejs %}
 
-
+    <!-- Side Nav implementaiton from https://www.youtube.com/watch?v=8tSbE3X29kQ -->
+    <script src="{% static 'js/main.js' %}"></script>
 
     <script src="https://kit.fontawesome.com/19ef3993ad.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -61,11 +62,6 @@
 
 
 
-
-
-
-    <!-- Side Nav implementaiton from https://www.youtube.com/watch?v=8tSbE3X29kQ -->
-    <script src="{% static 'js/main.js' %}"></script>
 
 
     <!--Lightbox2 loaded after jQuery-->
@@ -84,6 +80,11 @@
 
     <!-- Stripe Javascript-->
     <script src="https://js.stripe.com/v3"></script>
+
+
+
+
+
     {% endblock %}
 
     {% block extra_js %}
@@ -93,51 +94,53 @@
     <title>Fytletic {% block extra_title %} {% endblock %}</title>
 </head>
 
-<header>
+<body>
 
-    {% include 'includes/nav.html' %}
+    <header>
 
-</header>
+        {% include 'includes/nav.html' %}
+
+    </header>
 
 
 
 
 
-{% if messages %}
-<div class="message-container">
-    {% for message in messages %}
-    {% with message.level as level %}
-    {% if level == 40 %}
-    {% include 'includes/toasts/toast_error.html' %}
-    {% elif level == 30 %}
-    {% include 'includes/toasts/toast_warning.html' %}
-    {% elif level == 25 %}
-    {% include 'includes/toasts/toast_success.html' %}
-    {% else %}
-    {% include 'includes/toasts/toast_info.html' %}
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
-    {% endwith %}
-    {% endfor %}
-</div>
-{% endif %}
 
-<!-- block  header -->
-{% block page_header %}
-{% endblock %}
+    <!-- block  header -->
+    {% block page_header %}
+    {% endblock %}
 
-<!-- Main block content-->
+    <!-- Main block content-->
 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
 
-{% include 'includes/footer.html' %}
-<!-- post load custom JS-->
-{% block postloadjs %}
-<script type="text/javascript">
-    $('.toast').toast('show');
-</script>
-{% endblock %}
+    {% include 'includes/footer.html' %}
+    <!-- post load custom JS-->
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+    {% endblock %}
 
 </body>
 

@@ -1,3 +1,5 @@
+console.log('is this loading')
+
 /*===== EXPANDER MENU  =====*/
 const showMenu = (toggleId, navbarId, bodyId) => {
     const toggle = document.getElementById(toggleId),
@@ -36,3 +38,6 @@ for (i = 0; i < linkCollapse.length; i++) {
         rotate.classList.toggle('rotate')
     })
 }
+
+// alert('test!')
+
