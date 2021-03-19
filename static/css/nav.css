@@ -50,6 +50,12 @@
   background-color: white;
 }
 
+.logout {
+    position: absolute;
+    bottom: 0;
+}
+
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s; /* If you want a transition effect */
@@ -61,3 +67,6 @@
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
+
+ 
+
