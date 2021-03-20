@@ -129,9 +129,6 @@ The web application will be entirely online and is concerned with real-life prof
 In this case FYTLETIC - Professional Fight Network.
 
 
-**Branding:** 
-
-
 **Branding:**
 * I own the domain name https://fytletic.com and my business name follows suit with the strapline and business idea name. Fytletic is a play on two words , Fighting and Athletic. I beleive Fytletic is an easily rememberable name which translates well to a brand name.
 
