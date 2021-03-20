@@ -1,6 +1,6 @@
 # **Milestone Project 4**  - Full Stack. 
 
-## 🎵 **Fytletic - Fighter Networking Solution**
+## **Fytletic - Fighter Networking Solution**
 
 ![Ftyletic logo and strap line ](static/img/responsive.png)
 
@@ -8,6 +8,21 @@
 ![user gif](link)
 
 Fytletic is currently deployed and can be visited directly at Heroku **[Fytletic  ](https://fytletic.herokuapp.com/)**
+
+
+
+###  **For testing the following login and test card credentials are valid:**
+
+
+**Member Login**
+- Username: fytletic_test
+- Email: test@fytletic.com
+- Password: fyt_001
+
+**Card payments**
+- Card number: 4242 4242 4242 4242
+- Zip & CCV: any integer values are valid
+
 
 
 --
@@ -145,11 +160,16 @@ After some developement, i have found that the best option for the logo is to us
 
 *	Develop a professional colour scheme – check out competitors in not only UFC but other athletic based business websites. Use consistently throughout the site. For this colour scheme, I have gone with a dark blue and greys signifying trust, honesty and dependability, therefore helping to build customer and userbase loyalty, i also feel like i wanted the site to come across as a professional body. 
 
-* I have also researched colour palettes and other brands before making any decisions on my final approach you can find that here: 
 
+- After researching other fitness and fighting related sites combined with reading this medium article [How to use color Psychology ](https://medium.com/@jelly.shah/how-to-use-color-psychology-to-create-a-perfect-fitness-website-7e9f200c7f16), I developed the colour pallete below  using [Adobe Colour Pallete](https://color.adobe.com/create). 
 
-* **[PDF- Colour Pallete research.](LINK):**
+* I have also researched colour palettes and other brands before making any decisions on my final approach you can find  the extra infomation on that research here: 
 
+* **[PDF- Colour Pallete research.](/media/fytletic_research.pdf):**
+
+**Final Colour Pallete**
+
+![Colour Pallete ](media/colour.png)
 
 *	Choose a font type for the project which reflects what we are trying to achieve – research other platforms and use similar fonts.  “Montserrat”  will be used consistently throughout this site. The logo and business name  will employ ‘Montserrat font’ consistently. Again I have used this method from my previous milestone projects as I feel in my portfolio I wish to create a style for myself, following on from similar design and practices.
 
@@ -255,4 +275,87 @@ Thus I will develop the application to allow users to register and create their 
 ___
 ### **What users and stakeholders - Say they need**
 **User Stories**
+
+
+* Speaking to several professional and unprofessional fighters from a number of disciplines, I concluded that they want somewhere which provides the correct tools such as their own personal branded page to display their fighter stats and data, not only do they want this for their own record keeping, but they feel it would be a great tool to expand their network and gain exposure, an online fighters Cv as it were, they also would like to create their own blogs and news, which could then be associated to their own public channel. 
+
+* Again this helps with their self promotion and ability to gain better exposure in order to promote themselves within the fight world as this is a crucial step in helping them progress with their career endevours. 
+
+* The user visiting this type of website wants a professional website easy to navigate and also read profiles of upto date and relevant content, for in this instance - Other like for like fighters or gyms which suit their fighting expertise. 
+
+
+* They need to be able to to search for these gyms and fighters the user can increase their network and make connections which would have previously not been available to them. 
+
+* Not only that but if the user wishes to use the site to publish their own news reports they will also require a site that will allow full CRUD functionality, simplistic to use and allow their content to be displayed in an easy to read and eye inviting manner. 
+
+* They need to be able to share their work across platforms. 
+
+
+### **What users and stakeholders - Actually need**
+They need a clean and tidy designed website which is mobile responsive, highlighting the latest fighters, gyms and up to date news and information. A button from the front page known as a CTA will take them straight to the latest updates for the site, this was a primary reason for including entries in the database models such as profile CREATED on, so this is possible from the beginning of production.
+
+* As a user/publisher on the site, they require ease of use with full CRUD functionality, to publish amend or even delete their fighter profile stats and associated information. 
+
+* They will also need a means of sharing said content with others on their social networks or to potential sponsors. 
+
+### **What users and stakeholders - Don't know they need.**
+
+* As the site owner, they will want to be able to monitor and update the site, I have initially started this process by creating an admin user who can create new entries for all applications in a customised and ordered backend admin area, this can be found by logging in as the super user and navigating to the admin panel. 
+
+* As a working business website, we have to abide by GDPR rules, so a pop up advising the client on our privacy and how we use their information would be needed down the production line. This production app will not have this in place but will be if deployed.
+
+* Other desirable features may include, more services for advertisement and online merchandise store with inventory (at current the shop functions as a working shop but doesnt fulfil orders.)
+
+* Social networking feature – not essential but desirable, perhaps a Twitter/Facebook like entity where users can register to the site share their tips and advice, this would allow for content to be shared cross-platform and to other social media accounts, drastically increasing awareness of our web application. Or for people to use the site as a personal fight blog, create friends and discover shared interests. Being able to interact with other users on the site i feel would drastically improve the useablility of the site in general.
+
+* Figher connections and online status - being able to chat and speak with online fighters will create more of a network feel to the site unlike a database of fighters, i feel the two would work well together.
+
+* An iOS and android app – it is true that many users now if these features down the line are implemented that developing an application would be of extreme benefit, it would allow extra monetisation brand awareness and next-level professionalism.
+
+
+## User Stories continued - table ammended from user stories set out in Project ADO 
+
+
+|                   | As a     | I want to...                                              | So that..                                                                                       |
+|--------------------------------|--------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| Viewing and Navigation         |              |                                                                     |                                                                                                      |
+| 1                              | Site Visitor | Discover Fytletic                                   | Learn more about what the website plans to achieve - Fighter and Gym Profiles alongside news and fitness information.                                                |
+| 2                              | Site Visitor | View a list of products                                             | Select a product to view more details                                                                |
+| 3                              | Site Visitor | View a list of Fighters and Gyms                                          | Select a fighter or gym to view more details to learn more about that fighter or gym.                                                           |
+| 4                              | Site Visitor | View a specific category of products using search functionality                              | Quickly find products I’m interested in without having to search through all the available products on the site, this will initially be grouped in to order by price and search by category.
+| 5                              | Site Visitor | View individual product details                                     | Identify the description, price, available sizes, product image, and rating, being able to add them to the basket which keeps a running total of the basket.                           |
+| 6                              | Site Visitor | Access up to date fighter and gym profiles                                    | view the latest and upto date infomation, use Fytletic as a reliable source of fighter stats.                                        |
+| 7                              | Site Visitor | Easily access a contact page or F.A.Q section                                      | Send a message or read already answered questions regarding any queries I have.                                                      |
+| 8                              | Site Visitor | See  ratings on products                 | Be reassured that the product is good                                                      |
+| 9                              | Site Member  |          |                            |
+| 10                             | Site Member  | Access a member only news desk                                                              | Read members only content, to keep uptodate with the latest news fitness advice and infomation all from one account.                                    |
+| Registration and user accounts |              |                                                                     |                                                                                                      |
+| 11                             | Site Visitor | Easily register for an account                                      | Have a personal account and be able to view my main profile, add a public figher or gym profile, so that i can manage my relevant fight data quickly and easily.                                               |
+| 12                             | Site Visitor | Receive an email confirmation after registering                     | Verify that my account registration was successful                                                   |
+| 13                             | Site Member  | Easily login or logout                                              | Access my personal account information, update that infomation and logout securely not only regarding login but adding a query to see if i really want to logout, instead of mistakes.                                                              |
+| 14                             | Site Member  | Easily update my personal details                                   | Update profile details as expected, add a fighter profile or gym detail.                                                                       |
+| 15                             | Site Member  | Easily recover my password in case I forget it                      | Recover access to my account and prevent others from claiming my account.                                                                        |
+| 16                             | Site Member  | Have a personalised user profile add a public fighter profile (if a fighter)                                   | View my personal order confirmations, order history and save payment details for future purchases such as membership fees and to link this to my fighter profile where i can display public infomation about myself if i am a fighter professional.|
+| 17                             | Site Member  | Enable my details to be prefilled                                   | Save time entering my details when making future purchases                                          |
+| Sorting and Searching          |              |                                                                     |                                                                                                      |
+| 18                             | Site Visitor | Sort and filter the list of available products and memberships (in production)                | Find the products suitable to which i require.                                                            |
+| 19                             | Site Visitor | Search the site by keywords                                         | Easily find what I am looking for using keyword queries, such as 'protein powder'                                                                   |
+| 20                             | Site Visitor | Easily see what I’ve searched for and the number of results         | Quickly decide whether the product is available                                  |                                                                                |
+| Purchasing and checkout        |              |                                                                     |                                                                                                      |
+| 21                             | Site Visitor | Easily select the size and quantity of a product with sizes, for example t-shirts and ensure that its available before adding to basket  | buy the correct products the first time, and not have to send an incorrect sized product back.                              |
+| 22                             | Site Visitor | View items in my bag to be purchased                                | Identify the total cost of my purchase and all items to be ordered.                                  |
+| 23                             | Site Visitor | Adjust the quantity of individual items in my bag                   | Easily make changes to my purchase before checkout                                                   |
+| 24                             | Site Visitor | Easily enter my payment information and feel my personal and payment information is safe and secure                                  | Check out with the correct relevant card and billing  needed to make a purchase, processed through a third party payment gateway called Stripe.                   
+| 25                             | Site Visitor | View an order confirmation after I checkout                           | Verify that the order has been accepted and is correct                                                            |
+| 26                             | Site Visitor | Receive an email confirmation after checking out                    | Recieve an email confirmation of what I’ve purchased and any other relevant infomation which may be needed for future reference.                                         |
+| Admin and Store Management     |              |                                                                     |                                                                                                      |
+| 27                             | Site Owner   | Add a product                                                      | Add new products to the store                                                                                  |
+| 28                             | Site Owner   | Edit/Update a product                                              | Change product prices, descriptions, images, and any other details which are relevant.                             |
+| 29                             | Site Owner   | Delete a product/programme                                                    | Remove items that are no longer available                                                 |
+| 30                             | Site Owner   | Add a blog                                                          | Add new blogs to share with site members                                                        |
+| 31                             | Site Owner   | Links to Social Media                                | To connect with our clients  using already established social networking sites                                                       |
+
+| 32                             | Site Owner   | Develop the site in to a networking site                                 | To allow users of the site to gain ever increasing exposure to their profiles, giving them a chance of making a career out of their ability. |
+
+| 33                             | Site Owner   | Provide support for fighers and gyms to grow the network                                 | To encourage on boarding of investors and sponsorship. |
 
