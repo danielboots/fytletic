@@ -2,7 +2,7 @@
 
 ## 🎵 **Fytletic - Fighter Networking Solution**
 
-![Apollo logo and strap line ](static/img/responsive.png)
+![Ftyletic logo and strap line ](static/img/responsive.png)
 
 ![index gif](Link)
 ![user gif](link)
