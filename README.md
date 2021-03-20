@@ -172,5 +172,90 @@ After some developement, i have found that the best option for the logo is to us
 | **_How do I contact someone?_**  | Footer provides direct contact details for the webmaster. Similarly, a web form can be accessed from a menu item called 'Contact'|
 
 
+**What is culturally appropriate**
 
+As this is primarlily a fighter and gym network  I have found that the brand name stands for a lot right from the offset. Our website is only concerned with displaying information within the fight (for example UFC / Boxing) industry, and the fitness industry. We will not be extending our reach in to other similar industries for example cooking (which may be related to nutrition and fitness)
+
+
+We keep the site strictly about professional organised and amateur fighting  and focus solely on providing the users with the ability to create their professional online CVS , edit and delete them. They will also be able to build up their name as an athlete and fighter. 
+By giving the user the ability to update their own profiles, it is encouraging to the user to frequent the site and keep the data being stored about them up to date, including contact details, fight statistics training regimes etc. So again allowing us to create a self building site of relevant user generated content. Not only that but by building on a Django base alongside python we can ensure that we can consistently keep adding improvments and features which users may want and request, for example a follow or messaging service, this allowing users to contact each other and stay on the platform.
+
+I have also developed the site to be mobile-first as our demographic for clients looking for our services seems to be in the male category and age range of 16-34, whereby we know its highly likely that users have access to a smartphone and will be accessing our website from mobile.
+
+
+
+**Tracking and cataloguing content in an intuitive way.**
+
+Regarding the display of the content I have opted for a typical section style layout to the site, this meaning I have a hero section and subsequent blocks of content each separated by alternating background colours, an off white and white to ensure content separation is apparent. 
+
+The use of Djngo /Python for loops will allow the display of user generated content in a card, each iteration will generate a new card with the subsequent fighter name image and more button. In time I may break these loops down to fighter Discipline specific headings, for example Boxing, UFC  and even make fighters and gyms searchable by these extended options, however as the site is in its infancy I have opted to generate all reviews in cards utilising the bootstrap grid system displaying no more than three cards per row, time permitting i may employ a pagination system, instead of generating long loops of data.
+
+Typically in modern web design, a hero section is employed so I have taken advantage of that with a centred H1 and H2 Heading for the site title and strapline, using a more bolded font to make an impact from the first-page load. This screams to the user, this is the site title and this is what you can do here.
+
+I also used a background image which is relevant (in this case a glove on rope) to display the field the website is addressing (fighting /combat of some description). One concern is that on fighter profiles, if a user uploads a  bright image it may distract  from the Hero text, so a background overlay maybe used in order to fix this. At present i havent employed this on user generated data however with keeping to the branding pallete of the site i have employed an overlay system on the main navigation hero sections.  Not only that but the background overlay is the main colour in the colour palette chosen again adding to our branding and overall UX experience for the potential client.
+
+**What is the importance of this.**
+
+* From the first time the user visits the website we want to display a level of professionalism and ease of use, not only that our straplines, branding and colour palettes are correct but our content is distraction-free and displayed easily enough that a user can learn about our website and feel at ease very quickly. 
+
+* With minimal distractions and a simple interface, it will become easy for the user to quickly learn the site and sign up for an account and start creating custom content for the site. 
+
+**Why would a user want this.**
+
+ Its important to quickly allow the user to learn the site sign up and create content with little distractions as possible. I have deliberately simplified the application to allow for this. After re watching the sections on development of software i have become well aware of the YAGNI  and KISS principles, this i have designed the site to be deliberatly simple and learned easily by any kind of user.  Typically a user from visiting the site can sign up and create their fighter profile in less than 5 steps. 
+
+1. Visit the application 
+2. Click Register
+3. Register account.
+4. Click claim fighter profile. / gym profile (limited to one fighter and gym profile per registered user.)
+5. View Published profile. 
+
+This ease of use and free registration will encourage return users to the platform and again allow users to grow through external content creation. 
+
+
+**What creates a good User Experience concerning this online Fighter and gym profile business.**
+
+*	Strong branding – colour palette – typical industry typography.
+*	Displaying relevant content. - From only hosting/allowing correct and verified data from users and displaying content which is of value to readers.
+*	Social proof – adding social sharing to all fight and gym submissions allows for users to share their profiles and in return increases traffic to our web application.
+*   Overall ease of use, as highlighted above, the 5 steps from learning the site to publishing is imperative. I have used previous sites which require far more effort and are often more complicated to learn. Simplicity is key.
+
+
+**What does the user/client expect?**
+
+*	Strong Branding- Does this website come across as an authority in its field. I feel this is true by the use of correctly structured content, branding font type and also consistency throughout.
+*	Pricing – This is completely free, we may in our terms allow free use to contact users at a later date to offer other premium services. 
+*	Ease of use? - 5 steps from initial visit to signing up and publishing the first review.
+* Support - this is currently only available from a contact form, however as the site is simple and efficient I believe this is a minor addition to the free service provided. 
+
+
+
+**Prioritisation – To launch a Minimal Viable Product.**
+
+We can address which features should be prioritised primarily by developing a map of importance and viability/ feasibility.
+For this project, we will be focusing on UX efforts of higher importance and developing features of lower importance and viability/feasibility further in the timeline of this project.
+
+
+| Opportunity/Problem       | Importance         | Viability  |
+| ------------- |:-------------:| -----:|
+| **_A.     Allow users to register and create publishing account_**       | 5 | 5 |
+| **_B.     Display each review on their own page_**      | 5      |   5 |
+| **_C.     develop a follow /twitter type system for users to follow each other_** | 3      |    2 |
+| **_D.     _** | 2      |    3 |
+| **_E.     Group fight profiles to categories_** | 3      |    2 |
+
+
+**Graph of importance to launch our MVP from the previous table.**
+
+![Fytletic MVP prioritisation ](###)
+
+
+As referencing the above prioritisation matrix my UX efforts will be hence focused on areas A and B which will satisfy the CRUD app criteria of the grading process. 
+Thus I will develop the application to allow users to register and create their accounts whilst also displaying their profiles for fighters and gyms. 
+
+
+## 🧰 **Scope Plane - requirements and functional specifcation**
+___
+### **What users and stakeholders - Say they need**
+**User Stories**
 
