@@ -161,15 +161,27 @@ After some developement, i have found that the best option for the logo is to us
 *	Develop a professional colour scheme – check out competitors in not only UFC but other athletic based business websites. Use consistently throughout the site. For this colour scheme, I have gone with a dark blue and greys signifying trust, honesty and dependability, therefore helping to build customer and userbase loyalty, i also feel like i wanted the site to come across as a professional body. 
 
 
-- After researching other fitness and fighting related sites combined with reading this medium article [How to use color Psychology ](https://medium.com/@jelly.shah/how-to-use-color-psychology-to-create-a-perfect-fitness-website-7e9f200c7f16), I developed the colour pallete below  using [Adobe Colour Pallete](https://color.adobe.com/create). 
+- After researching other fitness and fighting related sites combined with reading this medium article [How to use color Psychology ](https://medium.com/@jelly.shah/how-to-use-color-psychology-to-create-a-perfect-fitness-website-7e9f200c7f16), 
+
+* [Wikipedia - Colour Psychology](https://en.wikipedia.org/wiki/Color_psychology)
+
+
+and this wikipedia article  I developed the colour pallete below  using [Adobe Colour Pallete](https://color.adobe.com/create). 
 
 * I have also researched colour palettes and other brands before making any decisions on my final approach you can find  the extra infomation on that research here: 
 
-* **[PDF- Colour Pallete research.](/media/fytletic_research.pdf):**
+* **[PDF- Colour Pallete research.](../media/fytletic_research.pdf):**
 
 **Final Colour Pallete**
 
+* Blue - Corporate, high quality 
+* Purple -  Authority, Sophistication, power
+* Grey  - Conventional, dependable and practical
+
 ![Colour Pallete ](media/colour.png)
+
+
+
 
 *	Choose a font type for the project which reflects what we are trying to achieve – research other platforms and use similar fonts.  “Montserrat”  will be used consistently throughout this site. The logo and business name  will employ ‘Montserrat font’ consistently. Again I have used this method from my previous milestone projects as I feel in my portfolio I wish to create a style for myself, following on from similar design and practices.
 
@@ -394,4 +406,161 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 ## 🏗️ **Structure: How we present information:**
 ___
 
-The web application will consist of typical navigation and structure which will conform to web best practices. By this, we would expect the navigation menu items to be located to the top right-hand corner of the web app. To the left, we will employ a Navigation bar logo which doubles as the main Home or index.html link.
+The web application will consist of typical navigation and structure which will conform to web best practices. By this, we would expect the navigation menu items to be located to the top right-hand corner of the web app. To the left, we will employ a Navigation bar logo which doubles as the main Home or index.html link. If time allows i would like to experiment with a side bar as using sites which have more admin style functionality i beleive a sidebar toggler is a good choice in order to group and organise an extensive menu without over powering the user. 
+
+Regarding site structure and page content, the main static pages will consist of a Home page, contact and about pages, alongside an F.A.Q section. 
+The web app will also have a shop with product pages using djangos templating system. A brief overview of the main features and their representative pages are covered below.
+
+### **Static pages:** 
+* Home / About / Contact / FAQ 
+
+### **App: Shop** 
+*  Product  page
+*  Product detail page
+*  Checkout / Success  (Logged in only)
+*  Account administration (Logged in only)
+
+### **App: Fytnet** 
+*  Fighter index page
+*  Fighter Profile page
+*  Fighter Profile Form page (for front end admin) (Logged in only)
+
+### **App: Gym** 
+*  Gym index page
+*  Gym Profile page
+*  Gym Profile Form page (for front end admin) (Logged in only)
+
+
+### **App: News Desk** 
+*  News Desk index page
+*  News Desk Article page (Logged in only)
+*  News Desk Article Form page (for front end admin) (Logged in only)
+
+
+### **Misc:** 
+*  Register page
+*  Login Page 
+
+
+
+
+## **Menu Structure**
+
+### **LOGGED OUT USERS:** 
+
+#### **HOME---FIGHTERS---GYMS---SHOP---NEWSDESK---LOGIN---REGISTER :** 
+* For logged-out users, the user will only have access to options which encourage registering to the site. A login option or a registration option alongside basic static pages for example the about and contact pages.
+
+
+
+
+#### **LOGGED IN USERS:** 
+### **HOME---ABOUT---CONTACT---SHOP---ADD FIGHTER / GYM--- NEWSDESK :** 
+* If the user is logged in, a more extensive list of menu items are available, for instance, the ability to add a review will allow the user to visit the add review page and add a review. 
+* An add fighter page will allow the user to manage their fighter profile update edit and delete, each with buttons for CRUD functionality.
+* Admin users at this current time will manage the site administration from the django admin area to which a menu item will be available, to create front end forms and pages when Django has a built in admin area seems unncessessary.
+* Finally logout for users to end their session and securely log out from the application, removing the session cookie. 
+
+
+### **FOOTER - UNIVERSAL / LOGGED IN AND OUT:**
+* ABOUT---CONTACT---F.A.Q
+
+
+
+### **Information on structure regarding page layout and design:**
+ The general structure of pages will consist of a navbar, a hero section utilising the django templating system to provide more information on the page the user is at, then to display relative content to that page, structured using the projects fonts, font sizing and aforementioned colour palette.
+
+* As discussed earlier I have opted for a content block approach which will allow me to display content in a clean and structured manner. These two points allow the user to learn the layout and feel of the website quickly. For Django templating, more specifically the display of content such as fighters and gyms i will utilise the Bootstrap card elements and customise them to suit the structure and layout of the app. 
+
+* Each page will have working navigation whereby the Nav Logo  (text or image) will return the user to the home or landing page.
+
+
+* The footer/ Copyright consists of two sections positioned centraly and away from the edges of the site so that any information can be viewed without scanning from left to right on larger screen resolutions. I discovered this as I work on a 27inch iMac and having to content full width at this size is bad for UX in my personal experience.
+Regarding the footer, section one or block one will have an information box
+section the second will offer my contact details and any further links to static pages on the site, for example the About, contact and F.A.Q sections.
+
+* Templated pages such as the gym and fighter detail pages will be laid out in two a two col structure on lager screens, displaying the main content in blocks utilising Bootstraps Material style (built using MDBootstrap container classes to add depth and a visually pleasing experience, compared with simple containers with no border etc.)
+
+
+
+### **SCHEMA - DATA & MVC**
+
+* Choosing a data structure for this project has been considered, and I have opted to use the POSTGRES relational database with a data model which is well organised and matches the schematics of the project. 
+* As the project is to be deployed using Heroku i have used the bundled SQLite in developement and Heroku Postrgres for production. 
+
+* Reasoning for using relational databases in this project was fundamentally due to allow multiple apps and tables to be linked with one another and data connected through the use of a ForeignKey. There are multitude of relationships employed in this app, including  one-to-one (example includes: User linked to fighter and gym) and One to many (example includes: One Gym being linked to many Fighters, thus the app feature, Join fightcamp and Fighter trains at: X gym.)
+
+
+* All Data resides in POSTGRES and each app has the appropriate models developed to ensure that all data needed for the user is covered. 
+
+* The below diagrams display the tables and the structure of my database as pre-planned when addressing MVC or regarding Django MVT framework conventions. 
+
+
+### **Models**  -- Diagram developed from using the online tool, DBDiagram to show the relationships between my models. 
+
+
+# INSERT DB diagram HERE 
+
+* Fighter model: Includes all fighter data and is linked to the user profile.
+* Gym model: Includes all fighter data and is linked to the user profile.
+* Products model: Includes all products in the shop.
+* Profile model: takes the user as the primary key here and links the data across many of the other tables so that a registered users data is accessible across the tables and to their account. 
+
+
+
+## ✏️ **Skeleton Plane – Interface design, navigation design and giving form to function:**
+___
+
+As with every project which is to be taken into production it was essential to firstly wireframe the project. This would allow me to test out different ideas layouts, navigation and presentation which is expected when visiting this type of website. I developed the wireframes using the Balsamiq software which allowed me to produce low fidelity mockups of the finished web application without the need for coding it first. This saved immensely on production time and allowed me to have a 'map' of how to finally code the app.
+
+_**Please note – these wireframes may differ slightly from the result.**_
+
+___
+
+
+#### **Wireframes.**
+ # Insert Wireframes
+
+
+
+
+### **Skeleton plane cont:**
+
+In this project, we are focusing on data presented in a template using Django  and the input of that data provided by registered users of the application.
+
+
+The data presented should be done so in a logical manner with ease on the eye and interesting to the end-user, it should also be simple to read and only present important data as to alleviate cognitive overload from the end-user. This is achieved by presenting only the important pieces of information from the fighter profile or gym profile as needed, in this case i will use the Gym scheme as an example: 
+
+* Gym Name - using a secondary font
+* Gym Profile image - As a heading / hero image.
+* Bio - in bold part of  the first info block displayed to the user
+
+* Gallery of images - utilising the lightbox plugin and employing an if else statement from Djangos templating to check for images and prevent blank data.
+
+* Location and main infomation  - Displayed as a block of content grouped in a conscise way.
+
+* Gym Owner - Displaying an Avatar small image to the right hand side of the page along with text underneath displaying the Gym owner name. 
+* Verification section: Underneath the gym owner i have developed a system for the admin to choose wether a gym is verified or not, this is using a Boolean value in the Model, if True a verified check mark will be displayed alonside text telling the user that the listing of the gym is infact verified by the site administration. Increasing value to the user and the site owner, as this will encourage accurate and uptodate information. 
+* Social network links - Dispalyed using font awesome and branded to the colour pallete as discussed in a previous section. 
+
+* Media - I have added a media section in fhe form of a carousel (OWL) placed at the bottom of the listing, one to end the main content but to also not distract from the main Bio and other more important venue details. It is however still important to place this section as users may want to see video footage of the gym.
+
+
+Navigation has been assembled in order of priority from left to right and all links and internal links are well displayed (many as buttons) and working.
+
+Furthermore, I found no need for pagination at this point to display data and also provided menu items and buttons with relevant font awesome icons to aid in web application learning to the end-user. Data is presented the same throughout the web app alongside colours, fonts and branding all aiming to allow the end-user to learn the web app easily and subsequently enjoy using it.
+
+
+### 🚀 **Surface plane:**
+
+Using all the planes above and the data presentation and all the research carried out I was able to present all of this with my project.
+I hope you enjoy browsing my web app and I look forward to developing it further.
+In ending this UXD analysis and a quote I feel summarises this whole process I will leave you with this.
+
+> “ Good UX smells like value. Ask yourself the question whenever you're building a project, does this smell like value?”
+
+Brian O'Grady - Code Institute
+
+
+## 📦️ **Features:** 
+
