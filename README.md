@@ -564,3 +564,334 @@ Brian O'Grady - Code Institute
 
 ## 📦️ **Features:** 
 
+* The web app is mobile responsive with a collapsible toggler navigation. I used a mobile-first approach to this project ensuring that mobile access was of high importance.
+
+* The Logo position left always takes the user back to the Home page.
+
+* Expected use of font-awesome icons to assist in users learning of the site.
+
+* Use of animation for hero text - minimal use of animation but effective for a pleasurable experience on page load.
+
+* Footer features on Index.html with information section populated with my information. 
+
+
+
+* Gym and Fighter Main pages  utilizes bootstrap cards which display FIghter image and content relevant to the fighter,, encouraging click through from the button below.  This was templated using the Django framework. This allowed the developer to create one template card which was used to create all the data cards for the users, through creating loops for the fighters. In time i will add pagination and sorting of these cards once the site grows in user data.
+
+* A user-friendly interface with easy navigation and learning of the whole application, through minimal design, visuals and information presented in a predictable but expected fashion. 
+Furthermore, all fonts and colour schemes are consistent throughout the application, from login panels to registration, all consistent to create a continuous feel and wholeness to the app. 
+Expected font use and consistency in font sizing and weights allow for an easy reading experience. 
+
+* Buttons are all styled the same and placed strategically to ensure the user has an enjoyable experience using the site. 
+
+* Forms are all styled using MDBOOTSTRAP's form control and also Django Crispy Forms which allows for styling away from the Django default giving a slick and professional look instead of the standard form design. 
+
+* Card use for listing and uniformity. I have used cards concurrently in my projects as I feel they are an exceptional way of containing and managing content to present on the site. 
+
+* Search functionality - was extended to incorporate most iterations or expected search strings and enquiries, so if a user wants to search for products by category or string the search functionality can handle that. 
+
+* Flash messages are employed to allow/alert the user if they have logged in, logged out, submitted added something to the shopping cart etc they will be alerted. 
+
+* User registration with login and log out functionality - I added this functionality to showcase a strategy for encouraging users to return to the site, by having their registration on the site will be more appealing for return visits. 
+
+* CRUD functionality for registered users: Allowing users to fully control the content they submit to the site allows for a return and frequent visits, not only that but it encourages social sharing of their content and to keep the content created up to date with minimal input from the administation. 
+
+* Allowing 3rd party content creation - through user accounts we allow for 3rd party content to be created, not just from the site owner. This will allow for exponential growth to the site, in turn increasing traffic and allowing for better SEO results. 
+
+* Mobile Responsive - This site has been tested to ensure that a mobile-first approach and layout is clean and effective, the delivery of content and readability on smaller devices was paramount. This was achieved by the use of the Bootstrap Grid system and custom CSS media queries allowing for content to be resized on smaller screens and thus utilising optimum screen real estate on smaller devices, all information is grouped and presented expectedly, aiding in ease of 'learning' for new and returning users. 
+
+* Buttons have been used extensively to allow for easy navigation when scrolling, as the navbar isn't sticky and resides at the top of the screen, the use of buttons to return the user to the home sections or read more, edit their fighter or gym profile and delete are all important in ease of use for the end-user. 
+
+* 404.html - This was not needed as part of this project however I did when testing my URLs mistype a few by accident, which returned server errors as expected, so I did a google search on how to implement a 404 page which will allow users to safely navigate back to the home page if they end up on a page which isn't expected or not found. This has been credited below however I feel this was a great addition to the site outside of the scope of the project but adds a lot of value to the site owner and end-user. I added a return to home button and incorporated the Navbar so that even if the user finds themselves lost they can easily return home or use the navigation bar to find what they were looking for, instead of using the back button or having to retype the address and refreshing the application. 
+
+* Search bar with  shop function index search - all search strings were incorporated in to the search functionality including: 
+
+* Youtube Embed - Allows the user to input the youtube embed URL to the database and display the youtube video on their fighter or gym page inside of a carousel. Giving the reader the chance to not only read about the fighter but view their fights or showreel etc.
+
+
+* Django admin - The admin of the site can add edit and delete anything from the administation section, mainly provided by Django, but i have ensured that all features, such as categories, fighters, gyms etc have all been registered to the admin panel using the register admin functions.
+
+![Admin Panel for admin]() 
+
+* Verified Fighter or Gym - I added a custom piece of Python logic that allowed users to apply to the admin for verified status, to achieve this i added a Boolean to the the fighter and gym models this resulted in using an 'if' Python statement to check if the value of the Boolean is True to then display a verified check mark, if the Boolean is False, then nothing is returned or a greyed out check box is displayed, showing the user that this gym or fighter hasnt been through the relevant verification process.
+
+
+# Ensure added to forms.
+
+* Defensive design - After failing to integrate sufficient defensive design into the previous project I made sure that this project was 'Rock Solid' from using fort Knox level SECRET_KEY's to setting required attributes to all form elements and also setting minimum and maximum input values, not only that but for inputs such as artwork and youtube embed I implemented this code ` pattern=" HTTPS://.*" required `  to ensure that only SSL HTTP connections following the correct URL pattern were allowed to be submitted to the database. All other form elements are required and no form can be submitted without adhering to my strict criteria. 
+
+
+### **Further Dev plans**: 
+
+> **Ongoing project notice:** 
+
+* I feel this project satisfies the criteria set out to which I wanted to achieve however I have further plans to branch this project to create a better experience again for users and readers of the site to which may include: 
+
+* Follow fighters - Develop something similar to twitter where users can follow their favourite fighters.
+
+* Top fighters - A ranking system which will aid in getting exposure for fighters and encouraging on boarding of users to the network.
+
+* User discussion forums may be of use so users can interact with one another or similar simple social network type functionality where users can add friends or follow fighters This will create a community. 
+
+
+* Categories - As the site grows there should be a significant extension of the site layout to incorporate growth, this may be grouping fighters by discipline such as by UFC and Boxing and displaying only top or latest Fighters on the home page in a carousel and linking to a separate genre-specific page, this will help in allowing users to find and explore fighters and disciplines they are interested in.
+
+
+* Advertising space - revenue generation or sponsored fighters - allowing fund generation for the site in return for better site positioning or exposure. 
+
+
+
+### **_Code Refactoring_:** 
+___
+In this project I also used the extension to Gitpod called prettier which would format my code, however, I then went through each page and ensured there were no excess lines of whitespace. I also chose a uniformed way of commenting display, whereby I left a line gap either side of my comments so that people can distinguish between code blocks. I feel it was just a neat way to format my comments. 
+
+Furthermore, to this, I used an online tool which formats my HTML and CSS to conform to best practice, so in my final (for deadline purposes) commits I will be formatting the HTML code from the formatter, as credited below.  
+
+## 🧪 **Testing:**
+___
+
+Testing was an integral part of the design and build process, responsiveness is crucial to the success of any online website so several steps were employed to ensure that the site worked across several platforms and browsers.
+Not only responsiveness but positioning, colours, inheritance etc were all factors to be taken into consideration, thus Google Chrome developer tools were used extensively to test all aspects of the site.
+Although Bootstrap is a mobile-first approach I opted to work on a simple desktop version first as I could work backwards.
+I first of all set up a few .css rules for the body section which allowed me to set some global rules such as.
+
+<!-- Code Blocks -->
+``` Css
+  * {
+  box-sizing: border-box;
+}
+```
+Which made sure that I was working with the box model more logical. 
+
+
+## 🧪 **User Experience testing:**
+
+
+As this website is aimed at getting users to interact with the site through viewing fighter or gym profiles or by registering to the site to become a user of the site I had to ensure that in my testing I adequately tested the UX and that it was simple enough for the user to "learn" how to use the site and follow industry standards and user expectations.
+
+This translated into me using a top menu bar with LOGO positioned to the left as expected.
+For this website, I haven't provided an extensive array of menu options, only as much as necessary to accomplish what the site sets out to achieve. So at this point in the web application infancy, I haven't set menu options for the latest additions, top fighters or  top ranked Gyms etc. I am keeping it basic to maintain simplicity.
+
+I used many inbound links and tested all links ensuring that they all work and link correctly, this had to be tested on each review and review page as all data is being populated from the MongoDB database collection. So although I only have an index and view_review.html page as the main two pages for 90% of interaction in the app I had to test each page thoroughly as these pages are generated from user data pulled from PostgreSQL and all buttons and cards dynamically create their pages templated from the Django templating system 
+
+I have logged my testing below to ensure that this web application is 100% functional and complies with defensive design.
+
+
+**User Experience: from top to bottom testing each feature for bugs**
+
+**Home / Navigation.**
+
+* Home Button always returns the user to index.html
+* Logo always returns the user to index.html
+* Profile menu item always directs users to their profile page.
+* Add fighter menu item, always directs users to the add fighter form.
+* Add Gym menu item, always directs users to the add Gym form.
+* Login directs users to the login page
+* Logout logs out users and removes session cookie for the user.
+
+**GYM / cards.**
+
+* Home Button always returns the user to index.html
+
+**GYM / Template.**
+
+* Home Button always returns the user to index.html
+
+**Fytnet/ cards.** 
+
+* Home Button always returns the user to index.html
+
+**Fytnet/ Template.**
+
+* Home Button always returns the user to index.html
+
+
+**Register.**
+
+* Register - Takes two inputs to the form Username and Password both utilising defensive design, required attributes and must conform to ` pattern="^[a-zA-Z0-9]{5,15}$" ` 
+
+* Register - button successfully registers the user to the database. 
+
+* Login - already a member login href, redirects user to the login page.
+
+
+
+
+**Screen size testing**
+
+![Screen Size and Resolution](static/img/screens.png)
+
+As displayed, I used the Responsive Viewer Chrome plugin to test a multitude of the most popular screen sizes available. Which included.
+
+* Medium Screen - 1024x800 
+* Large Screen -  1280x800
+* iPhone 8,7,6S,6 - 375x667
+* iPhone 8 Plus, 7 Plus, 6S plus - 414x736
+* Galaxy S9 Plus, S8 Plus - 412x846
+* Pixel 3, 3 XL - 393x786
+* Galaxy S9, Note 8, S8 - 360x 740
+* iPhone XS, X - 375x812
+* iPhone XR, XS MAX - 414x896
+
+
+___
+
+### **Further Testing:**
+* The use of validation services for **[Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)** and **[HTML Validator](https://validator.w3.org/)** allowed me to modify and fix any errors in my code, 
+
+
+### **Results from CSS and HTML validation:** 
+No errors found I did use the direct input to the CSS validator service as I am using external frameworks such as Bootstrap and MDBOOTSTRAP which did return some warning errors when using the URL input. However, these are out of my control so opting for direct input of my CSS allowed me to test my code only. 
+
+### **CSS Results:** 
+
+* CSS testing found only errors withing the MDBootstrap CSS - all written CSS passed validation, apart from WebKit-animation and WebKit-filter which is an external library I used for  H1 animations and out of my control. 
+
+![CSS testing](Link)
+
+
+### **PEP8 Results:** 
+No problems resulting from PEP8 testing and compliance of app.py file using http://pep8online.com/
+All major tests passed and no errors and indentation all correct.
+
+
+
+### **HTML Results:** 
+All HTML pages validated and passed tests however using Django and the way we extend from the base template we do see expected errors in each page such as Doctype must be declared first and special character escaping, however, this cant be circumvented and I am aware and happy to proceed with this. 
+
+![HTML Validation]()
+
+
+
+### **Other Testing criteria:**
+
+
+* I Used the Gitpod built-in HTML testing.
+
+
+* Emmet is also a great testing tool as if you do get errors or unclosed tags it will suggest to you the closing tag to use. I find this very helpful in bug fixing and testing.
+
+* I have an extension installed called PRETTIER which is referenced in technologies, which I employed for correct 
+
+* I finally used **[GTMETRIX](https://gtmetrix.com/)** which is used to test page website speeds. All testing came back fine apart from image sizes which scored pretty low. Thus I used the free online **[SQUOOSH](https://squoosh.app/)** to reduce massive image sizes up to 80% of their original file size. 
+This is especially important as large image sizes dramatically increase page loading speeds and leads to a bad UX especially on mobile where heavy loading sites can eat data very quickly. 
+
+
+
+___
+### **Testing Issues / known bugs:**
+
+
+
+
+## 🏭️ **Deployment:**
+ ___
+
+This project was developed using the Gitpod IDE which integrates seamlessly with Github, Git pod is a cloud IDE so this allowed me to work at home on my iMac or out on my iMac using only an internet connection and the website **[GITPOD workspaces](https://gitpod.io/workspaces/).** 
+
+The site was developed inside of the Gitpod IDE and connected to my GitHub repository. 
+As sections of the site were completed I ensured that I used version control to maintain copies of my code on the repository. This was achieved via commands on the terminal integrated with Gitpod.
+
+### **Steps in using version control and getting ready for Deployment**
+
+1. `git status` - would give me a list of the files which have been edited and ready for staging.
+1. `git add .` - I used this command to add **all** files to the staging area instead of adding each file individually I used the `.` after `Git add` which allowed all files to be added at once, I found this workflow quicker and easier.
+1. `git commit -m"Message"` - This is the command to commit the changes and the message allowed me to know what or significant changes had been made.
+1. `git push` - Was used to push to the remote repository, in this case, **GitHub**
+
+When working it was also necessary to view the changes to the website, for this I mainly used preview, as the save function allowed instant refreshes and updates reflecting my changes. However for fullscreen testing in a separate tab, I employed the use of the command `python3 manage.py runserver"` to open a port on my local machine, instructions were to make the port public then open in the browser. 
+
+## Deployment to Heroku 
+
+
+This project is connected to Heroku using automatic deployment through connection to my GitHub repository, this was achieved through the following steps. 
+
+1. Firstly and foremost one should create a new repository over at GitHub creating an env.py file to store sensitive data.
+
+2. We must create two initial files in addition to this in our preparation these include the requirements.txt and Procfile, Requirements.txt essentially tells Heroku which dependencies are needed to build the app and the Procfile specifies the commands that are executed by the app on startup. 
+
+3. To create the requirements.txt  and **P**rocfile we will use the commands as follows; 
+
+    • $ pip3 freeze --local > requirements.txt
+    • $ echo web: python app.py > Procfile 
+
+     > **Note:**  Procfile music be capitalized !!!
+
+4. Log in (or Register) to [Heroku](https://www.heroku.com/) and from your dashboard click 'new' > 'create new app'.
+
+
+![new app ](static/img/deploy/heroku/1.png)
+
+* Name your app something unique and select the region closest to you, in my case this is Europe.
+![New app](static/img/deploy/heroku/2.png)
+
+
+5.Connect up Github for automatic deployment - from the Deploy, tab select Github from deployment method.
+
+![Github](static/img/deploy/heroku/3.png)
+
+6. On the Github connect section ensure that your GitHub profile is visible than on the right-hand side box, type in a repo from GitHub to search for. Preferably it is advised that you keep uniformity within Heroku and GitHub so try to keep the same names for each. For this example, I have used Fytletic.
+
+![Repo](static/img/deploy/heroku/4.png)
+
+7. Once connected head over to the settings tab on Heroku and click on the reveal config Vars button as shown below 
+
+![Config vars](static/img/deploy/heroku/5.png)
+
+8. We use config vars to input our sensitive data and store it on Heroku so Heroku has access to these values, as they are the same values contained in the env.py file which isn't uploaded to Github. 
+
+the variables required are as follows (key and value pairs) and are to be input exactly like your env.py file.
+
+
+
+| KEY      | VALUE     | 
+| :------------- | :----------: |  
+|  **AWS_ACCESS_KEY_ID** | USER SPECIFIED   | 
+| **AWS_SECRET_ACCESS_KEY**  | USER SPECIFIED | 
+| **DATABASE_URL**      | USER SPECIFIED| 
+| **EMAIL_HOST_PASS**   | USER SPECIFIED | 
+| **SECRET_KEY**        | USER SPECIFIED | 
+| **STRIPE_PUBLIC_KEY**   | USER SPECIFIED | 
+| **STRIPE_SECRET_KEY**   | USER SPECIFIED | 
+| **STRIPE_WH_SECRET**   | USER SPECIFIED | 
+| **USE_AWS**   | TRUE | 
+|
+
+
+
+9. Once this step has been completed we can then push our requirements and Procfile to GitHub using the commands in the terminal ` git add requirements.txt ` ` git add Procfile ` 
+
+` git commit -m"added requirements and Procfile" ` 
+
+then push to GitHub using `git push` command in the terminal.
+
+10. Head over to the Deployment tab on Hero and under Automatic deploys click Enable Automatic Deploys' and then Deploy Branch See below. 
+
+![Auto Deploy](static/img//deploy/heroku/6.png)
+
+11. Following these steps correctly will allow Heroku to receive code from your Github repo and build the Django app using the correct packages and dependencies. 
+
+12. Once the build has completed you will get a message informing you that ' your app was successfully deployed' and you can then launch your app. 
+
+
+
+
+### **How to clone or run this project natively using HTTPS.**
+If you should require to fork or obtain a copy of this website you can follow these instructions. 
+
+1. Visit my Github repo here **[Fytletic](https://github.com/danielboots/fytletic):**
+
+
+2. Click on the GREEN clone or download button, located at the top right of the page see screenshot below.
+
+   
+     ![Repo Clone step](static/img/deploy/github/4.png)
+
+3. Click on the "clipboard" also located on the right now seen as a dropdown box. You can either click the clipboard or the URL if using URL method remember to right-click highlighted URL and copy.
+4. Open your IDE and open a new terminal window.
+5. Change the directory path to a location in which you want to clone the repo too. 
+6. Paste the Git URL and click ok / Clone etc. 
+
+
+ ### Additional steps required to allow the Django app to work. 
+
