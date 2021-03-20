@@ -313,12 +313,12 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 * An iOS and android app – it is true that many users now if these features down the line are implemented that developing an application would be of extreme benefit, it would allow extra monetisation brand awareness and next-level professionalism.
 
 
-## User Stories continued - table ammended from user stories set out in Project ADO 
+## User Stories continued - table ammended  and added to from user stories set out in **_Project ADO_**
 
 
 |                   | As a     | I want to...                                              | So that..                                                                                       |
 |--------------------------------|--------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| Viewing and Navigation         |              |                                                                     |                                                                                                      |
+| **_Viewing and Navigation_**         |              |                                                                     |                                                                                                      |
 | 1                              | Site Visitor | Discover Fytletic                                   | Learn more about what the website plans to achieve - Fighter and Gym Profiles alongside news and fitness information.                                                |
 | 2                              | Site Visitor | View a list of products                                             | Select a product to view more details                                                                |
 | 3                              | Site Visitor | View a list of Fighters and Gyms                                          | Select a fighter or gym to view more details to learn more about that fighter or gym.                                                           |
@@ -329,7 +329,7 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 | 8                              | Site Visitor | See  ratings on products                 | Be reassured that the product is good                                                      |
 | 9                              | Site Member  |          |                            |
 | 10                             | Site Member  | Access a member only news desk                                                              | Read members only content, to keep uptodate with the latest news fitness advice and infomation all from one account.                                    |
-| Registration and user accounts |              |                                                                     |                                                                                                      |
+| **_Registration and user accounts_** |              |                                                                     |                                                                                                      |
 | 11                             | Site Visitor | Easily register for an account                                      | Have a personal account and be able to view my main profile, add a public figher or gym profile, so that i can manage my relevant fight data quickly and easily.                                               |
 | 12                             | Site Visitor | Receive an email confirmation after registering                     | Verify that my account registration was successful                                                   |
 | 13                             | Site Member  | Easily login or logout                                              | Access my personal account information, update that infomation and logout securely not only regarding login but adding a query to see if i really want to logout, instead of mistakes.                                                              |
@@ -337,18 +337,18 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 | 15                             | Site Member  | Easily recover my password in case I forget it                      | Recover access to my account and prevent others from claiming my account.                                                                        |
 | 16                             | Site Member  | Have a personalised user profile add a public fighter profile (if a fighter)                                   | View my personal order confirmations, order history and save payment details for future purchases such as membership fees and to link this to my fighter profile where i can display public infomation about myself if i am a fighter professional.|
 | 17                             | Site Member  | Enable my details to be prefilled                                   | Save time entering my details when making future purchases                                          |
-| Sorting and Searching          |              |                                                                     |                                                                                                      |
+| **_Sorting and Searching_**          |              |                                                                     |                                                                                                      |
 | 18                             | Site Visitor | Sort and filter the list of available products and memberships (in production)                | Find the products suitable to which i require.                                                            |
 | 19                             | Site Visitor | Search the site by keywords                                         | Easily find what I am looking for using keyword queries, such as 'protein powder'                                                                   |
 | 20                             | Site Visitor | Easily see what I’ve searched for and the number of results         | Quickly decide whether the product is available                                  |                                                                                |
-| Purchasing and checkout        |              |                                                                     |                                                                                                      |
+| **_Purchasing and checkout_**        |              |                                                                     |                                                                                                      |
 | 21                             | Site Visitor | Easily select the size and quantity of a product with sizes, for example t-shirts and ensure that its available before adding to basket  | buy the correct products the first time, and not have to send an incorrect sized product back.                              |
 | 22                             | Site Visitor | View items in my bag to be purchased                                | Identify the total cost of my purchase and all items to be ordered.                                  |
 | 23                             | Site Visitor | Adjust the quantity of individual items in my bag                   | Easily make changes to my purchase before checkout                                                   |
 | 24                             | Site Visitor | Easily enter my payment information and feel my personal and payment information is safe and secure                                  | Check out with the correct relevant card and billing  needed to make a purchase, processed through a third party payment gateway called Stripe.                   
 | 25                             | Site Visitor | View an order confirmation after I checkout                           | Verify that the order has been accepted and is correct                                                            |
 | 26                             | Site Visitor | Receive an email confirmation after checking out                    | Recieve an email confirmation of what I’ve purchased and any other relevant infomation which may be needed for future reference.                                         |
-| Admin and Store Management     |              |                                                                     |                                                                                                      |
+| **_Admin and Store Management_**     |              |                                                                     |                                                                                                      |
 | 27                             | Site Owner   | Add a product                                                      | Add new products to the store                                                                                  |
 | 28                             | Site Owner   | Edit/Update a product                                              | Change product prices, descriptions, images, and any other details which are relevant.                             |
 | 29                             | Site Owner   | Delete a product/programme                                                    | Remove items that are no longer available                                                 |
@@ -359,3 +359,39 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 
 | 33                             | Site Owner   | Provide support for fighers and gyms to grow the network                                 | To encourage on boarding of investors and sponsorship. |
 
+
+
+
+**First-time visitor Goals**
+
+* Allow visitors to learn that the site is a Fighter and Gym Network.
+* Home screen prompting registration if logged out. 
+* See snippets and general rating of latest created or top fighters and Gyms on the home page.
+
+**Frequent visitor Goals**
+
+* Encouragement to register for more functionality, such as adding profile and writing news topics.
+* Read and learn more about the Fighters and gyms on the site.
+* Share these profiles on other social media outlets increasing site and fighter exposure.
+* Publish their fighter news complete with CRUD functionality so the ability to edit and delete if needed (encouraging publication as can be deleted if not confident)
+
+
+**Development Goals**
+
+* Demonstrate a solid foundational knowledge of the Python language and the Django framework.
+* Increase knowledge of Postrgres and also database relationships in general through CRUD dev and Django models. 
+* Learn more indepth about Model View Controller and increase my ability to follow the YAGNI and KISS principals.
+* Build up a portfolio of relevant projects suited to my needs  
+
+**Website owner Goals**
+
+* Encourage site use and exposure from allowing sharing and having a site that is easy to learn and use. Simple and effective interaction. 
+* Fewer steps to publishing as possible vs competitors. 
+* Easy registration to onboard new fighters and gyms, allowing for exponential growth through 3rd party content creation.
+
+
+
+## 🏗️ **Structure: How we present information:**
+___
+
+The web application will consist of typical navigation and structure which will conform to web best practices. By this, we would expect the navigation menu items to be located to the top right-hand corner of the web app. To the left, we will employ a Navigation bar logo which doubles as the main Home or index.html link.
