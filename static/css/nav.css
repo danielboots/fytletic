@@ -70,7 +70,7 @@ nav ul li a {
 
 
 
-/* Dropdown  */
+
 
 
 @media(max-width: 786px) {
@@ -84,6 +84,7 @@ nav ul li a {
       nav ul {
             max-height: 0px;
             background: #000;
+            overflow: hidden;
       }
 
       nav.black ul {
