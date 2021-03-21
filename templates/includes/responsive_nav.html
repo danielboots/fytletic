@@ -1,11 +1,11 @@
 <header>
 
-    <nav>
+    <nav class="navbar-nav ">
         <div class="menu-icon">
             <i class="fa fa-bars fa-2x"></i>
         </div>
         <div class="logo">
-            LOGO
+            <strong> FYT</strong><em>LETIC</em>
         </div>
         <div class="menu">
             <ul>
@@ -14,8 +14,43 @@
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Contact</a></li>
+
+
+                <!--Drop down section-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+                <!-- Shopping bag -->
+
+                <li class="list-inline-item">
+                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        href="{% url 'view_bag' %}">
+                        <div class="text-center">
+
+                            <p class="my-0"> <i class="fas fa-shopping-bag fa-lg"></i>
+                                {% if grand_total %}
+                                ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                £0.00
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+
             </ul>
+
         </div>
     </nav>
 
