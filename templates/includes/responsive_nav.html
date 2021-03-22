@@ -14,9 +14,9 @@
         </div>
         <div class="menu">
             <ul>
-                <li class="hover-nav"><a href="#">Home</a></li>
-                <li class="hover-nav"><a href="#">About</a></li>
-                <li class="hover-nav"><a href="{% url 'news' %}">News Desk</a></li>
+
+                <li><a href="{% url 'fytnet' %}">Fighters</a></li>
+                <li><a href="{% url 'gym' %}">Gyms</a></li>
                 <li class="hover-nav"><a href="{% url 'products' %}">Merch</a></li>
 
 
@@ -24,7 +24,7 @@
                 <li class="nav-item dropdown hover-nav">
                     <a class="dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        User Profile
+                        Account
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -40,9 +40,9 @@
                         <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                         <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                         {% endif %}
-                        <a href="{% url 'news' %}" class="dropdown-item">News</a>
-                        <a href="{% url 'products' %}" class="dropdown-item">FYT Merch</a>
-                        <a class="dropdown-item" href="{% url 'profile' %}">Account</a>
+
+
+
                         <a class="dropdown-item" href="#">Fight Profile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
