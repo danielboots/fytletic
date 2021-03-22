@@ -5,17 +5,27 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
+{% block content %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+<!-- Hero Section-->
+<div class="hero-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="hero-text text-center">
+                <h1 class="display-4 logo-font text-white font-weight-bold">
+                    Checkout
+                </h1>
+
+
+            </div>
+        </div>
     </div>
 </div>
-{% endblock %}
 
-{% block content %}
-<div class="overlay"></div>
+<!-- End Hero Section-->
+
+
+
 <div class="container">
     <div class="row">
         <div class="col">

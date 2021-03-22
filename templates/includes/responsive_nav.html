@@ -11,20 +11,19 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'news' %}">News Desk</a></li>
+                <li><a href="{% url 'products' %}">Merch</a></li>
 
 
                 <!--Drop down section-->
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        User Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}">Account</a>
+                        <a class="dropdown-item" href="#">Fight Profile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>

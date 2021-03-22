@@ -1,16 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+{{% block content %}
+
+<!-- Hero Section-->
+<div class="hero-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="hero-text text-center">
+                <h1 class="display-4 logo-font text-white font-weight-bold">
+                    Product Management: Edit Product
+                </h1>
+
+
+            </div>
+        </div>
     </div>
 </div>
-{% endblock %}
 
-{% block content %}
-<div class="overlay"></div>
+<!-- End Hero Section-->
+
+
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6">
@@ -29,17 +39,17 @@
                 {% for field in form %}
                 {% if field.name != 'image' %}
                 {{ field | as_crispy_field }}
-                {% else %}
-                {{ field }}
-                {% endif %}
-                {% endfor %}
-                <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Update Product</button>
-                </div>
-            </form>
-        </div>
-    </div>
+{% else %}
+{{ field }}
+{% endif %}
+{% endfor %}
+<div class="text-right">
+    <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+    <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+</div>
+</form>
+</div>
+</div>
 </div>
 {% endblock %}
 {% block postloadjs %}
