@@ -121,18 +121,11 @@ background-color: #12192Ccf;
     color: black;
     
 }
-
-
-/* pagination */
-
-.pagination .page-item.active .page-link {
-    color: #fff;
-    background-color: #12192C;
   
 
 /* Verification mark like instagram for verified profiles and gyms */
 
-i.fas.fa-check-circle.blue-tick {
+i.fas.fa-check-circle.blue-tick{
     color: dodgerblue !important;
 }
 
