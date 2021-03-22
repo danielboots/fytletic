@@ -272,6 +272,13 @@ font-family: "Montserrat", sans-serif;
   }
 }
 
+/* Logo */
+
+.logo a {
+    color: white;
+}
+
+
 
 
 /* Carousel */
@@ -556,6 +563,9 @@ input[name='q']::placeholder {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
+
+
 
 /* Product Form */
 

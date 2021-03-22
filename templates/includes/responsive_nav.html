@@ -5,19 +5,24 @@
             <i class="fa fa-bars fa-2x"></i>
         </div>
         <div class="logo">
-            <strong> FYT</strong><em>LETIC</em>
+
+            <a href="{% url 'home' %}" id="home-link">
+                <strong> FYT</strong><em>LETIC</em>
+            </a>
+
+
         </div>
         <div class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="{% url 'news' %}">News Desk</a></li>
-                <li><a href="{% url 'products' %}">Merch</a></li>
+                <li class="hover-nav"><a href="#">Home</a></li>
+                <li class="hover-nav"><a href="#">About</a></li>
+                <li class="hover-nav"><a href="{% url 'news' %}">News Desk</a></li>
+                <li class="hover-nav"><a href="{% url 'products' %}">Merch</a></li>
 
 
                 <!--Drop down section-->
-                <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <li class="nav-item dropdown hover-nav">
+                    <a class="dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         User Profile
                     </a>

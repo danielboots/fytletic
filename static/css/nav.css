@@ -69,8 +69,23 @@ nav ul li a {
 }
 
 
+.text-info {
+ color: white;
+}
+
+a:hover{
+    color: grey;
+}
 
 
+
+.hover-nav {
+  transition: 0.3s;
+}
+.hover-nav:hover {
+  transform: translate(0, -2px);
+  
+}
 
 
 @media(max-width: 786px) {
