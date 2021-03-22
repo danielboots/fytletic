@@ -344,6 +344,12 @@ font-family: "Montserrat", sans-serif;
     margin: 0;
 }
 
+/* pagination */
+
+.pagination .page-item.active .page-link {
+    color: #fff;
+    background-color: #05101f;
+
 
 .btn-black {
     /* Although css is black i updated brand colour to suit new UI*/
