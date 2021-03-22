@@ -98,12 +98,12 @@ a:hover{
 
       nav ul {
             max-height: 0px;
-            background: #000;
+            background: #12192c;
             overflow: hidden;
       }
 
       nav.black ul {
-            background: #000;
+            background: #12192c;   
       }
 
       .showing {
