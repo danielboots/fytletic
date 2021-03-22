@@ -231,6 +231,13 @@
                         <div class="div text-center">
 
                             <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Fighters</a></div>
+
+                        {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_fighter' fighter.id %}">Delete</a>
+                        </small>
+                        {% endif %}
                     </div>
 
                     <!-- Carousel-->
