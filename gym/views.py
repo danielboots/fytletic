@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from .models import Gym
 
 
@@ -6,7 +7,15 @@ def gym(request):
     """ A view to return the main fytnet page. """
     gyms = Gym.objects.all()
 
-    return render(request, "gym/gyms.html", {"gyms": gyms})
+    # addition of pagination - Followed Traversy media Django dev to deployment.
+
+    paginator = Paginator(gyms, 1)
+    page = request.GET.get("page")
+    paged_gyms = paginator.get_page(page)
+
+    context = {"gyms": paged_gyms}
+
+    return render(request, "gym/gyms.html", context)
 
 
 def gym_profile(request, gym_id):

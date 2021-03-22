@@ -58,42 +58,45 @@
         {% endfor %}
         {% endif %}
 
+
         <!-- Pagination -->
-        <div class="row">
-            <div class="col-md-12">
-                {% if fighters.has_other_pages %}
-                <ul class="pagination">
-                    {% if fighters.has_previous %}
-                    <li class="page-item">
-                        <a href="?page={{fighters.previous_page_number}}" class="page-link">&laquo;</a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link">&laquo;</a>
-                    </li>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col my-5">
+                    {% if fighters.has_other_pages %}
+                    <ul class="pagination">
+                        {% if fighters.has_previous %}
+                        <li class="page-item">
+                            <a href="?page={{fighters.previous_page_number}}" class="page-link">&laquo;</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link">&laquo;</a>
+                        </li>
+                        {% endif %}
+                        {% for i in fighters.paginator.page_range %}
+                        {% if fighters.number == i %}
+                        <li class="page-item active">
+                            <a class="page-link">{{i}}</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                            <a href="?page={{i}}" class="page-link">{{i}}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if fighters.has_next %}
+                        <li class="page-item">
+                            <a href="?page={{fighters.next_page_number}}" class="page-link">&raquo;</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link">&raquo;</a>
+                        </li>
+                        {% endif %}
+                    </ul>
                     {% endif %}
-                    {% for i in fighters.paginator.page_range %}
-                    {% if fighters.number == i %}
-                    <li class="page-item active">
-                        <a class="page-link">{{i}}</a>
-                    </li>
-                    {% else %}
-                    <li class="page-item">
-                        <a href="?page={{i}}" class="page-link">{{i}}</a>
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                    {% if fighters.has_next %}
-                    <li class="page-item">
-                        <a href="?page={{fighters.next_page_number}}" class="page-link">&raquo;</a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link">&raquo;</a>
-                    </li>
-                    {% endif %}
-                </ul>
-                {% endif %}
+                </div>
             </div>
         </div>
     </div>
