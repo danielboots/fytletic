@@ -46,7 +46,8 @@
                 <div class="card-body">
 
                     <!-- Title -->
-                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3"> {{ fighter.first_name }}</p>
+                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">
+                        {{ fighter.first_name }}</p>
                     <!-- Country -->
 
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'fytnet_profile' fighter.id %}">View
@@ -57,6 +58,8 @@
         </div>
         {% endfor %}
         {% endif %}
+
+
 
 
         <!-- Pagination -->
