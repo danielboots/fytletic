@@ -812,8 +812,9 @@ This project is connected to Heroku using automatic deployment through connectio
 
 3. To create the requirements.txt  and **P**rocfile we will use the commands as follows; 
 
+## Check this -==========
     • $ pip3 freeze --local > requirements.txt
-    • $ echo web: python app.py > Procfile 
+    • $ echo web: python manage.py > Procfile 
 
      > **Note:**  Procfile music be capitalized !!!
 
@@ -895,3 +896,67 @@ If you should require to fork or obtain a copy of this website you can follow th
 
  ### Additional steps required to allow the Django app to work. 
 
+
+
+
+
+
+
+## 🤝 **Credits Acknowledgements and References.**
+___
+
+### **Content**
+The content for the site was developed by myself from my own experience with the core code for the site being adapted from Project Django, Ado from Code Institute.
+
+
+### **Media - images** 
+Throughout my project, I used various sources for media - 
+The content such as stock images for the website were taken from envato elements to which i have a subscription. 
+
+### **Code Snippets** 
+
+
+* **NavBar** - MDBootstrap -https://mdbootstrap.com/docs/jquery/navigation/navbar/
+
+* **NavBar** - Transparent Sticky  adapted from code here: https://bootsnipp.com/snippets/kl8Q3 / https://www.mockplus.com/blog/post/bootstrap-navbar-template
+
+
+* **Forms** - MDBootstrap - https://mdbootstrap.com/docs/jquery/forms/basic/
+* **Cards** - MDBootstrap - https://mdbootstrap.com/docs/jquery/components/cards/
+
+
+
+### **Tutorials** 
+The initial code for this application was based on  the Django app tutorial from code institute, as part of my full stack web developer course, I could not have achieved this fully functional CRUD application without the extensive and comprehensive guide which I followed and adapted to my own needs. 
+
+
+
+### **Custom Code** 
+
+
+### **Animation Css External Libraries** 
+
+* **Animation Hero text** - Animista library - https://animista.net/play/text/focus-in/text-focus-in
+
+### **Additional** 
+
+* **Code Institute Projects** - Previous projects were referenced when needing to job memory on **HTML** structure or some **css** classes.
+* **[Gitpod Emoji Code 0.9.0](https://github.com/idleberg/vscode-emoji-code#readme):** - Allows emoji use in markdown. 
+* **[FavIcon- Instructions](https://www.youtube.com/watch?v=pA8103S-yqk):** - Allowed me to add a FavIcon to my site.
+* **[FavIcon- Converter](https://www.icoconverter.com/):** - Allowed me to Convert my 16x16px photoshop image to a .ico file.
+
+
+### **Thanks** 
+
+I would like to thank my mentor for this project Reuben who has helped me with the initial planning, the custom models including the Gym and Fighter network, his knowledge and support have been crucial in me completing this project. 
+
+Id like to thank my fiance once again who has let me stay up way too long every night the past month so i could hit the deadline, although ive been up with my daughter in the night too! Im ready for a small rest! But again my daughter and my son who are a massive part of my motivation for completing this course, this project is for you all! 
+
+To anyone else, you know who you are. 
+
+
+### **Contact:**
+
+> If you have enjoyed using this project or wish to connect with me my direct email is: 
+**_dan@fytletic.com_**
+Thanks for passing by! 
