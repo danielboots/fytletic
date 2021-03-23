@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section-->
+<div class="hero-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="hero-text text-center">
+                <h1 class="display-4 logo-font text-white font-weight-bold">
+                    FAQ.
+                </h1>
+                <p><em>Frequently Asked Questions.</em></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Hero Section-->
+
+
+<div class="container my-5 py-5 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section>
+
+        <h6 class="font-weight-normal text-uppercase font-small grey-text mb-4 text-center">FAQ</h6>
+        <!-- Section heading -->
+        <h3 class="font-weight-bold black-text mb-4 pb-2 text-center">Frequently Asked Questions</h3>
+        <hr class="w-header">
+        <!-- Section description -->
+        <p class="lead text-muted mx-auto mt-4 pt-2 mb-5 text-center">Got a question? We've got answers. If you have
+            some other questions, contact us directly.</p>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-10 mx-auto mb-5">
+
+                <!--Accordion wrapper-->
+                <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                    <!-- Accordion card -->
+                    <div class="card border-top border-bottom-0 border-left border-right border-light">
+
+                        <!-- Card header -->
+                        <div class="card-header border-bottom border-light" role="tab" id="headingOne1">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                aria-expanded="true" aria-controls="collapseOne1">
+                                <h5 class="black-text font-weight-normal mb-0">
+                                    What is Fytletic? <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+
+                        <!-- Card body -->
+                        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                            data-parent="#accordionEx">
+                            <div class="card-body">
+                                Fytletic is the worlds main database for fighters and gyms.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Accordion card -->
+
+                    <!-- Accordion card -->
+                    <div class="card border-bottom-0 border-left border-right border-light">
+
+                        <!-- Card header -->
+                        <div class="card-header border-bottom border-light" role="tab" id="headingTwo2">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+                                aria-expanded="false" aria-controls="collapseTwo2">
+                                <h5 class="black-text font-weight-normal mb-0">
+                                    How do i join? <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+
+                        <!-- Card body -->
+                        <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                            data-parent="#accordionEx">
+                            <div class="card-body">
+                                If you are a fighter or a gym owner, membership is completely free, all you have to do
+                                is register for an account and claim your profile.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Accordion card -->
+
+                    <!-- Accordion card -->
+                    <div class="card border-bottom-0 border-left border-right border-light">
+
+                        <!-- Card header -->
+                        <div class="card-header border-bottom border-light" role="tab" id="headingThree3">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                                <h5 class="black-text font-weight-normal mb-0">
+                                    Can I delete my profile? <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+
+                        <!-- Card body -->
+                        <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+                            data-parent="#accordionEx">
+                            <div class="card-body">
+                                You can delete your profile at any time, edit or update, just do so from the main panel
+                                in your account.
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Accordion card -->
+
+                    <!-- Accordion card -->
+                    <div class="card border-left border-right border-light">
+
+                        <!-- Card header -->
+                        <div class="card-header border-bottom border-light" role="tab" id="headingThree4">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                href="#collapseThree4" aria-expanded="false" aria-controls="collapseThree4">
+                                <h5 class="black-text font-weight-normal mb-0">
+                                    Can I request refund? <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+
+                        <!-- Card body -->
+                        <div id="collapseThree4" class="collapse" role="tabpanel" aria-labelledby="headingThree4"
+                            data-parent="#accordionEx">
+                            <div class="card-body">
+                                Unfortunately, not. This site is free...
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Accordion card -->
+
+                </div>
+                <!-- Accordion wrapper -->
+
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+<!-- back to top link-->
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
+
+</div>
+
+
+
+{% endblock %}
+
+{% block postloadjs %}
+<!-- block super appends instead of replacing anything in the block.-->
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+
+{% endblock %}

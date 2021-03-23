@@ -17,6 +17,14 @@ def about(request):
     return render(request, "home/about.html")
 
 
+def faq(request):
+    """
+    A view to return the F.A.Q page
+    """
+
+    return render(request, "home/faq.html")
+
+
 def contact(request):
     """
     A view to return the contact page
