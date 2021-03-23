@@ -90,6 +90,8 @@ ___
 
 * **[AM I RESPONSIVE](http://ami.responsivedesign.is/):** - Used to generate the header image displayed at top of Readme.MD file depicting 4 screen displays.
 
+* **[FAVICON](https://favicon.io/):** - Used to generate the favicon
+
 * **[CSS BEAUTIFIER](https://www.freeformatter.com/css-beautifier.html):** - Formats a CSS files with the chosen indentation level for optimal readability. Supports 4 indentation levels: 2 spaces, 3 spaces, 4 spaces and tabs.
 
 * **[PRETTIER](https://prettier.io/):** - Prettier is an opinionated code formatter for HTML CSS JavaScript etc
@@ -929,6 +931,9 @@ The content such as stock images for the website were taken from envato elements
 ### **Tutorials** 
 The initial code for this application was based on  the Django app tutorial from code institute, as part of my full stack web developer course, I could not have achieved this fully functional CRUD application without the extensive and comprehensive guide which I followed and adapted to my own needs. 
 
+* https://djangocentral.com/building-a-blog-application-with-django/ - Aided in building out the Newsdesk.
+
+* https://www.udemy.com/course/python-django-dev-to-deployment - this course has been fantastic and i emplore anyone getting in to Django to check it out, it helped greatly in my knowledge of databases and also the code from this project was adapted to allow me to use pagination with great success. 
 
 
 ### **Custom Code** 
@@ -951,6 +956,8 @@ The initial code for this application was based on  the Django app tutorial from
 I would like to thank my mentor for this project Reuben who has helped me with the initial planning, the custom models including the Gym and Fighter network, his knowledge and support have been crucial in me completing this project. 
 
 Id like to thank my fiance once again who has let me stay up way too long every night the past month so i could hit the deadline, although ive been up with my daughter in the night too! Im ready for a small rest! But again my daughter and my son who are a massive part of my motivation for completing this course, this project is for you all! 
+
+Id like to also thank everyone at Code Institute and the Learning people especially Stuart Crang, who started me on this journey. At the beginning i didnt know what a div was, now ive wrote this web app in Django, he has caused many sleepless nights for me but its all been worth it! 
 
 To anyone else, you know who you are. 
 
