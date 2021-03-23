@@ -1,12 +1,19 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from news.models import Post
 
 # Create your views here.
 
 
 def index(request):
     """ A view to return the index page. """
+    # fix from stackoverflow https://stackoverflow.com/questions/55007405/type-object-book-has-no-attribute-order-by
 
-    return render(request, "home/index.html")
+    posts = Post.objects.order_by("-created_on")[:3]
+
+    context = {"posts": posts}
+
+    return render(request, "home/index.html", context)
 
 
 def about(request):

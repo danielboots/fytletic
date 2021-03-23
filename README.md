@@ -272,7 +272,7 @@ For this project, we will be focusing on UX efforts of higher importance and dev
 | **_A.     Allow users to register and create publishing account_**       | 5 | 5 |
 | **_B.     Display each review on their own page_**      | 5      |   5 |
 | **_C.     develop a follow /twitter type system for users to follow each other_** | 3      |    2 |
-| **_D.     _** | 2      |    3 |
+| **_D. Add top news and fighters to the front page_** | 5      |    5 |
 | **_E.     Group fight profiles to categories_** | 3      |    2 |
 
 

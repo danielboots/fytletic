@@ -60,19 +60,53 @@
 
 <!--  Section-->
 
-<section>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font font font-weight-bold ">news</h2>
+<div class="container mt-5">
 
 
-                <hr class="w-50 mb-1">
+    <!-- Section heading -->
+    <h3 class="font-weight-bold mb-5">Latest News</h3>
+
+    <!-- New card System-->
+    <div class="row">
+
+        {% for post in posts %}
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+            <!-- Card -->
+            <div class="card hoverable">
+
+                <!-- Card image -->
+                <img class="card-img-top" src="{{ post.photo_main.url }}" alt="Card image cap">
+
+                <!-- Card content -->
+                <div class="card-body">
+
+                    <!-- Title -->
+                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ post.title}}</p>
+                    <!-- Text -->
+                    <p class="mb-2">{{ post.intro }}</p>
+                    <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
+                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read more!</a>
+
+                </div>
             </div>
         </div>
+        {% endfor %}
+
     </div>
-</section>
+</div>
+
+<!--Spacer row-->
+<div class="row my-5">
+    <div class="col">
+
+    </div>
+</div>
 
 
+
+<!--Section: Content-->
 
 {% endblock %}
