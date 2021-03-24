@@ -172,7 +172,7 @@ and this wikipedia article  I developed the colour pallete below  using [Adobe C
 
 * I have also researched colour palettes and other brands before making any decisions on my final approach you can find  the extra infomation on that research here: 
 
-* **[PDF- Colour Pallete research.](../media/fytletic_research.pdf):**
+* **[PDF- Colour Pallete research.](media/docs/fytletic_research.pdf):**
 
 **Final Colour Pallete**
 
@@ -270,15 +270,15 @@ For this project, we will be focusing on UX efforts of higher importance and dev
 | Opportunity/Problem       | Importance         | Viability  |
 | ------------- |:-------------:| -----:|
 | **_A.     Allow users to register and create publishing account_**       | 5 | 5 |
-| **_B.     Display each review on their own page_**      | 5      |   5 |
+| **_B.     Display each gym and fighter on their own page_**      | 5      |   4 |
 | **_C.     develop a follow /twitter type system for users to follow each other_** | 3      |    2 |
-| **_D. Add top news and fighters to the front page_** | 5      |    5 |
-| **_E.     Group fight profiles to categories_** | 3      |    2 |
+| **_D. Add latest news and fighters to the front page_** | 4      |    5 |
+| **_E.     Group fight profiles to categories_** | 2      |    2 |
 
 
 **Graph of importance to launch our MVP from the previous table.**
 
-![Fytletic MVP prioritisation ](###)
+![Fytletic MVP prioritisation ](media/pm4.png)
 
 
 As referencing the above prioritisation matrix my UX efforts will be hence focused on areas A and B which will satisfy the CRUD app criteria of the grading process. 
@@ -521,12 +521,19 @@ ___
 
 
 #### **Wireframes.**
- # Insert Wireframes
+
+
+![Fytletic Wireframes ](media/wireframe.jpg)
+
+
+*  For a full pdf of my desktop wireframes for this project click here: **[Wireframes](media/docs/wireframes.pdf):**
+
+ 
 
 
 
 
-### **Skeleton plane cont:**
+### **Skeleton plane continued:**
 
 In this project, we are focusing on data presented in a template using Django  and the input of that data provided by registered users of the application.
 
@@ -568,6 +575,13 @@ Brian O'Grady - Code Institute
 
 * The web app is mobile responsive with a collapsible toggler navigation. I used a mobile-first approach to this project ensuring that mobile access was of high importance.
 
+* Further more i used a transparent sticky nav bar on desktop which adds a pleasing UX for the user, Background overlays used on scroll so menu options are visible throughout site nav.
+
+* Cards used extensively, on the home page, import of models to the home app to allow for rendering of the latest content on the index.html page, ensuring upto date content is always displayed.
+
+* Use of pagination for News, Fighters and Gyms, sorted by creation date, with listings of 6 per page, to ensure that congnitive overload is avoided, users can scroll through listings with ease. 
+
+
 * The Logo position left always takes the user back to the Home page.
 
 * Expected use of font-awesome icons to assist in users learning of the site.
@@ -602,7 +616,7 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 
 * Mobile Responsive - This site has been tested to ensure that a mobile-first approach and layout is clean and effective, the delivery of content and readability on smaller devices was paramount. This was achieved by the use of the Bootstrap Grid system and custom CSS media queries allowing for content to be resized on smaller screens and thus utilising optimum screen real estate on smaller devices, all information is grouped and presented expectedly, aiding in ease of 'learning' for new and returning users. 
 
-* Buttons have been used extensively to allow for easy navigation when scrolling, as the navbar isn't sticky and resides at the top of the screen, the use of buttons to return the user to the home sections or read more, edit their fighter or gym profile and delete are all important in ease of use for the end-user. 
+* Buttons have been used extensively to allow for easy navigation when scrolling.
 
 * 404.html - This was not needed as part of this project however I did when testing my URLs mistype a few by accident, which returned server errors as expected, so I did a google search on how to implement a 404 page which will allow users to safely navigate back to the home page if they end up on a page which isn't expected or not found. This has been credited below however I feel this was a great addition to the site outside of the scope of the project but adds a lot of value to the site owner and end-user. I added a return to home button and incorporated the Navbar so that even if the user finds themselves lost they can easily return home or use the navigation bar to find what they were looking for, instead of using the back button or having to retype the address and refreshing the application. 
 
@@ -610,17 +624,31 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 
 * Youtube Embed - Allows the user to input the youtube embed URL to the database and display the youtube video on their fighter or gym page inside of a carousel. Giving the reader the chance to not only read about the fighter but view their fights or showreel etc.
 
+* External plugins used: for example Lightbox to present image data in a professional mean, also Owl carousel to scroll through extra media data with ease, carousels are useful and i have it set to auto rotate, which allows content hidden to be displayed.
 
-* Django admin - The admin of the site can add edit and delete anything from the administation section, mainly provided by Django, but i have ensured that all features, such as categories, fighters, gyms etc have all been registered to the admin panel using the register admin functions.
 
-![Admin Panel for admin]() 
+* Django admin - The admin of the site can add edit and delete anything from the administation section, mainly provided by Django, but i have ensured that all features, such as categories, fighters, gyms etc have all been registered to the admin panel using the register admin functions. 
+
+* Django admin panel styled to conform to branding colours, for astetic purposes.
+
+
+![Admin Panel for admin](media/djangoadmin.png) 
 
 * Verified Fighter or Gym - I added a custom piece of Python logic that allowed users to apply to the admin for verified status, to achieve this i added a Boolean to the the fighter and gym models this resulted in using an 'if' Python statement to check if the value of the Boolean is True to then display a verified check mark, if the Boolean is False, then nothing is returned or a greyed out check box is displayed, showing the user that this gym or fighter hasnt been through the relevant verification process.
 
 
-# Ensure added to forms.
+* Defensive design - 
+```
+{{ comment_form | crispy }}
+                    {% csrf_token %}
+                 
+```
 
-* Defensive design - After failing to integrate sufficient defensive design into the previous project I made sure that this project was 'Rock Solid' from using fort Knox level SECRET_KEY's to setting required attributes to all form elements and also setting minimum and maximum input values, not only that but for inputs such as artwork and youtube embed I implemented this code ` pattern=" HTTPS://.*" required `  to ensure that only SSL HTTP connections following the correct URL pattern were allowed to be submitted to the database. All other form elements are required and no form can be submitted without adhering to my strict criteria. 
+Crispy forms and Cross site Django tokens used, crispy form for styling, but CSRF allows for added security.
+
+* Toasts and message popups used across the site to give feedback on user actions across the site.
+
+* Font awesome icons used to increase user site learning, used in the footer and headers extensively.
 
 
 ### **Further Dev plans**: 
@@ -631,16 +659,18 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 
 * Follow fighters - Develop something similar to twitter where users can follow their favourite fighters.
 
-* Top fighters - A ranking system which will aid in getting exposure for fighters and encouraging on boarding of users to the network.
+* Top fighters - A ranking system which will aid in getting exposure for fighters and encouraging on boarding of users to the network, this would be accomplished by filtering by and ordering fighter data by rank, and writing logic to allow users to rate the fighter.
 
-* User discussion forums may be of use so users can interact with one another or similar simple social network type functionality where users can add friends or follow fighters This will create a community. 
+* User discussion forums may be of use so users can interact with one another or similar simple social network type functionality where users can add friends or follow fighters This will create a community, at present we have a commenting system but this may be extended. 
 
+* inboxing users, by using a messaging system it will allow users to connect and converse with one another.
 
 * Categories - As the site grows there should be a significant extension of the site layout to incorporate growth, this may be grouping fighters by discipline such as by UFC and Boxing and displaying only top or latest Fighters on the home page in a carousel and linking to a separate genre-specific page, this will help in allowing users to find and explore fighters and disciplines they are interested in.
 
 
 * Advertising space - revenue generation or sponsored fighters - allowing fund generation for the site in return for better site positioning or exposure. 
 
+* Implement the live keys to the merchandise shop to allow for customer purchases.
 
 
 ### **_Code Refactoring_:** 
@@ -666,17 +696,20 @@ I first of all set up a few .css rules for the body section which allowed me to 
 Which made sure that I was working with the box model more logical. 
 
 
+
+
+
 ## 🧪 **User Experience testing:**
 
 
-As this website is aimed at getting users to interact with the site through viewing fighter or gym profiles or by registering to the site to become a user of the site I had to ensure that in my testing I adequately tested the UX and that it was simple enough for the user to "learn" how to use the site and follow industry standards and user expectations.
+* As this website is aimed at getting users to interact with the site through viewing fighter or gym profiles or by registering to the site to become a user of the site I had to ensure that in my testing I adequately tested the UX and that it was simple enough for the user to "learn" how to use the site and follow industry standards and user expectations.
 
-This translated into me using a top menu bar with LOGO positioned to the left as expected.
+* This translated into me using a top menu bar with LOGO positioned to the left as expected.
 For this website, I haven't provided an extensive array of menu options, only as much as necessary to accomplish what the site sets out to achieve. So at this point in the web application infancy, I haven't set menu options for the latest additions, top fighters or  top ranked Gyms etc. I am keeping it basic to maintain simplicity.
 
-I used many inbound links and tested all links ensuring that they all work and link correctly, this had to be tested on each review and review page as all data is being populated from the MongoDB database collection. So although I only have an index and view_review.html page as the main two pages for 90% of interaction in the app I had to test each page thoroughly as these pages are generated from user data pulled from PostgreSQL and all buttons and cards dynamically create their pages templated from the Django templating system 
+* I used many inbound links and tested all links ensuring that they all work and link correctly, this had to be tested on each review and review page as all data is being populated from the MongoDB database collection. So although I only have an index and view_review.html page as the main two pages for 90% of interaction in the app I had to test each page thoroughly as these pages are generated from user data pulled from PostgreSQL and all buttons and cards dynamically create their pages templated from the Django templating system 
 
-I have logged my testing below to ensure that this web application is 100% functional and complies with defensive design.
+* I have logged my testing below to ensure that this web application is 100% functional and complies with defensive design.
 
 
 **User Experience: from top to bottom testing each feature for bugs**
@@ -691,21 +724,98 @@ I have logged my testing below to ensure that this web application is 100% funct
 * Login directs users to the login page
 * Logout logs out users and removes session cookie for the user.
 
+**Merch Shop / cards.**
+* Home Button always returns the user to index.html
+* Clicking product image takes user to product detail. 
+* Clicking on quantity buttons increments and decrements value
+* Add to basket adds product to basket
+* Shopping cart total updated and accessible across the site.
+* Shopping cart takes you to your basket.
+* Checkout takes you to the payment form.
+* Adjust bag returns the user back to the bag page 
+* Checkout takes you to the payment form.
+* Complete order loads the stripe payment gateway for payment handling.
+
+
+
+
+
+
 **GYM / cards.**
 
 * Home Button always returns the user to index.html
+* Card: For loop tempating, displays gyms in a card deck with pagination (correct and working)
+* Card: Img Top displays correct image
+* Card: Gym name displays correctly.
+* Card: Gym location displays correct
+* Card: Gym created on date displays in date format.
+* Card: Button takes user to correct gym listing
+* Card: verification logic displays blue tick for verified gyms and non for non verified gyms.
 
-**GYM / Template.**
+**GYM / Single Template.**
 
 * Home Button always returns the user to index.html
+* Hero Image displays correct image from models.
+* Hero heading displays gym name, animation present and correct.
+* About block retrieves about info from models.
+* GYM image main displays 
+* Lightbox logic loads correct amount (max 6) of images available.
+* Verified gym logic working.
+* location retrieved from database and displayed in the template
+* Address retrieved from database and displayed in the template
+* Specialises in retrieved from database and displayed in the template
+* Call number retrieved from database and displayed in the template
+* Email infomation retrieved from database and displayed in the template
+* social media links retrieved from database and displayed in the template
+* listing detail retrieved from database and displayed in the template
+* Join fight camp button adds user to list of linked users 
+* back to gyms button returns user to gym page. r
+* media, images or video retrieved and displayed in carousel
 
-**Fytnet/ cards.** 
+
+
+**Fytnet / cards.**
 
 * Home Button always returns the user to index.html
+* Card: For loop tempating, displays fighterters in a card deck with pagination (correct and working)
+* Card: Img Top displays correct image
+* Card:fighter name displays correctly.
+* Card:fighter location displays correct
+* Card:fighter created on date displays in date format.
+* Card: Button takes user to correctfighter listing
+* Card: verification logic displays blue tick for verified fighter and non for non verified fighter.
 
-**Fytnet/ Template.**
+*fighter / Single Template.**
 
 * Home Button always returns the user to index.html
+* Hero Image displays correct image from models.
+* Hero heading displays fighter name, animation present and correct.
+* About block retrieves about info from models.
+*fighter image main displays 
+* Lightbox logic loads correct amount (max 6) of images available.
+* Verifiedfighter logic working.
+* location retrieved from database and displayed in the template
+* Address retrieved from database and displayed in the template
+* Specialises in retrieved from database and displayed in the template
+* Call number retrieved from database and displayed in the template
+* Email infomation retrieved from database and displayed in the template
+* social media links retrieved from database and displayed in the template
+* listing detail retrieved from database and displayed in the template
+* Join fight camp button adds user to list of linked users 
+* back to fighter button returns user to gym page. r
+* media, images or video retrieved and displayed in carousel
+
+
+**News Desk / cards.**
+
+* Home Button always returns the user to index.html
+* Card: For loop tempating, displays news article in a card deck with pagination (correct and working)
+* Card: Img Top displays correct image
+* Card: News article name displays correctly.
+* Card: News article location displays correct
+* Card: News article created on date displays in date format.
+* Card: Button takes user to correct article listing
+
 
 
 **Register.**
@@ -932,6 +1042,8 @@ The content such as stock images for the website were taken from envato elements
 The initial code for this application was based on  the Django app tutorial from code institute, as part of my full stack web developer course, I could not have achieved this fully functional CRUD application without the extensive and comprehensive guide which I followed and adapted to my own needs. 
 
 * https://djangocentral.com/building-a-blog-application-with-django/ - Aided in building out the Newsdesk.
+
+* https://djangocentral.com/creating-comments-system-with-django/ - Adapted code for developing the comments system on the news desk.
 
 * https://www.udemy.com/course/python-django-dev-to-deployment - this course has been fantastic and i emplore anyone getting in to Django to check it out, it helped greatly in my knowledge of databases and also the code from this project was adapted to allow me to use pagination with great success. 
 
