@@ -1058,6 +1058,8 @@ The initial code for this application was based on  the Django app tutorial from
 
 * https://www.udemy.com/course/python-django-dev-to-deployment - this course has been fantastic and i emplore anyone getting in to Django to check it out, it helped greatly in my knowledge of databases and also the code from this project was adapted to allow me to use pagination with great success. 
 
+* https://docs.djangoproject.com/en/3.1/ref/views/ - The Django docs were used in order to implement a 404 page.
+
 
 ### **Custom Code** 
 

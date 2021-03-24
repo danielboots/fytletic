@@ -10,7 +10,7 @@ def news(request):
     """ A view to return the news page. """
     posts = Post.objects.all()
 
-    # addition of pagination - Followed Traversy media Django dev to deployment.
+    # addition of pagination - Django dev to deployment.
 
     paginator = Paginator(posts, 1)
     page = request.GET.get("page")
