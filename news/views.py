@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
 from django.core.paginator import Paginator
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 
 def news(request):
@@ -20,6 +21,7 @@ def news(request):
     return render(request, "news/news.html", context)
 
 
+@login_required
 def news_article(request, slug):
 
     template_name = "news/news_article.html"
@@ -35,8 +37,11 @@ def news_article(request, slug):
             new_comment = comment_form.save(commit=False)
             # Assign the current post to the comment
             new_comment.post = post
-            # Save the comment to the database
+            new_comment.user = request.user
             new_comment.save()
+            comment_form = CommentForm()
+            messages.success(request, "Successfully added comment!")
+            return redirect(reverse("news_article", args=[post.slug]))
     else:
         comment_form = CommentForm()
 
@@ -50,3 +55,15 @@ def news_article(request, slug):
             "comment_form": comment_form,
         },
     )
+
+
+@login_required
+def delete_own_comment(request, comment_id, slug):
+    """
+    Delete own comment / gets comment by post slug and comment id
+    """
+    post = get_object_or_404(Post, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    messages.success(request, "Comment deleted!")
+    return redirect(reverse("news_article", args=[post.slug]))

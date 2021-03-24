@@ -120,6 +120,16 @@
                         <span class=" text-muted font-weight-normal">
                             {{ comment.created_on }}
                         </span>
+
+                        <!--Delete comment icon, trigger modal-->
+                        {% if user.is_authenticated and user == comment.user or user.is_superuser %}
+                        <a href="{% url 'delete_own_comment' post.slug comment.id %}"
+                            class="btn btn-primary btn-dark btn-sm"> <i class="far fa-trash-alt"></i> Delete</a>
+
+                        {% endif %}
+
+
+
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>

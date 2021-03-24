@@ -707,7 +707,7 @@ Which made sure that I was working with the box model more logical.
 * This translated into me using a top menu bar with LOGO positioned to the left as expected.
 For this website, I haven't provided an extensive array of menu options, only as much as necessary to accomplish what the site sets out to achieve. So at this point in the web application infancy, I haven't set menu options for the latest additions, top fighters or  top ranked Gyms etc. I am keeping it basic to maintain simplicity.
 
-* I used many inbound links and tested all links ensuring that they all work and link correctly, this had to be tested on each review and review page as all data is being populated from the MongoDB database collection. So although I only have an index and view_review.html page as the main two pages for 90% of interaction in the app I had to test each page thoroughly as these pages are generated from user data pulled from PostgreSQL and all buttons and cards dynamically create their pages templated from the Django templating system 
+* I used many inbound links and tested all links ensuring that they all work and link correctly, I had to test each page template thoroughly as these pages are generated from user data pulled from PostgreSQL and all buttons and cards dynamically create their pages templated from the Django templating system 
 
 * I have logged my testing below to ensure that this web application is 100% functional and complies with defensive design.
 
@@ -736,11 +736,6 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Checkout takes you to the payment form.
 * Complete order loads the stripe payment gateway for payment handling.
 
-
-
-
-
-
 **GYM / cards.**
 
 * Home Button always returns the user to index.html
@@ -751,6 +746,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Card: Gym created on date displays in date format.
 * Card: Button takes user to correct gym listing
 * Card: verification logic displays blue tick for verified gyms and non for non verified gyms.
+* pagination: previous, next and number links all work with correct logic, if no prevous then button is disabled, similarly if no next button is also disabled.
 
 **GYM / Single Template.**
 
@@ -774,7 +770,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 
 
 
-**Fytnet / cards.**
+**Fighter / cards.**
 
 * Home Button always returns the user to index.html
 * Card: For loop tempating, displays fighterters in a card deck with pagination (correct and working)
@@ -784,8 +780,9 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Card:fighter created on date displays in date format.
 * Card: Button takes user to correctfighter listing
 * Card: verification logic displays blue tick for verified fighter and non for non verified fighter.
+* pagination: previous, next and number links all work with correct logic, if no prevous then button is disabled, similarly if no next button is also disabled.
 
-*fighter / Single Template.**
+**fighter / Single Template.**
 
 * Home Button always returns the user to index.html
 * Hero Image displays correct image from models.
@@ -815,23 +812,39 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Card: News article location displays correct
 * Card: News article created on date displays in date format.
 * Card: Button takes user to correct article listing
+* pagination: previous, next and number links all work with correct logic, if no prevous then button is disabled, similarly if no next button is also disabled.
 
+
+* News Article / Single Template.**
+
+* Home Button always returns the user to index.html
+* Hero Image displays correct image from models.
+* Hero heading displays Article heading name, animation present and correct.
+* title displays correct.
+* Main image retrieved from database.
+* Author name and avatar displayed.
+* Date posted retrieved.
+* Back to news desk button takes user back to news desk.
+* Logged in logic wil prevent non logged in users from reading full article, only the intro.
+
+* Comments - block displays correct along with comment count 
+* Comments - leave a comment form renders using crispy form.
+* Comments -  form posts data ready for admin approval.
+* Comments - Related news displays 
 
 
 **Register.**
 
-* Register - Takes two inputs to the form Username and Password both utilising defensive design, required attributes and must conform to ` pattern="^[a-zA-Z0-9]{5,15}$" ` 
+* Register - Takes two inputs to the form Username and Password both utilising defensive design. 
 
 * Register - button successfully registers the user to the database. 
 
 * Login - already a member login href, redirects user to the login page.
 
 
-
-
 **Screen size testing**
 
-![Screen Size and Resolution](static/img/screens.png)
+![Screen Size and Resolution](media/screens.png)
 
 As displayed, I used the Responsive Viewer Chrome plugin to test a multitude of the most popular screen sizes available. Which included.
 
@@ -1007,8 +1020,6 @@ If you should require to fork or obtain a copy of this website you can follow th
 
 
  ### Additional steps required to allow the Django app to work. 
-
-
 
 
 
