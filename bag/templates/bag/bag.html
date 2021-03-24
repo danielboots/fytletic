@@ -123,17 +123,29 @@
 </div>
 {% else %}
 <p class="lead mb-5">Your bag is empty.</p>
-<a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+<a href="{% url 'products' %}" class="btn btn-primary btn-dark btn-sm">
     <span class="icon">
         <i class="fas fa-chevron-left"></i>
     </span>
     <span class="text-uppercase">Keep Shopping</span>
 </a>
+
+
+
 {% endif %}
+
+<!--Spacer row-->
+<div class="row my-3">
+    <div class="col">
+
+    </div>
+</div>
 </div>
 </div>
 </div>
 {% endblock %}
+
+
 
 {% block postloadjs %}
 {{ block.super }}
