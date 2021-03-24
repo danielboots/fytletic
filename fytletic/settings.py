@@ -133,6 +133,14 @@ else:
         }
     }
 
+# DATABASE - HEROKU POSTGRES
+
+# DATABASES = {
+#     "default": dj_database_url.parse(
+#         "postgres here;"
+#     )
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
