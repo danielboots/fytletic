@@ -374,8 +374,6 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 | 33                             | Site Owner   | Provide support for fighers and gyms to grow the network                                 | To encourage on boarding of investors and sponsorship. |
 
 
-
-
 **First-time visitor Goals**
 
 * Allow visitors to learn that the site is a Fighter and Gym Network.
@@ -412,6 +410,15 @@ The web application will consist of typical navigation and structure which will 
 
 Regarding site structure and page content, the main static pages will consist of a Home page, contact and about pages, alongside an F.A.Q section. 
 The web app will also have a shop with product pages using djangos templating system. A brief overview of the main features and their representative pages are covered below.
+
+
+**Website Menu Structure**
+
+* For this application to conform to good UX and user experience i have laid out the general structure of the navigation. Ease of use and good navigation are crucial when aiding users in learning the site, finding content and being able to access it in an intuitive way is a major priority and pivitol precursor to the applications success. I have first hand experience before taking this course with bad navigation design, and it caused confusion with users, who would contact support just to find out how to use the navigation. 
+Below is an outline of the structure i designed to cope with navigating the site.
+
+![Nav Structure](media/navstructure.jpg)
+
 
 ### **Static pages:** 
 * Home / About / Contact / FAQ 
@@ -457,7 +464,7 @@ The web app will also have a shop with product pages using djangos templating sy
 
 
 #### **LOGGED IN USERS:** 
-### **HOME---ABOUT---CONTACT---SHOP---ADD FIGHTER / GYM--- NEWSDESK :** 
+### **HOME---ABOUT---ADD FIGHTER / GYM--- NEWSDESK :** 
 * If the user is logged in, a more extensive list of menu items are available, for instance, the ability to add a review will allow the user to visit the add review page and add a review. 
 * An add fighter page will allow the user to manage their fighter profile update edit and delete, each with buttons for CRUD functionality.
 * Admin users at this current time will manage the site administration from the django admin area to which a menu item will be available, to create front end forms and pages when Django has a built in admin area seems unncessessary.
@@ -465,8 +472,9 @@ The web app will also have a shop with product pages using djangos templating sy
 
 
 ### **FOOTER - UNIVERSAL / LOGGED IN AND OUT:**
-* ABOUT---CONTACT---F.A.Q
+ **NEWS**---**_FYTMERCH_**---**ABOUT**---**F.A.Q**---**CONTACT**
 
+* I decided to move alot of the standard and less important infomation down to the footer to allow the nav bar to contain only the main site goals of Fighters, Account and Gym infomation. As the Merchandise app is of lesser significance i deemed it more suitable to place in the footer, alongside the contact and questions links. Things users may need to find but are not essential enough to be on the main nav bar across each page. This would clutter the nav and fluidity of the site and is typical amongst larger projects. 
 
 
 ### **Information on structure regarding page layout and design:**
@@ -501,12 +509,15 @@ section the second will offer my contact details and any further links to static
 ### **Models**  -- Diagram developed from using the online tool, DBDiagram to show the relationships between my models. 
 
 
-# INSERT DB diagram HERE 
+# Need to update with links to ForeignKeys 
+
+![DB Schematic](media/database_schema.png)
 
 * Fighter model: Includes all fighter data and is linked to the user profile.
 * Gym model: Includes all fighter data and is linked to the user profile.
 * Products model: Includes all products in the shop.
 * Profile model: takes the user as the primary key here and links the data across many of the other tables so that a registered users data is accessible across the tables and to their account. 
+* News model contains all of the data pertaining to the creation of posts and commenting.
 
 
 
@@ -929,7 +940,15 @@ When working it was also necessary to view the changes to the website, for this 
 ## Deployment to Heroku 
 
 
-This project is connected to Heroku using automatic deployment through connection to my GitHub repository, this was achieved through the following steps. 
+This project is connected to Heroku using automatic deployment through connection to my GitHub repository, all media and static files are hosted on Amazon Web Services S3 bucket. 
+this was achieved through the following steps. 
+
+
+### Prerequisites and optional features: 
+
+* This site supports a merchandise shop and the payment gateway used was Stripe, if you would like to use stripe you can sign up for an account here [Stripe](https://www.stripe.com/)
+
+* Emails are handled by connecting to Gmail you will need a Gmail account if you wish to implement this feature, sign up for an account here: [GMAIL](https://www.gmail.com/)
 
 1. Firstly and foremost one should create a new repository over at GitHub creating an env.py file to store sensitive data.
 
@@ -937,34 +956,78 @@ This project is connected to Heroku using automatic deployment through connectio
 
 3. To create the requirements.txt  and **P**rocfile we will use the commands as follows; 
 
-## Check this -==========
+#
+
     • $ pip3 freeze --local > requirements.txt
     • $ echo web: python manage.py > Procfile 
 
      > **Note:**  Procfile music be capitalized !!!
 
 4. Log in (or Register) to [Heroku](https://www.heroku.com/) and from your dashboard click 'new' > 'create new app'.
+![Heroku New App](media/readme/deployment/1.png)
 
-
-![new app ](static/img/deploy/heroku/1.png)
 
 * Name your app something unique and select the region closest to you, in my case this is Europe.
-![New app](static/img/deploy/heroku/2.png)
+![Heroku New App](media/readme/deployment/2.png)
+
+5. Then on the 'Resources' tab, search and add the Heroku Postgres database, for normal projects the free option is usually sufficient.
+
+6. To connect Postrges with Django we need to install a couple of dependencies, dj_database_url and psycopg2, this is achieved by typing the below commands in the terminal 
+
+```
+$ pip3 install dj_database_url
+$ pip3 install psycopg2
+```
+
+7. We need to freeze these into a specific file called requirements.txt to ensure that Heroku installs all the apps requirements when deployed, we do this by entering the below command in the terminal
+
+```
+$ pip3 freeze > requirements.txt
+
+```
+
+8. We use two databases in our app, namely sqlite3 which comes as default for django and Postgres, in development we are using sqlite, so to implement this we need to replace the default database URL with a call to dj_database.url.parse and pass in the credentials from Heroku 
+
+```
+# DATABASES = {"default": dj_database_url.parse("DATABASE_URL")}
+```
+this takes care of the database for Heroku deployment, however we need to ammend our code after we make the initial Heroku Migrations, so to do this type in the terminal 
+
+```
+$ python3 manage.py migrate
+
+```
+As we are connected to the Postgres database you should create a superuser, in order to login to the backend of the app. we do this by typing in the terminal : 
+
+```
+$ python3 manage.py createsuperuser
+```
+and following the prompts.
 
 
-5.Connect up Github for automatic deployment - from the Deploy, tab select Github from deployment method.
 
-![Github](static/img/deploy/heroku/3.png)
+8. After this is completed migrating we then ammend the code to allow us to use both sqlite in development and postres for Heroku Deployment. 
+This is achienved by using the code below in replace of the database config above. 
 
-6. On the Github connect section ensure that your GitHub profile is visible than on the right-hand side box, type in a repo from GitHub to search for. Preferably it is advised that you keep uniformity within Heroku and GitHub so try to keep the same names for each. For this example, I have used Fytletic.
+```
+if "DATABASE_URL" in os.environ:
+    DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
 
-![Repo](static/img/deploy/heroku/4.png)
+```
 
-7. Once connected head over to the settings tab on Heroku and click on the reveal config Vars button as shown below 
+
+9. Once connected head over to the settings tab on Heroku and click on the reveal config Vars button as shown below 
 
 ![Config vars](static/img/deploy/heroku/5.png)
 
-8. We use config vars to input our sensitive data and store it on Heroku so Heroku has access to these values, as they are the same values contained in the env.py file which isn't uploaded to Github. 
+We use config vars to input our sensitive data and store it on Heroku so Heroku has access to these values, as they are the same values contained in the env.py file which isn't uploaded to Github. 
 
 the variables required are as follows (key and value pairs) and are to be input exactly like your env.py file.
 
@@ -984,20 +1047,39 @@ the variables required are as follows (key and value pairs) and are to be input 
 |
 
 
+10. Install gunicorn using the following command;
 
-9. Once this step has been completed we can then push our requirements and Procfile to GitHub using the commands in the terminal ` git add requirements.txt ` ` git add Procfile ` 
+`
+$ pip3 install gunicorn
+`
+
+Then freeze into your requirements file.
+
+
+11. Create a Procfile in the same level as the requirements.txt
+Inside of the  Procfile and add the following line;
+
+`
+web: gunicorn fytletic.wsgi:application
+`
+
+
+11. Once this step has been completed we can then push our requirements and Procfile to GitHub using the commands in the terminal ` git add requirements.txt ` ` git add Procfile ` 
 
 ` git commit -m"added requirements and Procfile" ` 
 
+
 then push to GitHub using `git push` command in the terminal.
 
-10. Head over to the Deployment tab on Hero and under Automatic deploys click Enable Automatic Deploys' and then Deploy Branch See below. 
 
-![Auto Deploy](static/img//deploy/heroku/6.png)
+Connect up Github for automatic deployment - from the Deploy, tab select Github from deployment method.
+Head over to the Deployment tab on Hero and under Automatic deploys click Enable Automatic Deploys' and then Deploy Branch See below. 
 
-11. Following these steps correctly will allow Heroku to receive code from your Github repo and build the Django app using the correct packages and dependencies. 
+ On the Github connect section ensure that your GitHub profile is visible than on the right-hand side box, type in a repo from GitHub to search for. Preferably it is advised that you keep uniformity within Heroku and GitHub so try to keep the same names for each. For this example, I have used Fytletic.
 
-12. Once the build has completed you will get a message informing you that ' your app was successfully deployed' and you can then launch your app. 
+Following these steps correctly will allow Heroku to receive code from your Github repo and build the Django app using the correct packages and dependencies. 
+
+ Once the build has completed you will get a message informing you that ' your app was successfully deployed' and you can then launch your app. 
 
 
 
@@ -1011,15 +1093,13 @@ If you should require to fork or obtain a copy of this website you can follow th
 2. Click on the GREEN clone or download button, located at the top right of the page see screenshot below.
 
    
-     ![Repo Clone step](static/img/deploy/github/4.png)
+    
 
 3. Click on the "clipboard" also located on the right now seen as a dropdown box. You can either click the clipboard or the URL if using URL method remember to right-click highlighted URL and copy.
 4. Open your IDE and open a new terminal window.
 5. Change the directory path to a location in which you want to clone the repo too. 
-6. Paste the Git URL and click ok / Clone etc. 
+6. Paste the Git URL and click ok / Clone
 
-
- ### Additional steps required to allow the Django app to work. 
 
 
 
