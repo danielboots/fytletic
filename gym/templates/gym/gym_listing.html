@@ -136,35 +136,29 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
+
                             <li class="list-group-item text-mute">
-                                <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
-                                <span class="float-right">{{ gym.whatsapp }}</span>
+                                <i class="fab fa-whatsapp"></i> <a href="tel: {{ gym.whatsapp }}" target="_blank"><span
+                                        class="float-right"> <strong>Call Gym</strong></span>
+                                </a>
+
                             </li>
                             <li class="list-group-item text-mute">
-                                <i class="fas fa-envelope"></i> <strong>Email:</strong>
-                                <span class="float-right">{{ gym.email }}
-                                </span>
+                                <i class="fas fa-envelope"></i> <a href="mailto: {{ gym.email }}" target="_blank"><span
+                                        class="float-right"> <strong>Contact</strong>
+                                    </span>
+                                </a>
                             </li>
 
                             <li class="list-group-item text-mute">
-                                <i class="fas fa-link"></i> <strong>Social Media:</strong>
-
-                                <p><i class="far fa-newspaper mr-3 hover-nav"></i><a
-                                        href="{{ gym.facebook.url }}"><strong>News</strong></a>
-                                </p>
-
-                                <span class="float-right"> <a href="{{ gym.facebook.url }}" target="_blank"></a>
-                                    Facebook</span><br>
+                                <i class="fas fa-link"></i> <strong>Other</strong>
 
 
-                                <span class="float-right">{{ gym.instagram }}</span><br>
-                                <span class="float-right">{{ gym.twitter }}</span><br>
-                                <span class="float-right">{{ gym.web }}</span><br>
 
 
                             </li>
-                            <li class="list-group-item ">
-                                <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
+                            <li class="list-group-item text-mute ">
+                                <i class="fas fa-calendar"></i> <strong>Created</strong>
                                 <span class="float-right">{{ gym.created_on }}</span>
 
                             </li>
@@ -210,17 +204,17 @@
 
                         <!--Facebook-->
 
-                        <a href="https://facebook.com" target="_blank" class="fb-ic mr-3" role="button"><i
+                        <a href="{{ gym.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-facebook-f"></i></a>
                         <!--Twitter-->
-                        <a href="https://twitter.com" target="_blank" class="tw-ic mr-3" role="button"><i
+                        <a href="{{ gym.twitter }}" target="_blank" class="tw-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-twitter"></i></a>
 
                         <!--Linkedin-->
-                        <a href="https://linkedin.com" target="_blank" class="li-ic mr-3" role="button"><i
-                                class="fab fa-lg fa-linkedin-in"></i></a>
+                        <a href="{{ gym.web }}" target="_blank" class="li-ic mr-3" role="button"><i
+                                class="fas fa-lg fa-link"></i></a>
                         <!--Instagram-->
-                        <a href="https://instagram.com" target="_blank" class="ins-ic mr-3" role="button"><i
+                        <a href="{{ gym.instagram }}" target="_blank" class="ins-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-instagram"></i></a>
                     </div>
 
