@@ -40,10 +40,7 @@
                         <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
                         <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
                         <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
-                        <p> <strong>Email</strong> {{ fighter.email }} </p>
 
-                        <a href="{{ fighter.facebook }}" target="_blank">facebook</a>
-                        <p> <strong>Whatsapp</strong> </p>
                     </div>
                 </div>
             </div>
@@ -127,23 +124,21 @@
                         <div class="col-md-6">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-mute">
-                                    <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
-                                    <span class="float-right">{{ fighter.whatsapp }}</span>
+                                    <i class="fab fa-whatsapp"></i> <a href="tel: {{ fighter.whatsapp }}"
+                                        target="_blank"><span class="float-right"> <strong>Call Gym</strong></span>
+                                    </a>
+
                                 </li>
                                 <li class="list-group-item text-mute">
-                                    <i class="fas fa-envelope"></i> <strong>Email:</strong>
-                                    <span class="float-right">{{ fighter.email }}
-                                    </span>
+                                    <i class="fas fa-envelope"></i> <a href="mailto: {{ fighter.email }}"
+                                        target="_blank"><span class="float-right"> <strong>Contact</strong>
+                                        </span>
+                                    </a>
                                 </li>
-                                <li class="list-group-item text-mute">
-                                    <i class="fas fa-link"></i> <strong>Social Media:</strong>
-                                    <span class="float-right">{{ fighter.facebook }}</span><br>
-                                    <span class="float-right">{{ fighter.instagram }}</span><br>
-                                    <span class="float-right">{{ fighter.twitter }}</span><br>
-                                    <span class="float-right">{{ fighter.web }}</span><br>
-                                </li>
+
+
                                 <li class="list-group-item ">
-                                    <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
+                                    <i class="fas fa-calendar text-mute"></i> <strong>Listing Date:</strong>
                                     <span class="float-right">{{ fighter.created_on }}</span>
                                 </li>
                             </ul>
@@ -174,16 +169,16 @@
                     <div class="card mb-3 white-box ">
                         <div class="div text-center">
                             <!--Facebook-->
-                            <a href="https://facebook.com" target="_blank" class="fb-ic mr-3" role="button"><i
+                            <a href="{{ fighter.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-facebook-f"></i></a>
                             <!--Twitter-->
-                            <a href="https://twitter.com" target="_blank" class="tw-ic mr-3" role="button"><i
+                            <a href="{{ fighter.twitter }}" target="_blank" class="tw-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-twitter"></i></a>
                             <!--Linkedin-->
-                            <a href="https://linkedin.com" target="_blank" class="li-ic mr-3" role="button"><i
-                                    class="fab fa-lg fa-linkedin-in"></i></a>
+                            <a href="{{ fighter.web }}" target="_blank" class="li-ic mr-3" role="button"><i
+                                    class="fab fa-lg fas fa-lg fa-link"></i></a>
                             <!--Instagram-->
-                            <a href="https://instagram.com" target="_blank" class="ins-ic mr-3" role="button"><i
+                            <a href="{{ fighter.instagram }}" target="_blank" class="ins-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-instagram"></i></a>
                         </div>
                     </div>
@@ -191,43 +186,19 @@
                         <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Fighters</a>
                     </div>
                     {% if request.user.is_superuser %}
-                    <small class="ml-3">
+                    <small class="text-center ">
                         <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
                         <a class="text-danger" href="{% url 'delete_fighter' fighter.id %}">Delete</a>
                     </small>
                     {% endif %}
                 </div>
-                <!-- Carousel-->
-                <div class="container-fluid ">
-                    <div class="row white-box my-5 py-5 z-depth-1">
-                        <div class="col text-left">
-                            <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
-                            <div class="owl-carousel">
-                                <div class="item-video" data-merge="1">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="1">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="2">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="2">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                                <div class="item-video" data-merge="1">
-                                    <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Carousel-->
-                </div>
+
             </div>
         </div>
+
     </section>
     <!-- End About Gym -->
-    </div>
+
     {% endblock %}
     {% block postloadjs %}
     <!-- block super appends instead of replacing anything in the block.-->
