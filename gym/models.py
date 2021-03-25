@@ -6,7 +6,7 @@ class GymType(models.Model):
 
     # Meta Class overwrites Django 'S' to our stated plural metaclass.
     class Meta:
-        verbose_name_plural = "Gym Types"
+        verbose_name_plural = "GymTypes"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
