@@ -97,6 +97,8 @@ ___
 * **[PRETTIER](https://prettier.io/):** - Prettier is an opinionated code formatter for HTML CSS JavaScript etc
 
 * **[PEP8 COMPLIANCE CHECKER](http://pep8online.com/):** - A free tool to allow the user to check their python code, to ensure it conforms to the PEP 8 standard. 
+
+* **[Black](https://github.com/psf/black):** - Black is the uncompromising Python code formatter.
  
 
 ___
@@ -181,8 +183,6 @@ and this wikipedia article  I developed the colour pallete below  using [Adobe C
 * Grey  - Conventional, dependable and practical
 
 ![Colour Pallete ](media/colour.png)
-
-
 
 
 *	Choose a font type for the project which reflects what we are trying to achieve – research other platforms and use similar fonts.  “Montserrat”  will be used consistently throughout this site. The logo and business name  will employ ‘Montserrat font’ consistently. Again I have used this method from my previous milestone projects as I feel in my portfolio I wish to create a style for myself, following on from similar design and practices.
@@ -417,7 +417,7 @@ The web app will also have a shop with product pages using djangos templating sy
 * For this application to conform to good UX and user experience i have laid out the general structure of the navigation. Ease of use and good navigation are crucial when aiding users in learning the site, finding content and being able to access it in an intuitive way is a major priority and pivitol precursor to the applications success. I have first hand experience before taking this course with bad navigation design, and it caused confusion with users, who would contact support just to find out how to use the navigation. 
 Below is an outline of the structure i designed to cope with navigating the site.
 
-![Nav Structure](media/navstructure.jpg)
+![Nav Structure](media/readme/navstructure.jpg)
 
 
 ### **Static pages:** 
@@ -511,7 +511,7 @@ section the second will offer my contact details and any further links to static
 
 # Need to update with links to ForeignKeys 
 
-![DB Schematic](media/database_schema.png)
+![DB Schematic](media/readme/database_schema.png)
 
 * Fighter model: Includes all fighter data and is linked to the user profile.
 * Gym model: Includes all fighter data and is linked to the user profile.
@@ -534,7 +534,7 @@ ___
 #### **Wireframes.**
 
 
-![Fytletic Wireframes ](media/wireframe.jpg)
+![Fytletic Wireframes ](media/readme/wireframe.jpg)
 
 
 *  For a full pdf of my desktop wireframes for this project click here: **[Wireframes](media/docs/wireframes.pdf):**
@@ -643,7 +643,7 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 * Django admin panel styled to conform to branding colours, for astetic purposes.
 
 
-![Admin Panel for admin](media/djangoadmin.png) 
+![Admin Panel for admin](media/readme/djangoadmin.png) 
 
 * Verified Fighter or Gym - I added a custom piece of Python logic that allowed users to apply to the admin for verified status, to achieve this i added a Boolean to the the fighter and gym models this resulted in using an 'if' Python statement to check if the value of the Boolean is True to then display a verified check mark, if the Boolean is False, then nothing is returned or a greyed out check box is displayed, showing the user that this gym or fighter hasnt been through the relevant verification process.
 
@@ -855,7 +855,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 
 **Screen size testing**
 
-![Screen Size and Resolution](media/screens.png)
+![Screen Size and Resolution](media/readme/screens.png)
 
 As displayed, I used the Responsive Viewer Chrome plugin to test a multitude of the most popular screen sizes available. Which included.
 
@@ -1025,7 +1025,9 @@ else:
 
 9. Once connected head over to the settings tab on Heroku and click on the reveal config Vars button as shown below 
 
-![Config vars](static/img/deploy/heroku/5.png)
+![Config vars](media/readme/deployment/3.png)
+
+
 
 We use config vars to input our sensitive data and store it on Heroku so Heroku has access to these values, as they are the same values contained in the env.py file which isn't uploaded to Github. 
 
@@ -1046,7 +1048,6 @@ the variables required are as follows (key and value pairs) and are to be input 
 | **USE_AWS**   | TRUE | 
 |
 
-
 10. Install gunicorn using the following command;
 
 `
@@ -1063,17 +1064,17 @@ Inside of the  Procfile and add the following line;
 web: gunicorn fytletic.wsgi:application
 `
 
-
 11. Once this step has been completed we can then push our requirements and Procfile to GitHub using the commands in the terminal ` git add requirements.txt ` ` git add Procfile ` 
 
 ` git commit -m"added requirements and Procfile" ` 
 
-
 then push to GitHub using `git push` command in the terminal.
-
 
 Connect up Github for automatic deployment - from the Deploy, tab select Github from deployment method.
 Head over to the Deployment tab on Hero and under Automatic deploys click Enable Automatic Deploys' and then Deploy Branch See below. 
+
+
+![Deployment to Heroku](media/readme/deployment/4.png)
 
  On the Github connect section ensure that your GitHub profile is visible than on the right-hand side box, type in a repo from GitHub to search for. Preferably it is advised that you keep uniformity within Heroku and GitHub so try to keep the same names for each. For this example, I have used Fytletic.
 
@@ -1083,8 +1084,9 @@ Following these steps correctly will allow Heroku to receive code from your Gith
 
 
 
+## **How to clone or run this project natively using HTTPS.**
 
-### **How to clone or run this project natively using HTTPS.**
+
 If you should require to fork or obtain a copy of this website you can follow these instructions. 
 
 1. Visit my Github repo here **[Fytletic](https://github.com/danielboots/fytletic):**
@@ -1092,7 +1094,8 @@ If you should require to fork or obtain a copy of this website you can follow th
 
 2. Click on the GREEN clone or download button, located at the top right of the page see screenshot below.
 
-   
+
+![Deployment to Heroku](media/readme/deployment/git1.png)
     
 
 3. Click on the "clipboard" also located on the right now seen as a dropdown box. You can either click the clipboard or the URL if using URL method remember to right-click highlighted URL and copy.
@@ -1101,7 +1104,45 @@ If you should require to fork or obtain a copy of this website you can follow th
 6. Paste the Git URL and click ok / Clone
 
 
+## Git bash instructions: 
 
+1. open git bash type in git clone then plaste the URL copied from the repo as highlighted above.
+
+`
+$ git clone https://github.com/YOUR-USERNAME/fytletic.git
+`
+
+3. press enter and git bash will create your local clone.
+
+4. Note once set up, it is important that you set up any sensitive data in your environment settings or add a env.py file to your workspace and ensure that it is included in your git ignore file so that secret keys,database keys etc dont end up in version control. 
+
+5. Install all requirements using the command: 
+
+
+`
+$ pip3 install -r requirements.txt
+`
+
+6. Next Apply migrations. 
+
+`
+python3 manage.py migrate
+`
+
+this will ensure that the database your using is set up correctly with the models created in the app. 
+
+7. Create a superuserto allow access to the django admin panel 
+`
+python3 manage.py createsuperuser
+`
+
+8. finally you can run the project locally with the command:
+
+`
+python3 manage.py runserver
+`
+
+___
 
 
 
