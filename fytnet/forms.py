@@ -22,6 +22,6 @@ class FighterForm(forms.ModelForm):
         gym_type = GymType.objects.all()
         friendly_names = [(c.id, c.get_friendly_name()) for c in gym_type]
 
-        self.fields["category"].choices = friendly_names
+        self.fields["discipline"].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs["class"] = "border-black rounded-0"

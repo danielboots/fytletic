@@ -1,84 +1,4 @@
 
-.content {
-      width: 94%;
-      margin: 4em auto;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: justify;
-}
-
-.logo {
-      line-height: 60px;
-      position: fixed;
-      float: left;
-      margin: 23px 46px;
-      color: #fff;
-      font-weight: bold;
-      font-size: 20px;
-      letter-spacing: 2px;
-}
-
-nav {
-        z-index: 5;
-      position: fixed;
-      width: 100%;
-      line-height: 60px;
-}
-
-
-
-nav ul {
-      line-height: 60px;
-      list-style: none;
-      background: rgba(0, 0, 0, 0);
-      /* overflow: hidden; */
-      color: #fff;
-      padding: 0;
-      text-align: right;
-      margin: 0;
-      padding-right: 40px;
-      transition: 1s;
-}
-
-nav.black ul {
-      background: #12192c;
-}
-
-nav ul li {
-          display: inline-block;
-    padding: 16px 20px;
-    font-weight: 600;
-}
-
-nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 16px;
-}
-
-.menu-icon {
-      line-height: 60px;
-      width: 100%;
-      background: #000;
-      text-align: right;
-      box-sizing: border-box;
-      padding: 15px 24px;
-      cursor: pointer;
-      color: #fff;
-      display: none;
-}
-
-
-.text-info {
- color: white;
-}
-
-a:hover{
-    color: grey;
-}
-
-
-
 .hover-nav {
   transition: 0.3s;
 }
@@ -87,42 +7,10 @@ a:hover{
   
 }
 
+.nav-link {
+    font-weight: 600;
+}
 
-@media(max-width: 786px) {
-
-      .logo {
-            position: fixed;
-            top: 0;
-            margin-top: 16px;
-      }
-
-      nav ul {
-            max-height: 0px;
-            background: #12192c;
-            overflow: hidden;
-      }
-
-      nav.black ul {
-            background: #12192c;   
-      }
-
-      .showing {
-            max-height: 34em;
-      }
-
-      nav ul li {
-            
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    font-weight: 500;
-    margin-left: 10px;
-    padding: 10px;
-
-      }
-
-      .menu-icon {
-            display: block;
-      }
-
+nav {
+    background-color:  white;
 }
