@@ -21,18 +21,15 @@ def news(request):
     return render(request, "news/news.html", context)
 
 
-@login_required
 def news_article(request, slug):
-
     template_name = "news/news_article.html"
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)
     new_comment = None
     # Comment posted
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_authenticated:
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-
             # Create Comment object but don't save to database yet
             new_comment = comment_form.save(commit=False)
             # Assign the current post to the comment

@@ -31,14 +31,15 @@
 
     <!-- End Hero Section-->
 
-    <div class="container-fluid whitesmoke-container ">
-        <!-- Data -->
-        <section class="py-4">
-            <div class="container">
-                <!-- About Gym -->
+    <!-- <div class="container-fluid whitesmoke-container "> -->
+    <!-- Data -->
+    <section class="py-4 whitesmoke-container">
+        <div class="container">
+            <!-- About Gym -->
+            <div class="row">
                 <div class="col text-left mt-3 white-box my-5 py-5 z-depth-1">
                     <h2 class="logo-font font font-weight-bold  text-left">
-                        <em>Bio - - -</em>
+                        <em>Bio</em>
                     </h2>
                     <div class="col-md-12 text-justify ">
                         {{ fighter.bio }}
@@ -49,235 +50,223 @@
                         <p> <strong>Whatsapp</strong> {{ fighter.whatsapp }} </p>
                     </div>
                 </div>
+            </div>
+        </div>
 
-
-
-
-
-                <div class="row">
-                    <div class="col-md-9 white-box  z-depth-1">
-
-
-                        <!-- Home Main Image -->
-                        <img src="{{ fighter.photo_1.url }}" alt=""
-                            class="img-fluid rounded mx-auto d-block  home-images mb-3">
-                        <!-- Thumbnails -->
-                        <div class="row mb-5 thumbs">
-                            {% if fighter.photo_1 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_1.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_2 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_2.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_2.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_3 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_3.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_3.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_4 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_4.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_4.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_5 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_5.url }}" data-lightbox="home-images">
-                                    <img src="{{ 5 }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
-                            {% if fighter.photo_6 %}
-                            <div class="col-md-2">
-                                <a href="{{ fighter.photo_6.url }}" data-lightbox="home-images">
-                                    <img src="{{ fighter.photo_6.url }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            {% endif %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 white-box  z-depth-1">
+                    <!-- Home Main Image -->
+                    <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid rounded mx-auto d-block  home-images mb-3">
+                    <!-- Thumbnails -->
+                    <div class="row mb-5 thumbs">
+                        {% if fighter.photo_1 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_1.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_1.url }}" alt="" class="img-fluid">
+                            </a>
                         </div>
-                        <!-- Fields -->
-                        <div class="row mb-5 fields">
-                            <div class="col-md-6 ">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item text-mute">
-                                        <i class="fas fa-globe-europe"></i> <strong>location:</strong>
-                                        <span class="float-right">{{ gym.country }}</span>
-                                    </li>
-                                    <li class="list-group-item text-mute">
-                                        <i class="fas fa-map-marked"></i> <strong>Address:</strong>
-                                        <span class="float-right">{{ gym.street_address1 }}
-                                            <br>{{ gym.street_address2 }}
-                                            <br>{{ gym.town_or_city }}</span>
-                                    </li>
-
-                                    <li class="list-group-item text-mute">
-                                        <i class="fas fa-fist-raised"></i> <strong>Specialises in:
-                                            {{ fighter.discipline }}</strong>
-                                        <span class="float-right">
-
-                                        </span>
-                                    </li>
-
-                                    <li class="list-group-item text-mute">
-                                        <i class="fas fa-fist-raised"></i> <strong>Style:
-                                            {{ fighter.fight_style }}</strong>
-                                        <span class="float-right">
-                                        </span>
-                                    </li>
-
-
-
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item text-mute">
-                                        <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
-                                        <span class="float-right">{{ fighter.whatsapp }}</span>
-                                    </li>
-                                    <li class="list-group-item text-mute">
-                                        <i class="fas fa-envelope"></i> <strong>Email:</strong>
-                                        <span class="float-right">{{ fighter.email }}
-                                        </span>
-                                    </li>
-
-                                    <li class="list-group-item text-mute">
-                                        <i class="fas fa-link"></i> <strong>Social Media:</strong>
-                                        <span class="float-right">{{ fighter.facebook }}</span><br>
-                                        <span class="float-right">{{ fighter.instagram }}</span><br>
-                                        <span class="float-right">{{ fighter.twitter }}</span><br>
-                                        <span class="float-right">{{ fighter.web }}</span><br>
-
-
-                                    </li>
-                                    <li class="list-group-item ">
-                                        <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
-                                        <span class="float-right">{{ fighter.created_on }}</span>
-
-                                    </li>
-                                </ul>
-                            </div>
+                        {% endif %}
+                        {% if fighter.photo_2 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_2.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_2.url }}" alt="" class="img-fluid">
+                            </a>
                         </div>
-
-
-                    </div>
-
-                    <div class="col-md-3 ">
-                        <div class="card mb-3 white-box">
-                            <div class="card-body text-center">
-                                <h5 class="card-title"> <strong>Sponsors:</strong></h5>
-
-                                <img src="{{ fighter.photo_6.url }}" class="mx-auto d-block img-fluid-profile rounded"
-                                    alt=" Sponsors">
-
-
-
-                                {% if fighter.is_verified %}
-                                <h6 class="font-weight-bold">
-                                    <em>Verified Fighter</em> <i class="fas fa-check-circle blue-tick"></i>
-                                </h6>
-                                {% endif %}
-                            </div>
+                        {% endif %}
+                        {% if fighter.photo_3 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_3.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_3.url }}" alt="" class="img-fluid">
+                            </a>
                         </div>
-
-
-                        <div class="card mb-3 white-box ">
-                            <div class="card-body text-center">
-                                <h5 class="card-title"> <strong>Trains At:</strong></h5>
-                                {{ fighter.trains_at }}
-
-                                <h6 class="card-title"> <strong>Weight class</strong></h6>
-
-                                {{ fighter.weight_class }}
-                            </div>
-
+                        {% endif %}
+                        {% if fighter.photo_4 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_4.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_4.url }}" alt="" class="img-fluid">
+                            </a>
                         </div>
-
-
-                        <div class="card mb-3 white-box ">
-
-                            <div class="div text-center">
-
-                                <!--Facebook-->
-
-                                <a href="https://facebook.com" target="_blank" class="fb-ic mr-3" role="button"><i
-                                        class="fab fa-lg fa-facebook-f"></i></a>
-                                <!--Twitter-->
-                                <a href="https://twitter.com" target="_blank" class="tw-ic mr-3" role="button"><i
-                                        class="fab fa-lg fa-twitter"></i></a>
-
-                                <!--Linkedin-->
-                                <a href="https://linkedin.com" target="_blank" class="li-ic mr-3" role="button"><i
-                                        class="fab fa-lg fa-linkedin-in"></i></a>
-                                <!--Instagram-->
-                                <a href="https://instagram.com" target="_blank" class="ins-ic mr-3" role="button"><i
-                                        class="fab fa-lg fa-instagram"></i></a>
-                            </div>
-
+                        {% endif %}
+                        {% if fighter.photo_5 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_5.url }}" data-lightbox="home-images">
+                                <img src="{{ 5 }}" alt="" class="img-fluid">
+                            </a>
                         </div>
-
-
-                        <div class="div text-center">
-
-                            <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Fighters</a></div>
-
-                        {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
-                            <a class="text-danger" href="{% url 'delete_fighter' fighter.id %}">Delete</a>
-                        </small>
+                        {% endif %}
+                        {% if fighter.photo_6 %}
+                        <div class="col-md-2">
+                            <a href="{{ fighter.photo_6.url }}" data-lightbox="home-images">
+                                <img src="{{ fighter.photo_6.url }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
                         {% endif %}
                     </div>
+                    <!-- Fields -->
+                    <div class="row mb-5 fields">
+                        <div class="col-md-6 ">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-mute">
+                                    <i class="fas fa-globe-europe"></i> <strong>location:</strong>
+                                    <span class="float-right">{{ gym.country }}</span>
+                                </li>
+                                <li class="list-group-item text-mute">
+                                    <i class="fas fa-map-marked"></i> <strong>Address:</strong>
+                                    <span class="float-right">{{ gym.street_address1 }}
+                                        <br>{{ gym.street_address2 }}
+                                        <br>{{ gym.town_or_city }}</span>
+                                </li>
 
-                    <!-- Carousel-->
-                    <div class="container-fluid ">
-                        <div class="row white-box my-5 py-5 z-depth-1">
-                            <div class="col text-left">
+                                <li class="list-group-item text-mute">
+                                    <i class="fas fa-fist-raised"></i> <strong>Specialises in:
+                                        {{ fighter.discipline }}</strong>
+                                    <span class="float-right">
 
-                                <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
+                                    </span>
+                                </li>
 
-                                <div class="owl-carousel">
-                                    <div class="item-video" data-merge="1">
-                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                    </div>
-                                    <div class="item-video" data-merge="1">
-                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                    </div>
-                                    <div class="item-video" data-merge="2">
-                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                    </div>
-                                    <div class="item-video" data-merge="2">
-                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                    </div>
-                                    <div class="item-video" data-merge="1">
-                                        <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
-                                    </div>
-                                </div>
-                            </div>
+                                <li class="list-group-item text-mute">
+                                    <i class="fas fa-fist-raised"></i> <strong>Style:
+                                        {{ fighter.fight_style }}</strong>
+                                    <span class="float-right">
+                                    </span>
+                                </li>
 
+
+
+                            </ul>
                         </div>
-                        <!-- End Carousel-->
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-mute">
+                                    <i class="fab fa-whatsapp"></i> <strong>Call:</strong>
+                                    <span class="float-right">{{ fighter.whatsapp }}</span>
+                                </li>
+                                <li class="list-group-item text-mute">
+                                    <i class="fas fa-envelope"></i> <strong>Email:</strong>
+                                    <span class="float-right">{{ fighter.email }}
+                                    </span>
+                                </li>
 
+                                <li class="list-group-item text-mute">
+                                    <i class="fas fa-link"></i> <strong>Social Media:</strong>
+                                    <span class="float-right">{{ fighter.facebook }}</span><br>
+                                    <span class="float-right">{{ fighter.instagram }}</span><br>
+                                    <span class="float-right">{{ fighter.twitter }}</span><br>
+                                    <span class="float-right">{{ fighter.web }}</span><br>
+
+
+                                </li>
+                                <li class="list-group-item ">
+                                    <i class="fas fa-calendar"></i> <strong>Listing Date:</strong>
+                                    <span class="float-right">{{ fighter.created_on }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 ">
+                <div class="card mb-3 white-box">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"> <strong>Sponsors:</strong></h5>
+
+                        <img src="{{ fighter.photo_6.url }}" class="mx-auto d-block img-fluid-profile rounded"
+                            alt=" Sponsors">
+
+
+
+                        {% if fighter.is_verified %}
+                        <h6 class="font-weight-bold">
+                            <em>Verified Fighter</em> <i class="fas fa-check-circle blue-tick"></i>
+                        </h6>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+                <div class="card mb-3 white-box ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"> <strong>Trains At:</strong></h5>
+                        {{ fighter.trains_at }}
+
+                        <h6 class="card-title"> <strong>Weight class</strong></h6>
+
+                        {{ fighter.weight_class }}
                     </div>
 
                 </div>
 
+
+                <div class="card mb-3 white-box ">
+                    <div class="div text-center">
+
+                        <!--Facebook-->
+
+                        <a href="https://facebook.com" target="_blank" class="fb-ic mr-3" role="button"><i
+                                class="fab fa-lg fa-facebook-f"></i></a>
+                        <!--Twitter-->
+                        <a href="https://twitter.com" target="_blank" class="tw-ic mr-3" role="button"><i
+                                class="fab fa-lg fa-twitter"></i></a>
+
+                        <!--Linkedin-->
+                        <a href="https://linkedin.com" target="_blank" class="li-ic mr-3" role="button"><i
+                                class="fab fa-lg fa-linkedin-in"></i></a>
+                        <!--Instagram-->
+                        <a href="https://instagram.com" target="_blank" class="ins-ic mr-3" role="button"><i
+                                class="fab fa-lg fa-instagram"></i></a>
+                    </div>
+
+                </div>
+
+
+                <div class="div text-center">
+
+                    <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Fighters</a></div>
+
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
+                    <a class="text-danger" href="{% url 'delete_fighter' fighter.id %}">Delete</a>
+                </small>
+                {% endif %}
             </div>
 
-        </section>
-        <!-- End About Gym -->
-    </div>
+            <!-- Carousel-->
+            <div class="container-fluid ">
+                <div class="row white-box my-5 py-5 z-depth-1">
+                    <div class="col text-left">
+
+                        <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
+
+                        <div class="owl-carousel">
+                            <div class="item-video" data-merge="1">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="1">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="2">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="2">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                            <div class="item-video" data-merge="1">
+                                <a class="owl-video" href="https://www.youtube.com/watch?v=u58gdiWGQks"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Carousel-->
+            </div>
+        </div>
+    </section>
+    <!-- End About Gym -->
+    <!-- </div> -->
 
     {% endblock %}
 

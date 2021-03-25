@@ -25,7 +25,10 @@ def gym_profile(request, gym_id):
 
     context = {
         "gym": gym,
+        "fighters": gym.fighters.all(),  # Fighter.objects.filter(trains_at=gym).all()
     }
+
+    # get_absolute_url to get the url for the fighter or gym
 
     return render(
         request,

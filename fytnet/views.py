@@ -57,7 +57,7 @@ def add_fighter(request):
     else:
         form = FighterForm()
 
-    template = "fytnet/add_fighter.html"
+    template = "fytnet/add_fighter_profile.html"
     context = {
         "form": form,
     }

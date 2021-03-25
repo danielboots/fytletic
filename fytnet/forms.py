@@ -1,6 +1,7 @@
 from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Fighter, Category
+from gym.models import Gym
 
 
 class FighterForm(forms.ModelForm):
@@ -11,6 +12,8 @@ class FighterForm(forms.ModelForm):
     image = forms.ImageField(
         label="Image", required=False, widget=CustomClearableFileInput
     )
+
+    gyms = forms.ModelChoiceField(queryset=Gym.objects.all(), empty_label="No Gyms Yet")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
