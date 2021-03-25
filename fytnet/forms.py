@@ -1,7 +1,7 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Fighter, Category
-from gym.models import Gym
+from .models import Fighter, Discipline
+from gym.models import Gym, GymType
 
 
 class FighterForm(forms.ModelForm):

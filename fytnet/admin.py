@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import Fighter, Category, WeightClass
+from .models import Fighter, Discipline, WeightClass
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class DisciplineAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "friendly_name",
@@ -18,5 +18,5 @@ class WeightClassAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Fighter)
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Discipline, DisciplineAdmin)
 admin.site.register(WeightClass, WeightClassAdmin)

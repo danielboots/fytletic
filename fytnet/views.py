@@ -107,7 +107,7 @@ def edit_fighter(request, fighter_id):
 def delete_fighter(request, fighter_id):
     """ Delete a Fighter from your profile """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, only store owners can do that.")
+        messages.error(request, "Sorry, only owners can do that.")
         return redirect(reverse("home"))
 
     fighter = get_object_or_404(Fighter, pk=fighter_id)

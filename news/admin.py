@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import Post, Category, Comment
+from .models import Post, NewsCategory, Comment
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class NewsCategoryAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "friendly_name",
@@ -22,4 +22,4 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post)
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(NewsCategory, NewsCategoryAdmin)

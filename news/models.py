@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Category(models.Model):
+class NewsCategory(models.Model):
 
     # Meta Class overwrites Django 'S' to our stated plural metaclass.
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "News Categories"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -21,7 +21,7 @@ class Category(models.Model):
 class Post(models.Model):
 
     # Relationship to Specialises in = aka categories
-    categories = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(NewsCategory)
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -50,7 +50,6 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
 
     # is there a way to get a user here:
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     name = models.CharField(max_length=80)
     email = models.EmailField()

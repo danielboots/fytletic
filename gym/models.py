@@ -2,11 +2,11 @@ from django.db import models
 from django_countries.fields import CountryField
 
 
-class Category(models.Model):
+class GymType(models.Model):
 
     # Meta Class overwrites Django 'S' to our stated plural metaclass.
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "Gym Types"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -23,7 +23,7 @@ class Gym(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
 
     # Relationship to Specialises in = aka categories
-    categories = models.ManyToManyField(Category)
+    gym_type = models.ManyToManyField(GymType)
 
     # Address Fields.
 

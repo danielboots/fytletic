@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 from gym.models import Gym
 
 
-class Category(models.Model):
+class Discipline(models.Model):
 
     # Meta Class overwrites Django 'S' to our stated plural metaclass.
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "Disciplines"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -40,7 +40,7 @@ class Fighter(models.Model):
     # Relationship to Fighter discipline in = aka categories
 
     discipline = models.ForeignKey(
-        Category, null=True, blank=True, on_delete=models.CASCADE
+        Discipline, null=True, blank=True, on_delete=models.CASCADE
     )
 
     # Relationship to Weight Class model
@@ -49,7 +49,9 @@ class Fighter(models.Model):
     )
 
     # Relationship to Weight Class model
-    trains_at = models.ForeignKey(Gym, null=True, blank=True, on_delete=models.CASCADE, related_name="fighters")
+    trains_at = models.ForeignKey(
+        Gym, null=True, blank=True, on_delete=models.CASCADE, related_name="fighters"
+    )
     # Main
     fighter = models.ForeignKey(User, on_delete=models.CASCADE)
     nick_name = models.CharField(
