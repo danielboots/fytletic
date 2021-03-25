@@ -6,6 +6,9 @@ from .models import Fighter, Discipline
 class FighterForm(forms.ModelForm):
     class Meta:
         model = Fighter
+
+        # change this to not include all fields -- only admin should
+
         fields = "__all__"
 
     image = forms.ImageField(
