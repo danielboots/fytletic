@@ -39,8 +39,8 @@ def fytnet_profile(request, fighter_id):
 @login_required
 def add_fighter(request):
     """ Add a Fighter to your profile """
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only store owners can do that.")
+    if not request.user.is_authenticated:
+        messages.error(request, "Sorry, only logged in members can do that.")
         return redirect(reverse("home"))
 
     if request.method == "POST":
@@ -48,7 +48,7 @@ def add_fighter(request):
         if form.is_valid():
             fighter = form.save()
             messages.success(request, "Successfully added Fighter Profile!")
-            return redirect(reverse("fighter_detail", args=[fighter.id]))
+            return redirect(reverse("fytnet_profile", args=[fighter.id]))
         else:
             messages.error(
                 request,
@@ -57,7 +57,7 @@ def add_fighter(request):
     else:
         form = FighterForm()
 
-    template = "fytnet/add_fighter_profile.html"
+    template = "fytnet/add_fighter.html"
     context = {
         "form": form,
     }
@@ -71,8 +71,8 @@ def add_fighter(request):
 @login_required
 def edit_fighter(request, fighter_id):
     """ Edit fight profile """
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only store owners can do that.")
+    if not request.user.is_authenticated:
+        messages.error(request, "Sorry, only logged in users can do that.")
         return redirect(reverse("home"))
 
     fighter = get_object_or_404(Fighter, pk=fighter_id)
@@ -81,7 +81,8 @@ def edit_fighter(request, fighter_id):
         if form.is_valid():
             form.save()
             messages.success(request, "Successfully updated Fight Profile!")
-            return redirect(reverse("fighter_detail", args=[fighter.id]))
+
+            return redirect(reverse("fytnet_profile", args=[fighter.id]))
         else:
             messages.error(
                 request,
@@ -89,9 +90,11 @@ def edit_fighter(request, fighter_id):
             )
     else:
         form = FighterForm(instance=fighter)
-        messages.info(request, f"You are editing {fighter.name}")
 
-    template = "fytnet/edit_fighter_profile.html"
+        # This line doesnt work.
+        messages.info(request, f"You are editing {fighter.fighter}")
+
+    template = "fytnet/edit_fighter.html"
     context = {
         "form": form,
         "fighter": fighter,
