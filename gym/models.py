@@ -22,7 +22,7 @@ class Gym(models.Model):
 
     name = models.CharField(max_length=50, null=False, blank=False)
 
-    # Relationship to Specialises in = aka categories
+    # Relationship to Specialises in = aka Gym types
     gym_type = models.ManyToManyField(GymType)
 
     # Address Fields.

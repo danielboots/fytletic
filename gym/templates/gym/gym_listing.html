@@ -115,12 +115,18 @@
                                 <span class="float-right">
 
                                     <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
-                                    {% for gymtype in gym.gym_type.all %}
+                                    {% for type in gym.gym_type.all %}
                                     {{ gym_type.name }} <br>
                                     {% empty %}
                                     No tags!
                                     {% endfor %}
 
+
+                                    {% for categories in gym.categories.all %}
+                                    {{ categories.name }} <br>
+                                    {% empty %}
+                                    No tags!
+                                    {% endfor %}
 
                                 </span>
                             </li>
@@ -140,7 +146,15 @@
 
                             <li class="list-group-item text-mute">
                                 <i class="fas fa-link"></i> <strong>Social Media:</strong>
-                                <span class="float-right">{{ gym.facebook }}</span><br>
+
+                                <p><i class="far fa-newspaper mr-3 hover-nav"></i><a
+                                        href="{{ gym.facebook.url }}"><strong>News</strong></a>
+                                </p>
+
+                                <span class="float-right"> <a href="{{ gym.facebook.url }}" target="_blank"></a>
+                                    Facebook</span><br>
+
+
                                 <span class="float-right">{{ gym.instagram }}</span><br>
                                 <span class="float-right">{{ gym.twitter }}</span><br>
                                 <span class="float-right">{{ gym.web }}</span><br>
