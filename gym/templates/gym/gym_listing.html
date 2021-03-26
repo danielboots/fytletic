@@ -192,7 +192,20 @@
                     <div class="card-body text-center">
                         <h5 class="card-title"> <strong>Fighters</strong></h5>
 
+                        <!-- working but somewhere knacked -->
+
+                        <!-- {{ gym.fighters.all }} -->
                     </div>
+
+                    {% for fighter in gym.fighters.all %}
+                    <strong>{{ gym.fighters.all }}</strong><br>
+
+                    {% empty %}
+                    No Fighters
+
+                    {% endfor %}
+
+
 
 
                 </div>
