@@ -108,10 +108,10 @@
 
 
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-12 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- comments -->
-                <h2>{{ comments.count }} comments</h2>
+                <h6>{{ comments.count }} comments</h6>
 
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
@@ -139,7 +139,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-12 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if new_comment %}
                 <div class="alert alert-success" role="alert">
