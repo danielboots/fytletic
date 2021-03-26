@@ -43,38 +43,55 @@
                     Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% if request.user.is_authenticated %}
+
+
+                    <a class="nav-link  hover-nav" href="{% url 'add_fighter' %}"><i
+                            class="fas fa-building mr-1 hover-nav"></i>Add Fighter Profile
+                    </a>
+
 
 
                     <a class="nav-link  hover-nav" href="{% url 'account_login' %}"><i
-                            class="fas fa-building mr-1 hover-nav"></i>Profile
+                            class="fas fa-building mr-1 hover-nav"></i>Add Gym
                     </a>
+
+
+
 
                     <!-- DropDown Divider - account login logout-->
                     <div class="dropdown-divider"></div>
 
-                    <a class="nav-link  hover-nav" href="{% url 'account_login' %}"><i
-                            class="fas fa-building mr-1 hover-nav"></i>Profile
-                    </a>
                     <a class="nav-link hover-nav" href="{% url 'account_logout' %}"><i
                             class="fas fa-building mr-1 hover-nav"></i>Logout
                     </a>
-                    <a class="nav-link hover-nav" href="{% url 'account_signup' %}"><i
-                            class="fas fa-building mr-1 hover-nav"></i>Register
-                    </a>
-
-                    <!-- DropDown Divider - account login logout-->
-                    <div class="dropdown-divider"></div>
+                    {% else %}
 
                     <a class="nav-link hover-nav" href="{% url 'account_login' %}"><i
                             class="fas fa-building mr-1 hover-nav"></i>Login
                     </a>
-                    <a class="nav-link hover-nav" href="{% url 'account_logout' %}"><i
-                            class="fas fa-building mr-1 hover-nav"></i>Logout
-                    </a>
                     <a class="nav-link hover-nav" href="{% url 'account_signup' %}"><i
                             class="fas fa-building mr-1 hover-nav"></i>Register
                     </a>
+                    {% endif %}
 
+                    {% if request.user.is_superuser %}
+                    <!-- DropDown Divider - account login logout-->
+                    <div class="dropdown-divider"></div>
+
+                    <h6 class="nav-link hover-nav"> <i class="fas fa-cog mr-1 hover-nav"></i><em>Admin</em> </h6>
+
+
+                    <a class="nav-link  hover-nav" href=""><i class="fas fa-building mr-1 hover-nav"></i>Admin Panel
+                    </a>
+
+                    <a class="nav-link  hover-nav" href="{% url 'add_product' %}"><i
+                            class="fas fa-building mr-1 hover-nav"></i>Add product
+                    </a>
+
+
+
+                    {% endif %}
                 </div>
             </li>
 
