@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark  bg-dark fixed-top">
     <a class="navbar-brand" href="{% url 'home' %}">FYT<strong><em>LETIC</em> </strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,7 @@
                 <a class="nav-link hover-nav" href="{% url 'products' %}"><i
                         class="fas fa-shopping-bag mr-1 hover-nav"></i>FYT<strong><em>MERCH</em> </strong>
                 </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link hover-nav" href="{% url 'news' %}"><i
@@ -33,7 +34,6 @@
                 </a>
             </li>
 
-            </li>
 
             <!-- Account management.-->
 
@@ -44,7 +44,15 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                    <a class="nav-link hover-nav" href="{% url 'account_login' %}"><i
+
+                    <a class="nav-link  hover-nav" href="{% url 'account_login' %}"><i
+                            class="fas fa-building mr-1 hover-nav"></i>Profile
+                    </a>
+
+                    <!-- DropDown Divider - account login logout-->
+                    <div class="dropdown-divider"></div>
+
+                    <a class="nav-link  hover-nav" href="{% url 'account_login' %}"><i
                             class="fas fa-building mr-1 hover-nav"></i>Profile
                     </a>
                     <a class="nav-link hover-nav" href="{% url 'account_logout' %}"><i
@@ -54,6 +62,8 @@
                             class="fas fa-building mr-1 hover-nav"></i>Register
                     </a>
 
+                    <!-- DropDown Divider - account login logout-->
+                    <div class="dropdown-divider"></div>
 
                     <a class="nav-link hover-nav" href="{% url 'account_login' %}"><i
                             class="fas fa-building mr-1 hover-nav"></i>Login
@@ -65,34 +75,26 @@
                             class="fas fa-building mr-1 hover-nav"></i>Register
                     </a>
 
-
-
-
-
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
 
 
 
-
-            <li class="nav-item hover-nav">
-                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} "
-                    href="{% url 'view_bag' %}">
-
-                    <i class="fas fa-shopping-bag fa-lg"></i>
-                    {% if grand_total %}
+            <li class="nav-item">
+                <a class="nav-link hover-nav" href="{% url 'view_bag' %}"><i
+                        class="fas fa-shopping-bag fa-lg mr-1 hover-nav"></i>{% if grand_total %}
                     ${{ grand_total|floatformat:2 }}
                     {% else %}
                     £0.00
                     {% endif %}
-
-
                 </a>
-            </li>
-        </ul>
 
+            </li>
+
+
+
+
+        </ul>
 
     </div>
 </nav>

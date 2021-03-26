@@ -9,8 +9,20 @@
 
 .nav-link {
     font-weight: 600;
+   
 }
 
-nav {
-    background-color:  white;
+
+.dropdown-menu {
+    background-color: #12192c !important;
 }
+
+.bg-dark {
+    background-color: transparent !important;
+}
+
+.bg-dark.scrolled {
+    background-color: #12192c !important;
+    transition:0.75s ease;
+}
+
