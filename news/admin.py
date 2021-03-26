@@ -12,7 +12,7 @@ class NewsCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ("name", "body", "post", "created_on", "active")
+    list_display = ("user", "body", "post", "created_on", "active")
     list_filter = ("active", "created_on")
     search_fields = ("name", "email", "body")
     actions = ["approve_comments"]
@@ -22,4 +22,5 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post)
+
 admin.site.register(NewsCategory, NewsCategoryAdmin)
