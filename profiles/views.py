@@ -5,6 +5,11 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 
+
+from news.models import Post
+from fytnet.models import Fighter
+from gym.models import Gym
+
 from checkout.models import Order
 
 
@@ -23,10 +28,22 @@ def profile(request):
     else:
 
         form = UserProfileForm(instance=profile)
+
     orders = profile.orders.all()
 
+    # importing fighters and gym to profile view - and context
+
+    fighters = Fighter.objects.order_by("-created_on")[:3]
+    gyms = Gym.objects.order_by("-created_on")[:3]
+
     template = "profiles/profile.html"
-    context = {"form": form, "orders": orders, "on_profile_page": True}
+    context = {
+        "form": form,
+        "orders": orders,
+        "fighters": fighters,
+        "gyms": gyms,
+        "on_profile_page": True,
+    }
 
     return render(request, template, context)
 
