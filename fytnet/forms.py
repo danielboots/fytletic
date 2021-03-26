@@ -26,3 +26,7 @@ class FighterForm(forms.ModelForm):
         self.fields["discipline"].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs["class"] = "border-black rounded-0"
+
+
+def __init__(self, *args, **kwargs):
+    super(FighterForm, self).__init__(*args, **kwargs)

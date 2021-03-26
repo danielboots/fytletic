@@ -8,6 +8,5 @@ class CommentForm(forms.ModelForm):
         fields = ["body"]
 
     # user signed in user name for return
-
     def __init__(self, *args, **kwargs):
         super(CommentForm, self).__init__(*args, **kwargs)
