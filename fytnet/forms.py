@@ -11,6 +11,9 @@ class FighterForm(forms.ModelForm):
 
         fields = "__all__"
 
+        # this excludes the below fields
+        exclude = ("is_verified", "fighter")
+
     image = forms.ImageField(
         label="Image", required=False, widget=CustomClearableFileInput
     )
