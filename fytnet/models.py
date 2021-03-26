@@ -42,6 +42,10 @@ class WeightClass(models.Model):
 
 class Fighter(models.Model):
 
+    # Main
+
+    fighter = models.OneToOneField(User, on_delete=models.CASCADE)
+
     # Relationship to Fighter discipline in = aka categories
 
     discipline = models.ForeignKey(
@@ -57,8 +61,6 @@ class Fighter(models.Model):
     trains_at = models.ForeignKey(
         Gym, null=True, blank=True, on_delete=models.CASCADE, related_name="fighters"
     )
-    # Main
-    fighter = models.ForeignKey(User, on_delete=models.CASCADE)
     nick_name = models.CharField(
         max_length=50, null=False, blank=False, default="DEFAULT VALUE"
     )
