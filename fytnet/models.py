@@ -44,7 +44,7 @@ class Fighter(models.Model):
 
     # Main
 
-    fighter = models.OneToOneField(User, on_delete=models.CASCADE)
+    fighter = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # Relationship to Fighter discipline in = aka categories
 
@@ -117,7 +117,7 @@ class Fighter(models.Model):
 
 
 @receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
+def create_or_update_user_fighter(sender, instance, created, **kwargs):
     """
     Create or update the users Fighter profile
     """
