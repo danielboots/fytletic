@@ -207,7 +207,127 @@
 
 
 
+<!--  Section Latest Fighters in database -->
 
+<div class="container mt-5">
+
+
+    <!-- Section heading -->
+    <h3 class="font-weight-bold mb-5">Gym Profile</h3>
+
+    <!-- New card System-->
+    <div class="row">
+
+
+        {% for gym in gyms.user %}
+
+
+        <!-- New fighter card layout-->
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+            <!-- Card -->
+            <div class="card hoverable">
+
+                <!-- Card image -->
+                <img class="card-img-top" src="{{ gym.gym_photo_main.url }}" alt="Card image cap">
+
+                <!-- Card content -->
+                <div class="card-body">
+                    {% if gym.is_verified %}
+                    <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
+                        {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
+                    </h5>
+
+                    {% else %}
+                    <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
+                        {{ gym.name }}<i class="fas fa-check-circle"></i>
+                    </h5>
+                    {% endif %}
+
+
+                    <!-- Text -->
+                    <p class="mb-2">{{ gym.town_or_city }}</p>
+                    <!-- Title -->
+                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ gym.created_on }}
+                    </p>
+
+                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">Read
+                        more!</a>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--End new card layout -->
+
+
+        {% endfor %}
+
+
+
+    </div>
+</div>
+
+<!--Spacer row-->
+<div class="row my-5">
+    <div class="col">
+
+    </div>
+</div>
+
+
+<!--  Section Latest Fighters in database -->
+
+<div class="container mt-5">
+
+
+    <!-- Section heading -->
+    <h3 class="font-weight-bold mb-5">Your Fighter Profile</h3>
+
+    <!-- New card System-->
+    <div class="row">
+
+        {% for fighter in fighters %}
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+            <!-- Card -->
+            <div class="card hoverable">
+
+                <!-- Card image -->
+                <img class="card-img-top" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
+
+                <!-- Card content -->
+                <div class="card-body">
+
+                    <!-- Title -->
+                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ fighter.first_name }}</p>
+                    <!-- Text -->
+
+                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'fytnet_profile' fighter.id %}">View
+                        Profile</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<!--Spacer row-->
+<div class="row my-5">
+    <div class="col">
+
+    </div>
+</div>
 
 
 
