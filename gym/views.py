@@ -96,7 +96,7 @@ def edit_gym(request, gym_id):
         form = GymForm(instance=gym)
 
         # This line doesnt work.
-        messages.info(request, f"You are editing {gym.gym}")
+        messages.info(request, f"You are editing {gym.user}")
 
     template = "fytnet/edit_gym.html"
     context = {

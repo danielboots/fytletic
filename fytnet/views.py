@@ -92,7 +92,7 @@ def edit_fighter(request, fighter_id):
         form = FighterForm(instance=fighter)
 
         # This line doesnt work.
-        messages.info(request, f"You are editing {fighter.fighter}")
+        messages.info(request, f"You are editing {fighter.user}")
 
     template = "fytnet/edit_fighter.html"
     context = {
