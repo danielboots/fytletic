@@ -43,9 +43,13 @@ def add_fighter(request):
         messages.error(request, "Sorry, only logged in members can do that.")
         return redirect(reverse("home"))
 
-    if request.method == "POST":
-        form = FighterForm(request.POST, request.FILES)
+    # requesting the logged in user
+
+    if request.method == "POST" and request.user.is_authenticated:
+        form = FighterForm(request.POST, request.FILES, request.user)
+
         if form.is_valid():
+
             fighter = form.save()
             messages.success(request, "Successfully added Fighter Profile!")
             return redirect(reverse("fytnet_profile", args=[fighter.id]))
@@ -76,7 +80,7 @@ def edit_fighter(request, fighter_id):
         return redirect(reverse("home"))
 
     fighter = get_object_or_404(Fighter, pk=fighter_id)
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_authenticated:
         form = FighterForm(request.POST, request.FILES, instance=fighter)
         if form.is_valid():
             form.save()
