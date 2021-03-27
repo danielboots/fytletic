@@ -185,10 +185,12 @@
                     <div class="div text-center">
                         <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Fighters</a>
                     </div>
-                    {% if request.user.is_superuser %}
+
+
+                    {% if user.is_authenticated and user == fighter.fighter or user.is_superuser %}
                     <small class="text-center ">
                         <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
-                        <a class="text-danger" href="{% url 'delete_fighter' fighter.id %}">Delete</a>
+                        <!-- <a class="text-danger" href="{% url 'delete_fighter' fighter_id %}">Delete</a> -->
                     </small>
                     {% endif %}
                 </div>

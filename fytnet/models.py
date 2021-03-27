@@ -39,6 +39,8 @@ class WeightClass(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+    # Models for creating fighter profiles
+
 
 class Fighter(models.Model):
 
@@ -62,7 +64,7 @@ class Fighter(models.Model):
         Gym, null=True, blank=True, on_delete=models.CASCADE, related_name="fighters"
     )
     nick_name = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="Fytletic Fighter"
     )
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
@@ -73,10 +75,10 @@ class Fighter(models.Model):
 
     # Contact
     email = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="user@fytletic.com"
     )
     whatsapp = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="07555555555"
     )
 
     # Media
