@@ -83,7 +83,13 @@ class Fighter(models.Model):
     profile_photo_main = models.ImageField(
         upload_to="media/%Y/%m/%d", null=True, blank=True
     )
-    video = models.URLField(null=True, blank=True)
+
+    video_1 = models.URLField(null=True, blank=True)
+    video_2 = models.URLField(null=True, blank=True)
+    video_3 = models.URLField(null=True, blank=True)
+    video_4 = models.URLField(null=True, blank=True)
+    video_5 = models.URLField(null=True, blank=True)
+
     photo_1 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
     photo_2 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
     photo_3 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
