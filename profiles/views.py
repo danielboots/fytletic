@@ -5,8 +5,6 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 
-
-from news.models import Post
 from fytnet.models import Fighter
 from gym.models import Gym
 
