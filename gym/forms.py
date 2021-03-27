@@ -22,7 +22,7 @@ class GymForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        gymtype = gymType.objects.all()
+        gymtype = GymType.objects.all()
         friendly_names = [(g.id, g.get_friendly_name()) for g in gymtype]
 
         self.fields["gymtype"].choices = friendly_names
