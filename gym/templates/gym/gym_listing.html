@@ -237,15 +237,6 @@
                 <div class="div text-center">
 
                     <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-dark">Back To Gyms</a></div>
-
-                <!-- Need to add authentication for user who created this listing-->
-
-                {% if user.is_authenticated and user == gym.user or user.is_superuser %}
-                <small class="text-center ">
-                    <a href="{% url 'edit_gym' gym.id %}">Edit</a> |
-                    <a class="text-danger" href="{% url 'delete_gym' gym.id %}">Delete</a>
-                </small>
-                {% endif %}
             </div>
 
             <!-- Carousel-->
