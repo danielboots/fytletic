@@ -116,4 +116,4 @@ def delete_fighter(request, fighter_id):
     fighter = get_object_or_404(Fighter, pk=fighter_id)
     fighter.delete()
     messages.success(request, "Fighter deleted!")
-    return redirect(reverse("fighter"))
+    return redirect(reverse("profile"))

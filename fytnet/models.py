@@ -42,9 +42,9 @@ class WeightClass(models.Model):
 
 class Fighter(models.Model):
 
-    # Main
+    # Main - Used one to one field, one user one fighter profile.
 
-    fighter = models.ForeignKey(User, on_delete=models.CASCADE)
+    fighter = models.OneToOneField(User, on_delete=models.CASCADE)
 
     # Relationship to Fighter discipline in = aka categories
 
@@ -62,7 +62,7 @@ class Fighter(models.Model):
         Gym, null=True, blank=True, on_delete=models.CASCADE, related_name="fighters"
     )
     nick_name = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="Fytnet PRO Fighter"
     )
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
@@ -73,10 +73,10 @@ class Fighter(models.Model):
 
     # Contact
     email = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="fighter@fytletic.com"
     )
     whatsapp = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="07555555555"
     )
 
     # Media
