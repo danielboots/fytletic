@@ -44,6 +44,9 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% if request.user.is_authenticated %}
+                    <p class="nav-link  hover-nav text-center">Hi, {{ user.username }}</p>
+                    <div class="dropdown-divider"></div>
+
 
                     <a class="nav-link  hover-nav" href="{% url 'profile' %}"><i
                             class="fas fa-user-plus mr-1 hover-nav"></i>Your Account
