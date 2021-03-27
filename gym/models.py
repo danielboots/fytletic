@@ -21,7 +21,7 @@ class GymType(models.Model):
 
 class Gym(models.Model):
 
-    # Main - Used one to one field, one user one Gym profile.
+    # Main - Used one to one field, one user one Gym profile
     gym = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
     name = models.CharField(max_length=50, null=False, blank=False)
@@ -29,7 +29,7 @@ class Gym(models.Model):
     # Relationship to Specialises in = aka Gym types
     gym_type = models.ManyToManyField(GymType)
 
-    # Address Fields.
+    # Address Fields
 
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
@@ -68,6 +68,7 @@ class Gym(models.Model):
     photo_6 = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
 
     # Social
+
     facebook = models.URLField(max_length=1024, null=True, blank=True)
     instagram = models.URLField(max_length=1024, null=True, blank=True)
     twitter = models.URLField(max_length=1024, null=True, blank=True)
