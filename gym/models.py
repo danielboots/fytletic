@@ -39,10 +39,10 @@ class Gym(models.Model):
 
     # Contact
     email = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="gym@fytletic.com"
     )
     whatsapp = models.CharField(
-        max_length=50, null=False, blank=False, default="DEFAULT VALUE"
+        max_length=50, null=False, blank=False, default="5555555555"
     )
 
     # Owner Details

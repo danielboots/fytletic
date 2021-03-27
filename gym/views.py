@@ -42,7 +42,7 @@ def gym_profile(request, gym_id):
 
 @login_required
 def add_gym(request):
-    """ Add a Fighter to your profile """
+    """ Add a Gym profile """
     if not request.user.is_authenticated:
         messages.error(request, "Sorry, only logged in members can do that.")
         return redirect(reverse("home"))
@@ -69,17 +69,17 @@ def add_gym(request):
     return render(request, template, context)
 
 
-# Edit Fighter Profile
+# Edit Gym
 
 
 @login_required
-def edit_gym(request, fighter_id):
+def edit_gym(request, gym_id):
     """ Edit fight profile """
     if not request.user.is_authenticated:
         messages.error(request, "Sorry, only logged in users can do that.")
         return redirect(reverse("home"))
 
-    fighter = get_object_or_404(Gym, pk=gym_id)
+    gym = get_object_or_404(Gym, pk=gym_id)
     if request.method == "POST":
         form = GymForm(request.POST, request.FILES, instance=gym)
         if form.is_valid():
@@ -101,13 +101,13 @@ def edit_gym(request, fighter_id):
     template = "fytnet/edit_gym.html"
     context = {
         "form": form,
-        "fighter": fighter,
+        "gym": gym,
     }
 
     return render(request, template, context)
 
 
-# Delete Fighter Profile
+# Delete Gym
 
 
 @login_required
