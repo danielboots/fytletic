@@ -22,7 +22,7 @@ class GymType(models.Model):
 class Gym(models.Model):
 
     # Main - Used one to one field, one user one Gym profile
-    gym = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
     name = models.CharField(max_length=50, null=False, blank=False)
 
