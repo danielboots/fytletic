@@ -124,4 +124,4 @@ def create_or_update_user_fighter(sender, instance, created, **kwargs):
     if created:
         Fighter.objects.create(user=instance)
     # Existing users: just save the profile
-    instance.fighter.save()
+    instance.userprofile.save()
