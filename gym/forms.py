@@ -25,7 +25,7 @@ class GymForm(forms.ModelForm):
         gymtype = GymType.objects.all()
         friendly_names = [(g.id, g.get_friendly_name()) for g in gymtype]
 
-        self.fields["gymtype"].choices = friendly_names
+        self.fields["gym_type"].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs["class"] = "border-black rounded-0"
 
