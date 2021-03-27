@@ -7,7 +7,7 @@ from .models import Gym
 
 
 def gym(request):
-    """ A view to return the main fytnet page. """
+    """ A view to return the main gym page. """
     gyms = Gym.objects.all()
 
     # addition of pagination - Django dev to deployment.
@@ -98,7 +98,7 @@ def edit_gym(request, gym_id):
         # This line doesnt work.
         messages.info(request, f"You are editing {gym.user}")
 
-    template = "fytnet/edit_gym.html"
+    template = "gym/edit_gym.html"
     context = {
         "form": form,
         "gym": gym,
