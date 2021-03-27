@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <div class="row ">
                 <div class="hero-text text-center focus-in-contract-bck">
-                    <p>"{{ fighter.fighter }}"</p>
+                    <p>"{{ fighter.nick_name }}"</p>
                     <h1 class="display-4 logo-font text-white font-weight-bold">
-                        {{ fighter.fighter }}
+                        {{ fighter.user }}
                     </h1>
                     <em>
                         <p>{{ fighter.titles }}</p>
@@ -192,6 +192,41 @@
                     </small>
                     {% endif %}
                 </div>
+
+
+                <!-- Carousel-->
+                <div class="container-fluid ">
+                    <div class="row white-box my-5 py-5 z-depth-1">
+                        <div class="col text-left">
+
+                            <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
+
+                            <div class="owl-carousel">
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="{{ fighter.video_1 }}"></a>
+                                </div>
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="{{ fighter.video_2 }}"></a>
+                                </div>
+                                <div class="item-video" data-merge="2">
+                                    <a class="owl-video" href="{{ fighter.video_3 }}"></a>
+                                </div>
+                                <div class="item-video" data-merge="2">
+                                    <a class="owl-video" href="{{ fighter.video_4 }}"></a>
+                                </div>
+                                <div class="item-video" data-merge="1">
+                                    <a class="owl-video" href="{{ fighter.video_5 }}"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- End Carousel-->
+
+
 
             </div>
         </div>
