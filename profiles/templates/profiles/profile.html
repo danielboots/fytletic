@@ -199,7 +199,9 @@
             </div>
             <hr>
             <p class="text-muted">Last Login</p>
-            <strong>{{ user.last_login | timesince }}</strong>
+            <strong>
+                <p class="text-success"> <em>{{ user.last_login | timesince }}</em> </p>
+            </strong>
         </div>
     </div>
 </div>
