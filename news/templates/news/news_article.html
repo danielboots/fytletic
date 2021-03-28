@@ -51,6 +51,8 @@
                     <!--Section: Content-->
                     <section class="text-center px-md-5 mx-md-5 dark-grey-text">
 
+                        <p class="text-muted"> {{ post.body|truncatechars:50 }} </p>
+
                         <h3 class="font-weight-bold">Read the full post by registering for free here: <a
                                 class="font-weight-bold" href="{% url 'account_signup' %}"><i
                                     class="fas fa-user-plus"></i> Register</a>
@@ -92,8 +94,9 @@
                     </div>
                 </div>
 
-
-                <a href="{% url 'news' %}" class="btn btn-primary btn-dark btn-sm">Back To News Desk</a>
+                <div class="div text-center">
+                    <a href="{% url 'news' %}" class=" btn btn-primary btn-dark btn-sm text-center">Back To News
+                        Desk</a></div>
             </div>
         </div>
     </div>
