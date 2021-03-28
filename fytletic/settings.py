@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    # humanize- login time.
+    "django.contrib.humanize",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",

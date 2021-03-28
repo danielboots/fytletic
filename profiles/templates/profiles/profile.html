@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load humanize %}
 {% load static %}
 
 {% block extra_css %}
@@ -198,7 +199,7 @@
             </div>
             <hr>
             <p class="text-muted">Last Login</p>
-            <strong>{{ user.last_login }}</strong>
+            <strong>{{ user.last_login | timesince }}</strong>
         </div>
     </div>
 </div>
