@@ -62,10 +62,10 @@ class Fighter(models.Model):
         Gym, null=True, blank=True, on_delete=models.CASCADE, related_name="fighters"
     )
     nick_name = models.CharField(
-        max_length=50, null=False, blank=False, default="Fytnet PRO Fighter"
+        max_length=50, null=True, blank=True, default="Fytnet PRO Fighter"
     )
-    first_name = models.CharField(max_length=50, null=False, blank=False)
-    last_name = models.CharField(max_length=50, null=False, blank=False)
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
     fight_style = models.CharField(max_length=200, unique=False)
     titles = models.CharField(max_length=200, unique=False)
     bio = models.TextField()
@@ -74,10 +74,10 @@ class Fighter(models.Model):
 
     # Contact
     email = models.CharField(
-        max_length=50, null=False, blank=False, default="fighter@fytletic.com"
+        max_length=50, null=True, blank=True, default="fighter@fytletic.com"
     )
     whatsapp = models.CharField(
-        max_length=50, null=False, blank=False, default="07555555555"
+        max_length=50, null=True, blank=True, default="07555555555"
     )
 
     # Media
