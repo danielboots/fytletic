@@ -12,7 +12,7 @@ def news(request):
 
     # addition of pagination - Django dev to deployment.
 
-    paginator = Paginator(posts, 1)
+    paginator = Paginator(posts, 6)
     page = request.GET.get("page")
     paged_posts = paginator.get_page(page)
 
