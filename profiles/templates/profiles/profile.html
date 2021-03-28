@@ -23,8 +23,103 @@
 </div>
 
 <!-- End Hero Section-->
+<!-- Fighter and Gym Container-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Profile management for {{ user.username }}</h2>
+<hr>
+</div>
+</div>
+<div class="row">
 
+    <!-- Fighter Profile data-->
+    <div class="col-12 col-lg-6">
+        <p class="text-muted">Your Fighter Profiles </p>
+        <div class="order-history table-responsive">
+            <table class="table table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Edit / Delete</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fighter in fighters %}
+                    <tr>
+                        <td>
+                            <a href="#" title="#">
+                                {{ fighter.first_name }}
+                            </a>
+                        </td>
+                        <td>{{ fighter.created_on }}</td>
 
+                        <td>
+                            <small class="text-center ">
+                                <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
+                                <a class="text-danger" href="{% url 'delete_fighter' fighter.id %}">Delete</a>
+                            </small>
+                        </td>
+                        <td><a class="btn btn-black btn-sm" href="{% url 'fytnet_profile' fighter.id %}"> View
+                            </a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <hr>
+            <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_fighter' %}">Add Fighter</a>
+        </div>
+    </div>
+
+    <!-- Gym Profile data-->
+    <div class="col-12 col-lg-6">
+        <p class="text-muted">Your Gym Profiles </p>
+        <div class="order-history table-responsive">
+            <table class="table table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Edit / Delete</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for gym in gyms %}
+                    <tr>
+                        <td>
+                            <a href="#" title="#">
+                                {{ gym.name }}
+                            </a>
+                        </td>
+                        <td>{{ gym.created_on }}</td>
+
+                        <td>
+                            <small class="text-center ">
+                                <a href="{% url 'edit_gym' gym.id %}">Edit</a> |
+                                <a class="text-danger" href="{% url 'delete_gym' gym.id %}">Delete</a>
+                            </small>
+                        </td>
+                        <td><a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">View</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <hr>
+            <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_gym' %}">Add Gym</a>
+        </div>
+    </div>
+</div>
+</div>
+<!--Spacer row-->
+<div class="row my-5">
+    <div class="col">
+
+    </div>
+</div>
 
 
 
@@ -33,7 +128,10 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Account</h2>
+            <h2 class="logo-font mb-4">FYT<strong><em>MERCH</em></strong> - <small class="text-muted">Delivery & Order
+                    Information</small>
+            </h2>
+
             <hr>
         </div>
     </div>
@@ -43,139 +141,46 @@
             <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-<button class="btn btn-black rounded-0 text-uppercase float-right btn-sm">Update Information</button>
-</form>
-</div>
-
-
-
-
-<div class="col-12 col-lg-6">
-    <p class="text-muted">Order History</p>
-    <div class="order-history table-responsive">
-        <table class="table table-sm table-borderless">
-            <thead>
-                <tr>
-                    <th>Order Number</th>
-                    <th>Date</th>
-                    <th>Items</th>
-                    <th>Order Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for order in orders %}
-                <tr>
-                    <td>
-                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
-                            {{ order.order_number|truncatechars:6 }}
-                        </a>
-                    </td>
-                    <td>{{ order.date }}</td>
-                    <td>
-                        <ul class="list-unstyled">
-                            {% for item in order.lineitems.all %}
-                            <li class="small">
-                                {% if item.product.has_sizes %}
-                                Size {{ item.product.size|upper }}
-                                {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </td>
-                    <td>${{ order.grand_total }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
-</div>
-</div>
-<!--Spacer row-->
-<div class="row my-5">
-    <div class="col">
-
-    </div>
-</div>
-
-
-
-<!-- Fighter and Gym Container-->
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Profile management for {{ user.username }}</h2>
-            <hr>
+                <button class="btn btn-black rounded-0 text-uppercase float-right btn-sm">Update Information</button>
+            </form>
         </div>
-    </div>
-    <div class="row">
 
-        <!-- Fighter Profile data-->
+
+
+
         <div class="col-12 col-lg-6">
-            <p class="text-muted">Your Fighter Profiles </p>
+            <p class="text-muted">Order History</p>
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Order Number</th>
                             <th>Date</th>
-                            <th>Edit / Delete</th>
-                            <th>View</th>
+                            <th>Items</th>
+                            <th>Order Total</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for fighter in fighters %}
+                        {% for order in orders %}
                         <tr>
                             <td>
-                                <a href="#" title="#">
-                                    Fighter name
+                                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                    {{ order.order_number|truncatechars:6 }}
                                 </a>
                             </td>
-                            <td>Date created</td>
-
+                            <td>{{ order.date }}</td>
                             <td>
-                                <a href="#" title="#">
-                                    Edit Fighter Profile
-                                </a>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="small">
+                                        {% if item.product.has_sizes %}
+                                        Size {{ item.product.size|upper }}
+                                        {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
                             </td>
-                            <td>URL for view</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Gym Profile data-->
-        <div class="col-12 col-lg-6">
-            <p class="text-muted">Your Gym Profiles </p>
-            <div class="order-history table-responsive">
-                <table class="table table-sm table-borderless">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Edit / Delete</th>
-                            <th>View</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for gym in gyms %}
-                        <tr>
-                            <td>
-                                <a href="#" title="#">
-                                    Gym name
-                                </a>
-                            </td>
-                            <td>Date created</td>
-
-                            <td>
-                                <a href="#" title="#">
-                                    Edit Gym
-                                </a>
-                            </td>
-                            <td>URL for View</td>
+                            <td>${{ order.grand_total }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -187,78 +192,6 @@
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
-    </div>
-</div>
-
-
-
-
-
-
-<!--  Section Latest Fighters in database -->
-
-<div class="container mt-5">
-
-
-    <!-- Section heading -->
-    <h3 class="font-weight-bold mb-5">Gym Profile</h3>
-
-    <!-- New card System-->
-    <div class="row">
-
-
-        {% for gym in gyms.user %}
-
-
-        <!-- New fighter card layout-->
-
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-
-            <!-- Card -->
-            <div class="card hoverable">
-
-                <!-- Card image -->
-                <img class="card-img-top" src="{{ gym.gym_photo_main.url }}" alt="Card image cap">
-
-                <!-- Card content -->
-                <div class="card-body">
-                    {% if gym.is_verified %}
-                    <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
-                        {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
-                    </h5>
-
-                    {% else %}
-                    <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
-                        {{ gym.name }}<i class="fas fa-check-circle"></i>
-                    </h5>
-                    {% endif %}
-
-
-                    <!-- Text -->
-                    <p class="mb-2">{{ gym.town_or_city }}</p>
-                    <!-- Title -->
-                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ gym.created_on }}
-                    </p>
-
-                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">Read
-                        more!</a>
-
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <!--End new card layout -->
-
-
-        {% endfor %}
-
-
 
     </div>
 </div>
