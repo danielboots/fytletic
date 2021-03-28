@@ -14,7 +14,7 @@
 
 
 .dropdown-menu {
-    background-color: #12192c !important;
+    background-color: #12192cF2 !important;
 }
 
 .bg-dark {
@@ -22,7 +22,7 @@
 }
 
 .bg-dark.scrolled {
-    background-color: #12192c !important;
+    background-color: #12192cF2 !important;
     transition:0.75s ease;
 }
 
@@ -30,7 +30,7 @@
 @media (max-width: 991px) {
 
 .bg-dark {
-    background:#12192c !important ;
+    background:#12192cF2 !important ;
 }
 
 
