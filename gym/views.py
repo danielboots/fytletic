@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from .forms import GymForm
@@ -9,6 +10,18 @@ from .models import Gym
 def gym(request):
     """ A view to return the main gym page. """
     gyms = Gym.objects.all()
+    query = None
+
+    # Search fighter functionality
+    if request.GET:
+        if "q" in request.GET:
+            query = request.GET["q"]
+            if not query:
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse("gym"))
+
+            queries = Q(name__icontains=query) | Q(about__icontains=query)
+            gyms = gyms.filter(queries)
 
     # addition of pagination - Django dev to deployment.
 
