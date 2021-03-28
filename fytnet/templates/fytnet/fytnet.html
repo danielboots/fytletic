@@ -14,6 +14,28 @@
                     Fighters
                 </h1>
 
+                <!--Fighter Search-->
+
+
+                <div class="col p-5 justify-content-center">
+                    <form method="GET" action="{% url 'fytnet' %}">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q"
+                                placeholder="Find Fighter">
+                            <div class="input-group-append ">
+
+                                <button class="btn btn btn-black  btn-sm" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                                <a class="btn btn btn-black  btn-sm " href="{% url 'fytnet' %}">Reset</a>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
 
             </div>
         </div>

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from .forms import FighterForm
@@ -9,14 +10,29 @@ from .models import Fighter
 def fighter(request):
     """ A view to return the main fytnet page. """
     fighters = Fighter.objects.all()
+    query = None
 
-    # addition of pagination - Followed Traversy media Django dev to deployment.
+    # Search fighter functionality
+    if request.GET:
+        if "q" in request.GET:
+            query = request.GET["q"]
+            if not query:
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse("fytnet"))
 
-    paginator = Paginator(fighters, 1)
+            queries = Q(first_name__icontains=query) | Q(bio__icontains=query)
+            fighters = fighters.filter(queries)
+
+    # addition of pagination - Traversy Media
+
+    paginator = Paginator(fighters, 6)
     page = request.GET.get("page")
     paged_listings = paginator.get_page(page)
 
-    context = {"fighters": paged_listings}
+    context = {
+        "fighters": paged_listings,
+        "search_term": query,
+    }
 
     return render(request, "fytnet/fytnet.html", context)
 
