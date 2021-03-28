@@ -10,7 +10,7 @@
                 <div class="hero-text text-center focus-in-contract-bck">
                     <p>"{{ fighter.nick_name }}"</p>
                     <h1 class="display-4 logo-font text-white font-weight-bold">
-                        {{ fighter.user }}
+                        {{ fighter.first_name }} {{ fighter.last_name }}
                     </h1>
                     <em>
                         <p>{{ fighter.titles }}</p>
@@ -28,22 +28,17 @@
     <section class="py-4 whitesmoke-container">
         <div class="container">
             <div class="row">
-                <!-- About fighter -->
+                <!-- Bio -->
                 <div class="col text-left mt-3 white-box my-5 py-5 z-depth-1">
-                    <h2 class="logo-font font font-weight-bold  text-left">
-                        <em>Bio - - -</em>
+                    <h2 class="logo-font mb-4">
+                        <em>Bio</em>
                     </h2>
-
-
                     <div class="col-md-12 text-justify ">
                         {{ fighter.bio }}
-                        <p> <strong>First Name</strong> {{ fighter.first_name }} </p>
-                        <p> <strong>Last Name</strong> {{ fighter.last_name }} </p>
-                        <p> <strong>Weight </strong> {{ fighter.weight }} <strong>lbs</strong></p>
-
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-9 white-box  z-depth-1">
                     <!-- Home Main Image -->
@@ -99,7 +94,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-mute">
                                     <i class="fas fa-globe-europe"></i> <strong>location:</strong>
-                                    <span class="float-right">{{ gym.country }}</span>
+                                    <span class="float-right">{{ fighter.location }}</span>
                                 </li>
                                 <li class="list-group-item text-mute">
                                     <i class="fas fa-map-marked"></i> <strong>Address:</strong>

@@ -30,7 +30,7 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <form method="POST" action="{% url 'add_fighter' %}" class="form mb-2" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'add_gym' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
                 {% if field.name != 'image' %}
@@ -40,7 +40,7 @@
                 {% endif %}
                 {% endfor %}
                 <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0 btn-sm" href="{% url 'fytnet' %}">Cancel</a>
+                    <a class="btn btn-outline-black rounded-0 btn-sm" href="{% url 'gym' %}">Cancel</a>
                     <button class="btn btn-black rounded-0 btn-sm" type="submit">Add gym </button>
                 </div>
             </form>

@@ -1,5 +1,5 @@
 from django import forms
-from .widgets import CustomClearableFileInput
+
 from .models import Gym, GymType
 
 
@@ -13,12 +13,6 @@ class GymForm(forms.ModelForm):
 
         # this excludes the below fields
         exclude = ("is_verified",)
-
-    # "gym"
-
-    image = forms.ImageField(
-        label="Image", required=False, widget=CustomClearableFileInput
-    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

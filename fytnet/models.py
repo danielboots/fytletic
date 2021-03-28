@@ -70,6 +70,7 @@ class Fighter(models.Model):
     titles = models.CharField(max_length=200, unique=False)
     bio = models.TextField()
     weight = models.IntegerField(null=True, blank=True)
+    location = models.CharField(max_length=50, null=True, blank=True)
 
     # Contact
     email = models.CharField(

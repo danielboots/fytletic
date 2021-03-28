@@ -48,7 +48,7 @@ class Gym(models.Model):
     # Owner Details
 
     gym_owner = models.ImageField(upload_to="media/%Y/%m/%d", null=True, blank=True)
-    gym_owner_name = models.CharField(max_length=50, null=False, blank=False)
+    gym_owner_name = models.CharField(max_length=50, null=True, blank=True)
 
     # Media
     gym_photo_main = models.ImageField(

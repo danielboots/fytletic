@@ -1,5 +1,5 @@
 from django import forms
-from .widgets import CustomClearableFileInput
+
 from .models import Fighter, Discipline
 
 
@@ -15,10 +15,6 @@ class FighterForm(forms.ModelForm):
         exclude = ("is_verified",)
 
     # "user"
-
-    image = forms.ImageField(
-        label="Image", required=False, widget=CustomClearableFileInput
-    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
