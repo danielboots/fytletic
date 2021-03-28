@@ -25,9 +25,10 @@
 <!-- End Hero Section-->
 
 
-<!-- Formatting layout -->
 
 
+
+<!-- Account Container-->
 <div class="container">
     <div class="row">
         <div class="col">
@@ -99,111 +100,99 @@
 
 
 
-<!-- Fighter Profile Views-->
-
-
+<!-- Fighter and Gym Container-->
 <div class="container">
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Profile Management for {{ user.username }}</h2>
+            <h2 class="logo-font mb-4">Profile management for {{ user.username }}</h2>
             <hr>
         </div>
     </div>
-
     <div class="row">
 
-        <!--Fighter Profile here-->
+        <!-- Fighter Profile data-->
         <div class="col-12 col-lg-6">
-            <p class="text-muted"> <em>Fighter Profile</em> </p>
+            <p class="text-muted">Your Fighter Profiles </p>
+            <div class="order-history table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Edit / Delete</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fighter in fighters %}
+                        <tr>
+                            <td>
+                                <a href="#" title="#">
+                                    Fighter name
+                                </a>
+                            </td>
+                            <td>Date created</td>
 
-            <a class="btn btn-dark pill-btn btn-sm mb-3" href="{% url 'add_fighter' %}">Add Fight profile</a>
-
-            <!-- Display Gym -->
-
-            <!-- Card -->
-            <div class="card hoverable">
-
-                <!-- Card image -->
-                <img class="card-img-top" src="#" alt="Card image cap">
-
-                <!-- Card content -->
-                <div class="card-body">
-
-                    <!-- Title -->
-                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">
-                        Your FIGHTER Profile.
-                    </p>
-
-
-
-                    <a class="btn btn-dark pill-btn btn-sm" href="#">View
-                        Profile</a>
-                    {% if user.is_authenticated %}
-                    <small class="text-center ">
-                        <a href="#">Edit</a> |
-                        <a class="text-danger" href="#">Delete</a>
-                    </small>
-                    {% endif %}
-
-
-
-
-                </div>
+                            <td>
+                                <a href="#" title="#">
+                                    Edit Fighter Profile
+                                </a>
+                            </td>
+                            <td>URL for view</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-
-
         </div>
 
-
-        <!--Gym Profile here-->
-
+        <!-- Gym Profile data-->
         <div class="col-12 col-lg-6">
-            <p class="text-muted"> <em>Gym Profile</em> </p>
-            <a class="btn btn-dark pill-btn btn-sm mb-3" href="{% url 'add_gym' %}">Add Gym</a>
+            <p class="text-muted">Your Gym Profiles </p>
+            <div class="order-history table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Edit / Delete</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for gym in gyms %}
+                        <tr>
+                            <td>
+                                <a href="#" title="#">
+                                    Gym name
+                                </a>
+                            </td>
+                            <td>Date created</td>
 
-
-            <!-- Display Gym -->
-
-            <!-- Card -->
-            <div class="card hoverable">
-
-                <!-- Card image -->
-                <img class="card-img-top" src="#" alt="Card image cap">
-
-                <!-- Card content -->
-                <div class="card-body">
-
-                    <!-- Title -->
-                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">
-                        Your GYM Profile.
-                    </p>
-
-
-                    <a class="btn btn-dark pill-btn btn-sm" href="#">View
-                        Gym</a>
-
-                    {% if user.is_authenticated %}
-                    <small class="text-center ">
-                        <a href="#">Edit</a> |
-                        <a class="text-danger" href="#">Delete</a>
-                    </small>
-                    {% endif %}
-
-                </div>
+                            <td>
+                                <a href="#" title="#">
+                                    Edit Gym
+                                </a>
+                            </td>
+                            <td>URL for View</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-
-
         </div>
     </div>
 </div>
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
 
     </div>
 </div>
+
+
+
 
 
 

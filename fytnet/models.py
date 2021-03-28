@@ -44,7 +44,7 @@ class Fighter(models.Model):
 
     # Main - Used one to one field, one user one fighter profile.
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # Relationship to Fighter discipline in = aka categories
 
