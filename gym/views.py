@@ -25,7 +25,7 @@ def gym(request):
 
     # addition of pagination - Django dev to deployment.
 
-    paginator = Paginator(gyms, 1)
+    paginator = Paginator(gyms, 6)
     page = request.GET.get("page")
     paged_gyms = paginator.get_page(page)
 
