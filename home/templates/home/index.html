@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load humanize %}
 {% load static %}
 
 {% block content %}
@@ -84,8 +85,6 @@
                     <!-- Text -->
                     <p class="mb-2">{{ gym.town_or_city }}</p>
                     <!-- Title -->
-                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ gym.created_on }}
-                    </p>
 
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">Read
                         more!</a>
@@ -197,7 +196,7 @@
                     <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ post.title}}</p>
                     <!-- Text -->
                     <p class="mb-2">{{ post.intro }}</p>
-                    <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
+                    <small>Posted at {{ post.created_on | timesince }} by <strong>{{ post.author }}</strong></small>
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read
                         more!</a>
 
