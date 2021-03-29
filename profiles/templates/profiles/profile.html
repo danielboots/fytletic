@@ -53,7 +53,7 @@
                     {% for fighter in fighters %}
                     <tr>
                         <td>
-                            <img src="{% static 'images/next.png' %}" alt="Profile" class="md-avatar rounded">
+                            <img src="{{ fighter.profile_photo_main.url }}" alt="Profile" class="md-avatar rounded">
                         </td>
                         <td>
                             <a href="#" title="#">
