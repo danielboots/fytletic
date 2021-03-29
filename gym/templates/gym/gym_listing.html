@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col text-left mt-3 white-box my-5 py-5 z-depth-1">
                 <h2 class="logo-font font font-weight-bold  text-left">
-                    <em>About - - -</em>
+                    <em>About</em>
                 </h2>
                 <div class="col-md-12 text-justify ">
                     {{ gym.about }}
@@ -192,20 +192,12 @@
 
                 <div class="card mb-3 white-box ">
                     <div class="card-body text-center">
-                        <h5 class="card-title"> <strong>Fighters</strong></h5>
+                        <h5 class="card-title"> <strong>Other</strong></h5>
 
-                        <!-- working but somewhere knacked -->
 
-                        <!-- {{ gym.fighters.all }} -->
                     </div>
 
-                    {% for fighter in fighters %}
-                    <strong>{{ fighter }}</strong><br>
-                    {% empty %}
 
-                    No Fighters
-
-                    {% endfor %}
 
 
 
@@ -253,7 +245,7 @@
                 <div class="row white-box my-5 py-5 z-depth-1">
                     <div class="col text-left">
 
-                        <h4 class="logo-font font font-weight-bold"> <em>Media - - - </em> </h4>
+                        <h4 class="logo-font font font-weight-bold"> <em>Media </em> </h4>
 
                         <div class="owl-carousel">
                             <div class="item-video" data-merge="1">
@@ -279,6 +271,33 @@
 
             </div>
             <!-- End Carousel-->
+
+            <!-- Fight camp -->
+            <div class="container-fluid ">
+                <div class="row white-box my-5 py-5 z-depth-1">
+                    <div class="col text-left">
+
+                        <h4 class="logo-font font font-weight-bold"> <em>Fight Camp </em> </h4>
+
+                        <p>fighters who train at this gym</p>
+
+                        {% for fighter in fighters %}
+                        <strong>{{ fighter }}</strong><br>
+                        <img src="{{ fighter.profile_photo_main.url }}" alt="Profile" class="md-avatar rounded">
+                        {% empty %}
+
+                        No Fighters
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- End Carousel-->
+
         </div>
 
     </div>
