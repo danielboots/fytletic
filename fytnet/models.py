@@ -125,8 +125,8 @@ class Fighter(models.Model):
     # Media
     profile_photo_main = models.ImageField(
         upload_to="media/%Y/%m/%d",
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         help_text="The main photo for the Fighter profile header",
     )
 

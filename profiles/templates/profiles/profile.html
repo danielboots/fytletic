@@ -221,44 +221,6 @@
 
 <!--  Section Latest Fighters in database -->
 
-<div class="container mt-5">
-
-
-    <!-- Section heading -->
-    <h3 class="font-weight-bold mb-5">Your Fighter Profile</h3>
-
-    <!-- New card System-->
-    <div class="row">
-
-        {% for fighter in fighters %}
-
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-
-            <!-- Card -->
-            <div class="card hoverable">
-
-                <!-- Card image -->
-                {% if fighter.profile_photo_main %}
-                <img class="card-img-top" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
-                {% endif %}
-                <!-- Card content -->
-                <div class="card-body">
-
-                    <!-- Title -->
-                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ fighter.first_name }}</p>
-                    <!-- Text -->
-
-                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'fytnet_profile' fighter.id %}">View
-                        Profile</a>
-
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-    </div>
-</div>
 
 <!--Spacer row-->
 <div class="row my-5">

@@ -48,7 +48,7 @@
 
 
     <!-- Section heading -->
-    <h3 class="font-weight-bold mb-5">Latest Gyms</h3>
+    <h3 class="logo-font mb-4">Latest Gyms</h3>
 
     <!-- New card System-->
     <div class="row">
@@ -68,6 +68,8 @@
                 <!-- Card image -->
                 {% if gym.gym_photo_main %}
                 <img class="card-img-top hover-nav" src="{{ gym.gym_photo_main.url }}" alt="Card image cap">
+                {% else %}
+                <img class="card-img-top hover-nav" src="{{ MEDIA_URL }}fyt_hero.jpg" alt="Card image cap">
                 {% endif %}
                 <!-- Card content -->
                 <div class="card-body">
@@ -122,7 +124,7 @@
 
 
     <!-- Section heading -->
-    <h3 class="font-weight-bold mb-5">Latest Fighters</h3>
+    <h3 class="logo-font mb-4">Latest Fighters</h3>
 
     <!-- New card System-->
     <div class="row">
@@ -138,6 +140,8 @@
                 <!-- Card image -->
                 {% if fighter.profile_photo_main %}
                 <img class="card-img-top hover-nav" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
+                {% else %}
+                <img class="card-img-top hover-nav" src="{{ MEDIA_URL }}fyt_hero.jpg" alt="Card image cap">
                 {% endif %}
                 <!-- Card content -->
                 <div class="card-body">
@@ -175,7 +179,7 @@
 
 
     <!-- Section heading -->
-    <h3 class="font-weight-bold mb-5">Latest News</h3>
+    <h3 class="logo-font mb-4">Latest News</h3>
 
     <!-- New card System-->
     <div class="row">
@@ -189,7 +193,11 @@
             <div class="card hoverable">
 
                 <!-- Card image -->
+                {% if post.photo_main.url %}
                 <img class="card-img-top hover-nav" src="{{ post.photo_main.url }}" alt="Card image cap">
+                {% else %}
+                <img class="card-img-top hover-nav" src="{{ MEDIA_URL }}fyt_hero.jpg" alt="Card image cap">
+                {% endif %}
 
                 <!-- Card content -->
                 <div class="card-body">

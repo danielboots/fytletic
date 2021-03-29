@@ -95,8 +95,8 @@ class Gym(models.Model):
     # Media
     gym_photo_main = models.ImageField(
         upload_to="media/%Y/%m/%d",
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         help_text="Main gym photo displayed as the header to the profile",
     )
     video_1 = models.URLField(
