@@ -28,7 +28,7 @@ Fytletic is currently deployed and can be visited directly at Heroku **[Fytletic
 --
 ## 📓 **About the project:**
 
-**Fytletic**  - A webite which allows
+**Fytletic**  - A website which allows
 
 ## 💻️ **Technologies Used:**
 ___
@@ -1167,6 +1167,8 @@ The content such as stock images for the website were taken from envato elements
 
 * **Forms** - MDBootstrap - https://mdbootstrap.com/docs/jquery/forms/basic/
 * **Cards** - MDBootstrap - https://mdbootstrap.com/docs/jquery/components/cards/
+
+* **EmailJS** - Error onload, fixed using answer from stackoverflow - https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null
 
 
 
