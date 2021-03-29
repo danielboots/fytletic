@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
+
 
 {% block content %}
 
@@ -41,7 +43,7 @@
             <div class="card hoverable">
 
                 <!-- Card image -->
-                <img class="card-img-top" src="{{ post.photo_main.url }}" alt="Card image cap">
+                <img class="card-img-top hover-nav" src="{{ post.photo_main.url }}" alt="Card image cap">
 
                 <!-- Card content -->
                 <div class="card-body">
@@ -50,7 +52,7 @@
                     <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ post.title}}</p>
                     <!-- Text -->
                     <p class="mb-2">{{ post.intro }}</p>
-                    <small>Posted at {{ post.created_on }} by <strong>{{ post.author }}</strong></small>
+                    <small>Posted {{ post.created_on | timesince }} by <strong>{{ post.author }}</strong></small>
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read more!</a>
 
                 </div>

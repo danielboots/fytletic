@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
+
 
 {% block content %}
 
@@ -34,7 +36,7 @@
         <div class="row ">
             <div class="col-md-9 card mb-3">
                 <!-- Home Main Image -->
-                <img src="{{ post.photo_main.url }}" alt="" class="img-main img-fluid p-3">
+                <img src="{{ post.photo_main.url }}" alt="" class="img-main img-fluid p-3 hover-nav">
 
 
                 <p>{{ post.intro }} </p>
@@ -73,14 +75,14 @@
 
 
                     {% for categories in post.categories.all %}
+                    <div class="text-danger">
+                        <span> <strong> <em>{{ categories.name }} / </em></strong></span>
 
-                    <span> <strong> <em>{{ categories.name }} / </em></strong></span>
-
-                    {% empty %}
-                    No tags!
-                    {% endfor %}
+                        {% empty %}
+                        No tags!
+                        {% endfor %}
+                    </div>
                 </div>
-
             </div>
             <div class="col-md-3 ">
                 <div class="card mb-3 white-box  z-depth-1">
@@ -88,7 +90,7 @@
                         <h5 class="card-title"> <strong>Author</strong></h5>
                         <img src="{{ post.photo_main.url }}" class="rounded img-fluid-profile" alt=" Author">
                         <h6 class="text-secondary">{{ post.author }}</h6>
-                        <small>Posted at {{ post.created_on }} by {{ post.author }}</small><br>
+                        <small>Posted at {{ post.created_on | timesince }} by {{ post.author }}</small><br>
 
 
                     </div>
@@ -121,8 +123,8 @@
                     {{ comment.body | linebreaks }}
                     <p class="font-weight-bold">
                         {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            <small> {{ comment.created_on }}</small>
+                        <span class=" text-muted font-weight-normal text-success">
+                            <small> {{ comment.created_on  | timesince }}</small>
                         </span>
                         {{ comment.user }}
 
