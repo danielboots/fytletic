@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% load humanize %}
+
 <section>
     <!-- Hero Section-->
     <div class="hero-gym">
@@ -126,13 +128,14 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-mute">
                                     <i class="fab fa-whatsapp"></i> <a href="tel: {{ fighter.whatsapp }}"
-                                        target="_blank"><span class="float-right"> <strong>Call Gym</strong></span>
+                                        target="_blank"><span class="float-right"> <strong>Fighters Contact
+                                                Number</strong></span>
                                     </a>
 
                                 </li>
                                 <li class="list-group-item text-mute">
                                     <i class="fas fa-envelope"></i> <a href="mailto: {{ fighter.email }}"
-                                        target="_blank"><span class="float-right"> <strong>Contact</strong>
+                                        target="_blank"><span class="float-right"> <strong>Contact via Email</strong>
                                         </span>
                                     </a>
                                 </li>
@@ -140,7 +143,7 @@
 
                                 <li class="list-group-item ">
                                     <i class="fas fa-calendar text-mute"></i> <strong>Listing Date:</strong>
-                                    <span class="float-right">{{ fighter.created_on }}</span>
+                                    <span class="float-right">{{ fighter.created_on | timesince }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -172,28 +175,36 @@
                     </div>
                     <div class="card mb-3 white-box ">
                         <div class="div text-center">
-                            <h6>Social Media</h6>
+
                             <!--Facebook-->
                             {% if fighter.facebook %}
                             <a href="{{ fighter.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-facebook-f fa-brand-facebook"></i></a>
+                            {% else %}
+                            <i class="fab fa-lg fa-facebook-f fa-muted"></i>
                             {% endif %}
 
                             <!--Twitter-->
                             {% if fighter.twitter %}
                             <a href="{{ fighter.twitter }}" target="_blank" class="tw-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-twitter fa-brand-twitter"></i></a>
+                            {% else %}
+                            <i class="fab fa-lg fa-twitter fa-muted"></i>
                             {% endif %}
 
                             <!--Instagram-->
                             {% if fighter.instagram %}
                             <a href="{{ fighter.instagram }}" target="_blank" class="ins-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-instagram fa-brand-instagram"></i></a>
+                            {% else %}
+                            <i class="fab fa-lg fa-instagram fa-muted"></i>
                             {% endif %}
                             <!--Web-->
                             {% if fighter.web %}
                             <a href="{{ fighter.web }}" target="_blank" class="li-ic mr-3" role="button"><i
                                     class="fab fa-lg fas fa-lg fa-link fa-brand-web"></i></a>
+                            {% else %}
+                            <i class="fab fa-lg fa-link fa-muted"></i>
                             {% endif %}
 
                         </div>
@@ -201,7 +212,7 @@
                     <div class="div text-center">
                         <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-back">Back To Fighters</a>
                     </div>
-                    {% if request.user.is_superuser %}
+                    {% if request.user.is_superuser%}
                     <small class="text-center ">
                         <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
                         <a class="text-danger" href="{% url 'delete_fighter' fighter.id %}">Delete</a>

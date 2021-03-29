@@ -218,25 +218,33 @@
                     <div class="div text-center">
 
                         <!--Facebook-->
-                        <h6 class="logo-font">Social Media</h6>
+
                         {% if gym.facebook %}
                         <a href="{{ gym.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-facebook-f fa-brand-facebook"></i></a>
+                        {% else %}
+                        <i class="fab fa-lg fa-facebook-f fa-muted"></i>
                         {% endif %}
                         <!--Twitter-->
                         {% if gym.twitter %}
                         <a href="{{ gym.twitter }}" target="_blank" class="tw-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-twitter fa-brand-twitter"></i></a>
+                        {% else %}
+                        <i class="fab fa-lg fa-twitter fa-muted"></i>
                         {% endif %}
                         <!--Instagram-->
                         {% if gym.instagram %}
                         <a href="{{ gym.instagram }}" target="_blank" class="ins-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-instagram fa-brand-instagram"></i></a>
+                        {% else %}
+                        <i class="fab fa-lg fa-instagram fa-muted"></i>
                         {% endif %}
                         <!--Linkedin-->
                         {% if gym.web %}
                         <a href="{{ gym.web }}" target="_blank" class="li-ic mr-3" role="button"><i
                                 class="fas fa-lg fa-link fa-brand-web"></i></a>
+                        {% else %}
+                        <i class="fab fa-lg fa-link fa-muted"></i>
                         {% endif %}
 
 
