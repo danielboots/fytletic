@@ -61,9 +61,12 @@ def add_gym(request):
         return redirect(reverse("home"))
 
     if request.method == "POST":
-        form = GymForm(request.POST, request.FILES)
+        form = GymForm(request.POST, request.FILES, request.user)
         if form.is_valid():
-            gym = form.save()
+
+            gym = form.save(commit=False)
+            gym.user = request.user
+            gym.save()
             messages.success(request, "Successfully added Gym ")
             return redirect(reverse("gym_profile", args=[gym.id]))
         else:
@@ -93,7 +96,8 @@ def edit_gym(request, gym_id):
         return redirect(reverse("home"))
 
     gym = get_object_or_404(Gym, pk=gym_id)
-    if request.method == "POST":
+
+    if request.method == "POST" and request.user.is_authenticated:
         form = GymForm(request.POST, request.FILES, instance=gym)
         if form.is_valid():
             form.save()
@@ -126,11 +130,12 @@ def edit_gym(request, gym_id):
 @login_required
 def delete_gym(request, gym_id):
     """ Delete a Gym from your profile """
-    if not request.user.is_superuser:
+    gym = get_object_or_404(Gym, pk=gym_id)
+
+    if gym.user != request.user:
         messages.error(request, "Sorry, only owners can do that.")
         return redirect(reverse("home"))
 
-    gym = get_object_or_404(Gym, pk=gym_id)
     gym.delete()
     messages.success(request, "Gym deleted!")
     return redirect(reverse("profile"))

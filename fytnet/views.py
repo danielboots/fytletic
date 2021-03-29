@@ -98,7 +98,7 @@ def edit_fighter(request, fighter_id):
         return redirect(reverse("home"))
 
     fighter = get_object_or_404(Fighter, pk=fighter_id)
-    
+
     if request.method == "POST" and request.user.is_authenticated:
         form = FighterForm(request.POST, request.FILES, instance=fighter)
         if form.is_valid():
