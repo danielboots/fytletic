@@ -149,12 +149,15 @@
                 <div class="col-md-3 ">
                     <div class="card mb-3 white-box">
                         <div class="card-body text-center">
-                            <h5 class="card-title logo-font mb-4"> <strong>Sponsors:</strong></h5>
-                            <img src="{{ fighter.photo_6.url }}" class="mx-auto d-block img-fluid-profile rounded"
-                                alt=" Sponsors">
+                            <h5 class="card-title logo-font mb-4"> <strong>Verified status</strong></h5>
+
                             {% if fighter.is_verified %}
                             <h6 class="font-weight-bold">
                                 <em>Verified Fighter</em> <i class="fas fa-check-circle blue-tick"></i>
+                            </h6>
+                            {% else %}
+                            <h6 class="font-weight-bold">
+                                <em>Un Verified</em> <i class="fas fa-check-circle "></i>
                             </h6>
                             {% endif %}
                         </div>
@@ -169,18 +172,30 @@
                     </div>
                     <div class="card mb-3 white-box ">
                         <div class="div text-center">
+                            <h6>Social Media</h6>
                             <!--Facebook-->
+                            {% if fighter.facebook %}
                             <a href="{{ fighter.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-facebook-f fa-brand-facebook"></i></a>
+                            {% endif %}
+
                             <!--Twitter-->
+                            {% if fighter.twitter %}
                             <a href="{{ fighter.twitter }}" target="_blank" class="tw-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-twitter fa-brand-twitter"></i></a>
+                            {% endif %}
+
                             <!--Instagram-->
+                            {% if fighter.instagram %}
                             <a href="{{ fighter.instagram }}" target="_blank" class="ins-ic mr-3" role="button"><i
                                     class="fab fa-lg fa-instagram fa-brand-instagram"></i></a>
+                            {% endif %}
                             <!--Web-->
+                            {% if fighter.web %}
                             <a href="{{ fighter.web }}" target="_blank" class="li-ic mr-3" role="button"><i
                                     class="fab fa-lg fas fa-lg fa-link fa-brand-web"></i></a>
+                            {% endif %}
+
                         </div>
                     </div>
                     <div class="div text-center">

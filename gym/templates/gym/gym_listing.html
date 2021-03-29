@@ -189,8 +189,10 @@
 
                         {% if gym.is_verified %}
                         <h6 class="font-weight-bold">
-                            <em>Verified GYM</em> <i class="fas fa-check-circle blue-tick"></i>
+                            <i class="fas fa-check-circle blue-tick"></i>
                         </h6>
+
+
                         {% endif %}
                     </div>
                 </div>
@@ -198,7 +200,7 @@
 
                 <div class="card mb-3 white-box ">
                     <div class="card-body text-center">
-                        <h5 class="card-title"> <strong>Other</strong></h5>
+                        <h5 class="card-title logo-font"> <strong>Other</strong></h5>
 
 
                     </div>
@@ -216,19 +218,28 @@
                     <div class="div text-center">
 
                         <!--Facebook-->
-
+                        <h6 class="logo-font">Social Media</h6>
+                        {% if gym.facebook %}
                         <a href="{{ gym.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-facebook-f fa-brand-facebook"></i></a>
+                        {% endif %}
                         <!--Twitter-->
+                        {% if gym.twitter %}
                         <a href="{{ gym.twitter }}" target="_blank" class="tw-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-twitter fa-brand-twitter"></i></a>
-
+                        {% endif %}
                         <!--Instagram-->
+                        {% if gym.instagram %}
                         <a href="{{ gym.instagram }}" target="_blank" class="ins-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-instagram fa-brand-instagram"></i></a>
+                        {% endif %}
                         <!--Linkedin-->
+                        {% if gym.web %}
                         <a href="{{ gym.web }}" target="_blank" class="li-ic mr-3" role="button"><i
                                 class="fas fa-lg fa-link fa-brand-web"></i></a>
+                        {% endif %}
+
+
                     </div>
 
                 </div>
@@ -283,6 +294,7 @@
             <!-- End Carousel-->
 
             <!-- Fight camp -->
+
             <div class="container-fluid ">
                 <div class="row white-box my-5 py-5 z-depth-1">
                     <div class="col text-left">
