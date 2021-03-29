@@ -140,7 +140,11 @@ else:
 
 # DATABASE - HEROKU POSTGRES
 
-# DATABASES = {"default": dj_database_url.parse("")}
+# DATABASES = {
+#     "default": dj_database_url.parse(
+#         ""
+#     )
+# }
 
 
 # Password validation
