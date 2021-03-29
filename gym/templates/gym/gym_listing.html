@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 
 {% block content %}
@@ -167,7 +168,7 @@
                             </li>
                             <li class="list-group-item text-mute ">
                                 <i class="fas fa-calendar"></i> <strong>Created</strong>
-                                <span class="float-right">{{ gym.created_on }}</span>
+                                <span class="float-right text-success">{{ gym.created_on |timesince }}</span>
 
                             </li>
                         </ul>
@@ -308,22 +309,54 @@
                     <div class="col text-left">
 
                         <h4 class="logo-font mb-4"> <em>Fight Camp </em> </h4>
-
                         <p>fighters who train at this gym</p>
 
-                        {% for fighter in fighters %}
+                        <!-- Fighter Profile data-->
+                        <div class="col-12">
+                            <div class="order-history table-responsive">
+                                <table class="table table-sm table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Profile</th>
+                                            <th>Name</th>
+                                            <th>Created</th>
 
-                        <div class="div">
+                                            <th>View</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for fighter in fighters %}
+                                        <tr>
+                                            <td>
+                                                <img src="{{ fighter.profile_photo_main.url }}" alt="Profile"
+                                                    class="md-avatar rounded hover-nav">
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'fytnet_profile' fighter.id %}" title="#">
+                                                    {{ fighter.first_name }} {{ fighter.last_name }}
+                                                </a>
+                                            </td>
+                                            <td class="text-success">{{ fighter.created_on |timesince  }}</td>
 
-                            <a href="{% url 'fytnet_profile' fighter.id %}">
-                                <img src="{{ fighter.profile_photo_main.url }}" alt="Profile"
-                                    class="md-avatar rounded"></a></div>
-                        <strong>{{ fighter }}</strong><br>
-                        {% empty %}
 
-                        No Fighters
+                                            <td><a class="btn btn-black btn-sm"
+                                                    href="{% url 'fytnet_profile' fighter.id %}"> View
+                                                </a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                <hr>
 
-                        {% endfor %}
+                            </div>
+                        </div>
+
+
+
+
+
+
+
 
                     </div>
 

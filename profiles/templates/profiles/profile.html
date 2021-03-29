@@ -56,7 +56,7 @@
                             <img src="{{ fighter.profile_photo_main.url }}" alt="Profile" class="md-avatar rounded">
                         </td>
                         <td>
-                            <a href="#" title="#">
+                            <a href="{% url 'fytnet_profile' fighter.id %}" title="#">
                                 {{ fighter.first_name }}
                             </a>
                         </td>
