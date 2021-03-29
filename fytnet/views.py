@@ -61,12 +61,14 @@ def add_fighter(request):
 
     # requesting the logged in user
 
-    if request.method == "POST" and request.user.is_authenticated:
+    if request.method == "POST":
         form = FighterForm(request.POST, request.FILES, request.user)
 
         if form.is_valid():
+            fighter = form.save(commit=False)
+            fighter.user = request.user
+            fighter.save()
 
-            fighter = form.save()
             messages.success(request, "Successfully added Fighter Profile!")
             return redirect(reverse("fytnet_profile", args=[fighter.id]))
         else:
@@ -130,11 +132,12 @@ def edit_fighter(request, fighter_id):
 @login_required
 def delete_fighter(request, fighter_id):
     """ Delete a Fighter from your profile """
-    if not request.user.is_superuser:
+    fighter = get_object_or_404(Fighter, pk=fighter_id)
+
+    if fighter.user != request.user:
         messages.error(request, "Sorry, only owners can do that.")
         return redirect(reverse("home"))
 
-    fighter = get_object_or_404(Fighter, pk=fighter_id)
     fighter.delete()
     messages.success(request, "Fighter deleted!")
     return redirect(reverse("profile"))

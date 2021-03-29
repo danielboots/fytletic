@@ -62,8 +62,9 @@
             <div class="card hoverable">
 
                 <!-- Card image -->
+                {% if fighter.profile_photo_main %}
                 <img class="card-img-top" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
-
+                {% endif %}
                 <!-- Card content -->
                 <div class="card-body">
 

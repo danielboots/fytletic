@@ -69,7 +69,7 @@ class Fighter(models.Model):
     fight_style = models.CharField(max_length=200, unique=False)
     titles = models.CharField(max_length=200, unique=False)
     bio = models.TextField()
-    weight = models.IntegerField(null=True, blank=True)
+    weight = models.IntegerField(null=True, blank=True, help_text="This is the weight of the fighter")
     location = models.CharField(max_length=50, null=True, blank=True)
 
     # Contact
@@ -117,7 +117,7 @@ class Fighter(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return self.first_name
+        return f"{self.first_name} {self.last_name}"
 
 
 # If created or update for users profile only

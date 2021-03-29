@@ -31,8 +31,8 @@ def profile(request):
 
     # importing fighters and gym to profile view - and context
 
-    fighters = Fighter.objects.order_by("-created_on")[:3]
-    gyms = Gym.objects.order_by("-created_on")[:3]
+    fighters = Fighter.objects.filter(user=request.user).order_by("-created_on")[:3]
+    gyms = Gym.objects.filter(user=request.user).order_by("-created_on")[:3]
 
     template = "profiles/profile.html"
     context = {

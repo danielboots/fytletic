@@ -12,9 +12,7 @@ class FighterForm(forms.ModelForm):
         fields = "__all__"
 
         # this excludes the below fields
-        exclude = ("is_verified",)
-
-    # "user"
+        exclude = ("is_verified", "user")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

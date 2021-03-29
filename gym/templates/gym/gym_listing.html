@@ -197,10 +197,10 @@
                         <!-- {{ gym.fighters.all }} -->
                     </div>
 
-                    {% for fighter in gym.fighters.all %}
-                    <strong>{{ gym.fighters.all }}</strong><br>
-
+                    {% for fighter in fighters %}
+                    <strong>{{ fighter }}</strong><br>
                     {% empty %}
+                    
                     No Fighters
 
                     {% endfor %}

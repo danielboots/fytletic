@@ -4,7 +4,11 @@
 <section>
     <!-- Hero Section-->
     <div class="hero-gym">
+        {% if fighter.profile_photo_main %}
         <img class="hero-gym-img" src=" {{ fighter.profile_photo_main.url }}" alt=" Image photo main">
+        {% else %}
+        <img class="hero-gym-img" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt=" Image photo main">
+        {% endif %}
         <div class="container-fluid">
             <div class="row ">
                 <div class="hero-text text-center focus-in-contract-bck">

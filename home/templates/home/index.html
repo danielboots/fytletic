@@ -66,8 +66,9 @@
             <div class="card hoverable">
 
                 <!-- Card image -->
+                {% if gym.gym_photo_main %}
                 <img class="card-img-top hover-nav" src="{{ gym.gym_photo_main.url }}" alt="Card image cap">
-
+                {% endif %}
                 <!-- Card content -->
                 <div class="card-body">
                     {% if gym.is_verified %}
@@ -135,8 +136,9 @@
             <div class="card hoverable">
 
                 <!-- Card image -->
+                {% if fighter.profile_photo_main %}
                 <img class="card-img-top hover-nav" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
-
+                {% endif %}
                 <!-- Card content -->
                 <div class="card-body">
 
