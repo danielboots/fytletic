@@ -38,7 +38,7 @@
         <!-- About Gym -->
         <div class="row">
             <div class="col text-left mt-3 white-box my-5 py-5 z-depth-1">
-                <h2 class="logo-font font font-weight-bold  text-left">
+                <h2 class="logo-font mb-4">
                     <em>About</em>
                 </h2>
                 <div class="col-md-12 text-justify ">
@@ -124,7 +124,7 @@
 
 
                                     {% for gymtype in gym.gym_type.all %}
-                                    {{ gymtype.name }} <br>
+                                    {{ gymtype.name | upper }} <br>
                                     {% empty %}
                                     No tags!
                                     {% endfor %}
@@ -174,7 +174,7 @@
             <div class="col-md-3 ">
                 <div class="card mb-3 white-box">
                     <div class="card-body text-center">
-                        <h5 class="card-title"> <strong>Gym Owner</strong></h5>
+                        <h5 class="card-title logo-font "> <strong>Gym Owner</strong></h5>
 
                         <img src="{{ gym.gym_owner.url }}" class="mx-auto d-block img-fluid-profile rounded"
                             alt=" Gym Owner">
@@ -245,7 +245,7 @@
                 <div class="row white-box my-5 py-5 z-depth-1">
                     <div class="col text-left">
 
-                        <h4 class="logo-font font font-weight-bold"> <em>Media </em> </h4>
+                        <h4 class="logo-font mb-4"> <em>Media </em> </h4>
 
                         <div class="owl-carousel">
                             <div class="item-video" data-merge="1">
@@ -277,13 +277,18 @@
                 <div class="row white-box my-5 py-5 z-depth-1">
                     <div class="col text-left">
 
-                        <h4 class="logo-font font font-weight-bold"> <em>Fight Camp </em> </h4>
+                        <h4 class="logo-font mb-4"> <em>Fight Camp </em> </h4>
 
                         <p>fighters who train at this gym</p>
 
                         {% for fighter in fighters %}
+
+                        <div class="div">
+
+                            <a href="{% url 'fytnet_profile' fighter.id %}">
+                                <img src="{{ fighter.profile_photo_main.url }}" alt="Profile"
+                                    class="md-avatar rounded"></a></div>
                         <strong>{{ fighter }}</strong><br>
-                        <img src="{{ fighter.profile_photo_main.url }}" alt="Profile" class="md-avatar rounded">
                         {% empty %}
 
                         No Fighters
