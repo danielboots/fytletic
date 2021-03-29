@@ -3,6 +3,8 @@
 
 
 
+
+
 {% block content %}
 
 <!-- Hero Section-->
@@ -86,11 +88,9 @@
                     <!-- Text -->
                     <p class="mb-2">{{ gym.town_or_city }}</p>
                     <!-- Title -->
-                    <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ gym.created_on }}
-                    </p>
 
-                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">Read
-                        more!</a>
+
+                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">View</a>
 
 
                 </div>

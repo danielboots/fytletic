@@ -29,7 +29,7 @@
 
 
     <!-- Section heading -->
-    <h3 class="font-weight-bold mb-5">Latest News</h3>
+    <h3 class="logo-font mb-4">Latest News</h3>
 
     <!-- New card System-->
     <div class="row">
@@ -51,8 +51,12 @@
                     <!-- Title -->
                     <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ post.title}}</p>
                     <!-- Text -->
+
+
                     <p class="mb-2">{{ post.intro }}</p>
-                    <small>Posted {{ post.created_on | timesince }} by <strong>{{ post.author }}</strong></small>
+                    <small><strong>Posted by {{ post.author }}</strong><br>
+                        <p class="text-success">{{ post.created_on | timesince }}</p>
+                    </small>
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read more!</a>
 
                 </div>
@@ -104,8 +108,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
+
 
 
 

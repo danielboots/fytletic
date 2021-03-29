@@ -89,8 +89,7 @@
                     <p class="mb-2">{{ gym.town_or_city }}</p>
                     <!-- Title -->
 
-                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">Read
-                        more!</a>
+                    <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">View</a>
 
 
                 </div>
@@ -206,8 +205,9 @@
                     <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ post.title}}</p>
                     <!-- Text -->
                     <p class="mb-2">{{ post.intro }}</p>
-                    <small>Posted at {{ post.created_on | timesince }} <br> by
-                        <strong>{{ post.author }}</strong></small> <br>
+                    <small><strong>Posted by {{ post.author }}</strong><br>
+                        <p class="text-success">{{ post.created_on | timesince }}</p>
+                    </small>
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read
                         more!</a>
 
