@@ -15,6 +15,8 @@ def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
 
+    multi_author = profile.multi_author
+
     if request.method == "POST":
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -40,6 +42,7 @@ def profile(request):
         "fighters": fighters,
         "gyms": gyms,
         "on_profile_page": True,
+        "multi_author": multi_author,
     }
 
     return render(request, template, context)

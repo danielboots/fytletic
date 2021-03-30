@@ -513,7 +513,6 @@ section the second will offer my contact details and any further links to static
 ### **Models**  -- Diagram developed from using the online tool, DBDiagram to show the relationships between my models. 
 
 
-# Need to update with links to ForeignKeys 
 
 ![DB Schematic](media/readme/database_schema.png)
 
@@ -522,6 +521,7 @@ section the second will offer my contact details and any further links to static
 * Products model: Includes all products in the shop.
 * Profile model: takes the user as the primary key here and links the data across many of the other tables so that a registered users data is accessible across the tables and to their account. 
 * News model contains all of the data pertaining to the creation of posts and commenting.
+* Contact model - allows visitors to contact the site administration and the site admin to read the messages alongside their contact details in the admin panel. Linked to the Google SMTP server for admin notification emails on live deployed site.
 
 
 
@@ -687,12 +687,23 @@ Crispy forms and Cross site Django tokens used, crispy form for styling, but CSR
 
 * Implement the live keys to the merchandise shop to allow for customer purchases.
 
+* Forums - for discussion and a hub for the latest discussions on fight topics.
+
+* Allowing a user to create news content for the site, so again extending the functionality of the site to allow 3rd party content creation and site expansion. 
+
+* Addition of the Google Maps API - a great feature would be for gyms to input their address and a map pin be generated for the profile of the gym allowing users to find the gym quickly and easily. 
+
+* Events app - UFC and other events listings to be added to a specific events and calendar app.
+
+
 
 ### **_Code Refactoring_:** 
 ___
 In this project I also used the extension to Gitpod called prettier which would format my code, however, I then went through each page and ensured there were no excess lines of whitespace. I also chose a uniformed way of commenting display, whereby I left a line gap either side of my comments so that people can distinguish between code blocks. I feel it was just a neat way to format my comments. 
 
 Furthermore, to this, I used an online tool which formats my HTML and CSS to conform to best practice, so in my final (for deadline purposes) commits I will be formatting the HTML code from the formatter, as credited below.  
+
+* Pep* compliance - to ensure that best practices were followed i used correct Pep8 formatting within the project, this included following correct indentation and using the Black python code formatter and python linting.
 
 ## 🧪 **Testing:**
 ___
