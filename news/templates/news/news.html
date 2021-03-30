@@ -1,10 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load humanize %}
-
-
 {% block content %}
-
 <!-- Hero Section-->
 <div class="hero-header">
     <div class="container-fluid">
@@ -13,61 +10,40 @@
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     News Desk
                 </h1>
-
-
             </div>
         </div>
     </div>
 </div>
-
 <!-- End Hero Section-->
-
-
-
-
 <div class="container mt-5">
-
-
     <!-- Section heading -->
     <h3 class="logo-font mb-4">Latest News</h3>
-
     <!-- New card System-->
     <div class="row">
-
         {% for post in posts %}
-
         <!-- Grid column -->
         <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-
             <!-- Card -->
             <div class="card hoverable">
-
                 <!-- Card image -->
                 <img class="card-img-top hover-nav" src="{{ post.photo_main.url }}" alt="Card image cap">
-
                 <!-- Card content -->
                 <div class="card-body">
-
                     <!-- Title -->
                     <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ post.title}}</p>
                     <!-- Text -->
-
-
                     <p class="mb-2">{{ post.intro }}</p>
-                    <small><strong>Posted by {{ post.author }}</strong><br>
+                    <small>
+                        <strong>Posted by {{ post.author }}</strong><br>
                         <p class="text-success">{{ post.created_on | timesince }}</p>
                     </small>
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read more!</a>
-
                 </div>
             </div>
         </div>
         {% endfor %}
-
     </div>
 </div>
-
-
 <!-- Pagination -->
 <div class="container-fluid">
     <div class="row">
@@ -108,37 +84,19 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
-
 <!--Section: Content-->
-
-
-
-
 <!-- back to top link-->
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-
 </div>
-
-
-
 {% endblock %}
-
 {% block postloadjs %}
 <!-- block super appends instead of replacing anything in the block.-->
 {{ block.super }}
@@ -147,5 +105,4 @@
         window.scrollTo(0, 0)
     })
 </script>
-
 {% endblock %}

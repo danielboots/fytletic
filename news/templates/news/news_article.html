@@ -1,15 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% load humanize %}
-
-
 {% block content %}
-
 <!-- Hero Section-->
 <div class="hero-gym">
     <img class="hero-gym-img" src=" {{ post.photo_main.url }}" alt=" Image photo main">
     <div class="container-fluid">
-
         <div class="row">
             <div class="hero-text text-center">
                 <h1 class="display-4 logo-font text-white font-weight-bold">
@@ -19,65 +15,41 @@
         </div>
     </div>
 </div>
-
 <!-- End Hero Section-->
-
 <!-- Data -->
 <section class="py-4">
     <div class="container">
         <!-- About News Article-->
         <div class="col text-left mt-3">
             <h2 class="logo-font font font-weight-bold ">
-                {{ post.title }}</h2>
+                {{ post.title }}
+            </h2>
         </div>
-
-
-
         <div class="row ">
             <div class="col-md-9 card mb-3">
                 <!-- Home Main Image -->
                 <img src="{{ post.photo_main.url }}" alt="" class="img-main img-fluid p-3 hover-nav">
-
-
                 <p>{{ post.intro }} </p>
-
-
                 {% if request.user.is_authenticated %}
                 <p>{{ post.body }} </p>
-
                 {% else %}
-
                 <div class="container my-5 py-5 z-depth-1">
-
-
                     <!--Section: Content-->
                     <section class="text-center px-md-5 mx-md-5 dark-grey-text">
-
                         <p class="text-muted"> {{ post.body|truncatechars:50 }} </p>
-
                         <h3 class="font-weight-bold">Read the full post by registering for free here: <a
                                 class="font-weight-bold" href="{% url 'account_signup' %}"><i
                                     class="fas fa-user-plus"></i> Register</a>
                         </h3>
-
                     </section>
                     <!--Section: Content-->
-
-
                 </div>
-
-
                 {% endif %}
-
-
                 <div class="col text-right">
                     <strong> Tags:</strong><br>
-
-
                     {% for categories in post.categories.all %}
                     <div class="text-danger">
                         <span> <strong> <em>{{ categories.name }} / </em></strong></span>
-
                         {% empty %}
                         No tags!
                         {% endfor %}
@@ -91,33 +63,24 @@
                         <img src="{{ post.photo_main.url }}" class="rounded img-fluid-profile" alt=" Author">
                         <h6 class="text-secondary">{{ post.author }}</h6>
                         <small>Posted at {{ post.created_on | timesince }} by {{ post.author }}</small><br>
-
-
                     </div>
                 </div>
-
                 <div class="div text-center">
                     <a href="{% url 'news' %}" class=" btn btn-primary btn-dark btn-sm text-center">Back To News
-                        Desk</a></div>
+                        Desk</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End News Article -->
-
-
 <!-- View for comment system-->
-
 <div class="container">
-
-
-
     <div class="row">
         <div class="col-12 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- comments -->
                 <h6>{{ comments.count }} comments</h6>
-
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     {{ comment.body | linebreaks }}
@@ -127,19 +90,12 @@
                             <small> {{ comment.created_on  | timesince }}</small>
                         </span>
                         {{ comment.user }}
-
-
                         <!--Delete comment icon, trigger modal-->
                         {% if user.is_authenticated and user == comment.user or user.is_superuser %}
                         <a href="{% url 'delete_own_comment' post.slug comment.id %}"
                             class="btn btn-primary btn-dark btn-sm"> <i class="far fa-trash-alt"></i> Delete</a>
-
                         {% endif %}
-
-
-
                     </p>
-
                 </div>
                 {% endfor %}
             </div>
@@ -162,25 +118,13 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 <!-- back to top link-->
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-
 </div>
-
-
-
 {% endblock %}
-
 {% block postloadjs %}
 <!-- block super appends instead of replacing anything in the block.-->
 {{ block.super }}
@@ -189,5 +133,4 @@
         window.scrollTo(0, 0)
     })
 </script>
-
 {% endblock %}
