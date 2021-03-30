@@ -69,7 +69,7 @@
             </table>
             <hr>
 
-
+            <!-- logic for restricting fighter profile creation to 1 profile unless user is activated as a multi_author-->
 
             {% if multi_author %}
             <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_fighter' %}">Add Fighter</a>
@@ -77,7 +77,7 @@
 
 
             {% if fighters|length == 1 %}
-            <p>You have created max amount of fighters</p>
+            <p class="text-success"> <strong> <em>Fighter Profile Claimed</em> </strong> </p>
             {% else %}
             {% if fighters|length == 0 %}
             <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_fighter' %}">Add Fighter</a>
@@ -85,6 +85,8 @@
             {% endif %}
             {% endif %}
             {% endif %}
+
+            <!-- end logic for fighter profile restriction -->
 
 
 
