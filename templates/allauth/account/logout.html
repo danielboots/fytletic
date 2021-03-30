@@ -1,21 +1,11 @@
 {% extends "account/base.html" %}
-
 {% load i18n %}
-
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
-
-
-
-
-
 {% block inner_content %}
-
-
 <hr>
 <h2 class="logo-font mb-4">{% trans "Sign Out" %}</h2>
 <hr>
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
-
 <form method="post" action="{% url 'account_logout' %}">
     {% csrf_token %}
     {% if redirect_field_value %}
@@ -24,15 +14,9 @@
     <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Cancel </a>
     <button type="submit">{% trans 'Sign Out' %}</button>
 </form>
-
 <!--Spacer Row-->
-
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
-
 {% endblock %}

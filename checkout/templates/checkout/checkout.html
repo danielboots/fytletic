@@ -1,12 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
-
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 {% block content %}
-
 <!-- Hero Section-->
 <div class="hero-header">
     <div class="container-fluid">
@@ -15,17 +13,11 @@
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     Checkout
                 </h1>
-
-
             </div>
         </div>
     </div>
 </div>
-
 <!-- End Hero Section-->
-
-
-
 <div class="container">
     <div class="row">
         <div class="col">
@@ -34,7 +26,6 @@
             <hr>
         </div>
     </div>
-
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -60,7 +51,8 @@
                 <div class="col-7">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                     <p class="my-0 small">Size:
-                        {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                        {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}
+                    </p>
                     <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
@@ -118,13 +110,11 @@
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element"></div>
-
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
-
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
                         <span class="icon">
@@ -149,7 +139,6 @@
         </div>
     </div>
 </div>
-
 <div id="loading-overlay">
     <h1 class="text-light logo-font loading-spinner">
         <span class="icon">
@@ -158,7 +147,6 @@
     </h1>
 </div>
 {% endblock %}
-
 {% block postloadjs %}
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
