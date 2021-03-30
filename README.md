@@ -9,8 +9,6 @@
 
 Fytletic is currently deployed and can be visited directly at Heroku **[Fytletic  ](https://fytletic.herokuapp.com/)**
 
-
-
 ###  **For testing the following login and test card credentials are valid:**
 
 
@@ -25,17 +23,16 @@ Fytletic is currently deployed and can be visited directly at Heroku **[Fytletic
 
 Note: This project contains a store app which orders will not be fullfilled nor payments taken, Stripe test keys used only. This is for testing purposes only. 
 
-
-
---
+---
 ## 📓 **About the project:**
 
-**Fytletic**  - A website which allows
+**Fytletic**  - Professional Fighter and Gym Network, allowing users to register create manage and maintain their professional Fighter CV.
 
 ## 💻️ **Technologies Used:**
 ___
 
-* **[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):** - Is the main language used in this project which allowed me to correctly structure the website, whereby using best practices to use semantic tags where appropriate.
+* **[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):** - 
+Is the main language used in this project which allowed me to correctly structure the website, whereby using best practices to use semantic tags where appropriate.
 
 * **[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS):** - Was used via an external stylesheet using best practices to style format and visually present the HTML.
 
@@ -102,7 +99,11 @@ ___
 
 * **[PEP8 COMPLIANCE CHECKER](http://pep8online.com/):** - A free tool to allow the user to check their python code, to ensure it conforms to the PEP 8 standard. 
 
-* **[Black](https://github.com/psf/black):** - Black is the uncompromising Python code formatter.
+* **[BLACK](https://github.com/psf/black):** - Black is the uncompromising Python code formatter.
+
+* **[DB SCHEMA . DOT](https://dreampuf.github.io/GraphvizOnline/ ):** - For automatic generation of Db Schemas from .dot file and .json
+
+
  
 
 ___
@@ -120,7 +121,6 @@ I have chosen to create a Fight network with ecommerce and full C.R.U.D function
 It will have the ability for users to register to the site upload their fighter data and create gyms if they own such facilities. 
 
 With this full stack project i aim to cover all user stories and cover all of the planes of UX and development.
-
 
 
 ## 💡 **Strategy plane: The Initial idea.**
@@ -146,7 +146,7 @@ As a developer and from a development standpoint my primary aim is to bring toge
 
 The web application will be entirely online and is concerned with real-life professional and amateur fight profiles from users who can sign up to the site for zero cost to themselves, simply by registering for an account. The primary aim of the website is to display fight and gym profiles from users and allow them to display their achievements / stats and information to accomplish two things, 1. Exponential growth through sharing of the website and 2. Expand awareness of their profile as an athlete and fighter. This may be from using the web app to connect and reach out to other fighters, or use it as an online 'CV' to showcase their statistics. 
 
-**Strategy to deliver above.**
+ ### **Strategy to deliver above.**
 
 * A clear and simple design starting with the Hero section displaying the Name and tag line to establish the message of the site.
 In this case FYTLETIC - Professional Fight Network.
@@ -157,7 +157,7 @@ In this case FYTLETIC - Professional Fight Network.
 
 * Logo - will be a simple design based on the letter F and L . Or will be based simply on the business name of Fytletic.
 
-**Strategy to deliver above.**
+ ### **Strategy to deliver above.**
 
 All of the below points should fulfil 'user first impressions' (see table below) and is especially important in our B2C business.
 
@@ -209,25 +209,22 @@ and this wikipedia article  I developed the colour pallete below  using [Adobe C
 
 **What is culturally appropriate**
 
-As this is primarlily a fighter and gym network  I have found that the brand name stands for a lot right from the offset. Our website is only concerned with displaying information within the fight (for example UFC / Boxing) industry, and the fitness industry. We will not be extending our reach in to other similar industries for example cooking (which may be related to nutrition and fitness)
+* As this is primarlily a fighter and gym network  I have found that the brand name stands for a lot right from the offset. Our website is only concerned with displaying information within the fight (for example UFC / Boxing) industry, and the fitness industry. We will not be extending our reach in to other similar industries for example cooking (which may be related to nutrition and fitness)
 
-
-We keep the site strictly about professional organised and amateur fighting  and focus solely on providing the users with the ability to create their professional online CVS , edit and delete them. They will also be able to build up their name as an athlete and fighter. 
+* We keep the site strictly about professional organised and amateur fighting  and focus solely on providing the users with the ability to create their professional online CVS , edit and delete them. They will also be able to build up their name as an athlete and fighter. 
 By giving the user the ability to update their own profiles, it is encouraging to the user to frequent the site and keep the data being stored about them up to date, including contact details, fight statistics training regimes etc. So again allowing us to create a self building site of relevant user generated content. Not only that but by building on a Django base alongside python we can ensure that we can consistently keep adding improvments and features which users may want and request, for example a follow or messaging service, this allowing users to contact each other and stay on the platform.
 
-I have also developed the site to be mobile-first as our demographic for clients looking for our services seems to be in the male category and age range of 16-34, whereby we know its highly likely that users have access to a smartphone and will be accessing our website from mobile.
-
-
+* I have also developed the site to be mobile-first as our demographic for clients looking for our services seems to be in the male category and age range of 16-34, whereby we know its highly likely that users have access to a smartphone and will be accessing our website from mobile.
 
 **Tracking and cataloguing content in an intuitive way.**
 
-Regarding the display of the content I have opted for a typical section style layout to the site, this meaning I have a hero section and subsequent blocks of content each separated by alternating background colours, an off white and white to ensure content separation is apparent. 
+* Regarding the display of the content I have opted for a typical section style layout to the site, this meaning I have a hero section and subsequent blocks of content each separated by alternating background colours, an off white and white to ensure content separation is apparent. 
 
-The use of Djngo /Python for loops will allow the display of user generated content in a card, each iteration will generate a new card with the subsequent fighter name image and more button. In time I may break these loops down to fighter Discipline specific headings, for example Boxing, UFC  and even make fighters and gyms searchable by these extended options, however as the site is in its infancy I have opted to generate all reviews in cards utilising the bootstrap grid system displaying no more than three cards per row, time permitting i may employ a pagination system, instead of generating long loops of data.
+* The use of Djngo /Python for loops will allow the display of user generated content in a card, each iteration will generate a new card with the subsequent fighter name image and more button. In time I may break these loops down to fighter Discipline specific headings, for example Boxing, UFC  and even make fighters and gyms searchable by these extended options, however as the site is in its infancy I have opted to generate all reviews in cards utilising the bootstrap grid system displaying no more than three cards per row, time permitting i may employ a pagination system, instead of generating long loops of data.
 
-Typically in modern web design, a hero section is employed so I have taken advantage of that with a centred H1 and H2 Heading for the site title and strapline, using a more bolded font to make an impact from the first-page load. This screams to the user, this is the site title and this is what you can do here.
+* Typically in modern web design, a hero section is employed so I have taken advantage of that with a centred H1 and H2 Heading for the site title and strapline, using a more bolded font to make an impact from the first-page load. This screams to the user, this is the site title and this is what you can do here.
 
-I also used a background image which is relevant (in this case a glove on rope) to display the field the website is addressing (fighting /combat of some description). One concern is that on fighter profiles, if a user uploads a  bright image it may distract  from the Hero text, so a background overlay maybe used in order to fix this. At present i havent employed this on user generated data however with keeping to the branding pallete of the site i have employed an overlay system on the main navigation hero sections.  Not only that but the background overlay is the main colour in the colour palette chosen again adding to our branding and overall UX experience for the potential client.
+* I also used a background image which is relevant (in this case a glove on rope) to display the field the website is addressing (fighting /combat of some description). One concern is that on fighter profiles, if a user uploads a  bright image it may distract  from the Hero text, so a background overlay maybe used in order to fix this. At present i havent employed this on user generated data however with keeping to the branding pallete of the site i have employed an overlay system on the main navigation hero sections.  Not only that but the background overlay is the main colour in the colour palette chosen again adding to our branding and overall UX experience for the potential client.
 
 **What is the importance of this.**
 
@@ -237,7 +234,7 @@ I also used a background image which is relevant (in this case a glove on rope) 
 
 **Why would a user want this.**
 
- Its important to quickly allow the user to learn the site sign up and create content with little distractions as possible. I have deliberately simplified the application to allow for this. After re watching the sections on development of software i have become well aware of the YAGNI  and KISS principles, this i have designed the site to be deliberatly simple and learned easily by any kind of user.  Typically a user from visiting the site can sign up and create their fighter profile in less than 5 steps. 
+ * Its important to quickly allow the user to learn the site sign up and create content with little distractions as possible. I have deliberately simplified the application to allow for this. After re watching the sections on development of software i have become well aware of the YAGNI  and KISS principles, this i have designed the site to be deliberatly simple and learned easily by any kind of user.  Typically a user from visiting the site can sign up and create their fighter profile in less than 5 steps. 
 
 1. Visit the application 
 2. Click Register
@@ -267,7 +264,7 @@ This ease of use and free registration will encourage return users to the platfo
 
 **Prioritisation – To launch a Minimal Viable Product.**
 
-We can address which features should be prioritised primarily by developing a map of importance and viability/ feasibility.
+* We can address which features should be prioritised primarily by developing a map of importance and viability/ feasibility.
 For this project, we will be focusing on UX efforts of higher importance and developing features of lower importance and viability/feasibility further in the timeline of this project.
 
 
@@ -410,9 +407,9 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 ## 🏗️ **Structure: How we present information:**
 ___
 
-The web application will consist of typical navigation and structure which will conform to web best practices. By this, we would expect the navigation menu items to be located to the top right-hand corner of the web app. To the left, we will employ a Navigation bar logo which doubles as the main Home or index.html link. If time allows i would like to experiment with a side bar as using sites which have more admin style functionality i beleive a sidebar toggler is a good choice in order to group and organise an extensive menu without over powering the user. 
+* The web application will consist of typical navigation and structure which will conform to web best practices. By this, we would expect the navigation menu items to be located to the top right-hand corner of the web app. To the left, we will employ a Navigation bar logo which doubles as the main Home or index.html link. If time allows i would like to experiment with a side bar as using sites which have more admin style functionality i beleive a sidebar toggler is a good choice in order to group and organise an extensive menu without over powering the user. 
 
-Regarding site structure and page content, the main static pages will consist of a Home page, contact and about pages, alongside an F.A.Q section. 
+* Regarding site structure and page content, the main static pages will consist of a Home page, contact and about pages, alongside an F.A.Q section. 
 The web app will also have a shop with product pages using djangos templating system. A brief overview of the main features and their representative pages are covered below.
 
 
@@ -510,11 +507,17 @@ section the second will offer my contact details and any further links to static
 * The below diagrams display the tables and the structure of my database as pre-planned when addressing MVC or regarding Django MVT framework conventions. 
 
 
-### **Models**  -- Diagram developed from using the online tool, DBDiagram to show the relationships between my models. 
+## **Models** 
 
 
 
-![DB Schematic](media/readme/database_schema.png)
+![DB Schematic](media/readme/graphviz.jpg)
+
+Generated by installing graphviz and generating a .dot file by running the command `python manage.py graph_models -a -g -o db_schema.dot --dot` and converting the data over at [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline) to generate this high resolution .SVG file 
+
+[**Click here for hi resolution SVG**](media/readme/graphviz.svg)
+
+
 
 * Fighter model: Includes all fighter data and is linked to the user profile.
 * Gym model: Includes all fighter data and is linked to the user profile.
@@ -525,12 +528,14 @@ section the second will offer my contact details and any further links to static
 
 
 
+
+
 ## ✏️ **Skeleton Plane – Interface design, navigation design and giving form to function:**
 ___
 
-As with every project which is to be taken into production it was essential to firstly wireframe the project. This would allow me to test out different ideas layouts, navigation and presentation which is expected when visiting this type of website. I developed the wireframes using the Balsamiq software which allowed me to produce low fidelity mockups of the finished web application without the need for coding it first. This saved immensely on production time and allowed me to have a 'map' of how to finally code the app.
+* As with every project which is to be taken into production it was essential to firstly wireframe the project. This would allow me to test out different ideas layouts, navigation and presentation which is expected when visiting this type of website. I developed the wireframes using the Balsamiq software which allowed me to produce low fidelity mockups of the finished web application without the need for coding it first. This saved immensely on production time and allowed me to have a 'map' of how to finally code the app.
 
-_**Please note – these wireframes may differ slightly from the result.**_
+* _**Please note – these wireframes may differ slightly from the result.**_
 
 ___
 
@@ -565,7 +570,7 @@ The data presented should be done so in a logical manner with ease on the eye an
 
 * Gym Owner - Displaying an Avatar small image to the right hand side of the page along with text underneath displaying the Gym owner name. 
 * Verification section: Underneath the gym owner i have developed a system for the admin to choose wether a gym is verified or not, this is using a Boolean value in the Model, if True a verified check mark will be displayed alonside text telling the user that the listing of the gym is infact verified by the site administration. Increasing value to the user and the site owner, as this will encourage accurate and uptodate information. 
-* Social network links - Dispalyed using font awesome and branded to the colour pallete as discussed in a previous section. 
+* Social network links - Displayed using font awesome and branded to the colour pallete as discussed in a previous section. 
 
 * Media - I have added a media section in fhe form of a carousel (OWL) placed at the bottom of the listing, one to end the main content but to also not distract from the main Bio and other more important venue details. It is however still important to place this section as users may want to see video footage of the gym.
 
@@ -742,16 +747,16 @@ I have also added a last login function, so that users are aware about how long 
 
 ### **_Code Refactoring_:** 
 ___
-In this project I also used the extension to Gitpod called prettier which would format my code, however, I then went through each page and ensured there were no excess lines of whitespace. I also chose a uniformed way of commenting display, whereby I left a line gap either side of my comments so that people can distinguish between code blocks. I feel it was just a neat way to format my comments. 
+* In this project I also used the extension to Gitpod called prettier which would format my code, however, I then went through each page and ensured there were no excess lines of whitespace. I also chose a uniformed way of commenting display, whereby I left a line gap either side of my comments so that people can distinguish between code blocks. I feel it was just a neat way to format my comments. 
 
-Furthermore, to this, I used an online tool which formats my HTML and CSS to conform to best practice, so in my final (for deadline purposes) commits I will be formatting the HTML code from the formatter, as credited below.  
+* Furthermore, to this, I used an online tool which formats my HTML and CSS to conform to best practice, so in my final (for deadline purposes) commits I will be formatting the HTML code from the formatter, as credited below.  
 
 * Pep* compliance - to ensure that best practices were followed i used correct Pep8 formatting within the project, this included following correct indentation and using the Black python code formatter and python linting.
 
 ## 🧪 **Testing:**
 ___
 
-Testing was an integral part of the design and build process, responsiveness is crucial to the success of any online website so several steps were employed to ensure that the site worked across several platforms and browsers.
+* Testing was an integral part of the design and build process, responsiveness is crucial to the success of any online website so several steps were employed to ensure that the site worked across several platforms and browsers.
 Not only responsiveness but positioning, colours, inheritance etc were all factors to be taken into consideration, thus Google Chrome developer tools were used extensively to test all aspects of the site.
 Although Bootstrap is a mobile-first approach I opted to work on a simple desktop version first as I could work backwards.
 I first of all set up a few .css rules for the body section which allowed me to set some global rules such as.
@@ -764,7 +769,7 @@ I first of all set up a few .css rules for the body section which allowed me to 
 ```
 Which made sure that I was working with the box model more logical. 
 
-
+*  Google Developer Tools was essential in working through alot of the design process as you can see real time what different css properties are doing to the page. I found myself relying on Dev tools alot more as ive progressed in web development.
 
 
 
@@ -781,9 +786,9 @@ For this website, I haven't provided an extensive array of menu options, only as
 * I have logged my testing below to ensure that this web application is 100% functional and complies with defensive design.
 
 
-**User Experience: from top to bottom testing each feature for bugs**
+### **User Experience: from top to bottom testing each feature for bugs**
 
-**Home / Navigation.**
+#### **Home / Navigation.**
 
 * Home Button always returns the user to index.html
 * Logo always returns the user to index.html
@@ -793,7 +798,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Login directs users to the login page
 * Logout logs out users and removes session cookie for the user.
 
-**Merch Shop / cards.**
+#### **Merch Shop / cards.**
 * Home Button always returns the user to index.html
 * Clicking product image takes user to product detail. 
 * Clicking on quantity buttons increments and decrements value
@@ -805,7 +810,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Checkout takes you to the payment form.
 * Complete order loads the stripe payment gateway for payment handling.
 
-**GYM / cards.**
+#### **GYM / cards.**
 
 * Home Button always returns the user to index.html
 * Card: For loop tempating, displays gyms in a card deck with pagination (correct and working)
@@ -817,7 +822,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Card: verification logic displays blue tick for verified gyms and non for non verified gyms.
 * pagination: previous, next and number links all work with correct logic, if no prevous then button is disabled, similarly if no next button is also disabled.
 
-**GYM / Single Template.**
+#### **GYM / Single Template.**
 
 * Home Button always returns the user to index.html
 * Hero Image displays correct image from models.
@@ -838,7 +843,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 
 
 
-**Fighter / cards.**
+#### **Fighter / cards.**
 
 * Home Button always returns the user to index.html
 * Card: For loop tempating, displays fighterters in a card deck with pagination (correct and working)
@@ -848,7 +853,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Card: Button takes user to correctfighter listing
 * pagination: previous, next and number links all work with correct logic, if no prevous then button is disabled, similarly if no next button is also disabled.
 
-**fighter / Single Template.**
+#### **Fighter / Single Template.**
 
 * Home Button always returns the user to index.html
 * Hero Image displays correct image from models.
@@ -869,7 +874,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * media, images or video retrieved and displayed in carousel
 
 
-**News Desk / cards.**
+#### **News Desk / Cards.**
 
 * Home Button always returns the user to index.html
 * Card: For loop tempating, displays news article in a card deck with pagination (correct and working)
@@ -881,7 +886,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * pagination: previous, next and number links all work with correct logic, if no prevous then button is disabled, similarly if no next button is also disabled.
 
 
-* News Article / Single Template.**
+#### **News Article / Single Template.**
 
 * Home Button always returns the user to index.html
 * Hero Image displays correct image from models.
@@ -900,7 +905,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 
 
 
-* Contact.**
+####  **Contact.**
 
 * Contact form renders and uses CSRF token 
 * Contact form defensive design asks users to fill in name and if logged in returns the user name.
@@ -911,7 +916,7 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Google maps renders in the head section of the contact us container.
 
 
-**Register.**
+#### **Register.**
 
 * Register - Takes two inputs to the form Username and Password both utilising defensive design. 
 
@@ -954,17 +959,17 @@ No errors found I did use the direct input to the CSS validator service as I am 
 
 
 ### **PEP8 Results:** 
-No problems resulting from PEP8 testing and compliance of all python3 .py files  using http://pep8online.com/
+* No problems resulting from PEP8 testing and compliance of all python3 .py files  using  **http://pep8online.com/**
 All major tests passed and no errors and indentation all correct.
 
-Note: the only exeption i have left in this is the lengh too long error, if time permitted i would go back and correct these 'errors' but as it stands the line lengh doesnt break site functionality therefore will be classed as known and to be ammended moving forward in a new branch.
+* Note: the only exeption i have left in this is the lengh too long error, if time permitted i would go back and correct these 'errors' but as it stands the line lengh doesnt break site functionality therefore will be classed as known and to be ammended moving forward in a new branch.
 
 
 
 ### **HTML Results:** 
-All HTML pages validated and passed tests however using Django and the way we extend from the base template we do see expected errors in each page such as Doctype must be declared first and special character escaping, however, this cant be circumvented and I am aware and happy to proceed with this. 
+* All HTML pages validated and passed tests however using Django and the way we extend from the base template we do see expected errors in each page such as Doctype must be declared first and special character escaping, however, this cant be circumvented and I am aware and happy to proceed with this. 
 
-This was carried out and then also templates rendered were formatted so that code is clean and legible to anyone browsing the repo or working on the project moving forward.
+* This was carried out and then also templates rendered were formatted so that code is clean and legible to anyone browsing the repo or working on the project moving forward.
 
 
 
@@ -981,23 +986,18 @@ This was carried out and then also templates rendered were formatted so that cod
 * I finally used **[GTMETRIX](https://gtmetrix.com/)** which is used to test page website speeds. All testing came back fine apart from image sizes which scored pretty low. Thus I used the free online **[SQUOOSH](https://squoosh.app/)** to reduce massive image sizes up to 80% of their original file size. 
 This is especially important as large image sizes dramatically increase page loading speeds and leads to a bad UX especially on mobile where heavy loading sites can eat data very quickly. 
 
-
-
 ___
 ### **Testing Issues / known bugs:**
-
-
-
 
 ## 🏭️ **Deployment:**
  ___
 
-This project was developed using the Gitpod IDE which integrates seamlessly with Github, Git pod is a cloud IDE so this allowed me to work at home on my iMac or out on my iMac using only an internet connection and the website **[GITPOD workspaces](https://gitpod.io/workspaces/).** 
+* This project was developed using the Gitpod IDE which integrates seamlessly with Github, Git pod is a cloud IDE so this allowed me to work at home on my iMac or out on my iMac using only an internet connection and the website **[GITPOD workspaces](https://gitpod.io/workspaces/).** 
 
-The site was developed inside of the Gitpod IDE and connected to my GitHub repository. 
+* The site was developed inside of the Gitpod IDE and connected to my GitHub repository. 
 As sections of the site were completed I ensured that I used version control to maintain copies of my code on the repository. This was achieved via commands on the terminal integrated with Gitpod.
 
-The python code - Only known issues with the code are some lines being too long. Again all code has been formatted with Black which still introduced this after formatting and will be dealt with in a new branch moving forward.
+* The python code - Only known issues with the code are some lines being too long. Again all code has been formatted with Black which still introduced this after formatting and will be dealt with in a new branch moving forward.
 
 
 ### **Steps in using version control and getting ready for Deployment**
@@ -1007,16 +1007,16 @@ The python code - Only known issues with the code are some lines being too long.
 1. `git commit -m"Message"` - This is the command to commit the changes and the message allowed me to know what or significant changes had been made.
 1. `git push` - Was used to push to the remote repository, in this case, **GitHub**
 
-When working it was also necessary to view the changes to the website, for this I mainly used preview, as the save function allowed instant refreshes and updates reflecting my changes. However for fullscreen testing in a separate tab, I employed the use of the command `python3 manage.py runserver"` to open a port on my local machine, instructions were to make the port public then open in the browser. 
+* When working it was also necessary to view the changes to the website, for this I mainly used preview, as the save function allowed instant refreshes and updates reflecting my changes. However for fullscreen testing in a separate tab, I employed the use of the command `python3 manage.py runserver"` to open a port on my local machine, instructions were to make the port public then open in the browser. 
 
-## Deployment to Heroku 
+## **Deployment to Heroku**
 
 
-This project is connected to Heroku using automatic deployment through connection to my GitHub repository, all media and static files are hosted on Amazon Web Services S3 bucket. 
+* This project is connected to Heroku using automatic deployment through connection to my GitHub repository, all media and static files are hosted on Amazon Web Services S3 bucket. 
 this was achieved through the following steps. 
 
 
-### Prerequisites and optional features: 
+### **Prerequisites and optional features:**
 
 * This site supports a merchandise shop and the payment gateway used was Stripe, if you would like to use stripe you can sign up for an account here [Stripe](https://www.stripe.com/)
 
@@ -1133,17 +1133,17 @@ web: gunicorn fytletic.wsgi:application
 
 then push to GitHub using `git push` command in the terminal.
 
-Connect up Github for automatic deployment - from the Deploy, tab select Github from deployment method.
+* Connect up Github for automatic deployment - from the Deploy, tab select Github from deployment method.
 Head over to the Deployment tab on Hero and under Automatic deploys click Enable Automatic Deploys' and then Deploy Branch See below. 
 
 
 ![Deployment to Heroku](media/readme/deployment/4.png)
 
- On the Github connect section ensure that your GitHub profile is visible than on the right-hand side box, type in a repo from GitHub to search for. Preferably it is advised that you keep uniformity within Heroku and GitHub so try to keep the same names for each. For this example, I have used Fytletic.
+ * On the Github connect section ensure that your GitHub profile is visible than on the right-hand side box, type in a repo from GitHub to search for. Preferably it is advised that you keep uniformity within Heroku and GitHub so try to keep the same names for each. For this example, I have used Fytletic.
 
-Following these steps correctly will allow Heroku to receive code from your Github repo and build the Django app using the correct packages and dependencies. 
+* Following these steps correctly will allow Heroku to receive code from your Github repo and build the Django app using the correct packages and dependencies. 
 
- Once the build has completed you will get a message informing you that ' your app was successfully deployed' and you can then launch your app. 
+ * Once the build has completed you will get a message informing you that ' your app was successfully deployed' and you can then launch your app. 
 
 
 
@@ -1225,9 +1225,6 @@ The content such as stock images for the website were taken from envato elements
 
 * **NavBar** - MDBootstrap -https://mdbootstrap.com/docs/jquery/navigation/navbar/
 
-* **NavBar** - Transparent Sticky  adapted from code here: https://bootsnipp.com/snippets/kl8Q3 / https://www.mockplus.com/blog/post/bootstrap-navbar-template
-
-
 * **Forms** - MDBootstrap - https://mdbootstrap.com/docs/jquery/forms/basic/
 * **Cards** - MDBootstrap - https://mdbootstrap.com/docs/jquery/components/cards/
 
@@ -1236,7 +1233,7 @@ The content such as stock images for the website were taken from envato elements
 ### **Python help:**
 * **Stackoverflow** = https://stackoverflow.com/questions/4617674/what-does-it-mean-for-an-object-to-be-unscriptable/16618872
 
-
+* **Django Docs** = https://docs.djangoproject.com/en/3.1/
 
 ### **Tutorials** 
 The initial code for this application was based on  the Django app tutorial from code institute, as part of my full stack web developer course, I could not have achieved this fully functional CRUD application without the extensive and comprehensive guide which I followed and adapted to my own needs. 
@@ -1277,7 +1274,7 @@ multi_author = profile['multi_author']
 
 ### **Thanks** 
 
-I would like to thank my mentor for this project Reuben who has helped me with the initial planning, the custom models including the Gym and Fighter network, his knowledge and support have been crucial in me completing this project. 
+*I would like to thank my mentor for this project Reuben who has helped me with the initial planning, the custom models including the Gym and Fighter network, his knowledge and support have been crucial in me completing this project i honestly couldnt have added alot of the functionality with out his expertise and help. 
 
 Id like to say a big thanks also to the mentor and tutor team at Code Institute who have been patient and helpful in helping me with support and guidance especially, Alan, Tim, Igor and Sheryl. 
 
