@@ -1,40 +1,33 @@
 {% extends "base.html" %}
 {% load humanize %}
 {% load static %}
-
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
-
 {{% block content %}
-
 <!-- Hero Section-->
 <div class="hero-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="hero-text text-center">
-                <h1 class="display-4 logo-font text-white font-weight-bold">
-                    Your Account
-                </h1>
-            </div>
-        </div>
-    </div>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="hero-text text-center">
+            <h1 class="display-4 logo-font text-white font-weight-bold">
+               Your Account
+            </h1>
+         </div>
+      </div>
+   </div>
 </div>
-
 <!-- End Hero Section-->
 <!-- Fighter and Gym Container-->
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Profile management for {{ user.username }}</h2>
+   <div class="row">
+      <div class="col">
+         <hr>
+         <h2 class="logo-font mb-4">Profile management for {{ user.username }}</h2>
 <hr>
 </div>
 </div>
 <div class="row">
-
-
-
     <!-- Fighter Profile data-->
     <div class="col-12 col-lg-6">
         <p class="text-muted">Your Fighter Profiles </p>
@@ -61,7 +54,6 @@
                             </a>
                         </td>
                         <td>{{ fighter.created_on  }}</td>
-
                         <td>
                             <small class="text-center ">
                                 <a href="{% url 'edit_fighter' fighter.id %}">Edit</a> |
@@ -69,22 +61,16 @@
                             </small>
                         </td>
                         <td><a class="btn btn-black btn-sm" href="{% url 'fytnet_profile' fighter.id %}"> View
-                            </a></td>
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
             <hr>
-
             <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_fighter' %}">Add Fighter</a>
-
-
-
-
-
         </div>
     </div>
-
     <!-- Gym Profile data-->
     <div class="col-12 col-lg-6">
         <p class="text-muted">Your Gym Profiles </p>
@@ -111,7 +97,6 @@
                             </a>
                         </td>
                         <td>{{ gym.created_on }}</td>
-
                         <td>
                             <small class="text-center ">
                                 <a href="{% url 'edit_gym' gym.id %}">Edit</a> |
@@ -132,12 +117,8 @@
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
-
 <!-- Account Container-->
 <div class="container">
     <div class="row">
@@ -146,7 +127,6 @@
             <h2 class="logo-font mb-4">FYT<strong><em>MERCH</em></strong> - <small class="text-muted">Delivery & Order
                     Information</small>
             </h2>
-
             <hr>
         </div>
     </div>
@@ -159,10 +139,6 @@
                 <button class="btn btn-black rounded-0 text-uppercase float-right btn-sm">Update Information</button>
             </form>
         </div>
-
-
-
-
         <div class="col-12 col-lg-6">
             <p class="text-muted">Order History</p>
             <div class="order-history table-responsive">
@@ -209,39 +185,23 @@
         </div>
     </div>
 </div>
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
 <!--  Section Latest Fighters in database -->
-
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
-
-
-
-
 {% endblock %}
-
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
