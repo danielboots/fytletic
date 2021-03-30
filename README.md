@@ -23,6 +23,8 @@ Fytletic is currently deployed and can be visited directly at Heroku **[Fytletic
 - Card number: 4242 4242 4242 4242
 - Zip & CCV: any integer values are valid
 
+Note: This project contains a store app which orders will not be fullfilled nor payments taken, Stripe test keys used only. This is for testing purposes only. 
+
 
 
 --
@@ -184,7 +186,7 @@ and this wikipedia article  I developed the colour pallete below  using [Adobe C
 * Purple -  Authority, Sophistication, power
 * Grey  - Conventional, dependable and practical
 
-![Colour Pallete ](media/colour.png)
+![Colour Pallete ](media/readme/colour.png)
 
 
 *	Choose a font type for the project which reflects what we are trying to achieve – research other platforms and use similar fonts.  “Montserrat”  will be used consistently throughout this site. The logo and business name  will employ ‘Montserrat font’ consistently. Again I have used this method from my previous milestone projects as I feel in my portfolio I wish to create a style for myself, following on from similar design and practices.
@@ -240,7 +242,7 @@ I also used a background image which is relevant (in this case a glove on rope) 
 1. Visit the application 
 2. Click Register
 3. Register account.
-4. Click claim fighter profile. / gym profile (limited to one fighter and gym profile per registered user.)
+4. Click add fighter profile. / gym profile 
 5. View Published profile. 
 
 This ease of use and free registration will encourage return users to the platform and again allow users to grow through external content creation. 
@@ -419,7 +421,7 @@ The web app will also have a shop with product pages using djangos templating sy
 * For this application to conform to good UX and user experience i have laid out the general structure of the navigation. Ease of use and good navigation are crucial when aiding users in learning the site, finding content and being able to access it in an intuitive way is a major priority and pivitol precursor to the applications success. I have first hand experience before taking this course with bad navigation design, and it caused confusion with users, who would contact support just to find out how to use the navigation. 
 Below is an outline of the structure i designed to cope with navigating the site.
 
-![Nav Structure](media/readme/navstructure.jpg)
+![Nav Structure](media/readme/nav_structure_new.jpg)
 
 
 ### **Static pages:** 
@@ -459,15 +461,15 @@ Below is an outline of the structure i designed to cope with navigating the site
 
 ### **LOGGED OUT USERS:** 
 
-#### **HOME---FIGHTERS---GYMS---SHOP---NEWSDESK---LOGIN---REGISTER :** 
+#### **HOME---FIGHTERS---GYMS---FTYMerch---NEWSDESK---LOGIN---REGISTER :** 
 * For logged-out users, the user will only have access to options which encourage registering to the site. A login option or a registration option alongside basic static pages for example the about and contact pages.
 
 
 
 
 #### **LOGGED IN USERS:** 
-### **HOME---ABOUT---ADD FIGHTER / GYM--- NEWSDESK :** 
-* If the user is logged in, a more extensive list of menu items are available, for instance, the ability to add a review will allow the user to visit the add review page and add a review. 
+### **HOME---FIGHTERS---GYMS---FTYMerch---NEWSDESK---ADD FIGHTER / GYM--- NEWSDESK :** 
+* If the user is logged in, a more extensive list of menu items are available, for instance, the ability to add a fighter or gym profile and manage their account data through the account menu option. 
 * An add fighter page will allow the user to manage their fighter profile update edit and delete, each with buttons for CRUD functionality.
 * Admin users at this current time will manage the site administration from the django admin area to which a menu item will be available, to create front end forms and pages when Django has a built in admin area seems unncessessary.
 * Finally logout for users to end their session and securely log out from the application, removing the session cookie. 
