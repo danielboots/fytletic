@@ -6,7 +6,7 @@ from .models import UserProfile
 class ProfileAdmin(admin.ModelAdmin):
     list_display = (
         "user",
-        "is_restricted",
+        "multi_author",
     )
 
 

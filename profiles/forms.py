@@ -7,7 +7,7 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         exclude = (
             "user",
-            "is_restricted",
+            "multi_author",
         )
 
     def __init__(self, *args, **kwargs):
