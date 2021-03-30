@@ -69,19 +69,21 @@
             </table>
             <hr>
 
+
+
             {% if multi_author %}
             <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_fighter' %}">Add Fighter</a>
-
-
-
             {% else %}
 
-            <!-- 
-            Need another if statement here -- if the user has a fighter count of 1 this means they have already created a profile and again hide the button if they have a count of 0 show the button -->
 
-
+            {% if fighters|length == 1 %}
+            <p>You have created max amount of fighters</p>
+            {% else %}
+            {% if fighters|length == 0 %}
             <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_fighter' %}">Add Fighter</a>
 
+            {% endif %}
+            {% endif %}
             {% endif %}
 
 
