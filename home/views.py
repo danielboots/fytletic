@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from news.models import Post
 from fytnet.models import Fighter
 from gym.models import Gym
+from contact.models import Contact
 
 # Create your views here.
 
@@ -39,7 +40,7 @@ def faq(request):
 
 def contact(request):
     """
-    A view to return the contact page
+    A view to return the contact page, using the contact model here !!
     """
 
     return render(request, "home/contact.html")

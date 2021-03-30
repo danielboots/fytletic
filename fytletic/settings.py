@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "fytnet",
     "gym",
     "django_extensions",
+    "contact",
 ]
 
 MIDDLEWARE = [
