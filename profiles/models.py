@@ -20,6 +20,10 @@ class UserProfile(models.Model):
     default_county = models.CharField(max_length=80, null=True, blank=True)
     default_postcode = models.CharField(max_length=20, null=True, blank=True)
     default_country = CountryField(blank_label="Country", null=True, blank=True)
+    is_restricted = models.BooleanField(
+        default=True,
+        help_text="Restrict access to users creating multiple fighters and gyms",
+    )
 
     def __str__(self):
         return self.user.username

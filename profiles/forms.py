@@ -5,7 +5,10 @@ from .models import UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        exclude = ("user",)
+        exclude = (
+            "user",
+            "is_restricted",
+        )
 
     def __init__(self, *args, **kwargs):
         """
