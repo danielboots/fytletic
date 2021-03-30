@@ -1,242 +1,225 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
 html {
-    height: 100%;
+	height: 100%;
 }
- 
+
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 body {
-  font-family: "Montserrat", sans-serif;
-  /* font-weight: 600; */
-  line-height: 1.6;    
+	font-family: "Montserrat", sans-serif;
+	/* font-weight: 600; */
+	line-height: 1.6;
 }
- 
+
+
 /* header - hero sections */
- 
+
 .hero-home {
-  background: url('/media/fyt_hero.jpg') no-repeat center center fixed;
-  /* background-size: cover; */
-  margin: auto;
-  height: 50vh;
-  background-attachment: fixed;
-  color: #ffffff;
-  position: relative;
+	background: url('/media/fyt_hero.jpg') no-repeat center center fixed;
+	/* background-size: cover; */
+	margin: auto;
+	height: 50vh;
+	background-attachment: fixed;
+	color: #ffffff;
+	position: relative;
 }
 
 .hero-home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* change RGBA to HEX Alpha Mentor Suggestion */
-background-color: #05101fcf;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* change RGBA to HEX Alpha Mentor Suggestion */
+	background-color: #05101fcf;
 }
 
 
 /* Accounts management hero section */
 
-
 .hero-accounts {
-  background: url('/media/fyt_hero.jpg') no-repeat center center fixed;
-  /* background-size: cover; */
-  margin: auto;
-  height: 50vh;
-  background-attachment: fixed;
-  color: #ffffff;
-  position: relative;
+	background: url('/media/fyt_hero.jpg') no-repeat center center fixed;
+	/* background-size: cover; */
+	margin: auto;
+	height: 50vh;
+	background-attachment: fixed;
+	color: #ffffff;
+	position: relative;
 }
 
 .hero-accounts::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* change RGBA to HEX Alpha Mentor Suggestion */
-background-color: #12192Ccf;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* change RGBA to HEX Alpha Mentor Suggestion */
+	background-color: #12192Ccf;
 }
 
-
- 
 .hero-header {
-  background: url('/media/fyt_hero.jpg') no-repeat center center fixed;
-  /* background-size: cover; */
-  margin: auto;
-  height: 50vh;
-  background-attachment: fixed;
-  color: #ffffff;
-  position: relative;
+	background: url('/media/fyt_hero.jpg') no-repeat center center fixed;
+	/* background-size: cover; */
+	margin: auto;
+	height: 50vh;
+	background-attachment: fixed;
+	color: #ffffff;
+	position: relative;
 }
 
 .hero-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* change RGBA to HEX Alpha Mentor Suggestion */
-background-color: #12192Ccf;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* change RGBA to HEX Alpha Mentor Suggestion */
+	background-color: #12192Ccf;
 }
+
 
 /* gym listings */
 
 .hero-gym {
-  background-image: url() no-repeat center center fixed;
-  /* background-size: cover; */
-  margin: auto;
-  height: 50vh;
-  background-attachment: fixed;
-  color: #ffffff;
-  position: relative;
+	background-image: url() no-repeat center center fixed;
+	/* background-size: cover; */
+	margin: auto;
+	height: 50vh;
+	background-attachment: fixed;
+	color: #ffffff;
+	position: relative;
 }
 
 .hero-gym::before {
-  /* content: ""; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* change RGBA to HEX Alpha Mentor Suggestion */
-background-color: #12192Ccf;
+	/* content: ""; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* change RGBA to HEX Alpha Mentor Suggestion */
+	background-color: #12192Ccf;
 }
 
 .hero-gym-img {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    filter: brightness(0.5);
+	width: 100%;
+	height: 50vh;
+	object-fit: cover;
+	filter: brightness(0.5);
 }
-
-
 
 .brandlogo {
 	width: 32px;
 	margin-left: 10px;
 }
 
+
 /* background containers */
 
 .whitesmoke-container {
-    background-color: whitesmoke;
+	background-color: whitesmoke;
 }
 
 .white-box {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 25px;
-    border: 1px solid #ebebeb;
-    border-radius: 5px;
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 25px;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
 }
 
 .nav-primary {
-    background-color: white;
-    color: black;
-   padding: 0 !important;
+	background-color: white;
+	color: black;
+	padding: 0 !important;
 }
 
-
-.nav-link  {
-    color: black;
-    
+.nav-link {
+	color: black;
 }
-  
+
 
 /* Verification mark like instagram for verified profiles and gyms */
 
-i.fas.fa-check-circle.blue-tick{
-    color: dodgerblue !important;
+i.fas.fa-check-circle.blue-tick {
+	color: dodgerblue !important;
 }
 
 i.fas.fa-check-circle {
-    color: grey !important;
+	color: grey !important;
 }
-
 
 .grad {
-background: #12192C;
-/* background: linear-gradient(45deg, rgba(5,16,30,1) 30%, rgba(93,114,153,1) 100%); */
+	background: #12192C;
+	/* background: linear-gradient(45deg, rgba(5,16,30,1) 30%, rgba(93,114,153,1) 100%); */
 }
 
-
 .hero-text {
-font-family: "Montserrat", sans-serif;
-  text-align: left;
-  position: absolute;
-  top: 40%;
-  left: 10%;
-  right: 10%;
-
-  color: white;
+	font-family: "Montserrat", sans-serif;
+	text-align: left;
+	position: absolute;
+	top: 40%;
+	left: 10%;
+	right: 10%;
+	color: white;
 }
 
 .m-text {
-font-family: "Montserrat", sans-serif;
-
+	font-family: "Montserrat", sans-serif;
 }
-
-
 
 .text-mute {
-    color:#6c757d!important;
+	color: #6c757d!important;
 }
 
-
-
 .img-fluid-profile {
-    object-fit: cover;
-  max-width: 50px;
-  height:auto;
-  align-items: center;
+	object-fit: cover;
+	max-width: 50px;
+	height: auto;
+	align-items: center;
 }
 
 
 /* Titles and headers */
 
 .h2-header-text {
-    font-family: "Montserrat", sans-serif;
-  text-align: center;
-  font-size: 30px;
-  letter-spacing: -1px;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	font-size: 30px;
+	letter-spacing: -1px;
 }
- 
+
 .footer-font {
-    font-family: "Montserrat", sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
-
-
-
 
 
 /* Cards */
 
 .card-img-top {
-    width: 100%;
+	width: 100%;
 	height: 150px;
 	object-fit: cover;
 }
 
-
 .md-avatar {
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
 }
 
 
 /* Css Animations - Animista.net */
 
- 
 .focus-in-contract-bck {
 	animation: focus-in-contract-bck 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
 
 /* ----------------------------------------------
  * Generated by Animista on 2020-6-24 10:0:25
@@ -245,30 +228,32 @@ font-family: "Montserrat", sans-serif;
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
+
 /**
  * ----------------------------------------
  * animation focus-in-contract-bck
  * ----------------------------------------
  */
-@keyframes focus-in-contract-bck {
-  0% {
-    letter-spacing: 1em;
-    transform: translateZ(300px);
-    filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateZ(12px);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
 
+@keyframes focus-in-contract-bck {
+	0% {
+		letter-spacing: 1em;
+		transform: translateZ(300px);
+		filter: blur(12px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateZ(12px);
+		filter: blur(0);
+		opacity: 1;
+	}
+}
 
 .text-focus-in {
 	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
 
 /* ----------------------------------------------
  * Generated by Animista on 2020-6-24 10:3:18
@@ -277,124 +262,125 @@ font-family: "Montserrat", sans-serif;
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
+
 /**
  * ----------------------------------------
  * animation text-focus-in
  * ----------------------------------------
  */
+
 @-webkit-keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
+	0% {
+		-webkit-filter: blur(12px);
+		filter: blur(12px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-filter: blur(0px);
+		filter: blur(0px);
+		opacity: 1;
+	}
 }
+
 @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
+	0% {
+		-webkit-filter: blur(12px);
+		filter: blur(12px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-filter: blur(0px);
+		filter: blur(0px);
+		opacity: 1;
+	}
 }
+
 
 /* Logo */
 
 .logo a {
-    color: white;
+	color: white;
 }
-
-
 
 
 /* Carousel */
 
 .container-media {
-    margin-top: 80px;
+	margin-top: 80px;
 }
 
 .owl-carousel {
-    top: 20px;
+	top: 20px;
 }
 
 .owl-carousel .item-video {
-    height: 200px;
+	height: 200px;
 }
 
 .owl-dot {
-    text-align: center;
-    margin-top: 20px;
-    display: inline-block;
+	text-align: center;
+	margin-top: 20px;
+	display: inline-block;
 }
 
 .owl-dot span {
-    width: 11px;
-    height: 11px;
-    background: #fff;
-    border-radius: 50%;
-    display: block;
-    margin: 5px 3px;
+	width: 11px;
+	height: 11px;
+	background: #fff;
+	border-radius: 50%;
+	display: block;
+	margin: 5px 3px;
 }
-
 
 .owl-dot.active span {
-    color: #12192C;
+	color: #12192C;
 }
 
+
 /* from Bulma */
+
 .icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	height: 1.5rem;
+	width: 1.5rem;
 }
 
 .logo-font {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .main-logo-link {
-    width: fit-content;
+	width: fit-content;
 }
 
 .shop-now-button {
-    background: #12192C;
-    color: white;
-    min-width: 260px;
+	background: #12192C;
+	color: white;
+	min-width: 260px;
 }
 
 .btn {
-    margin: 0;
+	margin: 0;
 }
-
 
 .btn-black {
-    /* Although css is black i updated brand colour to suit new UI*/
-    background: #12192C !important;
-    color: white;
-} 
+	/* Although css is black i updated brand colour to suit new UI*/
+	background: #12192C !important;
+	color: white;
+}
 
 .btn-back {
-    background-color: limegreen;
-    color: white
+	background-color: limegreen;
+	color: white
 }
-    
-
 
 .btn-outline-black {
-    background: white;
-    color: #12192C !important; /* use important to override link colors for <a> elements */
-    border: 1px solid #12192C;
+	background: white;
+	color: #12192C !important;
+	/* use important to override link colors for <a> elements */
+	border: 1px solid #12192C;
 }
 
 .shop-now-button:hover,
@@ -403,26 +389,25 @@ font-family: "Montserrat", sans-serif;
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #12192C;
-    color: white;
+	background: #12192C;
+	color: white;
 }
 
 .text-black {
-    color: #000 !important;
+	color: #000 !important;
 }
 
 .text-white {
-    color: white !important;
+	color: white !important;
 }
 
 .border-black {
-    border: 1px solid black !important;
+	border: 1px solid black !important;
 }
 
 .bg-black {
-    background: #12192C !important;
+	background: #12192C !important;
 }
-
 
 .overlay {
 	height: 100%;
@@ -434,313 +419,302 @@ font-family: "Montserrat", sans-serif;
 	z-index: -1;
 }
 
-
-a.category-badge > span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
+a.category-badge>span.badge:hover {
+	background: #212529 !important;
+	color: #fff !important;
 }
 
 .btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+	height: 42px;
+	width: 42px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
 }
 
-.btt-link, 
+.btt-link,
 .update-link,
 .remove-item {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 input[name='q']::placeholder {
-    color: #aab7c4;
+	color: #aab7c4;
 }
+
 
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
-    z-index: 99999999999;
+	position: fixed;
+	top: 72px;
+	right: 15px;
+	z-index: 99999999999;
 }
 
 .custom-toast {
-    overflow: visible;
+	overflow: visible;
 }
 
 .toast-capper {
-    height: 2px;
+	height: 2px;
 }
 
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+
 .arrow-up {
-    width: 0; 
-    height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 10px solid black;
+	position: absolute;
+	top: -10px;
+	right: 36px;
 }
 
+
 /* Convenience classes - colors copied from Bootstrap */
+
 .arrow-primary {
-    border-bottom-color: #007bff !important;
+	border-bottom-color: #007bff !important;
 }
 
 .arrow-secondary {
-    border-bottom-color: #6c757d !important;
+	border-bottom-color: #6c757d !important;
 }
 
 .arrow-success {
-    border-bottom-color: #28a745 !important;
+	border-bottom-color: #28a745 !important;
 }
 
 .arrow-danger {
-    border-bottom-color: #dc3545 !important;
+	border-bottom-color: #dc3545 !important;
 }
 
 .arrow-warning {
-    border-bottom-color: #ffc107 !important;
+	border-bottom-color: #ffc107 !important;
 }
 
 .arrow-info {
-    border-bottom-color: #17a2b8 !important;
+	border-bottom-color: #17a2b8 !important;
 }
 
 .arrow-light {
-    border-bottom-color: #f8f9fa !important;
+	border-bottom-color: #f8f9fa !important;
 }
 
 .arrow-dark {
-    border-bottom-color: #343a40 !important;
+	border-bottom-color: #343a40 !important;
 }
 
 .bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
+	height: 100px;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
+
 
 /* This container is for the notification, add to bag pop up box. */
 
 .bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
+	height: 100px;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
+
 
 /* -------------------------------- Media Queries */
 
+
 /* Slightly larger container on xl screens */
+
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+	.container {
+		max-width: 80%;
+	}
 }
 
 
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+	margin-top: 1.5rem;
+	/* mt-4 */
+	color: #6c757d;
+	/* text-secondary */
 }
 
 .allauth-form-inner-content input {
-    border-color: #000;
-    border-radius: 0;
+	border-color: #000;
+	border-radius: 0;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
+	display: none;
 }
 
 .allauth-form-inner-content input::placeholder {
-    color: #aab7c4;
+	color: #aab7c4;
 }
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
 	/* btn */
 	display: inline-block;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #05101e;
-    border: 1px solid #05101e;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0;
-
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	font-weight: 400;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: #05101e;
+	border: 1px solid #05101e;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: 0;
+	/* standard bootstrap btn transitions */
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
+.allauth-form-inner-content input[type='submit']:hover {
 	color: #fff;
-    background-color: #222;
-    border-color: #222;
+	background-color: #222;
+	border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #17a2b8;
+	/* text-info */
 }
-
-
 
 
 /* Product Form */
 
 .btn-file {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 
 .btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	opacity: 0;
+	cursor: pointer;
 }
 
 .custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
+	border-radius: 0;
+	border-color: #dc3545;
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
+	background-color: #dc3545;
+	border-color: #dc3545;
+	border-radius: 0;
 }
 
 .custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545; 
+	border-radius: 0;
+	border-color: #dc3545;
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
+	background-color: #dc3545;
+	border-color: #dc3545;
+	border-radius: 0;
 }
-
 
 .nav-primary {
- 
-    background-color: #12192C;
-    color: white;
-    padding: 25px 0px; 
-
+	background-color: #12192C;
+	color: white;
+	padding: 25px 0px;
 }
 
 .page-footer {
-    background-color: #12192C;
-    color: white;
-    padding: 25px 0px; 
-
+	background-color: #12192C;
+	color: white;
+	padding: 25px 0px;
 }
 
 .fa-brand-facebook {
-    color: #3b5998;
+	color: #3b5998;
 }
 
 .fa-brand-web {
-    color: black;
+	color: black;
 }
 
 .fa-brand-twitter {
-    color: #1da1f2;
+	color: #1da1f2;
 }
 
 .fa-brand-instagram {
-    color: #c32aa3;
+	color: #c32aa3;
 }
 
 .fa-muted {
-    color: #d3d3d3; 
+	color: #d3d3d3;
 }
-
 
 
 /* fixed top navbar only on medium and up */
+
 @media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding: 50px;
-    }
-
-
-  /* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
-
-    body {
-        height: calc(100vh - 116px);
-    }
-
-     .display-4.logo-font.text-black {
-        font-size: 2rem;
-    }
-
-    .nav-link {
-        padding: 0.15rem;
-    }
-
-    .nav-link i.fa-lg {
-        font-size: 1rem;
-    }
-
-    .navbar-toggler {
-        padding: .6rem .6rem;
-        font-size: 1rem;
-    }
-
-    #delivery-banner h4 {
-        font-size: .9rem;
-    }
-
-    .btn.btn-outline-black.rounded-0,
-    .btn.btn-black.rounded-0 {
-        padding: .375rem .375rem;
-    }
-
-    .btn.btn-outline-black.rounded-0.btn-lg,
-    .btn.btn-black.rounded-0.btn-lg {
-        padding: .375rem .375rem;
-        font-size: .75rem;
-    }
-
-    .increment-qty, .decrement-qty {
-        padding: .25rem .5rem !important;
-    }
-}
-
-
-
+	.fixed-top-desktop-only {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 1030;
+	}
+	.header-container {
+		padding: 50px;
+	}
+	/* pad the top a bit when navbar is collapsed on mobile */
+	@media (max-width: 991px) {
+		.header-container {
+			padding-top: 116px;
+		}
+		body {
+			height: calc(100vh - 116px);
+		}
+		.display-4.logo-font.text-black {
+			font-size: 2rem;
+		}
+		.nav-link {
+			padding: 0.15rem;
+		}
+		.nav-link i.fa-lg {
+			font-size: 1rem;
+		}
+		.navbar-toggler {
+			padding: .6rem .6rem;
+			font-size: 1rem;
+		}
+		#delivery-banner h4 {
+			font-size: .9rem;
+		}
+		.btn.btn-outline-black.rounded-0,
+		.btn.btn-black.rounded-0 {
+			padding: .375rem .375rem;
+		}
+		.btn.btn-outline-black.rounded-0.btn-lg,
+		.btn.btn-black.rounded-0.btn-lg {
+			padding: .375rem .375rem;
+			font-size: .75rem;
+		}
+		.increment-qty,
+		.decrement-qty {
+			padding: .25rem .5rem !important;
+		}
+	}
 }

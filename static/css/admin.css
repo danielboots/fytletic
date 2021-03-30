@@ -1,48 +1,50 @@
 /* Admin  */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
-    font-size: 12px;
-   font-family: 'Montserrat';
+	font-size: 12px;
+	font-family: 'Montserrat';
 }
 
 #header {
-height: 50px;
-background: #181b1f;
-color: white;
-
+	height: 50px;
+	background: #181b1f;
+	color: white;
 }
 
-#branding  h1{
-color: white;
+#branding h1 {
+	color: white;
 }
 
 div.breadcrumbs {
-    background-color: #30363d;
-
+	background-color: #30363d;
 }
 
-.module h2, .module caption, .inline-group h2 {
-    margin: 0;
-    background-color: #30363d;
+.module h2,
+.module caption,
+.inline-group h2 {
+	margin: 0;
+	background-color: #30363d;
 }
 
-a:link, a:visited {
-    color: #30363d;
-    text-decoration: none;
+a:link,
+a:visited {
+	color: #30363d;
+	text-decoration: none;
 }
 
 #nav-sidebar .current-model {
-    background: #1fea00;
+	background: #1fea00;
 }
 
-#nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
-    color: #1fea00;
-    font-weight: bold;
+#nav-sidebar .current-app .section:link,
+#nav-sidebar .current-app .section:visited {
+	color: #1fea00;
+	font-weight: bold;
 }
 
-.button.default, input[type=submit].default, .submit-row input.default {
-    
-    background: #181b1f;
+.button.default,
+input[type=submit].default,
+.submit-row input.default {
+	background: #181b1f;
 }
