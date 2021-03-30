@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 {% load humanize %}
-
 <section>
     <!-- Hero Section-->
     <div class="hero-gym">
@@ -31,7 +30,6 @@
         </div>
     </div>
     <!-- End Hero Section-->
-
     <!-- Data -->
     <section class="py-4 whitesmoke-container">
         <div class="container">
@@ -46,7 +44,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-9 col-sm-12  mt-3 white-box  z-depth-1">
                     <!-- Home Main Image -->
@@ -131,7 +128,6 @@
                                         target="_blank"><span class="float-right"> <strong>Fighters Contact
                                                 Number</strong></span>
                                     </a>
-
                                 </li>
                                 <li class="list-group-item text-mute">
                                     <i class="fas fa-envelope"></i> <a href="mailto: {{ fighter.email }}"
@@ -139,8 +135,6 @@
                                         </span>
                                     </a>
                                 </li>
-
-
                                 <li class="list-group-item ">
                                     <i class="fas fa-calendar text-mute"></i> <strong>Listing Date:</strong>
                                     <span class="float-right">{{ fighter.created_on | timesince }}</span>
@@ -153,7 +147,6 @@
                     <div class="card mb-3 white-box">
                         <div class="card-body text-center">
                             <h5 class="card-title logo-font mb-4"> <strong>Verified status</strong></h5>
-
                             {% if fighter.is_verified %}
                             <h6 class="font-weight-bold">
                                 <em>Verified Fighter</em> <i class="fas fa-check-circle blue-tick"></i>
@@ -175,7 +168,6 @@
                     </div>
                     <div class="card mb-3 white-box ">
                         <div class="div text-center">
-
                             <!--Facebook-->
                             {% if fighter.facebook %}
                             <a href="{{ fighter.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
@@ -183,7 +175,6 @@
                             {% else %}
                             <i class="fab fa-lg fa-facebook-f fa-muted"></i>
                             {% endif %}
-
                             <!--Twitter-->
                             {% if fighter.twitter %}
                             <a href="{{ fighter.twitter }}" target="_blank" class="tw-ic mr-3" role="button"><i
@@ -191,7 +182,6 @@
                             {% else %}
                             <i class="fab fa-lg fa-twitter fa-muted"></i>
                             {% endif %}
-
                             <!--Instagram-->
                             {% if fighter.instagram %}
                             <a href="{{ fighter.instagram }}" target="_blank" class="ins-ic mr-3" role="button"><i
@@ -206,7 +196,6 @@
                             {% else %}
                             <i class="fab fa-lg fa-link fa-muted"></i>
                             {% endif %}
-
                         </div>
                     </div>
                     <div class="div text-center">
@@ -219,15 +208,12 @@
                     </small>
                     {% endif %}
                 </div>
-
                 {% if fighter.video_1 %}
                 <!-- Carousel-->
                 <div class="container-fluid ">
                     <div class="row white-box my-5 py-5 z-depth-1">
                         <div class="col text-left">
-
                             <h4 class="logo-font mb-4"> <em>Media </em> </h4>
-
                             <div class="owl-carousel">
                                 <div class="item-video" data-merge="1">
                                     <a class="owl-video" href="{{ fighter.video_1 }}"></a>
@@ -246,21 +232,14 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
                 <!-- End Carousel-->
-
                 {% endif %}
-
             </div>
         </div>
-
     </section>
     <!-- End About Gym -->
-
     {% endblock %}
     {% block postloadjs %}
     <!-- block super appends instead of replacing anything in the block.-->
