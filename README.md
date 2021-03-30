@@ -1223,6 +1223,8 @@ The content for the site was developed by myself from my own experience with the
 Throughout my project, I used various sources for media - 
 The content such as stock images for the website were taken from envato elements to which i have a subscription. 
 
+* Gym images and inspiration for dummy data from:  https://generationiron.com/5-best-gyms-world-need-train-die/
+
 ### **Code Snippets** 
 
 * **NavBar** - MDBootstrap -https://mdbootstrap.com/docs/jquery/navigation/navbar/

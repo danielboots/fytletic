@@ -113,7 +113,7 @@
                             <img src="{{ gym.gym_photo_main.url }}" alt="Profile" class="md-avatar rounded">
                         </td>
                         <td>
-                            <a href="#" title="#">
+                            <a href="{% url 'gym_profile' gym.id %}" title="#">
                                 {{ gym.name }}
                             </a>
                         </td>
