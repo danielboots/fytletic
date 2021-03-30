@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
-
 <!-- Hero Section-->
 <div class="hero-header">
     <div class="container-fluid">
@@ -11,22 +9,14 @@
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     Contact
                 </h1>
-
-
             </div>
         </div>
     </div>
 </div>
-
 <!-- End Hero Section-->
-
-
 <div class="container my-5 py-5 z-depth-1">
-
-
     <!--Section: Content-->
     <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
-
         <style>
             .map-container {
                 height: 200px;
@@ -41,7 +31,6 @@
                 position: absolute;
             }
         </style>
-
         <!--Google map-->
         <div id="map-container-google-1" class="z-depth-1 map-container mb-5">
             <iframe
@@ -49,75 +38,47 @@
                 frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
         <!--Google Maps-->
-
         <!--Grid row-->
         <div class="row">
-
             <!--Grid column-->
             <div class="col-lg-5 col-md-12 mb-0 mb-md-0">
-
                 <h3 class="font-weight-bold">Contact Us</h3>
-
                 <p class="text-muted">We at Fytletic love to hear from you, if you want to contact us you can directly
                     using our office line the email below or fill out the form and we will get back to you as soon as
-                    possible..</p>
-
+                    possible..
+                </p>
                 <p><span class="font-weight-bold mr-2">Email:</span><a href="">contact@fytletic.com</a></p>
                 <p><span class="font-weight-bold mr-2">Phone:</span><a href="">+7544 905 639</a></p>
-
             </div>
-
-
-
-
-
             <!--Grid column-->
-
             <!--Grid column-->
             <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
-
                 <!--Grid row-->
                 <div class="row">
-
                     <!--Grid column-->
                     <div class="col-md-6">
-
                         <!-- Material outline input -->
-
-
                     </div>
                     <!--Grid column-->
-
                     <!--Grid column-->
                     <div class="col-md-6">
-
                         <!-- Material outline input -->
-
-
                     </div>
                     <!--Grid column-->
-
                 </div>
-
                 <form id="form">
                     <div class="md-form md-outline mb-0">
-
-
                         <input type="text" name="from_name" id="from_name" class="form-control" placeholder="Name"
                             required>
                     </div>
                     <div class="form-group md-form md-outline mb-0">
                         <textarea class="form-control rounded-0" name="message" id="message" rows="3"
                             placeholder="Message" required></textarea>
-
                     </div>
                     <div class="field md-form md-outline mb-3 md-form md-outline mb-0">
-
-
                         <input type="text" name="reply_to" id="reply_to" class="form-control" placeholder="Your Email"
                             required>
                     </div>
-
                     <input type="submit" id="button" class="btn btn-dark btn-sm ml-0" value="Send Email">
                 </form>
             </div>
@@ -126,32 +87,18 @@
     <!--Section: Content-->
 </div>
 <!--Grid column-->
-
-
-
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-
 <script type="text/javascript">
     emailjs.init('user_f7VEKMwii78g0ndoNBxSC')
 </script>
-
-
-
 <!-- back to top link-->
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-
 </div>
-
-
-
 {% endblock %}
-
 {% block postloadjs %}
-
 <!-- block super appends instead of replacing anything in the block.-->
 {{ block.super }}
 <script type="text/javascript">
@@ -159,5 +106,4 @@
         window.scrollTo(0, 0)
     })
 </script>
-
 {% endblock %}

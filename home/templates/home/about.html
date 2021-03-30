@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
-
 <!-- Hero Section-->
 <div class="hero-header">
     <div class="container-fluid">
@@ -11,66 +9,39 @@
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     About
                 </h1>
-
-
             </div>
         </div>
     </div>
 </div>
-
 <!-- End Hero Section-->
-
-
-
-
 <div class="container mt-5">
-
-
     <!-- Section heading -->
     <h3 class="font-weight-bold mb-5">About Fytletic</h3>
-
 </div>
-
-
 <div class="container my-5 py-5 z-depth-1">
-
-
     <!--Section: Content-->
     <section class="text-center px-md-5 mx-md-5 dark-grey-text">
-
         <!--Grid row-->
         <div class="row d-flex justify-content-center">
-
             <!--Grid column-->
             <div class="col-lg-7">
-
                 <p>Ftyletic is the first professional fighters network. It was set up to become the main professional
-                    source of fight data in the world. </p>
-
+                    source of fight data in the world.
+                </p>
             </div>
             <!--Grid column-->
-
         </div>
         <!--Grid row-->
     </section>
     <!--Section: Content-->
-
-
 </div>
-
-
 <!-- back to top link-->
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-
 </div>
-
-
-
 {% endblock %}
-
 {% block postloadjs %}
 <!-- block super appends instead of replacing anything in the block.-->
 {{ block.super }}
@@ -79,5 +50,4 @@
         window.scrollTo(0, 0)
     })
 </script>
-
 {% endblock %}

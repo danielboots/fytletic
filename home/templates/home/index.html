@@ -1,34 +1,21 @@
 {% extends "base.html" %}
 {% load humanize %}
 {% load static %}
-
 {% block content %}
-
 <!-- Hero Section-->
 <div class="hero-home">
     <div class="container">
         <div class="row">
             <div class="col-7 col-md-6 my-auto hero-text focus-in-contract-bck">
                 <h1 class="display-4 logo-font text-white font-weight-bold "><strong> FYT</strong><em>LETIC</em> <br>
-
                 </h1>
                 <h5><em>Professional Fight Network</em></h5>
-
             </div>
-
         </div>
     </div>
-
-
-
-
 </div>
-
 <!-- End Hero Section-->
-
-
 <!--  Section-->
-
 <section>
     <div class="container-fluid">
         <div class="row">
@@ -39,32 +26,18 @@
         </div>
     </div>
 </section>
-
-
-
 <!--  Section Latest Fighters in database -->
-
 <div class="container mt-5">
-
-
     <!-- Section heading -->
     <h3 class="logo-font mb-4">Latest Gyms</h3>
-
     <!-- New card System-->
     <div class="row">
-
-
         {% for gym in gyms %}
-
-
         <!-- New fighter card layout-->
-
         <!-- Grid column -->
         <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-
             <!-- Card -->
             <div class="card hoverable">
-
                 <!-- Card image -->
                 {% if gym.gym_photo_main %}
                 <img class="card-img-top hover-nav" src="{{ gym.gym_photo_main.url }}" alt="Card image cap">
@@ -77,65 +50,38 @@
                     <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
                         {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
                     </h5>
-
                     {% else %}
                     <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
                         {{ gym.name }}<i class="fas fa-check-circle"></i>
                     </h5>
                     {% endif %}
-
-
                     <!-- Text -->
                     <p class="mb-2">{{ gym.town_or_city }}</p>
                     <!-- Title -->
-
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">View</a>
-
-
                 </div>
             </div>
         </div>
-
-
-
-
         <!--End new card layout -->
-
-
         {% endfor %}
-
-
-
     </div>
 </div>
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
 <!--  Section Latest Fighters in database -->
-
 <div class="container mt-5">
-
-
     <!-- Section heading -->
     <h3 class="logo-font mb-4">Latest Fighters</h3>
-
     <!-- New card System-->
     <div class="row">
-
         {% for fighter in fighters %}
-
         <!-- Grid column -->
         <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-
             <!-- Card -->
             <div class="card hoverable">
-
                 <!-- Card image -->
                 {% if fighter.profile_photo_main %}
                 <img class="card-img-top hover-nav" src="{{ fighter.profile_photo_main.url }}" alt="Card image cap">
@@ -144,95 +90,61 @@
                 {% endif %}
                 <!-- Card content -->
                 <div class="card-body">
-
                     <!-- Title -->
                     <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ fighter.first_name }}</p>
                     <!-- Text -->
-
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'fytnet_profile' fighter.id %}">View
                         Profile</a>
-
                 </div>
             </div>
         </div>
         {% endfor %}
-
     </div>
 </div>
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
-
-
-
-
 <!--  Section Latest News From News -->
-
 <div class="container mt-5">
-
-
     <!-- Section heading -->
     <h3 class="logo-font mb-4">Latest News</h3>
-
     <!-- New card System-->
     <div class="row">
-
         {% for post in posts %}
-
         <!-- Grid column -->
         <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-
             <!-- Card -->
             <div class="card hoverable">
-
                 <!-- Card image -->
                 {% if post.photo_main.url %}
                 <img class="card-img-top hover-nav" src="{{ post.photo_main.url }}" alt="Card image cap">
                 {% else %}
                 <img class="card-img-top hover-nav" src="{{ MEDIA_URL }}fyt_hero.jpg" alt="Card image cap">
                 {% endif %}
-
                 <!-- Card content -->
                 <div class="card-body">
-
                     <!-- Title -->
                     <p class="card-title text-muted text-uppercase font-small mt-1 mb-3">{{ post.title}}</p>
                     <!-- Text -->
                     <p class="mb-2">{{ post.intro }}</p>
-                    <small><strong>Posted by {{ post.author }}</strong><br>
+                    <small>
+                        <strong>Posted by {{ post.author }}</strong><br>
                         <p class="text-success">{{ post.created_on | timesince }}</p>
                     </small>
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'news_article' post.slug %}">Read
                         more!</a>
-
                 </div>
             </div>
         </div>
         {% endfor %}
-
     </div>
 </div>
-
 <!--Spacer row-->
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
-
-
-
-
-
-
 <!--Section: Content-->
-
 {% endblock %}
