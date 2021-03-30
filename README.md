@@ -605,6 +605,9 @@ Brian O'Grady - Code Institute
 
 * Footer features on Index.html with information section populated with my information. 
 
+* Extensive use of logic if else statements which render blocks if the user has infomation pertaining to those blocks, for example, the media blocks in gyms and fighter profiles, if the user hasnt uploaded at least one video to this  section the block doesnt render in the template, this condenses the templates and allows templates to look complete even with out a full profile.
+
+* similarly if a user doesnt provide all social media links, they are greyed out, active social media links return branded colours alerting the user to the fact the profile has an active social media link. 
 
 
 * Gym and Fighter Main pages  utilizes bootstrap cards which display FIghter image and content relevant to the fighter,, encouraging click through from the button below.  This was templated using the Django framework. This allowed the developer to create one template card which was used to create all the data cards for the users, through creating loops for the fighters. In time i will add pagination and sorting of these cards once the site grows in user data.
@@ -655,15 +658,55 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 * Defensive design - 
 ```
 {{ comment_form | crispy }}
-                    {% csrf_token %}
+    {% csrf_token %}
                  
 ```
+* Crispy forms and Cross site Django tokens used, crispy form for styling, but CSRF allows for added security.
 
-Crispy forms and Cross site Django tokens used, crispy form for styling, but CSRF allows for added security.
+
+ Using Login required in views.py for different apps; This checks that the user is logged in and authenticated.
+
+```
+@login_required
+def edit_gym(request, gym_id):
+```
+
+
+
 
 * Toasts and message popups used across the site to give feedback on user actions across the site.
 
 * Font awesome icons used to increase user site learning, used in the footer and headers extensively.
+
+
+
+## **Other App Specific features**
+
+* **Home** - Ordering of the latest three Fighters, Gyms and latest news, ensures the home page is always upto date with the latest information, these are rendered as cards and styled with hover classes to be more visually appealing.
+
+* **Products** - Fully functional ecommerce site, with stripe integration, security through stripe, quanity selectors crispy forms and toasts alerting users to bag updates, deletion and manual editing and deleting of products in the bag.
+
+* **Contact** - Contact form Posts data to the backend Django admin panel where admins are alerted via email using the Google SMTP server. The admin panel shows and returns a list of messages with return email addresses. The forms are rendered on the front end via crispy form styling and are complete with defensive design to prevent spam. 
+
+* **Gym** - Rendering of custom content and blocks dependent on information provided to the template. Carousel and lightbox using if else statements to render infomation only if present. 
+Complete with Verification badges for users who have went through a vetting process so that their profiles are legitimate. 
+Fight Camp, shows related fighters in an ordered list / table with links to their profiles. 
+The use of telephone links and mail links on the profile page allow for mobile use, to quickly call or message the gym. Also a created message shows the status of when the profile was created, it has been styled in a green colour. 
+
+
+* **Fighter Profiles** - Rendering of custom content and blocks dependent on information provided to the template. Carousel and lightbox using if else statements to render infomation only if present. 
+Complete with Verification badges for users who have went through a vetting process so that their profiles are legitimate. 
+The use of telephone links and mail links on the profile page allow for mobile use, to quickly call or message the fighter. Also a created message shows the status of when the profile was created, it has been styled in a green colour. 
+
+* **News Desk** - Renders cards highlighting the latest news with links to the readmore button. 
+The news profile allows users who are logged in to read the full article and post comments which are linked to their username (complete with delete comment functionality).
+To encourage users to sign up, i have protected the news desk full body of the article using a filter to trunceate content and provided an if statement to render a block of text and a link asking unregistered users to sign up to read the rest of the article.
+News articles render correct tags for later sorting into categories.
+The template also renders the author name, when the article was posted and a link back to the main news desk page.
+
+* **User Profiles** - Not only does the profile / account page for users contain all order history and information to update their account, it also has been extended to show all of the users Fighter and Gym profiles associated with the account, neatly arranged in tables complete with links to profiles and avatars. Quick links for editing and deleting profiles are also available.
+I have also added a last login function, so that users are aware about how long ago they logged in and if they didnt then they will know that their account may have been compromised. 
+
 
 
 ### **Further Dev plans**: 
@@ -790,9 +833,8 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Email infomation retrieved from database and displayed in the template
 * social media links retrieved from database and displayed in the template
 * listing detail retrieved from database and displayed in the template
-* Join fight camp button adds user to list of linked users 
-* back to gyms button returns user to gym page. r
-* media, images or video retrieved and displayed in carousel
+* back to gyms button returns user to gym page. 
+* media, images or video retrieved and displayed in carousel if applicable.
 
 
 
@@ -802,10 +844,8 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Card: For loop tempating, displays fighterters in a card deck with pagination (correct and working)
 * Card: Img Top displays correct image
 * Card:fighter name displays correctly.
-* Card:fighter location displays correct
-* Card:fighter created on date displays in date format.
+
 * Card: Button takes user to correctfighter listing
-* Card: verification logic displays blue tick for verified fighter and non for non verified fighter.
 * pagination: previous, next and number links all work with correct logic, if no prevous then button is disabled, similarly if no next button is also disabled.
 
 **fighter / Single Template.**
@@ -859,6 +899,18 @@ For this website, I haven't provided an extensive array of menu options, only as
 * Comments - Related news displays 
 
 
+
+* Contact.**
+
+* Contact form renders and uses CSRF token 
+* Contact form defensive design asks users to fill in name and if logged in returns the user name.
+* Contact form asks for email address (required) and will return user email address if logged in.
+* Contact form renders and asks for phone number 
+* Contact form renders form input for message and is a required field. 
+* Submit button posts the data to the Django admin panel and emails the admin making them aware of a contact message form. 
+* Google maps renders in the head section of the contact us container.
+
+
 **Register.**
 
 * Register - Takes two inputs to the form Username and Password both utilising defensive design. 
@@ -898,19 +950,21 @@ No errors found I did use the direct input to the CSS validator service as I am 
 
 * CSS testing found only errors withing the MDBootstrap CSS - all written CSS passed validation, apart from WebKit-animation and WebKit-filter which is an external library I used for  H1 animations and out of my control. 
 
-![CSS testing](Link)
+
 
 
 ### **PEP8 Results:** 
-No problems resulting from PEP8 testing and compliance of app.py file using http://pep8online.com/
+No problems resulting from PEP8 testing and compliance of all python3 .py files  using http://pep8online.com/
 All major tests passed and no errors and indentation all correct.
+
+Note: the only exeption i have left in this is the lengh too long error, if time permitted i would go back and correct these 'errors' but as it stands the line lengh doesnt break site functionality therefore will be classed as known and to be ammended moving forward in a new branch.
 
 
 
 ### **HTML Results:** 
 All HTML pages validated and passed tests however using Django and the way we extend from the base template we do see expected errors in each page such as Doctype must be declared first and special character escaping, however, this cant be circumvented and I am aware and happy to proceed with this. 
 
-![HTML Validation]()
+This was carried out and then also templates rendered were formatted so that code is clean and legible to anyone browsing the repo or working on the project moving forward.
 
 
 
@@ -943,6 +997,9 @@ This project was developed using the Gitpod IDE which integrates seamlessly with
 The site was developed inside of the Gitpod IDE and connected to my GitHub repository. 
 As sections of the site were completed I ensured that I used version control to maintain copies of my code on the repository. This was achieved via commands on the terminal integrated with Gitpod.
 
+The python code - Only known issues with the code are some lines being too long. Again all code has been formatted with Black which still introduced this after formatting and will be dealt with in a new branch moving forward.
+
+
 ### **Steps in using version control and getting ready for Deployment**
 
 1. `git status` - would give me a list of the files which have been edited and ready for staging.
@@ -967,41 +1024,32 @@ this was achieved through the following steps.
 
 1. Firstly and foremost one should create a new repository over at GitHub creating an env.py file to store sensitive data.
 
-2. We must create two initial files in addition to this in our preparation these include the requirements.txt and Procfile, Requirements.txt essentially tells Heroku which dependencies are needed to build the app and the Procfile specifies the commands that are executed by the app on startup. 
 
-3. To create the requirements.txt  and **P**rocfile we will use the commands as follows; 
 
-#
-
-    • $ pip3 freeze --local > requirements.txt
-    • $ echo web: python manage.py > Procfile 
-
-     > **Note:**  Procfile music be capitalized !!!
-
-4. Log in (or Register) to [Heroku](https://www.heroku.com/) and from your dashboard click 'new' > 'create new app'.
+2. Log in (or Register) to [Heroku](https://www.heroku.com/) and from your dashboard click 'new' > 'create new app'.
 ![Heroku New App](media/readme/deployment/1.png)
 
 
 * Name your app something unique and select the region closest to you, in my case this is Europe.
 ![Heroku New App](media/readme/deployment/2.png)
 
-5. Then on the 'Resources' tab, search and add the Heroku Postgres database, for normal projects the free option is usually sufficient.
+3. Then on the 'Resources' tab, search and add the Heroku Postgres database, for normal projects the free option is usually sufficient.
 
-6. To connect Postrges with Django we need to install a couple of dependencies, dj_database_url and psycopg2, this is achieved by typing the below commands in the terminal 
+4. To connect Postrges with Django we need to install a couple of dependencies, dj_database_url and psycopg2, this is achieved by typing the below commands in the terminal 
 
 ```
 $ pip3 install dj_database_url
 $ pip3 install psycopg2
 ```
 
-7. We need to freeze these into a specific file called requirements.txt to ensure that Heroku installs all the apps requirements when deployed, we do this by entering the below command in the terminal
+5. We need to freeze these into a specific file called requirements.txt to ensure that Heroku installs all the apps requirements when deployed, we do this by entering the below command in the terminal
 
 ```
 $ pip3 freeze > requirements.txt
 
 ```
 
-8. We use two databases in our app, namely sqlite3 which comes as default for django and Postgres, in development we are using sqlite, so to implement this we need to replace the default database URL with a call to dj_database.url.parse and pass in the credentials from Heroku 
+6. We use two databases in our app, namely sqlite3 which comes as default for django and Postgres, in development we are using sqlite, so to implement this we need to replace the default database URL with a call to dj_database.url.parse and pass in the credentials from Heroku 
 
 ```
 # DATABASES = {"default": dj_database_url.parse("DATABASE_URL")}
@@ -1021,7 +1069,7 @@ and following the prompts.
 
 
 
-8. After this is completed migrating we then ammend the code to allow us to use both sqlite in development and postres for Heroku Deployment. 
+7. After this is completed migrating we then ammend the code to allow us to use both sqlite in development and postres for Heroku Deployment. 
 This is achienved by using the code below in replace of the database config above. 
 
 ```
@@ -1038,7 +1086,7 @@ else:
 ```
 
 
-9. Once connected head over to the settings tab on Heroku and click on the reveal config Vars button as shown below 
+8. Once connected head over to the settings tab on Heroku and click on the reveal config Vars button as shown below 
 
 ![Config vars](media/readme/deployment/3.png)
 
@@ -1063,7 +1111,7 @@ the variables required are as follows (key and value pairs) and are to be input 
 | **USE_AWS**   | TRUE | 
 |
 
-10. Install gunicorn using the following command;
+9. Install gunicorn using the following command;
 
 `
 $ pip3 install gunicorn
@@ -1072,7 +1120,7 @@ $ pip3 install gunicorn
 Then freeze into your requirements file.
 
 
-11. Create a Procfile in the same level as the requirements.txt
+10. Create a Procfile in the same level as the requirements.txt
 Inside of the  Procfile and add the following line;
 
 `
@@ -1185,6 +1233,9 @@ The content such as stock images for the website were taken from envato elements
 
 * **EmailJS** - Error onload, fixed using answer from stackoverflow - https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null
 
+### **Python help:**
+* **Stackoverflow** = https://stackoverflow.com/questions/4617674/what-does-it-mean-for-an-object-to-be-unscriptable/16618872
+
 
 
 ### **Tutorials** 
@@ -1200,6 +1251,16 @@ The initial code for this application was based on  the Django app tutorial from
 
 
 ### **Custom Code** 
+
+* Help from the CodeInstitute team: 
+
+```
+multi_author = profile['multi_author']
+2. then in context add:
+'multi_author': multi_author
+3. then in template you can access it {{ multi_author }}
+
+```
 
 
 ### **Animation Css External Libraries** 
@@ -1217,6 +1278,8 @@ The initial code for this application was based on  the Django app tutorial from
 ### **Thanks** 
 
 I would like to thank my mentor for this project Reuben who has helped me with the initial planning, the custom models including the Gym and Fighter network, his knowledge and support have been crucial in me completing this project. 
+
+Id like to say a big thanks also to the mentor and tutor team at Code Institute who have been patient and helpful in helping me with support and guidance especially, Alan, Tim, Igor and Sheryl. 
 
 Id like to thank my fiance once again who has let me stay up way too long every night the past month so i could hit the deadline, although ive been up with my daughter in the night too! Im ready for a small rest! But again my daughter and my son who are a massive part of my motivation for completing this course, this project is for you all! 
 
