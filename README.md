@@ -580,7 +580,8 @@ Navigation has been assembled in order of priority from left to right and all li
 Furthermore, I found no need for pagination at this point to display data and also provided menu items and buttons with relevant font awesome icons to aid in web application learning to the end-user. Data is presented the same throughout the web app alongside colours, fonts and branding all aiming to allow the end-user to learn the web app easily and subsequently enjoy using it.
 
 
-### 🚀 **Surface plane:**
+## 🚀 **Surface plane:**
+___
 
 Using all the planes above and the data presentation and all the research carried out I was able to present all of this with my project.
 I hope you enjoy browsing my web app and I look forward to developing it further.
@@ -592,6 +593,7 @@ Brian O'Grady - Code Institute
 
 
 ## 📦️ **Features:** 
+___
 
 * The web app is mobile responsive with a collapsible toggler navigation. I used a mobile-first approach to this project ensuring that mobile access was of high importance.
 
@@ -699,6 +701,7 @@ Fight Camp, shows related fighters in an ordered list / table with links to thei
 The use of telephone links and mail links on the profile page allow for mobile use, to quickly call or message the gym. Also a created message shows the status of when the profile was created, it has been styled in a green colour. 
 
 
+
 * **Fighter Profiles** - Rendering of custom content and blocks dependent on information provided to the template. Carousel and lightbox using if else statements to render infomation only if present. 
 Complete with Verification badges for users who have went through a vetting process so that their profiles are legitimate. 
 The use of telephone links and mail links on the profile page allow for mobile use, to quickly call or message the fighter. Also a created message shows the status of when the profile was created, it has been styled in a green colour. 
@@ -718,30 +721,30 @@ I have also added a last login function, so that users are aware about how long 
 
 > **Ongoing project notice:** 
 
-* I feel this project satisfies the criteria set out to which I wanted to achieve however I have further plans to branch this project to create a better experience again for users and readers of the site to which may include: 
+I feel this project satisfies the criteria set out to which I wanted to achieve however I have further plans to branch this project to create a better experience again for users and readers of the site to which may include: 
 
-* Follow fighters - Develop something similar to twitter where users can follow their favourite fighters.
+* **Follow fighters** - Develop something similar to twitter where users can follow their favourite fighters.
 
-* Top fighters - A ranking system which will aid in getting exposure for fighters and encouraging on boarding of users to the network, this would be accomplished by filtering by and ordering fighter data by rank, and writing logic to allow users to rate the fighter.
+* **Top fighters** - A ranking system which will aid in getting exposure for fighters and encouraging on boarding of users to the network, this would be accomplished by filtering by and ordering fighter data by rank, and writing logic to allow users to rate the fighter.
 
-* User discussion forums may be of use so users can interact with one another or similar simple social network type functionality where users can add friends or follow fighters This will create a community, at present we have a commenting system but this may be extended. 
+* **User discussion forums** - may be of use so users can interact with one another or similar simple social network type functionality where users can add friends or follow fighters This will create a community, at present we have a commenting system but this may be extended. 
 
-* inboxing users, by using a messaging system it will allow users to connect and converse with one another.
+* **inboxing users** - by using a messaging system it will allow users to connect and converse with one another.
 
-* Categories - As the site grows there should be a significant extension of the site layout to incorporate growth, this may be grouping fighters by discipline such as by UFC and Boxing and displaying only top or latest Fighters on the home page in a carousel and linking to a separate genre-specific page, this will help in allowing users to find and explore fighters and disciplines they are interested in.
+* **Categories** - As the site grows there should be a significant extension of the site layout to incorporate growth, this may be grouping fighters by discipline such as by UFC and Boxing and displaying only top or latest Fighters on the home page in a carousel and linking to a separate genre-specific page, this will help in allowing users to find and explore fighters and disciplines they are interested in.
 
 
-* Advertising space - revenue generation or sponsored fighters - allowing fund generation for the site in return for better site positioning or exposure. 
+* **Advertising space** - revenue generation or sponsored fighters - allowing fund generation for the site in return for better site positioning or exposure. 
 
-* Implement the live keys to the merchandise shop to allow for customer purchases.
+* **Implement the live keys** - to the merchandise shop to allow for customer purchases.
 
-* Forums - for discussion and a hub for the latest discussions on fight topics.
+* **Forums** - for discussion and a hub for the latest discussions on fight topics.
 
-* Allowing a user to create news content for the site, so again extending the functionality of the site to allow 3rd party content creation and site expansion. 
+* **Allowing a user to create news content for the site** - so again extending the functionality of the site to allow 3rd party content creation and site expansion. 
 
-* Addition of the Google Maps API - a great feature would be for gyms to input their address and a map pin be generated for the profile of the gym allowing users to find the gym quickly and easily. 
+* **Addition of the Google Maps API** - a great feature would be for gyms to input their address and a map pin be generated for the profile of the gym allowing users to find the gym quickly and easily. 
 
-* Events app - UFC and other events listings to be added to a specific events and calendar app.
+* **Events app** - UFC and other events listings to be added to a specific events and calendar app.
 
 
 
@@ -1221,7 +1224,6 @@ Throughout my project, I used various sources for media -
 The content such as stock images for the website were taken from envato elements to which i have a subscription. 
 
 ### **Code Snippets** 
-
 
 * **NavBar** - MDBootstrap -https://mdbootstrap.com/docs/jquery/navigation/navbar/
 

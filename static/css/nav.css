@@ -29,6 +29,6 @@
 	}
 	.bg-dark.scrolled {
 		background-color: #12192c !important;
-		transition: 0.75s ease;
+		
 	}
 }
