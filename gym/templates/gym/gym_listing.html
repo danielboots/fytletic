@@ -1,31 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 {% load humanize %}
-
-
 {% block content %}
-
-
-
-
 <!-- Hero Section-->
 <div class="hero-gym ">
-
     {% if gym.gym_photo_main %}
     <img class="hero-gym-img" src=" {{ gym.gym_photo_main.url }}" alt=" Image photo main">
     {% else %}
     <img class="hero-gym-img" src=" {{ MEDIA_URL }}fyt_hero.jpg" alt=" Image photo main">
     {% endif %}
     <div class="container-fluid">
-
         <div class="row">
             <div class="hero-text text-center">
-
                 {% if gym.is_verified %}
                 <h1 class="display-4 logo-font text-white font-weight-bold focus-in-contract-bck">
                     {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
                 </h1>
-
                 {% else %}
                 <h1 class="display-4 logo-font text-white font-weight-bold focus-in-contract-bck">
                     {{ gym.name }}
@@ -35,9 +25,7 @@
         </div>
     </div>
 </div>
-
 <!-- End Hero Section-->
-
 <!-- Data -->
 <section class="py-4 whitesmoke-container">
     <div class="container">
@@ -52,7 +40,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-9 white-box  z-depth-1">
                 <!-- Home Main Image -->
@@ -121,36 +108,26 @@
                                 <span class="float-right">{{ gym.street_address1 }} <br>{{ gym.street_address2 }}
                                     <br>{{ gym.town_or_city }}</span>
                             </li>
-
                             <li class="list-group-item text-mute">
                                 <i class="fas fa-fist-raised"></i> <strong>Specialises in:</strong>
                                 <span class="float-right">
-
                                     <!-- Looping over categories / tags in model database. Many2many relationship solution from https://stackoverflow.com/questions/3998527/how-to-display-a-list-of-objects-containing-many-to-many-relations-in-django-tem -->
-
                                     <!-- {{ gym.gym_type.all }} <br> -->
-
                                     {% for gymtype in gym.gym_type.all %}
                                     {{ gymtype.name | upper }} <br>
                                     {% empty %}
                                     No tags!
                                     {% endfor %}
-
-
-
-
                                 </span>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
-
                             <li class="list-group-item text-mute">
                                 <i class="fab fa-whatsapp"></i> <a href="tel: {{ gym.whatsapp }}" target="_blank"><span
                                         class="float-right"> <strong>Call Gym</strong></span>
                                 </a>
-
                             </li>
                             <li class="list-group-item text-mute">
                                 <i class="fas fa-envelope"></i> <a href="mailto: {{ gym.email }}" target="_blank"><span
@@ -158,68 +135,39 @@
                                     </span>
                                 </a>
                             </li>
-
                             <li class="list-group-item text-mute">
                                 <i class="fas fa-link"></i> <strong>Other</strong>
-
-
-
-
                             </li>
                             <li class="list-group-item text-mute ">
                                 <i class="fas fa-calendar"></i> <strong>Created</strong>
                                 <span class="float-right text-success">{{ gym.created_on |timesince }}</span>
-
                             </li>
                         </ul>
                     </div>
                 </div>
-
-
             </div>
-
             <div class="col-md-3 ">
                 <div class="card mb-3 white-box">
                     <div class="card-body text-center">
                         <h5 class="card-title logo-font "> <strong>Gym Owner</strong></h5>
-
                         <img src="{{ gym.gym_owner.url }}" class="mx-auto d-block img-fluid-profile rounded"
                             alt=" Gym Owner">
                         <h6 class="">{{ gym.gym_owner_name }}</h6>
-
-
                         {% if gym.is_verified %}
                         <h6 class="font-weight-bold">
                             <i class="fas fa-check-circle blue-tick"></i>
                         </h6>
-
-
                         {% endif %}
                     </div>
                 </div>
-
-
                 <div class="card mb-3 white-box ">
                     <div class="card-body text-center">
                         <h5 class="card-title logo-font"> <strong>Other</strong></h5>
-
-
                     </div>
-
-
-
-
-
-
                 </div>
-
-
                 <div class="card mb-3 white-box ">
-
                     <div class="div text-center">
-
                         <!--Facebook-->
-
                         {% if gym.facebook %}
                         <a href="{{ gym.facebook }}" target="_blank" class="fb-ic mr-3" role="button"><i
                                 class="fab fa-lg fa-facebook-f fa-brand-facebook"></i></a>
@@ -247,17 +195,11 @@
                         {% else %}
                         <i class="fab fa-lg fa-link fa-muted"></i>
                         {% endif %}
-
-
                     </div>
-
                 </div>
-
-
                 <div class="div text-center">
-
-                    <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-dark">Back To Gyms</a></div>
-
+                    <a href="{% url 'gym' %}" class="btn btn-primary btn-sm btn-dark">Back To Gyms</a>
+                </div>
                 {% if request.user.is_superuser %}
                 <small class="text-center ">
                     <a href="{% url 'edit_gym' gym.id %}">Edit</a> |
@@ -265,16 +207,12 @@
                 </small>
                 {% endif %}
             </div>
-
             <!-- Carousel-->
-
             {% if gym.video_1 %}
             <div class="container-fluid ">
                 <div class="row white-box my-5 py-5 z-depth-1">
                     <div class="col text-left">
-
                         <h4 class="logo-font mb-4"> <em>Media </em> </h4>
-
                         <div class="owl-carousel">
                             <div class="item-video" data-merge="1">
                                 <a class="owl-video" href="{{ gym.video_1 }}"></a>
@@ -293,24 +231,16 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
-
             {% endif %}
             <!-- End Carousel-->
-
             <!-- Fight camp -->
-
             <div class="container-fluid ">
                 <div class="row white-box my-5 py-5 z-depth-1">
                     <div class="col text-left">
-
                         <h4 class="logo-font mb-4"> <em>Fight Camp </em> </h4>
                         <p>fighters who train at this gym</p>
-
                         <!-- Fighter Profile data-->
                         <div class="col-12">
                             <div class="order-history table-responsive">
@@ -320,7 +250,6 @@
                                             <th>Profile</th>
                                             <th>Name</th>
                                             <th>Created</th>
-
                                             <th>View</th>
                                         </tr>
                                     </thead>
@@ -337,55 +266,33 @@
                                                 </a>
                                             </td>
                                             <td class="text-success">{{ fighter.created_on |timesince  }}</td>
-
-
                                             <td><a class="btn btn-black btn-sm"
                                                     href="{% url 'fytnet_profile' fighter.id %}"> View
-                                                </a></td>
+                                                </a>
+                                            </td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>
                                 </table>
                                 <hr>
-
                             </div>
                         </div>
-
-
-
-
-
-
-
-
                     </div>
-
                 </div>
-
-
             </div>
             <!-- End Carousel-->
-
         </div>
-
     </div>
-
 </section>
 <!-- End About Gym -->
-
-
 <!-- back to top link-->
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-
 </div>
-
 {% endblock %}
-
 {% block postloadjs %}
-
 <!-- block super appends instead of replacing anything in the block.-->
 {{ block.super }}
 <script type="text/javascript">
@@ -393,5 +300,4 @@
         window.scrollTo(0, 0)
     })
 </script>
-
 {% endblock %}

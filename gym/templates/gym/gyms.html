@@ -1,12 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
-
-
-
-
 {% block content %}
-
 <!-- Hero Section-->
 <div class="hero-header">
     <div class="container-fluid">
@@ -15,100 +9,64 @@
                 <h1 class="display-4 logo-font text-white font-weight-bold">
                     GYMS
                 </h1>
-
                 <!--Fighter Search-->
-
-
                 <div class="col p-5 justify-content-center">
                     <form method="GET" action="{% url 'gym' %}">
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-0" type="text" name="q"
                                 placeholder="Find Gym">
                             <div class="input-group-append ">
-
                                 <button class="btn btn btn-black  btn-sm" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
                                     </span>
                                 </button>
-
-
                             </div>
                         </div>
                     </form>
                 </div>
-
-
             </div>
         </div>
     </div>
 </div>
-
 <!-- End Hero Section-->
-
-
 <div class="container mt-5">
-
-
     <!-- Section heading -->
     <h3 class="logo-font mb-4">Gyms</h3>
-
     <!-- New card System-->
     <div class="row">
-
         {% if gyms %}
         {% for gym in gyms %}
-
-
         <!-- New fighter card layout-->
-
         <!-- Grid column -->
         <div class="col-lg-4 col-md-12 mb-lg-0 my-4">
-
             <!-- Card -->
             <div class="card hoverable">
-
                 <!-- Card image -->
                 <img class="card-img-top hover-nav" src="{{ gym.gym_photo_main.url }}" alt="Card image cap">
-
                 <!-- Card content -->
                 <div class="card-body">
                     {% if gym.is_verified %}
                     <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
                         {{ gym.name }}<i class="fas fa-check-circle blue-tick"></i>
                     </h5>
-
                     {% else %}
                     <h5 class="card-title text-muted text-uppercase font-small mt-1 mb-3">
                         {{ gym.name }}<i class="fas fa-check-circle"></i>
                     </h5>
                     {% endif %}
-
-
                     <!-- Text -->
                     <p class="mb-2">{{ gym.town_or_city }}</p>
                     <!-- Title -->
-
-
                     <a class="btn btn-dark pill-btn btn-sm" href="{% url 'gym_profile' gym.id %}">View</a>
-
-
                 </div>
             </div>
         </div>
-
-
-
-
         <!--End new card layout -->
-
-
         {% endfor %}
         {% endif %}
     </div>
 </div>
-
-
 <!-- Pagination -->
 <div class="container-fluid">
     <div class="row">
@@ -149,31 +107,17 @@
         </div>
     </div>
 </div>
-
-
 <div class="row my-5">
     <div class="col">
-
     </div>
 </div>
-
-
-
-
-
 <!-- back to top link-->
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-
 </div>
-
-
-
-
 {% endblock %}
-
 {% block postloadjs %}
 <!-- block super appends instead of replacing anything in the block.-->
 {{ block.super }}
@@ -182,6 +126,4 @@
         window.scrollTo(0, 0)
     })
 </script>
-
-
 {% endblock %}
