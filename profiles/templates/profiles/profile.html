@@ -130,7 +130,31 @@
                 </tbody>
             </table>
             <hr>
+
+            <!-- logic for restricting Gym profile creation to 1 profile unless user is activated as a multi_author-->
+
+            {% if multi_author %}
             <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_gym' %}">Add Gym</a>
+            {% else %}
+
+
+            {% if gyms|length == 1 %}
+            <p class="text-success"> <strong> <em>Gym Profile Claimed</em> </strong> </p>
+            {% else %}
+            {% if gyms|length == 0 %}
+            <a class="btn btn-dark pill-btn btn-sm" href="{% url 'add_gym' %}">Add Gym</a>
+
+            {% endif %}
+            {% endif %}
+            {% endif %}
+
+            <!-- end logic for Gym profile restriction -->
+
+
+
+
+
+
         </div>
     </div>
 </div>
