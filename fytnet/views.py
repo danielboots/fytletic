@@ -94,12 +94,17 @@ def add_fighter(request):
 def edit_fighter(request, fighter_id):
     """ Edit fight profile """
     if not request.user.is_authenticated:
-        messages.error(request, "Sorry, only logged in users can do that.")
+        messages.error(request, "Sorry, this aint your profile!!")
         return redirect(reverse("home"))
 
     fighter = get_object_or_404(Fighter, pk=fighter_id)
 
-    if request.method == "POST" and request.user.is_authenticated:
+    if fighter.user != request.user:
+        messages.error(request, "Sorry, this aint your profile!!")
+        return redirect(reverse("home"))
+
+    if request.method == "POST" and fighter.user == request.user:
+
         form = FighterForm(request.POST, request.FILES, instance=fighter)
         if form.is_valid():
             form.save()
