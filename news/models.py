@@ -6,7 +6,7 @@ class NewsCategory(models.Model):
 
     # Meta Class overwrites Django 'S' to our stated plural metaclass.
     class Meta:
-        verbose_name_plural = "News Categories"
+        verbose_name_plural = "NewsCategories"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
