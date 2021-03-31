@@ -169,6 +169,15 @@ i.fas.fa-check-circle {
 	color: white;
 }
 
+.stat-size {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.text-spacer-util {
+    letter-spacing: 10px ;
+}
+
 .m-text {
 	font-family: "Montserrat", sans-serif;
 }
@@ -176,6 +185,8 @@ i.fas.fa-check-circle {
 .text-mute {
 	color: #6c757d!important;
 }
+
+
 
 .img-fluid-profile {
 	object-fit: cover;
@@ -678,7 +689,12 @@ input[name='q']::placeholder {
 	}
 	.header-container {
 		padding: 50px;
-	}
+    }
+
+    
+    
+
+
 	/* pad the top a bit when navbar is collapsed on mobile */
 	@media (max-width: 991px) {
 		.header-container {
@@ -717,4 +733,14 @@ input[name='q']::placeholder {
 			padding: .25rem .5rem !important;
 		}
 	}
+}
+
+
+@media (max-width: 425px) {
+
+    .display-4 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
 }

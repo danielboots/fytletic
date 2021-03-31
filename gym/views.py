@@ -117,7 +117,7 @@ def edit_gym(request, gym_id):
     else:
         form = GymForm(instance=gym)
 
-        # This line doesnt work.
+        # message
         messages.info(request, f"You are editing {gym.user}")
 
     template = "gym/edit_gym.html"

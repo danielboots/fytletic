@@ -661,8 +661,14 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 
 * Verified Fighter or Gym - I added a custom piece of Python logic that allowed users to apply to the admin for verified status, to achieve this i added a Boolean to the the fighter and gym models this resulted in using an 'if' Python statement to check if the value of the Boolean is True to then display a verified check mark, if the Boolean is False, then nothing is returned or a greyed out check box is displayed, showing the user that this gym or fighter hasnt been through the relevant verification process.
 
+## **Defensive design** - 
 
-* Defensive design - 
+___
+
+* Throughout this course i have been made aware, of defensive design, to which i fully understand how important it is for a web app to employ sufficient defensive design, i have build in a plethora of safeguarding features to this web app to ensure that the project is safe and secure, not only employing built in Django features but writing code on the back end to redirect users if they dont have the correct credentials. I feel with the amount of features i have built in this app i should highlight a few ways to how i have used defensive design to my advantage. 
+
+* All forms utilise the Django CSRF token preventing cross site request forgery.
+
 ```
 {{ comment_form | crispy }}
     {% csrf_token %}
@@ -671,13 +677,60 @@ Expected font use and consistency in font sizing and weights allow for an easy r
 * Crispy forms and Cross site Django tokens used, crispy form for styling, but CSRF allows for added security.
 
 
+
  Using Login required in views.py for different apps; This checks that the user is logged in and authenticated.
 
+
+
+* Login required utilised Djangos built in safety features to check if the user is logged in and prevents rendering of the page if not, redirecting them back to a page unlogged in users are allowed to access.
 ```
 @login_required
 def edit_gym(request, gym_id):
 ```
 
+
+* Preventing un authorised or non logged in users from editing urls, this bug i spotted late in to the project where by i was only protecting the fighter edit urls using an 'is_authenticated' method, which although prevented logged out users from accessing the url for any fighter or gym profile, it didnt provide protection against users who were logged in. By simply ammending the url any user could edit any other users profile. This was ammended  in the views for  both the gym add and fighter add class. 
+
+
+![Gym Code](media/readme/gym_edit.png)
+
+* This was achieved by firstly checking that the user is logged in `@login_requried`
+* The code then checksif the user is authenticated if not, returns the user to home.
+* The code then runs an if statement to see if the gym (or fight user) matches the request.user if they dont match the user is shown an error message and also redirected to the home page
+* The code then checks if the method is a Post request and the gym.user is equal to the request.user, if true it then renders the form.
+
+
+* **Fighter Gym profile claiming** - This logic i put in just as a quality control and spam protection for the site. I first extended the profile model to have a multi_author value, which is a boolean. If true the user can add as many profiles fighters gyms as he / she pleases. However as the value is set to `False` initially i then restrict profile creation or the links to profile creation to 1 fighter or one gym only per account. This works by restricting access to the add fighter or gym fighter button. If the user has added a profile and isnt multiauthor then they get a message saying their profile has been claimed, and no button or direct button access to add new profiles are available. If the user deletes their profile the button returns. 
+The logic in the template simply uses a built in Django lengh filter to check against the number of profiles available and runs an if else statement to determine wether to render the profile add button or return a fighter claimed message.
+Similarly if a user is a multi author the button to add profiles is always there. 
+
+
+### **Multi - Author Managment view**
+![Add button logic](media/readme/multi1.png)
+
+### **Standard User view**
+![Multi User](media/readme/multi2.png)
+
+___
+
+
+## **Email Notification - Contact app** - 
+
+* Instead of using Email.js (which i did use in an earlier version of the app) i decided to build out a brand new app for handling contact requests, essentially meaning it can be extended to allow for users to contact gyms and fighters directly on the main site, instead of the standard email and phone buttons in the template. 
+* The contact form checks to see if the user is logged in and fills in form data such as name and email address automatically from the database, the form on submit is logged in the Django admin and sends an email using the Google SMTP server to the administrator of the site and makes them aware that a user has contacted them, and to check the admin contact panel for infomation. 
+The forms are rendered on the front end via crispy form styling and are complete with defensive design to prevent spam. 
+
+
+### **Email Test**
+![email](media/readme/email.png)
+
+
+### **Standard User view**
+![Multi User](media/readme/contact2.png)
+
+___
+
+* Throughout
 
 
 
@@ -693,7 +746,6 @@ def edit_gym(request, gym_id):
 
 * **Products** - Fully functional ecommerce site, with stripe integration, security through stripe, quanity selectors crispy forms and toasts alerting users to bag updates, deletion and manual editing and deleting of products in the bag.
 
-* **Contact** - Contact form Posts data to the backend Django admin panel where admins are alerted via email using the Google SMTP server. The admin panel shows and returns a list of messages with return email addresses. The forms are rendered on the front end via crispy form styling and are complete with defensive design to prevent spam. 
 
 * **Gym** - Rendering of custom content and blocks dependent on information provided to the template. Carousel and lightbox using if else statements to render infomation only if present. 
 Complete with Verification badges for users who have went through a vetting process so that their profiles are legitimate. 
@@ -714,6 +766,8 @@ The template also renders the author name, when the article was posted and a lin
 
 * **User Profiles** - Not only does the profile / account page for users contain all order history and information to update their account, it also has been extended to show all of the users Fighter and Gym profiles associated with the account, neatly arranged in tables complete with links to profiles and avatars. Quick links for editing and deleting profiles are also available.
 I have also added a last login function, so that users are aware about how long ago they logged in and if they didnt then they will know that their account may have been compromised. 
+
+
 
 
 

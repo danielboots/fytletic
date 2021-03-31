@@ -15,16 +15,16 @@
         <div class="container-fluid">
             <div class="row ">
                 <div class="hero-text text-center focus-in-contract-bck">
-                    <p>"{{ fighter.nick_name }}"</p>
+                    <p class="stat-size text-spacer-util">"{{ fighter.nick_name }}"</p>
                     <h1 class="display-4  text-white font-weight-bold">
                         {{ fighter.first_name }} {{ fighter.last_name }}
                     </h1>
                     <em>
                         <p>{{ fighter.titles }}</p>
                     </em>
-                    <span> <strong> W :{{ fighter.win }}</strong></span>
-                    <span> D :{{ fighter.draw }}</span>
-                    <span> L :{{ fighter.loss }}</span>
+                    <span class="stat-size"> <strong> W :{{ fighter.win }}</strong></span>
+                    <span class="stat-size"> D :{{ fighter.draw }}</span>
+                    <span class="stat-size"> L :{{ fighter.loss }}</span>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
                 <div class="col-md-3 ">
                     <div class="card mb-3 white-box">
                         <div class="card-body text-center">
-                            <h5 class="card-title logo-font mb-4"> <strong>Verified status</strong></h5>
+                            <h5 class="card-title logo-font"> <strong>Verifed</strong></h5>
                             {% if fighter.is_verified %}
                             <h6 class="font-weight-bold">
                                 <em>Verified Fighter</em> <i class="fas fa-check-circle blue-tick"></i>
