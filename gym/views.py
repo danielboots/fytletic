@@ -97,7 +97,12 @@ def edit_gym(request, gym_id):
 
     gym = get_object_or_404(Gym, pk=gym_id)
 
-    if request.method == "POST" and request.user.is_authenticated:
+    if gym.user != request.user:
+        messages.error(request, "Sorry, this isnt your gym!!")
+        return redirect(reverse("home"))
+
+    if request.method == "POST" and gym.user == request.user:
+
         form = GymForm(request.POST, request.FILES, instance=gym)
         if form.is_valid():
             form.save()
