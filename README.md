@@ -2,22 +2,21 @@
 
 ## **Fytletic - Fighter Networking Solution**
 
-![Ftyletic logo and strap line ](static/img/responsive.png)
+![Ftyletic logo and strap line ](media/readme/responsive.png)
 
-![index gif](Link)
-![user gif](link)
+![index gif](media/readme/fytletic.gif)
+![index gif](media/readme/user2.gif)
 
 Fytletic is currently deployed and can be visited directly at Heroku **[Fytletic  ](https://fytletic.herokuapp.com/)**
 
 ###  **For testing the following login and test card credentials are valid:**
 
 
-**Member Login**
-- Username: fytletic_test
-- Email: test@fytletic.com
-- Password: fyt_001
+**Member Login** - Registration is open for this deployed site, please click on the register button to sign up. Admin account is not accessible, if you require admin status please contact me at Dan@fytletic.com
 
-**Card payments**
+
+
+**Card payments** - For dummy test purchases
 - Card number: 4242 4242 4242 4242
 - Zip & CCV: any integer values are valid
 
