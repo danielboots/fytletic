@@ -1278,6 +1278,8 @@ The content such as stock images for the website were taken from envato elements
 
 * Gym images and inspiration for dummy data from:  https://generationiron.com/5-best-gyms-world-need-train-die/
 
+* Fighter info  retireved from:  https://www.ufc.com/
+
 ### **Code Snippets** 
 
 * **NavBar** - MDBootstrap -https://mdbootstrap.com/docs/jquery/navigation/navbar/
