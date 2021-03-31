@@ -86,8 +86,6 @@ Is the main language used in this project which allowed me to correctly structur
 
 * **[GIFY](https://giphy.com/):** - Used to create the .gif file in readme depicting the responsive viewer in action and showing my testing on different screen sizes. 
 
-* **[WEB FONT GENERATOR](https://www.fontsquirrel.com/tools/webfont-generator):** - Used to bring in a custom font I wanted to use for the main H1/ H2 sections, custom branding.
-
 * **[AM I RESPONSIVE](http://ami.responsivedesign.is/):** - Used to generate the header image displayed at top of Readme.MD file depicting 4 screen displays.
 
 * **[FAVICON](https://favicon.io/):** - Used to generate the favicon
@@ -162,6 +160,19 @@ All of the below points should fulfil 'user first impressions' (see table below)
 
 *	Develop a logo – which is simple but effective, based on the letters F and L  and try to symbolise a link between fitness, wellbeing and the relationship of the letters. See Logo on the deployed site for the final design. The logo will also act as a link back to the home page as common practice. Increasing credibility and trustworthiness.
 After some developement, i have found that the best option for the logo is to use the Fytletic play on words, using a combination of Bold italic and thin variations of the “Montserrat” font, which subsequently is also used as the main type face of the web app, i feel this works as it adds to the simlistic approach to the branding of the site.
+
+## **Final Logo** 
+
+![logo ](media/readme/logofinal.png)
+
+
+## **FavIcon** 
+
+* I created a simple Favcicon which uses the same font styling as the main logo to keep in line with branding. Its simple and effective and diesnt distract the user. 
+
+![logo ](media/readme/favicon.png)
+
+
 
 * A simple design structure with a navigation bar and side navigation on smaller screen resolutions accessible on every page will be essential for allowing users and readers to 'learn' the site and layout/functionality with ease. There should also be a home button/link on the logo for each page and subsequent back/return to the fighters and gyms profile. I will ensure that a back button is generated on each page so that the user doesn't have to use the browser back button as this is bad UX. 
 
@@ -365,13 +376,25 @@ They need a clean and tidy designed website which is mobile responsive, highligh
 | **_Admin and Store Management_**     |              |                                                                     |                                                                                                      |
 | 27                             | Site Owner   | Add a product                                                      | Add new products to the store                                                                                  |
 | 28                             | Site Owner   | Edit/Update a product                                              | Change product prices, descriptions, images, and any other details which are relevant.                             |
-| 29                             | Site Owner   | Delete a product/programme                                                    | Remove items that are no longer available                                                 |
+| 29                             | Site Owner   | Delete a product                                                 | Remove items that are no longer available                                                 |
 | 30                             | Site Owner   | Add a blog                                                          | Add new blogs to share with site members                                                        |
 | 31                             | Site Owner   | Links to Social Media                                | To connect with our clients  using already established social networking sites                                                       |
 
-| 32                             | Site Owner   | Develop the site in to a networking site                                 | To allow users of the site to gain ever increasing exposure to their profiles, giving them a chance of making a career out of their ability. |
+| 32                             | Site Owner   | Develop the site in to a networking site                                 | To allow users of the site to gain ever increasing exposure to their profiles, giving them a chance of making a career out of their ability. | 
 
 | 33                             | Site Owner   | Provide support for fighers and gyms to grow the network                                 | To encourage on boarding of investors and sponsorship. |
+
+
+
+| **_Fighter and Gym Profiles_**     |              |                                                                     |                                                                                                      |
+| 34                             | Site User   | Add a Fighter or gym profile                                                     | Add their profiles to the global database                                                                                 |
+| 35                             | Site User   | Edit/Update a profile                                             | Change profile images, and any other details which are relevant.                             |
+| 36                             | Site User   | Delete a profile                                                   | Remove profiles that are no longer available                                                 |
+| 37                             | Site User   | Comment on News articles                                                          | Let people know my thoughts on a subject.                                                       |
+| 38                            | Site Owner   | Manage over all database of fighters                                | Can become a major global database of fighters and to help fighters expand their network, whilst maintaining a professional image, reducing site from spam., increase brand awareness and gain sponsorship opps.                                                       |
+
+
+
 
 
 **First-time visitor Goals**
