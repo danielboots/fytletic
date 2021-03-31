@@ -234,12 +234,12 @@ class Fighter(models.Model):
 # If created or update for users profile only
 
 
-@receiver(post_save, sender=User)
-def create_or_update_user_fighter(sender, instance, created, **kwargs):
-    """
-    Create or update the users Fighter profile
-    """
-    if created:
-        Fighter.objects.create(user=instance)
-    # Existing users: just save the profile
-    instance.userprofile.save()
+# @receiver(post_save, sender=User)
+# def create_or_update_user_fighter(sender, instance, created, **kwargs):
+#     """
+#     Create or update the users Fighter profile
+#     """
+#     if created:
+#         Fighter.objects.create(user=instance)
+#     # Existing users: just save the profile
+#     instance.userprofile.save()
